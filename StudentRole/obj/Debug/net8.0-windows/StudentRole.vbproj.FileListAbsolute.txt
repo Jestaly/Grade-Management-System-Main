@@ -1,16 +1,20 @@
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.studentLogin.resources
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.vbproj.GenerateResource.cache
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.AssemblyInfoInputs.cache
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.AssemblyInfo.vb
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.vbproj.CoreCompileInputs.cache
-C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.exe
-C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.deps.json
-C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.runtimeconfig.json
-C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.dll
-C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.pdb
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.dll
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\refint\StudentRole.dll
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.pdb
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.genruntimeconfig.cache
-C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\ref\StudentRole.dll
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\StudentRole.exe
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\ApplicationEvents.vb
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\DBConnector.vb
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\studentLogin.vb
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\StudentRole.deps.json
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\StudentRole.runtimeconfig.json
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\StudentRole.dll
+F:\Github Projects\Grade-Management-System-Main\StudentRole\bin\Debug\net8.0-windows\StudentRole.pdb
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.studentLogin.resources
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.vbproj.GenerateResource.cache
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.GeneratedMSBuildEditorConfig.editorconfig
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.AssemblyInfoInputs.cache
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.AssemblyInfo.vb
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.vbproj.CoreCompileInputs.cache
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.sourcelink.json
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.dll
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\refint\StudentRole.dll
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.pdb
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\StudentRole.genruntimeconfig.cache
+F:\Github Projects\Grade-Management-System-Main\StudentRole\obj\Debug\net8.0-windows\ref\StudentRole.dll

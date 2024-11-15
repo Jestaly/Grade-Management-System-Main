@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("StudentRole"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48c977c7c82cced8e70439529bcbeb0ee21ebd69"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("StudentRole"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("StudentRole"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
