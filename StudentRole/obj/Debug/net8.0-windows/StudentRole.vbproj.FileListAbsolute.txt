@@ -1,0 +1,16 @@
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.studentLogin.resources
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.vbproj.GenerateResource.cache
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.AssemblyInfoInputs.cache
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.AssemblyInfo.vb
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.vbproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.exe
+C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.deps.json
+C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.runtimeconfig.json
+C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.dll
+C:\Users\acer\source\repos\StudentRole\bin\Debug\net8.0-windows\StudentRole.pdb
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.dll
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\refint\StudentRole.dll
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.pdb
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\StudentRole.genruntimeconfig.cache
+C:\Users\acer\source\repos\StudentRole\obj\Debug\net8.0-windows\ref\StudentRole.dll
