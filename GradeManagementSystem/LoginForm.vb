@@ -3,6 +3,7 @@
 Public Class loginForm
     Public connector As New DatabaseConnector
     Dim adminForm As New AdminForm
+    Dim registerForm As New RegisterForm
     Private Sub loginButton_Click(sender As Object, e As EventArgs) Handles loginButton.Click
         If (accountExist()) Then
             MessageBox.Show("Logged in!")
@@ -80,5 +81,9 @@ Public Class loginForm
             MessageBox.Show("Database Error")
         End Try
         connector.connect.Close()
+    End Sub
+
+    Private Sub registerButton_Click(sender As Object, e As EventArgs) Handles registerButton.Click
+        registerForm.Visible = True
     End Sub
 End Class
