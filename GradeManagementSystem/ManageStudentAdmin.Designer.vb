@@ -22,21 +22,21 @@ Partial Class ManageStudentAdmin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        TextBox1 = New TextBox()
+        searchStudentField = New TextBox()
         addStudent = New Button()
         modifyStudent = New Button()
         searchStudent = New Button()
-        DataGridView1 = New DataGridView()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        dataView = New DataGridView()
+        CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' TextBox1
+        ' searchStudentField
         ' 
-        TextBox1.Location = New Point(28, 35)
-        TextBox1.Name = "TextBox1"
-        TextBox1.PlaceholderText = "Search student here"
-        TextBox1.Size = New Size(233, 27)
-        TextBox1.TabIndex = 0
+        searchStudentField.Location = New Point(28, 35)
+        searchStudentField.Name = "searchStudentField"
+        searchStudentField.PlaceholderText = "Search student here"
+        searchStudentField.Size = New Size(233, 27)
+        searchStudentField.TabIndex = 0
         ' 
         ' addStudent
         ' 
@@ -65,14 +65,14 @@ Partial Class ManageStudentAdmin
         searchStudent.Text = "Search"
         searchStudent.UseVisualStyleBackColor = True
         ' 
-        ' DataGridView1
+        ' dataView
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(28, 68)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(744, 359)
-        DataGridView1.TabIndex = 4
+        dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dataView.Location = New Point(28, 68)
+        dataView.Name = "dataView"
+        dataView.RowHeadersWidth = 51
+        dataView.Size = New Size(744, 359)
+        dataView.TabIndex = 4
         ' 
         ' ManageStudentAdmin
         ' 
@@ -80,21 +80,21 @@ Partial Class ManageStudentAdmin
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveBorder
         ClientSize = New Size(800, 450)
-        Controls.Add(DataGridView1)
+        Controls.Add(dataView)
         Controls.Add(searchStudent)
         Controls.Add(modifyStudent)
         Controls.Add(addStudent)
-        Controls.Add(TextBox1)
+        Controls.Add(searchStudentField)
         Name = "ManageStudentAdmin"
-        Text = "ManageStudentAdmin"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        Text = "  "
+        CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents searchStudentField As TextBox
     Friend WithEvents addStudent As Button
     Friend WithEvents modifyStudent As Button
     Friend WithEvents searchStudent As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dataView As DataGridView
 End Class
