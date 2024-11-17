@@ -2,9 +2,12 @@
 
 Public Class loginForm
     Public connector As New DatabaseConnector
+    Dim adminForm As New AdminForm
     Private Sub loginButton_Click(sender As Object, e As EventArgs) Handles loginButton.Click
         If (accountExist()) Then
             MessageBox.Show("Logged in!")
+            Me.Visible = False
+            adminForm.Visible = True
             Return
         End If
         MessageBox.Show("Account doesn't exists!")
