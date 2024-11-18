@@ -162,4 +162,5 @@ Public Class loginForm
     Private Sub registerButton_Click(sender As Object, e As EventArgs) Handles registerButton.Click
         registerForm.Visible = True
     End Sub
+
 End Class

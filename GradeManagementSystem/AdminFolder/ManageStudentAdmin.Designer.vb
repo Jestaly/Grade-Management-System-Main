@@ -27,6 +27,7 @@ Partial Class ManageStudentAdmin
         modifyStudent = New Button()
         searchStudent = New Button()
         dataView = New DataGridView()
+        refreshButton = New Button()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -68,11 +69,20 @@ Partial Class ManageStudentAdmin
         ' dataView
         ' 
         dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dataView.Location = New Point(28, 68)
+        dataView.Location = New Point(28, 112)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(744, 359)
+        dataView.Size = New Size(744, 315)
         dataView.TabIndex = 4
+        ' 
+        ' refreshButton
+        ' 
+        refreshButton.Location = New Point(28, 77)
+        refreshButton.Name = "refreshButton"
+        refreshButton.Size = New Size(94, 29)
+        refreshButton.TabIndex = 5
+        refreshButton.Text = "Refresh"
+        refreshButton.UseVisualStyleBackColor = True
         ' 
         ' ManageStudentAdmin
         ' 
@@ -80,6 +90,7 @@ Partial Class ManageStudentAdmin
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveBorder
         ClientSize = New Size(800, 450)
+        Controls.Add(refreshButton)
         Controls.Add(dataView)
         Controls.Add(searchStudent)
         Controls.Add(modifyStudent)
@@ -97,4 +108,5 @@ Partial Class ManageStudentAdmin
     Friend WithEvents modifyStudent As Button
     Friend WithEvents searchStudent As Button
     Friend WithEvents dataView As DataGridView
+    Friend WithEvents refreshButton As Button
 End Class
