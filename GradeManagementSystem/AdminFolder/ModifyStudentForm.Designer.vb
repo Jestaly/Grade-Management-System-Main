@@ -22,30 +22,53 @@ Partial Class ModifyStudentForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
+        studentIDTextBox = New TextBox()
+        StudentIDLabel = New Label()
+        searchButton = New Button()
         SuspendLayout()
         ' 
-        ' Label1
+        ' studentIDTextBox
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(32, 159)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(552, 62)
-        Label1.TabIndex = 0
-        Label1.Text = "MODIFY STUDENT FORM"
+        studentIDTextBox.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        studentIDTextBox.Location = New Point(162, 161)
+        studentIDTextBox.Name = "studentIDTextBox"
+        studentIDTextBox.Size = New Size(287, 51)
+        studentIDTextBox.TabIndex = 0
+        ' 
+        ' StudentIDLabel
+        ' 
+        StudentIDLabel.AutoSize = True
+        StudentIDLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        StudentIDLabel.Location = New Point(237, 127)
+        StudentIDLabel.Name = "StudentIDLabel"
+        StudentIDLabel.Size = New Size(121, 31)
+        StudentIDLabel.TabIndex = 1
+        StudentIDLabel.Text = "Student ID"
+        ' 
+        ' searchButton
+        ' 
+        searchButton.Location = New Point(237, 233)
+        searchButton.Name = "searchButton"
+        searchButton.Size = New Size(137, 59)
+        searchButton.TabIndex = 2
+        searchButton.Text = "Search"
+        searchButton.UseVisualStyleBackColor = True
         ' 
         ' ModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(610, 450)
-        Controls.Add(Label1)
+        Controls.Add(searchButton)
+        Controls.Add(StudentIDLabel)
+        Controls.Add(studentIDTextBox)
         Name = "ModifyStudentForm"
         Text = "ModifyStudentForm"
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents studentIDTextBox As TextBox
+    Friend WithEvents StudentIDLabel As Label
+    Friend WithEvents searchButton As Button
 End Class
