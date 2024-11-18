@@ -2,6 +2,7 @@
 
 Public Class ManageStudentAdmin
     Private addStudentForm As New AddStudentForm
+    Private modifyStudentForm As New ModifyStudentForm
     Private connector As New DatabaseConnector
     Private Sub addStudent_Click(sender As Object, e As EventArgs) Handles addStudent.Click
         addStudentForm.Visible = True
@@ -31,4 +32,7 @@ Public Class ManageStudentAdmin
         End Try
     End Sub
 
+    Private Sub modifyStudent_Click(sender As Object, e As EventArgs) Handles modifyStudent.Click
+        modifyStudentForm.Visible = True
+    End Sub
 End Class

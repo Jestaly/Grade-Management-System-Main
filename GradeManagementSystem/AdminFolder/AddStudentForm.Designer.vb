@@ -35,13 +35,13 @@ Partial Class AddStudentForm
         Label8 = New Label()
         emailTextBox = New TextBox()
         Label9 = New Label()
-        Button1 = New Button()
+        addStudentButton = New Button()
         Button2 = New Button()
         programComboBox = New ComboBox()
         yearComboBox = New ComboBox()
         sectionComboBox = New ComboBox()
         departmentComboBox = New ComboBox()
-        statusTextBox = New ComboBox()
+        statusComboBox = New ComboBox()
         SuspendLayout()
         ' 
         ' firstnameTextBox
@@ -153,14 +153,14 @@ Partial Class AddStudentForm
         Label9.TabIndex = 17
         Label9.Text = "status"
         ' 
-        ' Button1
+        ' addStudentButton
         ' 
-        Button1.Location = New Point(57, 300)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(125, 29)
-        Button1.TabIndex = 18
-        Button1.Text = "Add Student"
-        Button1.UseVisualStyleBackColor = True
+        addStudentButton.Location = New Point(57, 300)
+        addStudentButton.Name = "addStudentButton"
+        addStudentButton.Size = New Size(125, 29)
+        addStudentButton.TabIndex = 18
+        addStudentButton.Text = "Add Student"
+        addStudentButton.UseVisualStyleBackColor = True
         ' 
         ' Button2
         ' 
@@ -211,28 +211,28 @@ Partial Class AddStudentForm
         departmentComboBox.Size = New Size(125, 28)
         departmentComboBox.TabIndex = 23
         ' 
-        ' statusTextBox
+        ' statusComboBox
         ' 
-        statusTextBox.DropDownStyle = ComboBoxStyle.DropDownList
-        statusTextBox.FormattingEnabled = True
-        statusTextBox.Items.AddRange(New Object() {"Active", "Inactive", "Drop out", "Suspended"})
-        statusTextBox.Location = New Point(319, 233)
-        statusTextBox.Name = "statusTextBox"
-        statusTextBox.Size = New Size(125, 28)
-        statusTextBox.TabIndex = 24
+        statusComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+        statusComboBox.FormattingEnabled = True
+        statusComboBox.Items.AddRange(New Object() {"Active", "Inactive", "Drop out", "Suspended"})
+        statusComboBox.Location = New Point(319, 233)
+        statusComboBox.Name = "statusComboBox"
+        statusComboBox.Size = New Size(125, 28)
+        statusComboBox.TabIndex = 24
         ' 
         ' AddStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(626, 450)
-        Controls.Add(statusTextBox)
+        Controls.Add(statusComboBox)
         Controls.Add(departmentComboBox)
         Controls.Add(sectionComboBox)
         Controls.Add(yearComboBox)
         Controls.Add(programComboBox)
         Controls.Add(Button2)
-        Controls.Add(Button1)
+        Controls.Add(addStudentButton)
         Controls.Add(Label9)
         Controls.Add(Label8)
         Controls.Add(emailTextBox)
@@ -265,11 +265,11 @@ Partial Class AddStudentForm
     Friend WithEvents Label8 As Label
     Friend WithEvents emailTextBox As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents addStudentButton As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents programComboBox As ComboBox
     Friend WithEvents yearComboBox As ComboBox
     Friend WithEvents sectionComboBox As ComboBox
     Friend WithEvents departmentComboBox As ComboBox
-    Friend WithEvents statusTextBox As ComboBox
+    Friend WithEvents statusComboBox As ComboBox
 End Class
