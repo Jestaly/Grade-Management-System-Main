@@ -4,5 +4,5 @@ Public Class DatabaseConnector
     Public dt As New DataTable
     Public da As New MySqlDataAdapter
     Public query As String
-    Public connect As New MySqlConnection("server=localhost;port=3307;user=root;password=joseph;database=student")
+    Public connect As New MySqlConnection("server=localhost;port=3307;user=root;password=joseph;database=grade_management_system")
 End Class

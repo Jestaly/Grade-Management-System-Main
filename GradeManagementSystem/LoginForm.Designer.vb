@@ -22,61 +22,61 @@ Partial Class loginForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        usernameTextBox = New TextBox()
-        passwordTextBox = New MaskedTextBox()
-        Label1 = New Label()
-        Label2 = New Label()
-        forgotPassword = New LinkLabel()
+        usernameLogin = New TextBox()
+        passwordLogin = New MaskedTextBox()
+        usrnameLabel = New Label()
+        passwordLabel = New Label()
+        forgotPasswordLogin = New LinkLabel()
         loginButton = New Button()
-        accountType = New Label()
-        ComboBox1 = New ComboBox()
-        accountID = New Label()
-        TextBox1 = New TextBox()
+        accountTypeLabel = New Label()
+        accountTypeLogin = New ComboBox()
+        accountIDLabel = New Label()
+        accountIDLogin = New TextBox()
         registerButton = New Button()
         SuspendLayout()
         ' 
-        ' usernameTextBox
+        ' usernameLogin
         ' 
-        usernameTextBox.Location = New Point(112, 155)
-        usernameTextBox.Name = "usernameTextBox"
-        usernameTextBox.Size = New Size(177, 27)
-        usernameTextBox.TabIndex = 0
+        usernameLogin.Location = New Point(112, 155)
+        usernameLogin.Name = "usernameLogin"
+        usernameLogin.Size = New Size(177, 27)
+        usernameLogin.TabIndex = 0
         ' 
-        ' passwordTextBox
+        ' passwordLogin
         ' 
-        passwordTextBox.Location = New Point(112, 266)
-        passwordTextBox.Name = "passwordTextBox"
-        passwordTextBox.Size = New Size(177, 27)
-        passwordTextBox.TabIndex = 1
-        passwordTextBox.UseSystemPasswordChar = True
+        passwordLogin.Location = New Point(112, 266)
+        passwordLogin.Name = "passwordLogin"
+        passwordLogin.Size = New Size(177, 27)
+        passwordLogin.TabIndex = 1
+        passwordLogin.UseSystemPasswordChar = True
         ' 
-        ' Label1
+        ' usrnameLabel
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(112, 132)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(75, 20)
-        Label1.TabIndex = 2
-        Label1.Text = "Username"
+        usrnameLabel.AutoSize = True
+        usrnameLabel.Location = New Point(112, 132)
+        usrnameLabel.Name = "usrnameLabel"
+        usrnameLabel.Size = New Size(75, 20)
+        usrnameLabel.TabIndex = 2
+        usrnameLabel.Text = "Username"
         ' 
-        ' Label2
+        ' passwordLabel
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(112, 243)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(70, 20)
-        Label2.TabIndex = 3
-        Label2.Text = "Password"
+        passwordLabel.AutoSize = True
+        passwordLabel.Location = New Point(112, 243)
+        passwordLabel.Name = "passwordLabel"
+        passwordLabel.Size = New Size(70, 20)
+        passwordLabel.TabIndex = 3
+        passwordLabel.Text = "Password"
         ' 
-        ' forgotPassword
+        ' forgotPasswordLogin
         ' 
-        forgotPassword.AutoSize = True
-        forgotPassword.Location = New Point(171, 296)
-        forgotPassword.Name = "forgotPassword"
-        forgotPassword.Size = New Size(118, 20)
-        forgotPassword.TabIndex = 4
-        forgotPassword.TabStop = True
-        forgotPassword.Text = "Forgot Password"
+        forgotPasswordLogin.AutoSize = True
+        forgotPasswordLogin.Location = New Point(171, 296)
+        forgotPasswordLogin.Name = "forgotPasswordLogin"
+        forgotPasswordLogin.Size = New Size(118, 20)
+        forgotPasswordLogin.TabIndex = 4
+        forgotPasswordLogin.TabStop = True
+        forgotPasswordLogin.Text = "Forgot Password"
         ' 
         ' loginButton
         ' 
@@ -87,40 +87,40 @@ Partial Class loginForm
         loginButton.Text = "Login"
         loginButton.UseVisualStyleBackColor = True
         ' 
-        ' accountType
+        ' accountTypeLabel
         ' 
-        accountType.AutoSize = True
-        accountType.Location = New Point(112, 185)
-        accountType.Name = "accountType"
-        accountType.Size = New Size(98, 20)
-        accountType.TabIndex = 7
-        accountType.Text = "Account Type"
+        accountTypeLabel.AutoSize = True
+        accountTypeLabel.Location = New Point(112, 185)
+        accountTypeLabel.Name = "accountTypeLabel"
+        accountTypeLabel.Size = New Size(98, 20)
+        accountTypeLabel.TabIndex = 7
+        accountTypeLabel.Text = "Account Type"
         ' 
-        ' ComboBox1
+        ' accountTypeLogin
         ' 
-        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"Student", "Professor", "Admin"})
-        ComboBox1.Location = New Point(113, 208)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(176, 28)
-        ComboBox1.TabIndex = 8
+        accountTypeLogin.DropDownStyle = ComboBoxStyle.DropDownList
+        accountTypeLogin.FormattingEnabled = True
+        accountTypeLogin.Items.AddRange(New Object() {"Student", "Professor", "Admin"})
+        accountTypeLogin.Location = New Point(113, 208)
+        accountTypeLogin.Name = "accountTypeLogin"
+        accountTypeLogin.Size = New Size(176, 28)
+        accountTypeLogin.TabIndex = 8
         ' 
-        ' accountID
+        ' accountIDLabel
         ' 
-        accountID.AutoSize = True
-        accountID.Location = New Point(112, 79)
-        accountID.Name = "accountID"
-        accountID.Size = New Size(82, 20)
-        accountID.TabIndex = 10
-        accountID.Text = "Account ID"
+        accountIDLabel.AutoSize = True
+        accountIDLabel.Location = New Point(112, 79)
+        accountIDLabel.Name = "accountIDLabel"
+        accountIDLabel.Size = New Size(82, 20)
+        accountIDLabel.TabIndex = 10
+        accountIDLabel.Text = "Account ID"
         ' 
-        ' TextBox1
+        ' accountIDLogin
         ' 
-        TextBox1.Location = New Point(112, 102)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(177, 27)
-        TextBox1.TabIndex = 9
+        accountIDLogin.Location = New Point(112, 102)
+        accountIDLogin.Name = "accountIDLogin"
+        accountIDLogin.Size = New Size(177, 27)
+        accountIDLogin.TabIndex = 9
         ' 
         ' registerButton
         ' 
@@ -137,32 +137,32 @@ Partial Class loginForm
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(419, 450)
         Controls.Add(registerButton)
-        Controls.Add(accountID)
-        Controls.Add(TextBox1)
-        Controls.Add(ComboBox1)
-        Controls.Add(accountType)
+        Controls.Add(accountIDLabel)
+        Controls.Add(accountIDLogin)
+        Controls.Add(accountTypeLogin)
+        Controls.Add(accountTypeLabel)
         Controls.Add(loginButton)
-        Controls.Add(forgotPassword)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
-        Controls.Add(passwordTextBox)
-        Controls.Add(usernameTextBox)
+        Controls.Add(forgotPasswordLogin)
+        Controls.Add(passwordLabel)
+        Controls.Add(usrnameLabel)
+        Controls.Add(passwordLogin)
+        Controls.Add(usernameLogin)
         Name = "loginForm"
         Text = "Login"
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents usernameTextBox As TextBox
-    Friend WithEvents passwordTextBox As MaskedTextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents forgotPassword As LinkLabel
+    Friend WithEvents usernameLogin As TextBox
+    Friend WithEvents passwordLogin As MaskedTextBox
+    Friend WithEvents usrnameLabel As Label
+    Friend WithEvents passwordLabel As Label
+    Friend WithEvents forgotPasswordLogin As LinkLabel
     Friend WithEvents loginButton As Button
-    Friend WithEvents accountType As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents accountID As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents accountTypeLabel As Label
+    Friend WithEvents accountTypeLogin As ComboBox
+    Friend WithEvents accountIDLabel As Label
+    Friend WithEvents accountIDLogin As TextBox
     Friend WithEvents registerButton As Button
 
 End Class
