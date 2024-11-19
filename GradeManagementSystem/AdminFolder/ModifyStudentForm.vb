@@ -19,7 +19,7 @@ Public Class ModifyStudentForm
     Private Sub connectToOMSF()
         Try
             Dim row As Integer
-            row = getStudentData() - 1
+            row = getStudentID() - 1
             connector.connect.Open()
             connector.dataTable.Clear()
             connector.query = "SELECT * FROM student_info;"
@@ -28,9 +28,7 @@ Public Class ModifyStudentForm
             connector.dataAdapter.SelectCommand = connector.command
             connector.dataAdapter.Fill(connector.dataTable)
             ManageStudentAdmin.dataView.DataSource = connector.dataTable
-
-            officialModifyStudentForm.firstnameTextBox.Text = ManageStudentAdmin.dataView(1, row).Value
-            officialModifyStudentForm.middlenameTextBox.Text = ManageStudentAdmin.dataView(2, row).Value
+            getStudentData(row)
             connector.connect.Close()
             connector.command.Parameters.Clear()
             MessageBox.Show("this form is visible")
@@ -44,7 +42,20 @@ Public Class ModifyStudentForm
         connector.command.Parameters.Clear()
     End Sub
 
-    Public Function getStudentData() As Integer
+    Private Sub getStudentData(row As Integer)
+        officialModifyStudentForm.sidTextBox.Text = ManageStudentAdmin.dataView(0, row).Value
+        officialModifyStudentForm.firstnameTextBox.Text = ManageStudentAdmin.dataView(1, row).Value
+        officialModifyStudentForm.middlenameTextBox.Text = ManageStudentAdmin.dataView(2, row).Value
+        officialModifyStudentForm.lastnameTextBox.Text = ManageStudentAdmin.dataView(3, row).Value
+        officialModifyStudentForm.programComboBox.Text = ManageStudentAdmin.dataView(4, row).Value
+        officialModifyStudentForm.yearComboBox.Text = ManageStudentAdmin.dataView(5, row).Value
+        officialModifyStudentForm.sectionComboBox.Text = ManageStudentAdmin.dataView(6, row).Value
+        officialModifyStudentForm.departmentComboBox.Text = ManageStudentAdmin.dataView(7, row).Value
+        officialModifyStudentForm.emailTextBox.Text = ManageStudentAdmin.dataView(8, row).Value
+        officialModifyStudentForm.statusComboBox.Text = ManageStudentAdmin.dataView(9, row).Value
+    End Sub
+
+    Public Function getStudentID() As Integer
         Dim getID = Integer.Parse(studentIDTextBox.Text)
         Return getID
     End Function
@@ -56,8 +67,8 @@ Public Class ModifyStudentForm
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.Parameters.AddWithValue("?sid", studentIDTextBox.Text)
-            Dim Count = Convert.ToInt32(connector.command.ExecuteScalar())
-            If (Count > 0) Then
+            Dim count = Convert.ToInt32(connector.command.ExecuteScalar())
+            If (count > 0) Then
                 connector.connect.Close()
                 connector.command.Parameters.Clear()
                 Return True

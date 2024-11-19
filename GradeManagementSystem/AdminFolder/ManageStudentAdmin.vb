@@ -36,4 +36,24 @@ Public Class ManageStudentAdmin
         modifyStudentForm.Visible = True
     End Sub
 
+    Private Sub searchStudent_Click(sender As Object, e As EventArgs) Handles searchStudent.Click
+        Try
+            Dim studentDetail = searchStudentField.Text
+            connector.connect.Open()
+            connector.query = "SELECT * FROM student_info WHERE CONCAT(fname,' ',mname,' ',lname) = ?fullname;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.Parameters.AddWithValue("?fullname", studentDetail)
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
 End Class

@@ -41,6 +41,8 @@ Partial Class OfficialModifyStudentForm
         middlenameTextBox = New TextBox()
         Label1 = New Label()
         firstnameTextBox = New TextBox()
+        sidTextBox = New TextBox()
+        Label10 = New Label()
         SuspendLayout()
         ' 
         ' statusComboBox
@@ -211,11 +213,30 @@ Partial Class OfficialModifyStudentForm
         firstnameTextBox.Size = New Size(125, 27)
         firstnameTextBox.TabIndex = 25
         ' 
+        ' sidTextBox
+        ' 
+        sidTextBox.Enabled = False
+        sidTextBox.Location = New Point(97, 23)
+        sidTextBox.Name = "sidTextBox"
+        sidTextBox.Size = New Size(80, 27)
+        sidTextBox.TabIndex = 44
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Location = New Point(59, 26)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(32, 20)
+        Label10.TabIndex = 45
+        Label10.Text = "SID"
+        ' 
         ' OfficialModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(636, 399)
+        Controls.Add(Label10)
+        Controls.Add(sidTextBox)
         Controls.Add(statusComboBox)
         Controls.Add(departmentComboBox)
         Controls.Add(sectionComboBox)
@@ -260,4 +281,6 @@ Partial Class OfficialModifyStudentForm
     Friend WithEvents middlenameTextBox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents firstnameTextBox As TextBox
+    Friend WithEvents sidTextBox As TextBox
+    Friend WithEvents Label10 As Label
 End Class
