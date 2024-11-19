@@ -3,30 +3,19 @@
 Public Class ModifyStudentForm
     Private connector As New DatabaseConnector
     Private officialModifyStudentForm As New OfficialModifyStudentForm
-    Private manageStudentAdmin As New ManageStudentAdmin
 
     Private Sub ModifyStudentForm_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
     End Sub
 
-    Private Sub getStudentData()
+    Public Function getStudentData() As Integer
         Dim getID = Integer.Parse(studentIDTextBox.Text)
-        officialModifyStudentForm.firstnameTextBox.Text = manageStudentAdmin.dataView(1, getID).Value
-        officialModifyStudentForm.middlenameTextBox.Text = manageStudentAdmin.dataView(2, getID).Value
-        officialModifyStudentForm.lastnameTextBox.Text = ""
-        officialModifyStudentForm.programComboBox.Text = ""
-        officialModifyStudentForm.yearComboBox.Text = ""
-        officialModifyStudentForm.sectionComboBox.Text = ""
-        officialModifyStudentForm.departmentComboBox.Text = ""
-        officialModifyStudentForm.emailTextBox.Text = ""
-        officialModifyStudentForm.statusComboBox.Text = ""
-
-    End Sub
+        Return getID
+    End Function
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         If (studentExists()) Then
-            getStudentData()
             officialModifyStudentForm.Visible = True
         End If
     End Sub
@@ -54,4 +43,8 @@ Public Class ModifyStudentForm
         MessageBox.Show("Student not found.")
         Return False
     End Function
+
+    Private Sub ModifyStudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

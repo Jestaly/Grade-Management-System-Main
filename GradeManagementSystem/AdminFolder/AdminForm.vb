@@ -1,5 +1,5 @@
 ﻿Public Class AdminForm
-    Dim manageStudentAdmin As New ManageStudentAdmin
+    Private manageStudentAdmin As New ManageStudentAdmin
     Private Sub manageStudentButton_Click(sender As Object, e As EventArgs) Handles manageStudentButton.Click
         Me.Visible = False
         manageStudentAdmin.Visible = True
@@ -9,4 +9,5 @@
         e.Cancel = True
         Me.Visible = False
     End Sub
+
 End Class

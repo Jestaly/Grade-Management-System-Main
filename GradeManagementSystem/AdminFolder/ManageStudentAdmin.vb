@@ -36,4 +36,11 @@ Public Class ManageStudentAdmin
         modifyStudentForm.Visible = True
     End Sub
 
+    Private Sub dataView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataView.CellContentClick
+
+    End Sub
+
+    Private Sub ManageStudentAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

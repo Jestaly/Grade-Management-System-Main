@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class AddStudentForm
-    Private connector As New DatabaseConnector
+    Private connector As DatabaseConnector
     Private Sub AddStudentForm_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
@@ -46,5 +46,9 @@ Public Class AddStudentForm
         departmentComboBox.SelectedIndex = -1
         emailTextBox.Clear()
         statusComboBox.SelectedIndex = -1
+    End Sub
+
+    Private Sub AddStudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
