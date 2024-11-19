@@ -40,7 +40,8 @@ Public Class ManageStudentAdmin
         Try
             Dim studentDetail = searchStudentField.Text
             connector.connect.Open()
-            connector.query = "SELECT * FROM student_info WHERE CONCAT(fname,' ',mname,' ',lname) = ?fullname;"
+            connector.dataTable.Clear()
+            connector.query = "SELECT * FROM student_info WHERE CONCAT(fname,' ',mname,' ',lname) = ?fullname OR CONCAT(fname,' ',mname) = ?fullname OR CONCAT(fname,' ',lname) = ?fullname;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.Parameters.AddWithValue("?fullname", studentDetail)
