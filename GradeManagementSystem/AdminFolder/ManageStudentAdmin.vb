@@ -35,4 +35,5 @@ Public Class ManageStudentAdmin
     Private Sub modifyStudent_Click(sender As Object, e As EventArgs) Handles modifyStudent.Click
         modifyStudentForm.Visible = True
     End Sub
+
 End Class
