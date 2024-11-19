@@ -107,6 +107,6 @@ Partial Class ManageStudentAdmin
     Friend WithEvents addStudent As Button
     Friend WithEvents modifyStudent As Button
     Friend WithEvents searchStudent As Button
-    Friend WithEvents dataView As DataGridView
     Friend WithEvents refreshButton As Button
+    Public WithEvents dataView As DataGridView
 End Class

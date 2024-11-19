@@ -67,8 +67,7 @@ Partial Class ModifyStudentForm
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents studentIDTextBox As TextBox
     Friend WithEvents StudentIDLabel As Label
     Friend WithEvents searchButton As Button
+    Public WithEvents studentIDTextBox As TextBox
 End Class

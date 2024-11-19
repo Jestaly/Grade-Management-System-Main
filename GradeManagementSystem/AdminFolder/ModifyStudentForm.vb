@@ -16,6 +16,7 @@ Public Class ModifyStudentForm
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         If (studentExists()) Then
+            officialModifyStudentForm.row = getStudentData() - 1
             officialModifyStudentForm.Visible = True
         End If
     End Sub
@@ -44,7 +45,4 @@ Public Class ModifyStudentForm
         Return False
     End Function
 
-    Private Sub ModifyStudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
