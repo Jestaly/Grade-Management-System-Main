@@ -4,9 +4,44 @@ Public Class ModifyStudentForm
     Private connector As New DatabaseConnector
     Private officialModifyStudentForm As New OfficialModifyStudentForm
 
+
     Private Sub ModifyStudentForm_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
+    End Sub
+
+    Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
+        If (studentExists()) Then
+            connectToOMSF()
+        End If
+    End Sub
+
+    Private Sub connectToOMSF()
+        Try
+            Dim row As Integer
+            row = getStudentData() - 1
+            connector.connect.Open()
+            connector.dataTable.Clear()
+            connector.query = "SELECT * FROM student_info;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            ManageStudentAdmin.dataView.DataSource = connector.dataTable
+
+            officialModifyStudentForm.firstnameTextBox.Text = ManageStudentAdmin.dataView(1, row).Value
+            officialModifyStudentForm.middlenameTextBox.Text = ManageStudentAdmin.dataView(2, row).Value
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+            MessageBox.Show("this form is visible")
+            officialModifyStudentForm.Visible = True
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+            MessageBox.Show("End of Records")
+        End Try
+        connector.connect.Close()
+        connector.command.Parameters.Clear()
     End Sub
 
     Public Function getStudentData() As Integer
@@ -14,12 +49,6 @@ Public Class ModifyStudentForm
         Return getID
     End Function
 
-    Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
-        If (studentExists()) Then
-            officialModifyStudentForm.row = getStudentData() - 1
-            officialModifyStudentForm.Visible = True
-        End If
-    End Sub
     Private Function studentExists() As Boolean
         Try
             connector.connect.Open()
