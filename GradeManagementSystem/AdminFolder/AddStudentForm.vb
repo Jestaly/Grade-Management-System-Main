@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class AddStudentForm
-    Private connector As DatabaseConnector
+    Private connector As New DatabaseConnector
     Private Sub AddStudentForm_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
