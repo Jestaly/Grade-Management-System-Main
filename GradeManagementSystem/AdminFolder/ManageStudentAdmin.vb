@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ManageStudentAdmin
-    Private addStudentForm As New AddStudentForm
+    Private addStudentForm As New AddStudentAccount
     Private modifyStudentForm As New ModifyStudentForm
     Private connector As New DatabaseConnector
     Private Sub addStudent_Click(sender As Object, e As EventArgs) Handles addStudent.Click
@@ -57,4 +57,7 @@ Public Class ManageStudentAdmin
         End Try
     End Sub
 
+    Private Sub ManageStudentAdmin1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

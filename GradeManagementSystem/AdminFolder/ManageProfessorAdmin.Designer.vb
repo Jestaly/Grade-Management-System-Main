@@ -1,0 +1,110 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class ManageProfessorAdmin
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        refreshButton = New Button()
+        searchButton = New Button()
+        addProfessorButton = New Button()
+        modifyProfessorButton = New Button()
+        TextBox1 = New TextBox()
+        dataView = New DataGridView()
+        CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' refreshButton
+        ' 
+        refreshButton.Location = New Point(16, 85)
+        refreshButton.Name = "refreshButton"
+        refreshButton.Size = New Size(94, 29)
+        refreshButton.TabIndex = 0
+        refreshButton.Text = "Refresh"
+        refreshButton.UseVisualStyleBackColor = True
+        ' 
+        ' searchButton
+        ' 
+        searchButton.Location = New Point(212, 30)
+        searchButton.Name = "searchButton"
+        searchButton.Size = New Size(94, 29)
+        searchButton.TabIndex = 1
+        searchButton.Text = "Search"
+        searchButton.UseVisualStyleBackColor = True
+        ' 
+        ' addProfessorButton
+        ' 
+        addProfessorButton.Location = New Point(508, 30)
+        addProfessorButton.Name = "addProfessorButton"
+        addProfessorButton.Size = New Size(133, 29)
+        addProfessorButton.TabIndex = 2
+        addProfessorButton.Text = "Add Professor"
+        addProfessorButton.UseVisualStyleBackColor = True
+        ' 
+        ' modifyProfessorButton
+        ' 
+        modifyProfessorButton.Location = New Point(647, 30)
+        modifyProfessorButton.Name = "modifyProfessorButton"
+        modifyProfessorButton.Size = New Size(133, 29)
+        modifyProfessorButton.TabIndex = 3
+        modifyProfessorButton.Text = "Modify Professor"
+        modifyProfessorButton.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(16, 32)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(190, 27)
+        TextBox1.TabIndex = 4
+        ' 
+        ' dataView
+        ' 
+        dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dataView.Location = New Point(16, 120)
+        dataView.Name = "dataView"
+        dataView.RowHeadersWidth = 51
+        dataView.Size = New Size(764, 318)
+        dataView.TabIndex = 5
+        ' 
+        ' ManageProfessorAdmin
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Controls.Add(dataView)
+        Controls.Add(TextBox1)
+        Controls.Add(modifyProfessorButton)
+        Controls.Add(addProfessorButton)
+        Controls.Add(searchButton)
+        Controls.Add(refreshButton)
+        Name = "ManageProfessorAdmin"
+        Text = "ManageProfessorAdmin"
+        CType(dataView, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
+    End Sub
+
+    Friend WithEvents refreshButton As Button
+    Friend WithEvents searchButton As Button
+    Friend WithEvents addProfessorButton As Button
+    Friend WithEvents modifyProfessorButton As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents dataView As DataGridView
+End Class
