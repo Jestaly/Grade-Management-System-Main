@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Configuration
+Imports MySql.Data.MySqlClient
 
 Public Class ManageProfessorAdmin
     Private connector As New DatabaseConnector
