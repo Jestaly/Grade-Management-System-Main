@@ -3,7 +3,8 @@ Imports MySql.Data.MySqlClient
 
 Public Class ManageProfessorAdmin
     Private connector As New DatabaseConnector
-    Private addProfessorAccount As New AddProfessorAccount
+    Private addProfessorForm As New AddProfessorAccount
+    Private modifyProfessorForm As New ModifyProfessorForm
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
         Try
             connector.connect.Open()
@@ -67,4 +68,8 @@ Public Class ManageProfessorAdmin
         End Select
         Return zeros
     End Function
+
+    Private Sub modifyProfessorButton_Click(sender As Object, e As EventArgs) Handles modifyProfessorButton.Click
+        modifyProfessorForm.Visible = True
+    End Sub
 End Class

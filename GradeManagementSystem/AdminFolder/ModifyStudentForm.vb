@@ -85,4 +85,7 @@ Public Class ModifyStudentForm
         Return False
     End Function
 
+    Private Sub ModifyStudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -48,7 +48,4 @@ Public Class AddStudentAccount
         statusComboBox.SelectedIndex = -1
     End Sub
 
-    Private Sub AddStudentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
