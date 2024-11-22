@@ -9,6 +9,9 @@ Public Class AddProfessorAccount
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
+            connector.query = "INSERT INTO prof_count_history VALUES ();"
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
             MessageBox.Show("Added Succesfully!")
             connector.connect.Close()
         Catch ex As MySqlException
