@@ -4,6 +4,7 @@ Public Class ManageProgramAdmin
     Private connector As New DatabaseConnector
     Private courseSectionForm As New CourseSectionForm
     Private addProgramForm As New AddProgramForm
+    Private modifyProgramForm As New ModifyProgramForm
     Private Sub ManageProgramAdmin_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
@@ -60,4 +61,9 @@ Public Class ManageProgramAdmin
         End Select
         Return zeros
     End Function
+
+    Private Sub modifyProgramButton_Click(sender As Object, e As EventArgs) Handles modifyProgramButton.Click
+        modifyProgramForm.Visible = True
+    End Sub
+
 End Class
