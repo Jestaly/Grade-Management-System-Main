@@ -42,7 +42,7 @@ Partial Class OfficialModifyProfessorForm
         profIDTextBox.Location = New Point(85, 29)
         profIDTextBox.Mask = "0-00-00000"
         profIDTextBox.Name = "profIDTextBox"
-        profIDTextBox.PromptChar = "0"c
+        profIDTextBox.PromptChar = "X"c
         profIDTextBox.Size = New Size(125, 27)
         profIDTextBox.TabIndex = 0
         ' 
