@@ -26,7 +26,7 @@ Partial Class ManageProfessorAdmin
         searchButton = New Button()
         addProfessorButton = New Button()
         modifyProfessorButton = New Button()
-        TextBox1 = New TextBox()
+        searchProfessorField = New TextBox()
         dataView = New DataGridView()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -67,12 +67,13 @@ Partial Class ManageProfessorAdmin
         modifyProfessorButton.Text = "Modify Professor"
         modifyProfessorButton.UseVisualStyleBackColor = True
         ' 
-        ' TextBox1
+        ' searchProfessorField
         ' 
-        TextBox1.Location = New Point(16, 32)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(190, 27)
-        TextBox1.TabIndex = 4
+        searchProfessorField.Location = New Point(16, 32)
+        searchProfessorField.Name = "searchProfessorField"
+        searchProfessorField.PlaceholderText = "Search Professor here.."
+        searchProfessorField.Size = New Size(190, 27)
+        searchProfessorField.TabIndex = 4
         ' 
         ' dataView
         ' 
@@ -89,7 +90,7 @@ Partial Class ManageProfessorAdmin
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Controls.Add(dataView)
-        Controls.Add(TextBox1)
+        Controls.Add(searchProfessorField)
         Controls.Add(modifyProfessorButton)
         Controls.Add(addProfessorButton)
         Controls.Add(searchButton)
@@ -105,6 +106,6 @@ Partial Class ManageProfessorAdmin
     Friend WithEvents searchButton As Button
     Friend WithEvents addProfessorButton As Button
     Friend WithEvents modifyProfessorButton As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents searchProfessorField As TextBox
     Friend WithEvents dataView As DataGridView
 End Class
