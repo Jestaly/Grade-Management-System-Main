@@ -78,7 +78,7 @@ Partial Class OfficialModifyProgramForm
         ' 
         programnameTextBox.Location = New Point(130, 148)
         programnameTextBox.Name = "programnameTextBox"
-        programnameTextBox.Size = New Size(125, 27)
+        programnameTextBox.Size = New Size(169, 27)
         programnameTextBox.TabIndex = 5
         ' 
         ' programIDTextBox

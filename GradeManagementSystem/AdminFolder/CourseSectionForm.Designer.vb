@@ -23,6 +23,7 @@ Partial Class CourseSectionForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' Label1
@@ -35,11 +36,21 @@ Partial Class CourseSectionForm
         Label1.TabIndex = 0
         Label1.Text = "COURSE SECTION FORM"
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(12, 12)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 1
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' CourseSectionForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(652, 384)
+        Controls.Add(backButton)
         Controls.Add(Label1)
         Name = "CourseSectionForm"
         Text = "CourseSectionForm"
@@ -48,4 +59,5 @@ Partial Class CourseSectionForm
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents backButton As Button
 End Class
