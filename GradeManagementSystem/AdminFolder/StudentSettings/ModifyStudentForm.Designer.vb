@@ -22,18 +22,10 @@ Partial Class ModifyStudentForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        studentIDTextBox = New TextBox()
         StudentIDLabel = New Label()
         searchButton = New Button()
+        studentIDTextBox = New MaskedTextBox()
         SuspendLayout()
-        ' 
-        ' studentIDTextBox
-        ' 
-        studentIDTextBox.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        studentIDTextBox.Location = New Point(162, 161)
-        studentIDTextBox.Name = "studentIDTextBox"
-        studentIDTextBox.Size = New Size(287, 51)
-        studentIDTextBox.TabIndex = 0
         ' 
         ' StudentIDLabel
         ' 
@@ -54,14 +46,24 @@ Partial Class ModifyStudentForm
         searchButton.Text = "Search"
         searchButton.UseVisualStyleBackColor = True
         ' 
+        ' studentIDTextBox
+        ' 
+        studentIDTextBox.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        studentIDTextBox.Location = New Point(162, 161)
+        studentIDTextBox.Mask = "0-00-00000"
+        studentIDTextBox.Name = "studentIDTextBox"
+        studentIDTextBox.PromptChar = "X"c
+        studentIDTextBox.Size = New Size(287, 51)
+        studentIDTextBox.TabIndex = 3
+        ' 
         ' ModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(610, 450)
+        Controls.Add(studentIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(StudentIDLabel)
-        Controls.Add(studentIDTextBox)
         Name = "ModifyStudentForm"
         Text = "ModifyStudentForm"
         ResumeLayout(False)
@@ -69,5 +71,5 @@ Partial Class ModifyStudentForm
     End Sub
     Friend WithEvents StudentIDLabel As Label
     Friend WithEvents searchButton As Button
-    Public WithEvents studentIDTextBox As TextBox
+    Friend WithEvents studentIDTextBox As MaskedTextBox
 End Class

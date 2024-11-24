@@ -60,7 +60,7 @@ Public Class ManageStudentAdmin
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
-            connector.query = "SELECT student.id,student.lname,student.fname,student.mname,student.birthdate,program.program_name,student.year,student.section FROM student JOIN program ON student.program_id = program.program_id;"
+            connector.query = "SELECT student.id,student.lname,student.fname,student.mname,student.birthdate,program.program_name,student.year,student.section,student.email FROM student LEFT JOIN program ON student.program_id = program.program_id;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command

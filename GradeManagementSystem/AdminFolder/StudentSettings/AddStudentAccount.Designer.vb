@@ -178,7 +178,6 @@ Partial Class AddStudentAccount
         ' 
         programComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         programComboBox.FormattingEnabled = True
-        programComboBox.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Nursing", "Engineering", "Education", "Mechatronics"})
         programComboBox.Location = New Point(443, 114)
         programComboBox.Name = "programComboBox"
         programComboBox.Size = New Size(125, 28)

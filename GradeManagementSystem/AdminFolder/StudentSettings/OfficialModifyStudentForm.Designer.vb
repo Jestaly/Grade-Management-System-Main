@@ -22,16 +22,12 @@ Partial Class OfficialModifyStudentForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        statusComboBox = New ComboBox()
-        departmentComboBox = New ComboBox()
         sectionComboBox = New ComboBox()
         yearComboBox = New ComboBox()
         programComboBox = New ComboBox()
         modifyStudentButton = New Button()
-        Label9 = New Label()
         Label8 = New Label()
         emailTextBox = New TextBox()
-        Label7 = New Label()
         Label6 = New Label()
         Label5 = New Label()
         Label4 = New Label()
@@ -43,27 +39,8 @@ Partial Class OfficialModifyStudentForm
         firstnameTextBox = New TextBox()
         sidTextBox = New TextBox()
         Label10 = New Label()
+        birthCalendar = New MonthCalendar()
         SuspendLayout()
-        ' 
-        ' statusComboBox
-        ' 
-        statusComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        statusComboBox.FormattingEnabled = True
-        statusComboBox.Items.AddRange(New Object() {"Active", "Inactive", "Drop out", "Suspended"})
-        statusComboBox.Location = New Point(321, 239)
-        statusComboBox.Name = "statusComboBox"
-        statusComboBox.Size = New Size(125, 28)
-        statusComboBox.TabIndex = 43
-        ' 
-        ' departmentComboBox
-        ' 
-        departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        departmentComboBox.FormattingEnabled = True
-        departmentComboBox.Items.AddRange(New Object() {"CCS"})
-        departmentComboBox.Location = New Point(321, 161)
-        departmentComboBox.Name = "departmentComboBox"
-        departmentComboBox.Size = New Size(125, 28)
-        departmentComboBox.TabIndex = 42
         ' 
         ' sectionComboBox
         ' 
@@ -87,9 +64,7 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' programComboBox
         ' 
-        programComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         programComboBox.FormattingEnabled = True
-        programComboBox.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Nursing", "Engineering", "Education"})
         programComboBox.Location = New Point(452, 87)
         programComboBox.Name = "programComboBox"
         programComboBox.Size = New Size(125, 28)
@@ -103,15 +78,6 @@ Partial Class OfficialModifyStudentForm
         modifyStudentButton.TabIndex = 38
         modifyStudentButton.Text = "Modify Student"
         modifyStudentButton.UseVisualStyleBackColor = True
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(321, 216)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(47, 20)
-        Label9.TabIndex = 37
-        Label9.Text = "status"
         ' 
         ' Label8
         ' 
@@ -128,15 +94,6 @@ Partial Class OfficialModifyStudentForm
         emailTextBox.Name = "emailTextBox"
         emailTextBox.Size = New Size(256, 27)
         emailTextBox.TabIndex = 35
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(321, 138)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(87, 20)
-        Label7.TabIndex = 34
-        Label7.Text = "department"
         ' 
         ' Label6
         ' 
@@ -230,23 +187,26 @@ Partial Class OfficialModifyStudentForm
         Label10.TabIndex = 45
         Label10.Text = "SID"
         ' 
+        ' birthCalendar
+        ' 
+        birthCalendar.Location = New Point(458, 138)
+        birthCalendar.Name = "birthCalendar"
+        birthCalendar.TabIndex = 46
+        ' 
         ' OfficialModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(636, 399)
+        ClientSize = New Size(759, 399)
+        Controls.Add(birthCalendar)
         Controls.Add(Label10)
         Controls.Add(sidTextBox)
-        Controls.Add(statusComboBox)
-        Controls.Add(departmentComboBox)
         Controls.Add(sectionComboBox)
         Controls.Add(yearComboBox)
         Controls.Add(programComboBox)
         Controls.Add(modifyStudentButton)
-        Controls.Add(Label9)
         Controls.Add(Label8)
         Controls.Add(emailTextBox)
-        Controls.Add(Label7)
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
@@ -261,17 +221,12 @@ Partial Class OfficialModifyStudentForm
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents statusComboBox As ComboBox
-    Friend WithEvents departmentComboBox As ComboBox
     Friend WithEvents sectionComboBox As ComboBox
     Friend WithEvents yearComboBox As ComboBox
     Friend WithEvents programComboBox As ComboBox
     Friend WithEvents modifyStudentButton As Button
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents emailTextBox As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -283,4 +238,5 @@ Partial Class OfficialModifyStudentForm
     Friend WithEvents firstnameTextBox As TextBox
     Friend WithEvents sidTextBox As TextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents birthCalendar As MonthCalendar
 End Class

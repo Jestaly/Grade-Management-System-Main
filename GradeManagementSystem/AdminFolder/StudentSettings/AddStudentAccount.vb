@@ -15,7 +15,6 @@ Public Class AddStudentAccount
     Private Function getProgramID() As String
         Dim programID As String = ""
         Try
-
             connector.query = "SELECT * FROM program;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
