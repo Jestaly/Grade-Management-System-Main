@@ -42,11 +42,14 @@ Partial Class AddStudentAccount
         sectionComboBox = New ComboBox()
         departmentComboBox = New ComboBox()
         statusComboBox = New ComboBox()
+        studentIDTextBox = New MaskedTextBox()
+        Label10 = New Label()
+        birthCalendar = New MonthCalendar()
         SuspendLayout()
         ' 
         ' firstnameTextBox
         ' 
-        firstnameTextBox.Location = New Point(57, 81)
+        firstnameTextBox.Location = New Point(50, 114)
         firstnameTextBox.Name = "firstnameTextBox"
         firstnameTextBox.Size = New Size(125, 27)
         firstnameTextBox.TabIndex = 0
@@ -54,7 +57,7 @@ Partial Class AddStudentAccount
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(57, 58)
+        Label1.Location = New Point(50, 91)
         Label1.Name = "Label1"
         Label1.Size = New Size(34, 20)
         Label1.TabIndex = 1
@@ -63,7 +66,7 @@ Partial Class AddStudentAccount
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(188, 58)
+        Label2.Location = New Point(181, 91)
         Label2.Name = "Label2"
         Label2.Size = New Size(56, 20)
         Label2.TabIndex = 3
@@ -71,7 +74,7 @@ Partial Class AddStudentAccount
         ' 
         ' middlenameTextBox
         ' 
-        middlenameTextBox.Location = New Point(188, 81)
+        middlenameTextBox.Location = New Point(181, 114)
         middlenameTextBox.Name = "middlenameTextBox"
         middlenameTextBox.Size = New Size(125, 27)
         middlenameTextBox.TabIndex = 2
@@ -79,7 +82,7 @@ Partial Class AddStudentAccount
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(319, 58)
+        Label3.Location = New Point(312, 91)
         Label3.Name = "Label3"
         Label3.Size = New Size(32, 20)
         Label3.TabIndex = 5
@@ -87,7 +90,7 @@ Partial Class AddStudentAccount
         ' 
         ' lastnameTextBox
         ' 
-        lastnameTextBox.Location = New Point(319, 81)
+        lastnameTextBox.Location = New Point(312, 114)
         lastnameTextBox.Name = "lastnameTextBox"
         lastnameTextBox.Size = New Size(125, 27)
         lastnameTextBox.TabIndex = 4
@@ -95,7 +98,7 @@ Partial Class AddStudentAccount
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(450, 58)
+        Label4.Location = New Point(443, 91)
         Label4.Name = "Label4"
         Label4.Size = New Size(67, 20)
         Label4.TabIndex = 7
@@ -104,7 +107,7 @@ Partial Class AddStudentAccount
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(57, 132)
+        Label5.Location = New Point(50, 165)
         Label5.Name = "Label5"
         Label5.Size = New Size(37, 20)
         Label5.TabIndex = 9
@@ -113,7 +116,7 @@ Partial Class AddStudentAccount
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(188, 132)
+        Label6.Location = New Point(181, 165)
         Label6.Name = "Label6"
         Label6.Size = New Size(56, 20)
         Label6.TabIndex = 11
@@ -122,7 +125,7 @@ Partial Class AddStudentAccount
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(319, 132)
+        Label7.Location = New Point(312, 165)
         Label7.Name = "Label7"
         Label7.Size = New Size(87, 20)
         Label7.TabIndex = 13
@@ -131,7 +134,7 @@ Partial Class AddStudentAccount
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(57, 210)
+        Label8.Location = New Point(50, 243)
         Label8.Name = "Label8"
         Label8.Size = New Size(46, 20)
         Label8.TabIndex = 15
@@ -139,7 +142,7 @@ Partial Class AddStudentAccount
         ' 
         ' emailTextBox
         ' 
-        emailTextBox.Location = New Point(57, 233)
+        emailTextBox.Location = New Point(50, 266)
         emailTextBox.Name = "emailTextBox"
         emailTextBox.Size = New Size(256, 27)
         emailTextBox.TabIndex = 14
@@ -147,7 +150,7 @@ Partial Class AddStudentAccount
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(319, 210)
+        Label9.Location = New Point(312, 243)
         Label9.Name = "Label9"
         Label9.Size = New Size(47, 20)
         Label9.TabIndex = 17
@@ -155,7 +158,7 @@ Partial Class AddStudentAccount
         ' 
         ' addStudentButton
         ' 
-        addStudentButton.Location = New Point(57, 300)
+        addStudentButton.Location = New Point(50, 333)
         addStudentButton.Name = "addStudentButton"
         addStudentButton.Size = New Size(125, 29)
         addStudentButton.TabIndex = 18
@@ -164,7 +167,7 @@ Partial Class AddStudentAccount
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(57, 335)
+        Button2.Location = New Point(50, 368)
         Button2.Name = "Button2"
         Button2.Size = New Size(125, 29)
         Button2.TabIndex = 19
@@ -175,8 +178,8 @@ Partial Class AddStudentAccount
         ' 
         programComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         programComboBox.FormattingEnabled = True
-        programComboBox.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Nursing", "Engineering", "Education"})
-        programComboBox.Location = New Point(450, 81)
+        programComboBox.Items.AddRange(New Object() {"Computer Science", "Information Technology", "Nursing", "Engineering", "Education", "Mechatronics"})
+        programComboBox.Location = New Point(443, 114)
         programComboBox.Name = "programComboBox"
         programComboBox.Size = New Size(125, 28)
         programComboBox.TabIndex = 20
@@ -186,7 +189,7 @@ Partial Class AddStudentAccount
         yearComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         yearComboBox.FormattingEnabled = True
         yearComboBox.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        yearComboBox.Location = New Point(57, 155)
+        yearComboBox.Location = New Point(50, 188)
         yearComboBox.Name = "yearComboBox"
         yearComboBox.Size = New Size(125, 28)
         yearComboBox.TabIndex = 21
@@ -196,7 +199,7 @@ Partial Class AddStudentAccount
         sectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         sectionComboBox.FormattingEnabled = True
         sectionComboBox.Items.AddRange(New Object() {"A", "B", "C", "D", "E"})
-        sectionComboBox.Location = New Point(188, 155)
+        sectionComboBox.Location = New Point(181, 188)
         sectionComboBox.Name = "sectionComboBox"
         sectionComboBox.Size = New Size(125, 28)
         sectionComboBox.TabIndex = 22
@@ -206,7 +209,7 @@ Partial Class AddStudentAccount
         departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         departmentComboBox.FormattingEnabled = True
         departmentComboBox.Items.AddRange(New Object() {"CCS"})
-        departmentComboBox.Location = New Point(319, 155)
+        departmentComboBox.Location = New Point(312, 188)
         departmentComboBox.Name = "departmentComboBox"
         departmentComboBox.Size = New Size(125, 28)
         departmentComboBox.TabIndex = 23
@@ -216,16 +219,44 @@ Partial Class AddStudentAccount
         statusComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         statusComboBox.FormattingEnabled = True
         statusComboBox.Items.AddRange(New Object() {"Active", "Inactive", "Drop out", "Suspended"})
-        statusComboBox.Location = New Point(319, 233)
+        statusComboBox.Location = New Point(312, 266)
         statusComboBox.Name = "statusComboBox"
         statusComboBox.Size = New Size(125, 28)
         statusComboBox.TabIndex = 24
         ' 
-        ' AddStudentForm
+        ' studentIDTextBox
+        ' 
+        studentIDTextBox.Enabled = False
+        studentIDTextBox.Location = New Point(135, 37)
+        studentIDTextBox.Mask = "0-00-00000"
+        studentIDTextBox.Name = "studentIDTextBox"
+        studentIDTextBox.PromptChar = "X"c
+        studentIDTextBox.Size = New Size(125, 27)
+        studentIDTextBox.TabIndex = 25
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Location = New Point(50, 40)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(79, 20)
+        Label10.TabIndex = 26
+        Label10.Text = "Student ID"
+        ' 
+        ' birthCalendar
+        ' 
+        birthCalendar.Location = New Point(465, 165)
+        birthCalendar.Name = "birthCalendar"
+        birthCalendar.TabIndex = 27
+        ' 
+        ' AddStudentAccount
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(626, 450)
+        ClientSize = New Size(823, 450)
+        Controls.Add(birthCalendar)
+        Controls.Add(Label10)
+        Controls.Add(studentIDTextBox)
         Controls.Add(statusComboBox)
         Controls.Add(departmentComboBox)
         Controls.Add(sectionComboBox)
@@ -246,7 +277,7 @@ Partial Class AddStudentAccount
         Controls.Add(middlenameTextBox)
         Controls.Add(Label1)
         Controls.Add(firstnameTextBox)
-        Name = "AddStudentForm"
+        Name = "AddStudentAccount"
         Text = "AddStudentForm"
         ResumeLayout(False)
         PerformLayout()
@@ -272,4 +303,7 @@ Partial Class AddStudentAccount
     Friend WithEvents sectionComboBox As ComboBox
     Friend WithEvents departmentComboBox As ComboBox
     Friend WithEvents statusComboBox As ComboBox
+    Friend WithEvents studentIDTextBox As MaskedTextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents birthCalendar As MonthCalendar
 End Class
