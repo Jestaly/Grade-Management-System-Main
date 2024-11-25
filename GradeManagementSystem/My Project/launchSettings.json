@@ -2,7 +2,7 @@
   "profiles": {
     "GradeManagementSystem": {
       "commandName": "Project",
-      "workingDirectory": "F:\\Github Projects\\Grade-Management-System-Main\\GradeManagementSystem\\bin\\Debug\\net8.0-windows",
+      "workingDirectory": "C:\\Users\\Ynah Sese\\source\\repos\\Seausel1102\\Grade-Management-System-Main\\GradeManagementSystem\\bin\\Debug\\net8.0-windows",
       "remoteDebugEnabled": false
     }
   }

@@ -19,7 +19,7 @@
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Transitions">
-      <HintPath>bin\Debug\net8.0-windows\Transitions.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\ohh-main\ohh-main\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
