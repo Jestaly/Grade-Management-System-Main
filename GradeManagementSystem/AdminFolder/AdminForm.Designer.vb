@@ -28,6 +28,7 @@ Partial Class AdminForm
         manageProfessor = New Button()
         allocationManager = New Button()
         logoutButton = New Button()
+        manageDepartmentButton = New Button()
         SuspendLayout()
         ' 
         ' dashboardButton
@@ -50,7 +51,7 @@ Partial Class AdminForm
         ' 
         ' manageProgramButton
         ' 
-        manageProgramButton.Location = New Point(31, 158)
+        manageProgramButton.Location = New Point(31, 210)
         manageProgramButton.Name = "manageProgramButton"
         manageProgramButton.Size = New Size(178, 46)
         manageProgramButton.TabIndex = 2
@@ -59,7 +60,7 @@ Partial Class AdminForm
         ' 
         ' manageProfessor
         ' 
-        manageProfessor.Location = New Point(31, 210)
+        manageProfessor.Location = New Point(31, 158)
         manageProfessor.Name = "manageProfessor"
         manageProfessor.Size = New Size(178, 46)
         manageProfessor.TabIndex = 3
@@ -68,7 +69,7 @@ Partial Class AdminForm
         ' 
         ' allocationManager
         ' 
-        allocationManager.Location = New Point(31, 262)
+        allocationManager.Location = New Point(31, 314)
         allocationManager.Name = "allocationManager"
         allocationManager.Size = New Size(178, 46)
         allocationManager.TabIndex = 4
@@ -77,18 +78,28 @@ Partial Class AdminForm
         ' 
         ' logoutButton
         ' 
-        logoutButton.Location = New Point(31, 331)
+        logoutButton.Location = New Point(31, 374)
         logoutButton.Name = "logoutButton"
         logoutButton.Size = New Size(178, 46)
         logoutButton.TabIndex = 5
         logoutButton.Text = "Logout"
         logoutButton.UseVisualStyleBackColor = True
         ' 
+        ' manageDepartmentButton
+        ' 
+        manageDepartmentButton.Location = New Point(31, 262)
+        manageDepartmentButton.Name = "manageDepartmentButton"
+        manageDepartmentButton.Size = New Size(178, 46)
+        manageDepartmentButton.TabIndex = 6
+        manageDepartmentButton.Text = "Manage Department"
+        manageDepartmentButton.UseVisualStyleBackColor = True
+        ' 
         ' AdminForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(manageDepartmentButton)
         Controls.Add(logoutButton)
         Controls.Add(allocationManager)
         Controls.Add(manageProfessor)
@@ -106,4 +117,5 @@ Partial Class AdminForm
     Friend WithEvents manageProfessor As Button
     Friend WithEvents allocationManager As Button
     Friend WithEvents logoutButton As Button
+    Friend WithEvents manageDepartmentButton As Button
 End Class

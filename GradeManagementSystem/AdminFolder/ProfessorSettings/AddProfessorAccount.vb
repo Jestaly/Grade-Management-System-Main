@@ -5,7 +5,7 @@ Public Class AddProfessorAccount
     Private Sub addProfessorButton_Click(sender As Object, e As EventArgs) Handles addProfessorButton.Click
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO faculty VALUES ('" & getProfID() & "','" & lastnameTextBox.Text & "','" & firstnameTextBox.Text & "','" & middlenameTextBox.Text & "','" & emailTextBox.Text & "');"
+            connector.query = "INSERT INTO professor VALUES ('" & getProfID() & "','" & lastnameTextBox.Text & "','" & firstnameTextBox.Text & "','" & middlenameTextBox.Text & "','" & emailTextBox.Text & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()

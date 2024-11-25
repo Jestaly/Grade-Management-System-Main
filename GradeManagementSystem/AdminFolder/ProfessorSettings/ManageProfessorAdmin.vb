@@ -9,7 +9,7 @@ Public Class ManageProfessorAdmin
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
-            connector.query = "SELECT * FROM faculty;"
+            connector.query = "SELECT * FROM professor;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
@@ -71,5 +71,10 @@ Public Class ManageProfessorAdmin
 
     Private Sub modifyProfessorButton_Click(sender As Object, e As EventArgs) Handles modifyProfessorButton.Click
         modifyProfessorForm.Visible = True
+    End Sub
+
+    Private Sub ManageProfessorAdmin_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        e.Cancel = True
+        Me.Visible = False
     End Sub
 End Class

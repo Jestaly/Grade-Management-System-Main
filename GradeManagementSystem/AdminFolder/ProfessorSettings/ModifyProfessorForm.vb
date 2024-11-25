@@ -14,7 +14,7 @@ Public Class ModifyProfessorForm
         Dim rowIndex As Integer = -1
         Try
             connector.connect.Open()
-            connector.query = "SELECT * FROM faculty;"
+            connector.query = "SELECT * FROM professor;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
@@ -38,7 +38,7 @@ Public Class ModifyProfessorForm
     Private Function professorExists() As Boolean
         Try
             connector.connect.Open()
-            connector.query = "SELECT * FROM faculty;"
+            connector.query = "SELECT * FROM professor;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command

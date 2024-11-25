@@ -10,7 +10,7 @@ Public Class OfficialModifyProfessorForm
     Private Sub modifyButton_Click(sender As Object, e As EventArgs) Handles modifyButton.Click
         Try
             connector.connect.Open()
-            connector.query = "UPDATE faculty SET lname = '" & lastnameTextBox.Text & "', fname = '" & firstnameTextBox.Text & "', mname = '" & middlenameTextBox.Text & "', email = '" & emailTextBox.Text & "' WHERE id = " & trimmedProfID() & ";"
+            connector.query = "UPDATE professor SET lname = '" & lastnameTextBox.Text & "', fname = '" & firstnameTextBox.Text & "', mname = '" & middlenameTextBox.Text & "', email = '" & emailTextBox.Text & "' WHERE id = " & trimmedProfID() & ";"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
