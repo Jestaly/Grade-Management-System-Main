@@ -2,7 +2,7 @@
   "profiles": {
     "GradeManagementSystem": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\Acer\\source\\repos\\Chicken-mcqueen\\Grade-ManagementSystem-Main\\GradeManagementSystem",
+      "workingDirectory": "F:\\Github Projects\\Grade-Management-System-Main\\GradeManagementSystem\\bin\\Debug\\net8.0-windows",
       "remoteDebugEnabled": false
     }
   }

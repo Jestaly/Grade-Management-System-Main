@@ -1,5 +1,4 @@
 ﻿Imports Transitions
-Imports geraldcomp
 Imports System.IO
 
 
@@ -14,11 +13,11 @@ Public Class AdminDashboard
 
 
     Private Sub AdminDashboard(sender As Object, e As EventArgs) Handles MyBase.Load
-        originalImage = Image.FromFile("C:\Users\Acer\source\repos\GradingSystem\GradingSystem\Resources\darkgreen.png")
-        hoverImage = Image.FromFile("C:\Users\Acer\source\repos\GradingSystem\GradingSystem\Resources\brightgreen.png")
+
         studbox.Show()
         studbox2.Hide()
         profbox2.Hide()
+        
         profbox.Show()
         originalSize = Panel1.Size
         expandedSize = New Size(originalSize.Width + 210, originalSize.Height + 210)

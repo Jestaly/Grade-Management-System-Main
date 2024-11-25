@@ -15,14 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="geraldcomp">
-      <HintPath>..\..\..\geraldcomp\geraldcomp\bin\Debug\geraldcomp.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Transitions">
-      <HintPath>..\..\..\..\..\Downloads\Transitions.dll</HintPath>
+      <HintPath>bin\Debug\net8.0-windows\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
