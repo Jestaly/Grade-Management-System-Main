@@ -31,4 +31,5 @@ Public Class AddProgramForm
         e.Cancel = True
         Me.Visible = False
     End Sub
+
 End Class
