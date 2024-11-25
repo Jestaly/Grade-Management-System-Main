@@ -39,7 +39,7 @@ Partial Class loginForm
         ' 
         usernameLogin.Location = New Point(112, 155)
         usernameLogin.Name = "usernameLogin"
-        usernameLogin.Size = New Size(177, 27)
+        usernameLogin.Size = New Size(236, 27)
         usernameLogin.TabIndex = 0
         ' 
         ' passwordLogin
