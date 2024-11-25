@@ -260,7 +260,7 @@ Partial Class AdminDashboard
         ' 
         studbox2.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         studbox2.Image = CType(resources.GetObject("studbox2.Image"), Image)
-        studbox2.Location = New Point(391, 164)
+        studbox2.Location = New Point(379, 164)
         studbox2.Name = "studbox2"
         studbox2.Size = New Size(279, 270)
         studbox2.SizeMode = PictureBoxSizeMode.StretchImage
