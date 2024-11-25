@@ -10,8 +10,6 @@ Public Class AdminDashboard
     Private hoverImage As Image
     Private expand As Boolean = False
 
-
-
     Private Sub AdminDashboard(sender As Object, e As EventArgs) Handles MyBase.Load
 
         studbox.Show()
