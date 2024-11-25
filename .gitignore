@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ignore build output for .NET 8.0 on Windows
+bin/Debug/net8.0-windows/
