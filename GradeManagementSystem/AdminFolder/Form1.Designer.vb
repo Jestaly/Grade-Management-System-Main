@@ -118,7 +118,7 @@ Partial Class Form1
         ' 
         ' PictureBox6
         ' 
-        PictureBox6.Image = My.Resources.Resources.Screenshot_2024_11_20_161746_removebg_preview
+        PictureBox6.Image = My.Resources.Screenshot_2024_11_20_161746_removebg_preview
         PictureBox6.Location = New Point(8, 279)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(66, 66)
@@ -128,7 +128,7 @@ Partial Class Form1
         ' 
         ' PictureBox5
         ' 
-        PictureBox5.Image = My.Resources.Resources.Screenshot_2024_11_20_161739_removebg_preview
+        PictureBox5.Image = My.AdminFolder.Resources.Screenshot_2024_11_20_161739_removebg_preview '
         PictureBox5.Location = New Point(9, 211)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(66, 66)
