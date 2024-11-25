@@ -5,4 +5,11 @@
         Me.Visible = False
 
     End Sub
+
+    Private Sub addDepartmentButton_Click(sender As Object, e As EventArgs) Handles addDepartmentButton.Click
+
+
+
+
+    End Sub
 End Class
