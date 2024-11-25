@@ -19,7 +19,7 @@
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Transitions">
-      <HintPath>C:\Users\acer\Downloads\transition - do not delete\Transitions.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\ohh-main\ohh-main\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
