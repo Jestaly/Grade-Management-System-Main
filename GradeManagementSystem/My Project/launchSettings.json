@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "GradeManagementSystem": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Acer\\source\\repos\\Chicken-mcqueen\\Grade-ManagementSystem-Main\\GradeManagementSystem",
+      "remoteDebugEnabled": false
+    }
+  }
+}

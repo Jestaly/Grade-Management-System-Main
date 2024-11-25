@@ -23,4 +23,13 @@
     Private Sub manageDepartmentButton_Click(sender As Object, e As EventArgs) Handles manageDepartmentButton.Click
         manageDepartmentAdmin.Visible = True
     End Sub
+
+    Private Sub dashboardButton_Click(sender As Object, e As EventArgs) Handles dashboardButton.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        AdminDashboard.Show()
+        Hide()
+    End Sub
 End Class

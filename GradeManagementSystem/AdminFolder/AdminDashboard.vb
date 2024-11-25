@@ -3,7 +3,7 @@ Imports geraldcomp
 Imports System.IO
 
 
-Public Class Form1
+Public Class AdminDashboard
     Dim originalSize As Size
     Dim expandedSize As Size
 
@@ -13,7 +13,7 @@ Public Class Form1
 
 
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AdminDashboard(sender As Object, e As EventArgs) Handles MyBase.Load
         originalImage = Image.FromFile("C:\Users\Acer\source\repos\GradingSystem\GradingSystem\Resources\darkgreen.png")
         hoverImage = Image.FromFile("C:\Users\Acer\source\repos\GradingSystem\GradingSystem\Resources\brightgreen.png")
         studbox.Show()
@@ -153,10 +153,10 @@ Public Class Form1
 
 
     Private Sub Button7_Click(sender As Object, e As EventArgs)
-        Form3.Show()
+
     End Sub
     Private Sub Button6_Click(sender As Object, e As EventArgs)
-        Form2.Show()
+        Studets.Show()
     End Sub
 
     Private Sub Gerald1_Click(sender As Object, e As EventArgs)
@@ -192,7 +192,7 @@ Public Class Form1
     End Sub
 
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles studbox.Click
-        Form2.Show()
+        Studets.Show()
     End Sub
 
     Private Sub PictureBox11_MouseEnter(sender As Object, e As EventArgs) Handles studbox.MouseEnter
