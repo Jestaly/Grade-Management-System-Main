@@ -22,19 +22,8 @@ Partial Class CourseSectionForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
         backButton = New Button()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(102, 139)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(459, 54)
-        Label1.TabIndex = 0
-        Label1.Text = "COURSE SECTION FORM"
         ' 
         ' backButton
         ' 
@@ -51,13 +40,9 @@ Partial Class CourseSectionForm
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(652, 384)
         Controls.Add(backButton)
-        Controls.Add(Label1)
         Name = "CourseSectionForm"
         Text = "CourseSectionForm"
         ResumeLayout(False)
-        PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents backButton As Button
 End Class
