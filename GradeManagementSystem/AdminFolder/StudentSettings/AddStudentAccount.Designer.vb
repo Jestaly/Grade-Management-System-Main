@@ -34,14 +34,12 @@ Partial Class AddStudentAccount
         Label7 = New Label()
         Label8 = New Label()
         emailTextBox = New TextBox()
-        Label9 = New Label()
         addStudentButton = New Button()
         Button2 = New Button()
         programComboBox = New ComboBox()
         yearComboBox = New ComboBox()
         sectionComboBox = New ComboBox()
         departmentComboBox = New ComboBox()
-        statusComboBox = New ComboBox()
         studentIDTextBox = New MaskedTextBox()
         Label10 = New Label()
         birthCalendar = New MonthCalendar()
@@ -147,15 +145,6 @@ Partial Class AddStudentAccount
         emailTextBox.Size = New Size(256, 27)
         emailTextBox.TabIndex = 14
         ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(312, 243)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(47, 20)
-        Label9.TabIndex = 17
-        Label9.Text = "status"
-        ' 
         ' addStudentButton
         ' 
         addStudentButton.Location = New Point(50, 333)
@@ -197,7 +186,6 @@ Partial Class AddStudentAccount
         ' 
         sectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         sectionComboBox.FormattingEnabled = True
-        sectionComboBox.Items.AddRange(New Object() {"A", "B", "C", "D", "E"})
         sectionComboBox.Location = New Point(181, 188)
         sectionComboBox.Name = "sectionComboBox"
         sectionComboBox.Size = New Size(125, 28)
@@ -212,16 +200,6 @@ Partial Class AddStudentAccount
         departmentComboBox.Name = "departmentComboBox"
         departmentComboBox.Size = New Size(125, 28)
         departmentComboBox.TabIndex = 23
-        ' 
-        ' statusComboBox
-        ' 
-        statusComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        statusComboBox.FormattingEnabled = True
-        statusComboBox.Items.AddRange(New Object() {"Active", "Inactive", "Drop out", "Suspended"})
-        statusComboBox.Location = New Point(312, 266)
-        statusComboBox.Name = "statusComboBox"
-        statusComboBox.Size = New Size(125, 28)
-        statusComboBox.TabIndex = 24
         ' 
         ' studentIDTextBox
         ' 
@@ -256,14 +234,12 @@ Partial Class AddStudentAccount
         Controls.Add(birthCalendar)
         Controls.Add(Label10)
         Controls.Add(studentIDTextBox)
-        Controls.Add(statusComboBox)
         Controls.Add(departmentComboBox)
         Controls.Add(sectionComboBox)
         Controls.Add(yearComboBox)
         Controls.Add(programComboBox)
         Controls.Add(Button2)
         Controls.Add(addStudentButton)
-        Controls.Add(Label9)
         Controls.Add(Label8)
         Controls.Add(emailTextBox)
         Controls.Add(Label7)
@@ -294,14 +270,12 @@ Partial Class AddStudentAccount
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents emailTextBox As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents addStudentButton As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents programComboBox As ComboBox
     Friend WithEvents yearComboBox As ComboBox
     Friend WithEvents sectionComboBox As ComboBox
     Friend WithEvents departmentComboBox As ComboBox
-    Friend WithEvents statusComboBox As ComboBox
     Friend WithEvents studentIDTextBox As MaskedTextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents birthCalendar As MonthCalendar

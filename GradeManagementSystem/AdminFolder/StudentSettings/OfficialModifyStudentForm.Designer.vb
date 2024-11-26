@@ -46,7 +46,6 @@ Partial Class OfficialModifyStudentForm
         ' 
         sectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         sectionComboBox.FormattingEnabled = True
-        sectionComboBox.Items.AddRange(New Object() {"A", "B", "C", "D", "E"})
         sectionComboBox.Location = New Point(190, 161)
         sectionComboBox.Name = "sectionComboBox"
         sectionComboBox.Size = New Size(125, 28)
@@ -64,6 +63,7 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' programComboBox
         ' 
+        programComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         programComboBox.FormattingEnabled = True
         programComboBox.Location = New Point(452, 87)
         programComboBox.Name = "programComboBox"

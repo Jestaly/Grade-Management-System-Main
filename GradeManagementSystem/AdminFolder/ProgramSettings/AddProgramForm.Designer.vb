@@ -29,6 +29,8 @@ Partial Class AddProgramForm
         Label2 = New Label()
         Label3 = New Label()
         programIDLabel = New Label()
+        sectionBox = New DomainUpDown()
+        Label1 = New Label()
         SuspendLayout()
         ' 
         ' addProgramButton
@@ -90,11 +92,42 @@ Partial Class AddProgramForm
         programIDLabel.TabIndex = 5
         programIDLabel.Text = "P-000"
         ' 
+        ' sectionBox
+        ' 
+        sectionBox.BorderStyle = BorderStyle.FixedSingle
+        sectionBox.Items.Add("1")
+        sectionBox.Items.Add("2")
+        sectionBox.Items.Add("3")
+        sectionBox.Items.Add("4")
+        sectionBox.Items.Add("5")
+        sectionBox.Items.Add("6")
+        sectionBox.Items.Add("7")
+        sectionBox.Items.Add("8")
+        sectionBox.Items.Add("9")
+        sectionBox.Items.Add("10")
+        sectionBox.Location = New Point(405, 98)
+        sectionBox.Name = "sectionBox"
+        sectionBox.ReadOnly = True
+        sectionBox.Size = New Size(76, 27)
+        sectionBox.TabIndex = 10
+        sectionBox.Text = "1"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(335, 101)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(64, 20)
+        Label1.TabIndex = 9
+        Label1.Text = "Sections"
+        ' 
         ' AddProgramForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(605, 358)
+        Controls.Add(sectionBox)
+        Controls.Add(Label1)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(programIDLabel)
@@ -115,4 +148,6 @@ Partial Class AddProgramForm
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents programIDLabel As Label
+    Friend WithEvents sectionBox As DomainUpDown
+    Friend WithEvents Label1 As Label
 End Class

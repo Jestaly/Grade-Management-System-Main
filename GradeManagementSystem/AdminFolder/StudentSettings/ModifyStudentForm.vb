@@ -1,5 +1,4 @@
-﻿Imports System.Security.Permissions
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class ModifyStudentForm
     Private connector As New DatabaseConnector
@@ -12,29 +11,26 @@ Public Class ModifyStudentForm
     End Sub
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
+        officialModifyStudentForm.programComboBox.Items.Clear()
         If (studentExists()) Then
-            connectToOMSF()
             loadProgram()
+            connectToOMSF()
         End If
     End Sub
 
     Private Sub loadProgram()
         Try
             connector.connect.Open()
-            connector.dataTable.Clear()
-            connector.query = "SELECT * FROM program;"
+            connector.query = "SELECT program_name FROM program;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.dataAdapter.Fill(connector.dataTable)
-            ManageProgramAdmin.dataView.DataSource = connector.dataTable
-            For Each row As DataGridViewRow In ManageProgramAdmin.dataView.Rows
-                Dim programName As String = row.Cells("program_name").Value
-                If (programName Is Nothing) Then
-                    Exit For
+            connector.reader = connector.command.ExecuteReader()
+            While connector.reader.Read()
+                Dim programName As String = connector.reader("program_name").ToString()
+                If Not String.IsNullOrEmpty(programName) Then
+                    officialModifyStudentForm.programComboBox.Items.Add(programName)
                 End If
-                officialModifyStudentForm.programComboBox.Items.Add(programName)
-            Next
+            End While
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
@@ -44,6 +40,7 @@ Public Class ModifyStudentForm
 
     Private Sub connectToOMSF()
         Dim rowIndex As Integer = -1
+
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
@@ -59,9 +56,9 @@ Public Class ModifyStudentForm
                     Exit For
                 End If
             Next
+            connector.connect.Close()
             getStudentData(rowIndex)
             officialModifyStudentForm.Visible = True
-            connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error")
@@ -76,11 +73,38 @@ Public Class ModifyStudentForm
         officialModifyStudentForm.birthCalendar.SetDate(ManageStudentAdmin.dataView(4, rowIndex).Value)
         officialModifyStudentForm.programComboBox.Text = ManageStudentAdmin.dataView(5, rowIndex).Value.ToString
         officialModifyStudentForm.yearComboBox.Text = ManageStudentAdmin.dataView(6, rowIndex).Value.ToString
-        officialModifyStudentForm.sectionComboBox.Text = ManageStudentAdmin.dataView(7, rowIndex).Value.ToString
         officialModifyStudentForm.emailTextBox.Text = ManageStudentAdmin.dataView(8, rowIndex).Value.ToString
+        getSectionData()
+        officialModifyStudentForm.sectionComboBox.Text = ManageStudentAdmin.dataView(7, rowIndex).Value.ToString
     End Sub
 
-    Public Function getStudentID() As Integer
+    Private Sub getSectionData()
+        Dim selectedProgram As String = officialModifyStudentForm.programComboBox.Text
+        Dim numOfSection As Integer
+        Try
+            connector.connect.Open()
+            officialModifyStudentForm.sectionComboBox.Items.Clear()
+            connector.query = "SELECT program_name,sections FROM program;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If selectedProgram.Equals(connector.reader("program_name").ToString) Then
+                    numOfSection = Integer.Parse(connector.reader("sections").ToString())
+                    Exit While
+                End If
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Dim section() As String = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}
+        For i As Integer = 0 To numOfSection - 1
+            officialModifyStudentForm.sectionComboBox.Items.Add(section(i))
+        Next
+    End Sub
+    Private Function getStudentID() As Integer
         Dim getID = Integer.Parse(studentIDTextBox.Text)
         Return getID
     End Function

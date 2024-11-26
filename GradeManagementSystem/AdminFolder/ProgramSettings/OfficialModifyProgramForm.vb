@@ -10,7 +10,7 @@ Public Class OfficialModifyProgramForm
     Private Sub modifyButton_Click(sender As Object, e As EventArgs) Handles modifyButton.Click
         Try
             connector.connect.Open()
-            connector.query = "UPDATE program SET program_name = '" & programnameTextBox.Text & "', year_added = '" & yearAddedTextBox.Text & "' WHERE program_id = '" & trimmedProgID() & "';"
+            connector.query = "UPDATE program SET program_name = '" & programnameTextBox.Text & "', year_added = '" & yearAddedTextBox.Text & "', sections = " & sectionBox.Text & " WHERE program_id = '" & trimmedProgID() & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()

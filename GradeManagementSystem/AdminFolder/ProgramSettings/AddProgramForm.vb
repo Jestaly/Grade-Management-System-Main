@@ -5,7 +5,7 @@ Public Class AddProgramForm
     Private Sub addProgramButton_Click(sender As Object, e As EventArgs) Handles addProgramButton.Click
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO program VALUES ('" & getProgramID() & "','" & programNameTextBox.Text & "','" & dateAddedTextBox.Text & "');"
+            connector.query = "INSERT INTO program VALUES ('" & getProgramID() & "','" & programNameTextBox.Text & "','" & dateAddedTextBox.Text & "'," & sectionBox.Text & ");"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()

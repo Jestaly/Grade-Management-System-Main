@@ -7,6 +7,8 @@ Public Class ManageStudentAdmin
     Private Sub addStudent_Click(sender As Object, e As EventArgs) Handles addStudent.Click
         Dim sCount As Integer
         Try
+            addStudentForm.programComboBox.Items.Clear()
+            loadProgram()
             connector.connect.Open()
             connector.query = "SELECT * FROM student_count_history ORDER BY count DESC LIMIT 1;"
             connector.command.Connection = connector.connect
@@ -19,6 +21,27 @@ Public Class ManageStudentAdmin
         End Try
         addStudentForm.studentIDTextBox.Text = getStudNum() & "-" & getStudYear() & "-" & getZeros(sCount) & (sCount + 1)
         addStudentForm.Visible = True
+    End Sub
+
+    Private Sub loadProgram()
+        Try
+            connector.connect.Open()
+            connector.dataTable.Clear()
+            connector.query = "SELECT program_name FROM program;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader()
+            While connector.reader.Read()
+                Dim programName As String = connector.reader("program_name").ToString()
+                If Not String.IsNullOrEmpty(programName) Then
+                        addStudentForm.programComboBox.Items.Add(programName)
+                    End If
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
     End Sub
 
     Private Function getStudNum() As String

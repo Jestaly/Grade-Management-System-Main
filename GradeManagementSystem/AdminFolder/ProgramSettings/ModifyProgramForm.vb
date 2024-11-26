@@ -66,6 +66,7 @@ Public Class ModifyProgramForm
         officialModifyProgramForm.programIDTextBox.Text = ManageProgramAdmin.dataView(0, rowIndex).Value
         officialModifyProgramForm.programnameTextBox.Text = ManageProgramAdmin.dataView(1, rowIndex).Value
         officialModifyProgramForm.yearAddedTextBox.Text = ManageProgramAdmin.dataView(2, rowIndex).Value
+        officialModifyProgramForm.sectionBox.Text = ManageProgramAdmin.dataView(3, rowIndex).Value
     End Sub
 
     Private Function trimmedProgID() As String

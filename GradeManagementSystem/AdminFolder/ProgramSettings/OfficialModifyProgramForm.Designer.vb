@@ -29,6 +29,8 @@ Partial Class OfficialModifyProgramForm
         yearAddedTextBox = New TextBox()
         programnameTextBox = New TextBox()
         programIDTextBox = New MaskedTextBox()
+        sectionBox = New DomainUpDown()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' Label1
@@ -91,11 +93,42 @@ Partial Class OfficialModifyProgramForm
         programIDTextBox.Size = New Size(125, 27)
         programIDTextBox.TabIndex = 6
         ' 
+        ' sectionBox
+        ' 
+        sectionBox.BorderStyle = BorderStyle.FixedSingle
+        sectionBox.Items.Add("1")
+        sectionBox.Items.Add("2")
+        sectionBox.Items.Add("3")
+        sectionBox.Items.Add("4")
+        sectionBox.Items.Add("5")
+        sectionBox.Items.Add("6")
+        sectionBox.Items.Add("7")
+        sectionBox.Items.Add("8")
+        sectionBox.Items.Add("9")
+        sectionBox.Items.Add("10")
+        sectionBox.Location = New Point(130, 190)
+        sectionBox.Name = "sectionBox"
+        sectionBox.ReadOnly = True
+        sectionBox.Size = New Size(76, 27)
+        sectionBox.TabIndex = 12
+        sectionBox.Text = "1"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(60, 193)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(64, 20)
+        Label4.TabIndex = 11
+        Label4.Text = "Sections"
+        ' 
         ' OfficialModifyProgramForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(617, 371)
+        Controls.Add(sectionBox)
+        Controls.Add(Label4)
         Controls.Add(programIDTextBox)
         Controls.Add(programnameTextBox)
         Controls.Add(yearAddedTextBox)
@@ -116,4 +149,6 @@ Partial Class OfficialModifyProgramForm
     Friend WithEvents yearAddedTextBox As TextBox
     Friend WithEvents programnameTextBox As TextBox
     Friend WithEvents programIDTextBox As MaskedTextBox
+    Friend WithEvents sectionBox As DomainUpDown
+    Friend WithEvents Label4 As Label
 End Class
