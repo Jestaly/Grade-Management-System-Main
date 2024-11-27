@@ -32,6 +32,8 @@ Partial Class AddProgramForm
         sectionBox = New DomainUpDown()
         Label1 = New Label()
         backButton = New Button()
+        Label4 = New Label()
+        departmentComboBox = New ComboBox()
         SuspendLayout()
         ' 
         ' addProgramButton
@@ -54,14 +56,14 @@ Partial Class AddProgramForm
         ' 
         ' dateAddedTextBox
         ' 
-        dateAddedTextBox.Location = New Point(141, 88)
+        dateAddedTextBox.Location = New Point(141, 75)
         dateAddedTextBox.Name = "dateAddedTextBox"
         dateAddedTextBox.Size = New Size(172, 27)
         dateAddedTextBox.TabIndex = 3
         ' 
         ' programNameTextBox
         ' 
-        programNameTextBox.Location = New Point(141, 55)
+        programNameTextBox.Location = New Point(141, 42)
         programNameTextBox.Name = "programNameTextBox"
         programNameTextBox.Size = New Size(172, 27)
         programNameTextBox.TabIndex = 4
@@ -69,7 +71,7 @@ Partial Class AddProgramForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(25, 58)
+        Label2.Location = New Point(26, 45)
         Label2.Name = "Label2"
         Label2.Size = New Size(110, 20)
         Label2.TabIndex = 6
@@ -78,7 +80,7 @@ Partial Class AddProgramForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(41, 91)
+        Label3.Location = New Point(46, 78)
         Label3.Name = "Label3"
         Label3.Size = New Size(90, 20)
         Label3.TabIndex = 7
@@ -87,7 +89,7 @@ Partial Class AddProgramForm
         ' programIDLabel
         ' 
         programIDLabel.AutoSize = True
-        programIDLabel.Location = New Point(45, 26)
+        programIDLabel.Location = New Point(62, 12)
         programIDLabel.Name = "programIDLabel"
         programIDLabel.Size = New Size(47, 20)
         programIDLabel.TabIndex = 5
@@ -106,7 +108,7 @@ Partial Class AddProgramForm
         sectionBox.Items.Add("8")
         sectionBox.Items.Add("9")
         sectionBox.Items.Add("10")
-        sectionBox.Location = New Point(141, 131)
+        sectionBox.Location = New Point(141, 143)
         sectionBox.Name = "sectionBox"
         sectionBox.ReadOnly = True
         sectionBox.Size = New Size(76, 27)
@@ -116,7 +118,7 @@ Partial Class AddProgramForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(71, 134)
+        Label1.Location = New Point(71, 145)
         Label1.Name = "Label1"
         Label1.Size = New Size(64, 20)
         Label1.TabIndex = 9
@@ -131,12 +133,31 @@ Partial Class AddProgramForm
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
         ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(46, 112)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(89, 20)
+        Label4.TabIndex = 18
+        Label4.Text = "Department"
+        ' 
+        ' departmentComboBox
+        ' 
+        departmentComboBox.FormattingEnabled = True
+        departmentComboBox.Location = New Point(141, 109)
+        departmentComboBox.Name = "departmentComboBox"
+        departmentComboBox.Size = New Size(172, 28)
+        departmentComboBox.TabIndex = 19
+        ' 
         ' AddProgramForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
         ClientSize = New Size(371, 215)
+        Controls.Add(departmentComboBox)
+        Controls.Add(Label4)
         Controls.Add(backButton)
         Controls.Add(sectionBox)
         Controls.Add(Label1)
@@ -165,4 +186,6 @@ Partial Class AddProgramForm
     Friend WithEvents sectionBox As DomainUpDown
     Friend WithEvents Label1 As Label
     Friend WithEvents backButton As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents departmentComboBox As ComboBox
 End Class

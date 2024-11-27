@@ -13,19 +13,19 @@ Public Class OfficialModifyStudentForm
             connector.query = "SELECT * FROM program;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.dataAdapter.Fill(connector.dataTable)
-            ManageProgramAdmin.dataView.DataSource = connector.dataTable
-            For Each row As DataGridViewRow In ManageProgramAdmin.dataView.Rows
-                If (row.Cells("program_name").Value IsNot Nothing AndAlso row.Cells("program_name").Value.ToString.Equals(programComboBox.Text)) Then
-                    programID = row.Cells("program_id").Value.ToString
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If connector.reader("program_name").ToString IsNot Nothing And connector.reader("program_name").ToString.Equals(programComboBox.Text) Then
+                    programID = connector.reader("program_id").ToString
+                    connector.reader.Close()
                     Return programID
                 End If
-            Next
+            End While
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
+        connector.reader.Close()
         Return programID
     End Function
 
