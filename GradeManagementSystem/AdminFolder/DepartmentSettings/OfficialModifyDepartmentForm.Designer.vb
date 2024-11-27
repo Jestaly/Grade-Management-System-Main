@@ -24,12 +24,13 @@ Partial Class OfficialModifyDepartmentForm
     Private Sub InitializeComponent()
         Label3 = New Label()
         Label2 = New Label()
-        departmentIDLabel = New Label()
+        Label = New Label()
         departmentNameTextBox = New TextBox()
         departmentHeadTextBox = New TextBox()
         clearButton = New Button()
         modifyDepartmentButton = New Button()
         backButton = New Button()
+        deptIDTextBox = New MaskedTextBox()
         SuspendLayout()
         ' 
         ' Label3
@@ -50,14 +51,14 @@ Partial Class OfficialModifyDepartmentForm
         Label2.TabIndex = 20
         Label2.Text = "Department Name"
         ' 
-        ' departmentIDLabel
+        ' Label
         ' 
-        departmentIDLabel.AutoSize = True
-        departmentIDLabel.Location = New Point(34, 8)
-        departmentIDLabel.Name = "departmentIDLabel"
-        departmentIDLabel.Size = New Size(50, 20)
-        departmentIDLabel.TabIndex = 19
-        departmentIDLabel.Text = "D-000"
+        Label.AutoSize = True
+        Label.Location = New Point(34, 8)
+        Label.Name = "Label"
+        Label.Size = New Size(61, 20)
+        Label.TabIndex = 19
+        Label.Text = "Dept ID"
         ' 
         ' departmentNameTextBox
         ' 
@@ -100,20 +101,31 @@ Partial Class OfficialModifyDepartmentForm
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
         ' 
+        ' deptIDTextBox
+        ' 
+        deptIDTextBox.Location = New Point(101, 5)
+        deptIDTextBox.Mask = "L-000"
+        deptIDTextBox.Name = "deptIDTextBox"
+        deptIDTextBox.PromptChar = "X"c
+        deptIDTextBox.Size = New Size(125, 27)
+        deptIDTextBox.TabIndex = 23
+        ' 
         ' OfficialModifyDepartmentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
         ClientSize = New Size(371, 215)
+        Controls.Add(deptIDTextBox)
         Controls.Add(backButton)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(departmentIDLabel)
+        Controls.Add(Label)
         Controls.Add(departmentNameTextBox)
         Controls.Add(departmentHeadTextBox)
         Controls.Add(clearButton)
         Controls.Add(modifyDepartmentButton)
+        Enabled = False
         FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyDepartmentForm"
         Text = "OfficialModifyDepartmentForm"
@@ -123,10 +135,11 @@ Partial Class OfficialModifyDepartmentForm
 
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents departmentIDLabel As Label
+    Friend WithEvents Label As Label
     Friend WithEvents departmentNameTextBox As TextBox
     Friend WithEvents departmentHeadTextBox As TextBox
     Friend WithEvents clearButton As Button
     Friend WithEvents modifyDepartmentButton As Button
     Friend WithEvents backButton As Button
+    Friend WithEvents deptIDTextBox As MaskedTextBox
 End Class

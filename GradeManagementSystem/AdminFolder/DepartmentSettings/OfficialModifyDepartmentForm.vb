@@ -19,7 +19,7 @@ Public Class OfficialModifyDepartmentForm
     End Sub
 
     Private Function trimmedDeptID() As String
-        Dim deptID As String = departmentIDLabel.Text
+        Dim deptID As String = deptIDTextBox.Text
         deptID = deptID.Replace("-", "")
         Return deptID
     End Function
