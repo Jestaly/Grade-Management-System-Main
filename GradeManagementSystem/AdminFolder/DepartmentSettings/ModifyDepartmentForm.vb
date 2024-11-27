@@ -56,6 +56,8 @@ Public Class ModifyDepartmentForm
                 End If
             Next
             getDepartmentData(rowIndex)
+            Me.Visible = False
+            makeOMDFChild()
             officialModifyDepartmentForm.Visible = True
             connector.connect.Close()
         Catch ex As MySqlException
@@ -74,4 +76,20 @@ Public Class ModifyDepartmentForm
         Dim deptID = departmentIDTextBox.Text.Replace("-", "")
         Return deptID
     End Function
+
+    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+        Me.Visible = False
+    End Sub
+    Private Sub makeOMDFChild()
+        officialModifyDepartmentForm.TopLevel = False
+        officialModifyDepartmentForm.Parent = Me.Parent
+        CenterOMDF()
+        officialModifyDepartmentForm.BringToFront()
+    End Sub
+
+    Private Sub CenterOMDF()
+        Dim x As Integer = (Me.Parent.ClientSize.Width - officialModifyDepartmentForm.Width) \ 2
+        Dim y As Integer = (Me.Parent.ClientSize.Height - officialModifyDepartmentForm.Height) \ 2
+        officialModifyDepartmentForm.Location = New Point(x, y)
+    End Sub
 End Class

@@ -31,12 +31,13 @@ Partial Class OfficialModifyCourseForm
         unitTextBox = New TextBox()
         Button2 = New Button()
         modifyCourseButton = New Button()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(107, 217)
+        Label1.Location = New Point(41, 137)
         Label1.Name = "Label1"
         Label1.Size = New Size(66, 20)
         Label1.TabIndex = 34
@@ -45,7 +46,7 @@ Partial Class OfficialModifyCourseForm
         ' programComboBox
         ' 
         programComboBox.FormattingEnabled = True
-        programComboBox.Location = New Point(180, 214)
+        programComboBox.Location = New Point(114, 134)
         programComboBox.Name = "programComboBox"
         programComboBox.Size = New Size(172, 28)
         programComboBox.TabIndex = 33
@@ -53,7 +54,7 @@ Partial Class OfficialModifyCourseForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(132, 167)
+        Label3.Location = New Point(66, 108)
         Label3.Name = "Label3"
         Label3.Size = New Size(42, 20)
         Label3.TabIndex = 32
@@ -62,7 +63,7 @@ Partial Class OfficialModifyCourseForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(75, 111)
+        Label2.Location = New Point(9, 71)
         Label2.Name = "Label2"
         Label2.Size = New Size(98, 20)
         Label2.TabIndex = 31
@@ -71,7 +72,7 @@ Partial Class OfficialModifyCourseForm
         ' courseIDLabel
         ' 
         courseIDLabel.AutoSize = True
-        courseIDLabel.Location = New Point(123, 41)
+        courseIDLabel.Location = New Point(60, 29)
         courseIDLabel.Name = "courseIDLabel"
         courseIDLabel.Size = New Size(48, 20)
         courseIDLabel.TabIndex = 30
@@ -79,21 +80,21 @@ Partial Class OfficialModifyCourseForm
         ' 
         ' courseNameTextBox
         ' 
-        courseNameTextBox.Location = New Point(180, 108)
+        courseNameTextBox.Location = New Point(114, 68)
         courseNameTextBox.Name = "courseNameTextBox"
         courseNameTextBox.Size = New Size(172, 27)
         courseNameTextBox.TabIndex = 29
         ' 
         ' unitTextBox
         ' 
-        unitTextBox.Location = New Point(180, 160)
+        unitTextBox.Location = New Point(114, 101)
         unitTextBox.Name = "unitTextBox"
         unitTextBox.Size = New Size(172, 27)
         unitTextBox.TabIndex = 28
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(65, 313)
+        Button2.Location = New Point(178, 168)
         Button2.Name = "Button2"
         Button2.Size = New Size(119, 29)
         Button2.TabIndex = 27
@@ -102,18 +103,29 @@ Partial Class OfficialModifyCourseForm
         ' 
         ' modifyCourseButton
         ' 
-        modifyCourseButton.Location = New Point(65, 278)
+        modifyCourseButton.Location = New Point(52, 168)
         modifyCourseButton.Name = "modifyCourseButton"
         modifyCourseButton.Size = New Size(119, 29)
         modifyCourseButton.TabIndex = 26
         modifyCourseButton.Text = "Modify Course"
         modifyCourseButton.UseVisualStyleBackColor = True
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(232, 12)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 35
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' OfficialModifyCourseForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(575, 402)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(353, 221)
+        Controls.Add(backButton)
         Controls.Add(Label1)
         Controls.Add(programComboBox)
         Controls.Add(Label3)
@@ -123,6 +135,7 @@ Partial Class OfficialModifyCourseForm
         Controls.Add(unitTextBox)
         Controls.Add(Button2)
         Controls.Add(modifyCourseButton)
+        FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyCourseForm"
         Text = "OfficialModifyCourseForm"
         ResumeLayout(False)
@@ -138,4 +151,5 @@ Partial Class OfficialModifyCourseForm
     Friend WithEvents unitTextBox As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents modifyCourseButton As Button
+    Friend WithEvents backButton As Button
 End Class

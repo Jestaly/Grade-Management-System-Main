@@ -95,6 +95,7 @@ Partial Class ManageDepartmentAdmin
         Controls.Add(addDepartment)
         Controls.Add(searchButton)
         Name = "ManageDepartmentAdmin"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ManageDepartmentAdmin"
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

@@ -40,13 +40,16 @@ Partial Class OfficialModifyStudentForm
         sidTextBox = New TextBox()
         Label10 = New Label()
         birthCalendar = New MonthCalendar()
+        backButton = New Button()
+        Label7 = New Label()
+        Button2 = New Button()
         SuspendLayout()
         ' 
         ' sectionComboBox
         ' 
         sectionComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         sectionComboBox.FormattingEnabled = True
-        sectionComboBox.Location = New Point(190, 161)
+        sectionComboBox.Location = New Point(155, 121)
         sectionComboBox.Name = "sectionComboBox"
         sectionComboBox.Size = New Size(125, 28)
         sectionComboBox.TabIndex = 41
@@ -56,7 +59,7 @@ Partial Class OfficialModifyStudentForm
         yearComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         yearComboBox.FormattingEnabled = True
         yearComboBox.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        yearComboBox.Location = New Point(59, 161)
+        yearComboBox.Location = New Point(24, 121)
         yearComboBox.Name = "yearComboBox"
         yearComboBox.Size = New Size(125, 28)
         yearComboBox.TabIndex = 40
@@ -65,14 +68,14 @@ Partial Class OfficialModifyStudentForm
         ' 
         programComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         programComboBox.FormattingEnabled = True
-        programComboBox.Location = New Point(452, 87)
+        programComboBox.Location = New Point(286, 121)
         programComboBox.Name = "programComboBox"
         programComboBox.Size = New Size(125, 28)
         programComboBox.TabIndex = 39
         ' 
         ' modifyStudentButton
         ' 
-        modifyStudentButton.Location = New Point(59, 306)
+        modifyStudentButton.Location = New Point(24, 226)
         modifyStudentButton.Name = "modifyStudentButton"
         modifyStudentButton.Size = New Size(125, 29)
         modifyStudentButton.TabIndex = 38
@@ -82,7 +85,7 @@ Partial Class OfficialModifyStudentForm
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(59, 216)
+        Label8.Location = New Point(24, 153)
         Label8.Name = "Label8"
         Label8.Size = New Size(46, 20)
         Label8.TabIndex = 36
@@ -90,15 +93,15 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' emailTextBox
         ' 
-        emailTextBox.Location = New Point(59, 239)
+        emailTextBox.Location = New Point(24, 176)
         emailTextBox.Name = "emailTextBox"
-        emailTextBox.Size = New Size(256, 27)
+        emailTextBox.Size = New Size(211, 27)
         emailTextBox.TabIndex = 35
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(190, 138)
+        Label6.Location = New Point(155, 98)
         Label6.Name = "Label6"
         Label6.Size = New Size(56, 20)
         Label6.TabIndex = 33
@@ -107,7 +110,7 @@ Partial Class OfficialModifyStudentForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(59, 138)
+        Label5.Location = New Point(24, 98)
         Label5.Name = "Label5"
         Label5.Size = New Size(37, 20)
         Label5.TabIndex = 32
@@ -116,7 +119,7 @@ Partial Class OfficialModifyStudentForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(452, 64)
+        Label4.Location = New Point(286, 98)
         Label4.Name = "Label4"
         Label4.Size = New Size(67, 20)
         Label4.TabIndex = 31
@@ -125,7 +128,7 @@ Partial Class OfficialModifyStudentForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(321, 64)
+        Label3.Location = New Point(286, 49)
         Label3.Name = "Label3"
         Label3.Size = New Size(32, 20)
         Label3.TabIndex = 30
@@ -133,7 +136,7 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' lastnameTextBox
         ' 
-        lastnameTextBox.Location = New Point(321, 87)
+        lastnameTextBox.Location = New Point(286, 72)
         lastnameTextBox.Name = "lastnameTextBox"
         lastnameTextBox.Size = New Size(125, 27)
         lastnameTextBox.TabIndex = 29
@@ -141,7 +144,7 @@ Partial Class OfficialModifyStudentForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(190, 64)
+        Label2.Location = New Point(155, 49)
         Label2.Name = "Label2"
         Label2.Size = New Size(56, 20)
         Label2.TabIndex = 28
@@ -149,7 +152,7 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' middlenameTextBox
         ' 
-        middlenameTextBox.Location = New Point(190, 87)
+        middlenameTextBox.Location = New Point(155, 72)
         middlenameTextBox.Name = "middlenameTextBox"
         middlenameTextBox.Size = New Size(125, 27)
         middlenameTextBox.TabIndex = 27
@@ -157,7 +160,7 @@ Partial Class OfficialModifyStudentForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(59, 64)
+        Label1.Location = New Point(24, 49)
         Label1.Name = "Label1"
         Label1.Size = New Size(34, 20)
         Label1.TabIndex = 26
@@ -165,7 +168,7 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' firstnameTextBox
         ' 
-        firstnameTextBox.Location = New Point(59, 87)
+        firstnameTextBox.Location = New Point(24, 72)
         firstnameTextBox.Name = "firstnameTextBox"
         firstnameTextBox.Size = New Size(125, 27)
         firstnameTextBox.TabIndex = 25
@@ -173,7 +176,7 @@ Partial Class OfficialModifyStudentForm
         ' sidTextBox
         ' 
         sidTextBox.Enabled = False
-        sidTextBox.Location = New Point(97, 23)
+        sidTextBox.Location = New Point(66, 12)
         sidTextBox.Name = "sidTextBox"
         sidTextBox.Size = New Size(80, 27)
         sidTextBox.TabIndex = 44
@@ -181,7 +184,7 @@ Partial Class OfficialModifyStudentForm
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(59, 26)
+        Label10.Location = New Point(28, 15)
         Label10.Name = "Label10"
         Label10.Size = New Size(32, 20)
         Label10.TabIndex = 45
@@ -189,15 +192,46 @@ Partial Class OfficialModifyStudentForm
         ' 
         ' birthCalendar
         ' 
-        birthCalendar.Location = New Point(458, 138)
+        birthCalendar.Location = New Point(170, 226)
         birthCalendar.Name = "birthCalendar"
         birthCalendar.TabIndex = 46
+        ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(24, 296)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(122, 29)
+        backButton.TabIndex = 47
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(271, 197)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(70, 20)
+        Label7.TabIndex = 48
+        Label7.Text = "birthdate"
+        ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(24, 261)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(125, 29)
+        Button2.TabIndex = 49
+        Button2.Text = "Clear"
+        Button2.UseVisualStyleBackColor = True
         ' 
         ' OfficialModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(759, 399)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(468, 457)
+        Controls.Add(Button2)
+        Controls.Add(Label7)
+        Controls.Add(backButton)
         Controls.Add(birthCalendar)
         Controls.Add(Label10)
         Controls.Add(sidTextBox)
@@ -216,6 +250,7 @@ Partial Class OfficialModifyStudentForm
         Controls.Add(middlenameTextBox)
         Controls.Add(Label1)
         Controls.Add(firstnameTextBox)
+        FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyStudentForm"
         Text = "OfficialModifyStudentForm"
         ResumeLayout(False)
@@ -239,4 +274,7 @@ Partial Class OfficialModifyStudentForm
     Friend WithEvents sidTextBox As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents birthCalendar As MonthCalendar
+    Friend WithEvents backButton As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Button2 As Button
 End Class

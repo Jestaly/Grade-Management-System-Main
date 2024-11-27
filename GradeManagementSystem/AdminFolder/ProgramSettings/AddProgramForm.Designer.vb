@@ -31,11 +31,12 @@ Partial Class AddProgramForm
         programIDLabel = New Label()
         sectionBox = New DomainUpDown()
         Label1 = New Label()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' addProgramButton
         ' 
-        addProgramButton.Location = New Point(36, 235)
+        addProgramButton.Location = New Point(41, 181)
         addProgramButton.Name = "addProgramButton"
         addProgramButton.Size = New Size(109, 29)
         addProgramButton.TabIndex = 0
@@ -44,7 +45,7 @@ Partial Class AddProgramForm
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(36, 270)
+        Button2.Location = New Point(156, 181)
         Button2.Name = "Button2"
         Button2.Size = New Size(109, 29)
         Button2.TabIndex = 1
@@ -53,14 +54,14 @@ Partial Class AddProgramForm
         ' 
         ' dateAddedTextBox
         ' 
-        dateAddedTextBox.Location = New Point(131, 150)
+        dateAddedTextBox.Location = New Point(141, 88)
         dateAddedTextBox.Name = "dateAddedTextBox"
         dateAddedTextBox.Size = New Size(172, 27)
         dateAddedTextBox.TabIndex = 3
         ' 
         ' programNameTextBox
         ' 
-        programNameTextBox.Location = New Point(131, 98)
+        programNameTextBox.Location = New Point(141, 55)
         programNameTextBox.Name = "programNameTextBox"
         programNameTextBox.Size = New Size(172, 27)
         programNameTextBox.TabIndex = 4
@@ -68,7 +69,7 @@ Partial Class AddProgramForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(15, 101)
+        Label2.Location = New Point(25, 58)
         Label2.Name = "Label2"
         Label2.Size = New Size(110, 20)
         Label2.TabIndex = 6
@@ -77,7 +78,7 @@ Partial Class AddProgramForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(31, 153)
+        Label3.Location = New Point(41, 91)
         Label3.Name = "Label3"
         Label3.Size = New Size(90, 20)
         Label3.TabIndex = 7
@@ -86,7 +87,7 @@ Partial Class AddProgramForm
         ' programIDLabel
         ' 
         programIDLabel.AutoSize = True
-        programIDLabel.Location = New Point(74, 31)
+        programIDLabel.Location = New Point(45, 26)
         programIDLabel.Name = "programIDLabel"
         programIDLabel.Size = New Size(47, 20)
         programIDLabel.TabIndex = 5
@@ -105,7 +106,7 @@ Partial Class AddProgramForm
         sectionBox.Items.Add("8")
         sectionBox.Items.Add("9")
         sectionBox.Items.Add("10")
-        sectionBox.Location = New Point(405, 98)
+        sectionBox.Location = New Point(141, 131)
         sectionBox.Name = "sectionBox"
         sectionBox.ReadOnly = True
         sectionBox.Size = New Size(76, 27)
@@ -115,17 +116,28 @@ Partial Class AddProgramForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(335, 101)
+        Label1.Location = New Point(71, 134)
         Label1.Name = "Label1"
         Label1.Size = New Size(64, 20)
         Label1.TabIndex = 9
         Label1.Text = "Sections"
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(265, 3)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 17
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' AddProgramForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(605, 358)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(371, 215)
+        Controls.Add(backButton)
         Controls.Add(sectionBox)
         Controls.Add(Label1)
         Controls.Add(Label3)
@@ -135,6 +147,7 @@ Partial Class AddProgramForm
         Controls.Add(dateAddedTextBox)
         Controls.Add(Button2)
         Controls.Add(addProgramButton)
+        FormBorderStyle = FormBorderStyle.None
         Name = "AddProgramForm"
         Text = "AddProgramForm"
         ResumeLayout(False)
@@ -150,4 +163,5 @@ Partial Class AddProgramForm
     Friend WithEvents programIDLabel As Label
     Friend WithEvents sectionBox As DomainUpDown
     Friend WithEvents Label1 As Label
+    Friend WithEvents backButton As Button
 End Class

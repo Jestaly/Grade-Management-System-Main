@@ -4,6 +4,7 @@ Public Class ManageDepartmentAdmin
     Private connector As New DatabaseConnector
     Private addDepartmentForm As New AddDepartmentForm
     Private modifyDepartmentForm As New ModifyDepartmentForm
+    Private officialModifyDepartmentForm As New OfficialModifyDepartmentForm
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
         Try
             connector.dataTable.Clear()
@@ -23,6 +24,7 @@ Public Class ManageDepartmentAdmin
     End Sub
 
     Private Sub addDepartment_Click(sender As Object, e As EventArgs) Handles addDepartment.Click
+
         Dim dCount As Integer = 0
         Try
             connector.connect.Open()
@@ -55,4 +57,41 @@ Public Class ManageDepartmentAdmin
     Private Sub modifyButton_Click(sender As Object, e As EventArgs) Handles modifyButton.Click
         modifyDepartmentForm.Visible = True
     End Sub
+
+    Private Sub ManageDepartmentAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        makeADFChild()
+        makeMDFChild()
+    End Sub
+
+    Private Sub makeADFChild()
+        addDepartmentForm.TopLevel = False
+        addDepartmentForm.Parent = Me
+        CenterADF()
+        addDepartmentForm.BringToFront()
+    End Sub
+
+    Private Sub CenterADF()
+        Dim x As Integer = (Me.ClientSize.Width - addDepartmentForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - addDepartmentForm.Height) \ 2
+        addDepartmentForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub makeMDFChild()
+        modifyDepartmentForm.TopLevel = False
+        modifyDepartmentForm.Parent = Me
+        CenterMDF()
+        modifyDepartmentForm.BringToFront()
+    End Sub
+
+    Private Sub CenterMDF()
+        Dim x As Integer = (Me.ClientSize.Width - modifyDepartmentForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - modifyDepartmentForm.Height) \ 2
+        modifyDepartmentForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub ManageDepartmentAdmin_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        e.Cancel = True
+        Me.Visible = False
+    End Sub
+
 End Class

@@ -25,13 +25,14 @@ Partial Class ModifyProgramForm
         Label1 = New Label()
         searchButton = New Button()
         programIDTextBox = New MaskedTextBox()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(193, 81)
+        Label1.Location = New Point(114, 43)
         Label1.Name = "Label1"
         Label1.Size = New Size(130, 31)
         Label1.TabIndex = 1
@@ -39,7 +40,7 @@ Partial Class ModifyProgramForm
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(193, 171)
+        searchButton.Location = New Point(114, 133)
         searchButton.Name = "searchButton"
         searchButton.Size = New Size(130, 45)
         searchButton.TabIndex = 2
@@ -50,21 +51,33 @@ Partial Class ModifyProgramForm
         ' 
         programIDTextBox.AsciiOnly = True
         programIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        programIDTextBox.Location = New Point(169, 127)
+        programIDTextBox.Location = New Point(90, 89)
         programIDTextBox.Mask = "L-000"
         programIDTextBox.Name = "programIDTextBox"
         programIDTextBox.PromptChar = "X"c
         programIDTextBox.Size = New Size(184, 38)
         programIDTextBox.TabIndex = 3
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(265, 12)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 17
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' ModifyProgramForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(538, 316)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(371, 215)
+        Controls.Add(backButton)
         Controls.Add(programIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "ModifyProgramForm"
         Text = "ModifyProgramForm"
         ResumeLayout(False)
@@ -73,4 +86,5 @@ Partial Class ModifyProgramForm
     Friend WithEvents Label1 As Label
     Friend WithEvents searchButton As Button
     Friend WithEvents programIDTextBox As MaskedTextBox
+    Friend WithEvents backButton As Button
 End Class

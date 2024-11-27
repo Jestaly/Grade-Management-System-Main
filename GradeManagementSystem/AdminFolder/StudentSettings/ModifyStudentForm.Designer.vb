@@ -25,13 +25,14 @@ Partial Class ModifyStudentForm
         StudentIDLabel = New Label()
         searchButton = New Button()
         studentIDTextBox = New MaskedTextBox()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' StudentIDLabel
         ' 
         StudentIDLabel.AutoSize = True
         StudentIDLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        StudentIDLabel.Location = New Point(237, 127)
+        StudentIDLabel.Location = New Point(112, 56)
         StudentIDLabel.Name = "StudentIDLabel"
         StudentIDLabel.Size = New Size(121, 31)
         StudentIDLabel.TabIndex = 1
@@ -39,7 +40,7 @@ Partial Class ModifyStudentForm
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(237, 233)
+        searchButton.Location = New Point(112, 162)
         searchButton.Name = "searchButton"
         searchButton.Size = New Size(137, 59)
         searchButton.TabIndex = 2
@@ -49,21 +50,33 @@ Partial Class ModifyStudentForm
         ' studentIDTextBox
         ' 
         studentIDTextBox.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        studentIDTextBox.Location = New Point(162, 161)
+        studentIDTextBox.Location = New Point(37, 90)
         studentIDTextBox.Mask = "0-00-00000"
         studentIDTextBox.Name = "studentIDTextBox"
         studentIDTextBox.PromptChar = "X"c
         studentIDTextBox.Size = New Size(287, 51)
         studentIDTextBox.TabIndex = 3
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(243, 21)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 19
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' ModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(610, 450)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(365, 245)
+        Controls.Add(backButton)
         Controls.Add(studentIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(StudentIDLabel)
+        FormBorderStyle = FormBorderStyle.None
         Name = "ModifyStudentForm"
         Text = "ModifyStudentForm"
         ResumeLayout(False)
@@ -72,4 +85,5 @@ Partial Class ModifyStudentForm
     Friend WithEvents StudentIDLabel As Label
     Friend WithEvents searchButton As Button
     Friend WithEvents studentIDTextBox As MaskedTextBox
+    Friend WithEvents backButton As Button
 End Class

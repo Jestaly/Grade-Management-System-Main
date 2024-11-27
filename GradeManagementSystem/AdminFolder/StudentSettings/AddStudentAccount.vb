@@ -64,7 +64,6 @@ Public Class AddStudentAccount
         programComboBox.SelectedIndex = -1
         yearComboBox.SelectedIndex = -1
         sectionComboBox.SelectedIndex = -1
-        departmentComboBox.SelectedIndex = -1
         emailTextBox.Clear()
 
         Me.Visible = False
@@ -77,7 +76,6 @@ Public Class AddStudentAccount
         programComboBox.SelectedIndex = -1
         yearComboBox.SelectedIndex = -1
         sectionComboBox.SelectedIndex = -1
-        departmentComboBox.SelectedIndex = -1
         emailTextBox.Clear()
     End Sub
 
@@ -112,5 +110,9 @@ Public Class AddStudentAccount
         For i As Integer = 0 To numOfSection - 1
             sectionComboBox.Items.Add(section(i))
         Next
+    End Sub
+
+    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+        Me.Visible = False
     End Sub
 End Class

@@ -66,4 +66,34 @@ Public Class ManageProgramAdmin
         modifyProgramForm.Visible = True
     End Sub
 
+    Private Sub ManageProgramAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        makeAPFChild()
+        makeMPFChild()
+    End Sub
+
+    Private Sub makeAPFChild()
+        addProgramForm.TopLevel = False
+        addProgramForm.Parent = Me
+        CenterAPF()
+        addProgramForm.BringToFront()
+    End Sub
+
+    Private Sub CenterAPF()
+        Dim x As Integer = (Me.ClientSize.Width - addProgramForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - addProgramForm.Height) \ 2
+        addProgramForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub makeMPFChild()
+        modifyProgramForm.TopLevel = False
+        modifyProgramForm.Parent = Me
+        CenterMPF()
+        modifyProgramForm.BringToFront()
+    End Sub
+
+    Private Sub CenterMPF()
+        Dim x As Integer = (Me.Width - modifyProgramForm.Width) \ 2
+        Dim y As Integer = (Me.Height - modifyProgramForm.Height) \ 2
+        modifyProgramForm.Location = New Point(x, y)
+    End Sub
 End Class

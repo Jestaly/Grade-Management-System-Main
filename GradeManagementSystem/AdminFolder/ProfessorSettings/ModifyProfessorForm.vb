@@ -27,6 +27,8 @@ Public Class ModifyProfessorForm
                 End If
             Next
             getProfessorData(rowIndex)
+            Me.Visible = False
+            makeOMPFFChild()
             officialModifyProfessorForm.Visible = True
             connector.connect.Close()
         Catch ex As MySqlException
@@ -76,5 +78,21 @@ Public Class ModifyProfessorForm
     Private Sub ModifyProfessorForm_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
+    End Sub
+
+    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+        Me.Visible = False
+    End Sub
+    Private Sub makeOMPFFChild()
+        officialModifyProfessorForm.TopLevel = False
+        officialModifyProfessorForm.Parent = Me.Parent
+        CenterOMPFF()
+        officialModifyProfessorForm.BringToFront()
+    End Sub
+
+    Private Sub CenterOMPFF()
+        Dim x As Integer = (Me.Parent.ClientSize.Width - officialModifyProfessorForm.Width) \ 2
+        Dim y As Integer = (Me.Parent.ClientSize.Height - officialModifyProfessorForm.Height) \ 2
+        officialModifyProfessorForm.Location = New Point(x, y)
     End Sub
 End Class

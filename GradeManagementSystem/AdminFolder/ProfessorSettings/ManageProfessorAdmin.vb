@@ -35,8 +35,8 @@ Public Class ManageProfessorAdmin
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        addProfessorAccount.professorIDLabel.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
-        addProfessorAccount.Visible = True
+        addProfessorForm.professorIDLabel.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
+        addProfessorForm.Visible = True
     End Sub
 
     Private Function getProfNum() As String
@@ -76,5 +76,35 @@ Public Class ManageProfessorAdmin
     Private Sub ManageProfessorAdmin_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
+    End Sub
+
+    Private Sub ManageProfessorAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        makeAPFFChild()
+        makeMPFFChild()
+    End Sub
+    Private Sub makeAPFFChild()
+        addProfessorForm.TopLevel = False
+        addProfessorForm.Parent = Me
+        CenterAPFF()
+        addProfessorForm.BringToFront()
+    End Sub
+
+    Private Sub CenterAPFF()
+        Dim x As Integer = (Me.ClientSize.Width - addProfessorForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - addProfessorForm.Height) \ 2
+        addProfessorForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub makeMPFFChild()
+        modifyProfessorForm.TopLevel = False
+        modifyProfessorForm.Parent = Me
+        CenterMPFF()
+        modifyProfessorForm.BringToFront()
+    End Sub
+
+    Private Sub CenterMPFF()
+        Dim x As Integer = (Me.ClientSize.Width - modifyProfessorForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - modifyProfessorForm.Height) \ 2
+        modifyProfessorForm.Location = New Point(x, y)
     End Sub
 End Class

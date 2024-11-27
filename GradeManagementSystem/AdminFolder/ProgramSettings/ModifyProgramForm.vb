@@ -54,6 +54,8 @@ Public Class ModifyProgramForm
                 End If
             Next
             getProgramData(rowIndex)
+            Me.Visible = False
+            makeOMPFChild()
             officialModifyProgramForm.Visible = True
             connector.connect.Close()
         Catch ex As MySqlException
@@ -74,4 +76,19 @@ Public Class ModifyProgramForm
         Return progID
     End Function
 
+    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+        Me.Visible = False
+    End Sub
+    Private Sub makeOMPFChild()
+        officialModifyProgramForm.TopLevel = False
+        officialModifyProgramForm.Parent = Me.Parent
+        CenterOMPF()
+        officialModifyProgramForm.BringToFront()
+    End Sub
+
+    Private Sub CenterOMPF()
+        Dim x As Integer = (Me.Parent.Width - officialModifyProgramForm.Width) \ 2
+        Dim y As Integer = (Me.Parent.Height - officialModifyProgramForm.Height) \ 2
+        officialModifyProgramForm.Location = New Point(x, y)
+    End Sub
 End Class

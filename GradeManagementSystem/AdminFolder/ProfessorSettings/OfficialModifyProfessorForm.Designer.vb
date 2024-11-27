@@ -34,12 +34,13 @@ Partial Class OfficialModifyProfessorForm
         Label5 = New Label()
         modifyButton = New Button()
         clearButton = New Button()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' profIDTextBox
         ' 
         profIDTextBox.Enabled = False
-        profIDTextBox.Location = New Point(85, 29)
+        profIDTextBox.Location = New Point(69, 9)
         profIDTextBox.Mask = "0-00-00000"
         profIDTextBox.Name = "profIDTextBox"
         profIDTextBox.PromptChar = "X"c
@@ -48,28 +49,28 @@ Partial Class OfficialModifyProfessorForm
         ' 
         ' firstnameTextBox
         ' 
-        firstnameTextBox.Location = New Point(68, 108)
+        firstnameTextBox.Location = New Point(69, 42)
         firstnameTextBox.Name = "firstnameTextBox"
         firstnameTextBox.Size = New Size(125, 27)
         firstnameTextBox.TabIndex = 1
         ' 
         ' middlenameTextBox
         ' 
-        middlenameTextBox.Location = New Point(307, 108)
+        middlenameTextBox.Location = New Point(69, 75)
         middlenameTextBox.Name = "middlenameTextBox"
         middlenameTextBox.Size = New Size(125, 27)
         middlenameTextBox.TabIndex = 2
         ' 
         ' lastnameTextBox
         ' 
-        lastnameTextBox.Location = New Point(67, 178)
+        lastnameTextBox.Location = New Point(68, 108)
         lastnameTextBox.Name = "lastnameTextBox"
         lastnameTextBox.Size = New Size(125, 27)
         lastnameTextBox.TabIndex = 3
         ' 
         ' emailTextBox
         ' 
-        emailTextBox.Location = New Point(307, 178)
+        emailTextBox.Location = New Point(69, 141)
         emailTextBox.Name = "emailTextBox"
         emailTextBox.Size = New Size(125, 27)
         emailTextBox.TabIndex = 4
@@ -77,7 +78,7 @@ Partial Class OfficialModifyProfessorForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(26, 32)
+        Label1.Location = New Point(10, 12)
         Label1.Name = "Label1"
         Label1.Size = New Size(55, 20)
         Label1.TabIndex = 5
@@ -86,7 +87,7 @@ Partial Class OfficialModifyProfessorForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(26, 115)
+        Label2.Location = New Point(27, 49)
         Label2.Name = "Label2"
         Label2.Size = New Size(36, 20)
         Label2.TabIndex = 6
@@ -95,7 +96,7 @@ Partial Class OfficialModifyProfessorForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(245, 111)
+        Label3.Location = New Point(7, 78)
         Label3.Name = "Label3"
         Label3.Size = New Size(56, 20)
         Label3.TabIndex = 7
@@ -104,7 +105,7 @@ Partial Class OfficialModifyProfessorForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(27, 181)
+        Label4.Location = New Point(28, 111)
         Label4.Name = "Label4"
         Label4.Size = New Size(35, 20)
         Label4.TabIndex = 8
@@ -113,7 +114,7 @@ Partial Class OfficialModifyProfessorForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(255, 181)
+        Label5.Location = New Point(17, 144)
         Label5.Name = "Label5"
         Label5.Size = New Size(46, 20)
         Label5.TabIndex = 9
@@ -121,7 +122,7 @@ Partial Class OfficialModifyProfessorForm
         ' 
         ' modifyButton
         ' 
-        modifyButton.Location = New Point(57, 259)
+        modifyButton.Location = New Point(5, 174)
         modifyButton.Name = "modifyButton"
         modifyButton.Size = New Size(135, 29)
         modifyButton.TabIndex = 10
@@ -130,18 +131,29 @@ Partial Class OfficialModifyProfessorForm
         ' 
         ' clearButton
         ' 
-        clearButton.Location = New Point(57, 303)
+        clearButton.Location = New Point(146, 174)
         clearButton.Name = "clearButton"
         clearButton.Size = New Size(135, 29)
         clearButton.TabIndex = 11
         clearButton.Text = "Clear"
         clearButton.UseVisualStyleBackColor = True
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(178, 209)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 17
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' OfficialModifyProfessorForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(657, 392)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(293, 254)
+        Controls.Add(backButton)
         Controls.Add(clearButton)
         Controls.Add(modifyButton)
         Controls.Add(Label5)
@@ -154,6 +166,7 @@ Partial Class OfficialModifyProfessorForm
         Controls.Add(middlenameTextBox)
         Controls.Add(firstnameTextBox)
         Controls.Add(profIDTextBox)
+        FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyProfessorForm"
         Text = "OfficialModifyProfessorForm"
         ResumeLayout(False)
@@ -172,4 +185,5 @@ Partial Class OfficialModifyProfessorForm
     Friend WithEvents Label5 As Label
     Friend WithEvents modifyButton As Button
     Friend WithEvents clearButton As Button
+    Friend WithEvents backButton As Button
 End Class

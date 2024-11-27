@@ -31,12 +31,13 @@ Partial Class AddCourseForm
         addCourseButton = New Button()
         programComboBox = New ComboBox()
         Label1 = New Label()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(126, 192)
+        Label3.Location = New Point(73, 93)
         Label3.Name = "Label3"
         Label3.Size = New Size(42, 20)
         Label3.TabIndex = 14
@@ -45,7 +46,7 @@ Partial Class AddCourseForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(69, 136)
+        Label2.Location = New Point(16, 56)
         Label2.Name = "Label2"
         Label2.Size = New Size(98, 20)
         Label2.TabIndex = 13
@@ -54,7 +55,7 @@ Partial Class AddCourseForm
         ' courseIDLabel
         ' 
         courseIDLabel.AutoSize = True
-        courseIDLabel.Location = New Point(117, 66)
+        courseIDLabel.Location = New Point(33, 23)
         courseIDLabel.Name = "courseIDLabel"
         courseIDLabel.Size = New Size(48, 20)
         courseIDLabel.TabIndex = 12
@@ -62,21 +63,21 @@ Partial Class AddCourseForm
         ' 
         ' courseNameTextBox
         ' 
-        courseNameTextBox.Location = New Point(174, 133)
+        courseNameTextBox.Location = New Point(121, 53)
         courseNameTextBox.Name = "courseNameTextBox"
         courseNameTextBox.Size = New Size(172, 27)
         courseNameTextBox.TabIndex = 11
         ' 
         ' unitTextBox
         ' 
-        unitTextBox.Location = New Point(174, 185)
+        unitTextBox.Location = New Point(121, 86)
         unitTextBox.Name = "unitTextBox"
         unitTextBox.Size = New Size(172, 27)
         unitTextBox.TabIndex = 10
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(59, 338)
+        Button2.Location = New Point(154, 153)
         Button2.Name = "Button2"
         Button2.Size = New Size(109, 29)
         Button2.TabIndex = 9
@@ -85,7 +86,7 @@ Partial Class AddCourseForm
         ' 
         ' addCourseButton
         ' 
-        addCourseButton.Location = New Point(59, 303)
+        addCourseButton.Location = New Point(39, 153)
         addCourseButton.Name = "addCourseButton"
         addCourseButton.Size = New Size(109, 29)
         addCourseButton.TabIndex = 8
@@ -95,7 +96,7 @@ Partial Class AddCourseForm
         ' programComboBox
         ' 
         programComboBox.FormattingEnabled = True
-        programComboBox.Location = New Point(174, 239)
+        programComboBox.Location = New Point(121, 119)
         programComboBox.Name = "programComboBox"
         programComboBox.Size = New Size(172, 28)
         programComboBox.TabIndex = 15
@@ -103,17 +104,28 @@ Partial Class AddCourseForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(101, 242)
+        Label1.Location = New Point(48, 122)
         Label1.Name = "Label1"
         Label1.Size = New Size(66, 20)
         Label1.TabIndex = 16
         Label1.Text = "Program"
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(220, 12)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 18
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' AddCourseForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(568, 406)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(353, 197)
+        Controls.Add(backButton)
         Controls.Add(Label1)
         Controls.Add(programComboBox)
         Controls.Add(Label3)
@@ -123,6 +135,7 @@ Partial Class AddCourseForm
         Controls.Add(unitTextBox)
         Controls.Add(Button2)
         Controls.Add(addCourseButton)
+        FormBorderStyle = FormBorderStyle.None
         Name = "AddCourseForm"
         Text = "AddCourseForm"
         ResumeLayout(False)
@@ -138,4 +151,5 @@ Partial Class AddCourseForm
     Friend WithEvents addCourseButton As Button
     Friend WithEvents programComboBox As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents backButton As Button
 End Class

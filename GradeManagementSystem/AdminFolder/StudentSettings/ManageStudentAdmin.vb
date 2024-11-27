@@ -34,8 +34,8 @@ Public Class ManageStudentAdmin
             While connector.reader.Read()
                 Dim programName As String = connector.reader("program_name").ToString()
                 If Not String.IsNullOrEmpty(programName) Then
-                        addStudentForm.programComboBox.Items.Add(programName)
-                    End If
+                    addStudentForm.programComboBox.Items.Add(programName)
+                End If
             End While
             connector.connect.Close()
         Catch ex As MySqlException
@@ -123,4 +123,33 @@ Public Class ManageStudentAdmin
         End Try
     End Sub
 
+    Private Sub ManageStudentAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        makeASFChild()
+        makeMSFChild()
+    End Sub
+
+    Private Sub makeASFChild()
+        addStudentForm.TopLevel = False
+        addStudentForm.Parent = Me
+        CenterASF()
+        addStudentForm.BringToFront()
+    End Sub
+
+    Private Sub CenterASF()
+        Dim x As Integer = (Me.ClientSize.Width - addStudentForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - addStudentForm.Height) \ 2
+        addStudentForm.Location = New Point(x, y)
+    End Sub
+    Private Sub makeMSFChild()
+        modifyStudentForm.TopLevel = False
+        modifyStudentForm.Parent = Me
+        CenterMSF()
+        modifyStudentForm.BringToFront()
+    End Sub
+
+    Private Sub CenterMSF()
+        Dim x As Integer = (Me.ClientSize.Width - modifyStudentForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - modifyStudentForm.Height) \ 2
+        modifyStudentForm.Location = New Point(x, y)
+    End Sub
 End Class

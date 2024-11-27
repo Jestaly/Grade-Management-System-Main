@@ -31,12 +31,13 @@ Partial Class OfficialModifyProgramForm
         programIDTextBox = New MaskedTextBox()
         sectionBox = New DomainUpDown()
         Label4 = New Label()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(31, 52)
+        Label1.Location = New Point(27, 7)
         Label1.Name = "Label1"
         Label1.Size = New Size(85, 20)
         Label1.TabIndex = 0
@@ -45,7 +46,7 @@ Partial Class OfficialModifyProgramForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(14, 151)
+        Label2.Location = New Point(2, 36)
         Label2.Name = "Label2"
         Label2.Size = New Size(110, 20)
         Label2.TabIndex = 1
@@ -54,7 +55,7 @@ Partial Class OfficialModifyProgramForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(305, 151)
+        Label3.Location = New Point(26, 69)
         Label3.Name = "Label3"
         Label3.Size = New Size(86, 20)
         Label3.TabIndex = 2
@@ -62,7 +63,7 @@ Partial Class OfficialModifyProgramForm
         ' 
         ' modifyButton
         ' 
-        modifyButton.Location = New Point(31, 234)
+        modifyButton.Location = New Point(26, 132)
         modifyButton.Name = "modifyButton"
         modifyButton.Size = New Size(128, 29)
         modifyButton.TabIndex = 3
@@ -71,14 +72,14 @@ Partial Class OfficialModifyProgramForm
         ' 
         ' yearAddedTextBox
         ' 
-        yearAddedTextBox.Location = New Point(397, 148)
+        yearAddedTextBox.Location = New Point(118, 66)
         yearAddedTextBox.Name = "yearAddedTextBox"
         yearAddedTextBox.Size = New Size(125, 27)
         yearAddedTextBox.TabIndex = 4
         ' 
         ' programnameTextBox
         ' 
-        programnameTextBox.Location = New Point(130, 148)
+        programnameTextBox.Location = New Point(118, 33)
         programnameTextBox.Name = "programnameTextBox"
         programnameTextBox.Size = New Size(169, 27)
         programnameTextBox.TabIndex = 5
@@ -86,7 +87,7 @@ Partial Class OfficialModifyProgramForm
         ' programIDTextBox
         ' 
         programIDTextBox.Enabled = False
-        programIDTextBox.Location = New Point(122, 49)
+        programIDTextBox.Location = New Point(118, 4)
         programIDTextBox.Mask = "L-000"
         programIDTextBox.Name = "programIDTextBox"
         programIDTextBox.PromptChar = "X"c
@@ -106,7 +107,7 @@ Partial Class OfficialModifyProgramForm
         sectionBox.Items.Add("8")
         sectionBox.Items.Add("9")
         sectionBox.Items.Add("10")
-        sectionBox.Location = New Point(130, 190)
+        sectionBox.Location = New Point(118, 99)
         sectionBox.Name = "sectionBox"
         sectionBox.ReadOnly = True
         sectionBox.Size = New Size(76, 27)
@@ -116,17 +117,28 @@ Partial Class OfficialModifyProgramForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(60, 193)
+        Label4.Location = New Point(48, 102)
         Label4.Name = "Label4"
         Label4.Size = New Size(64, 20)
         Label4.TabIndex = 11
         Label4.Text = "Sections"
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(238, 127)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 18
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' OfficialModifyProgramForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(617, 371)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(353, 168)
+        Controls.Add(backButton)
         Controls.Add(sectionBox)
         Controls.Add(Label4)
         Controls.Add(programIDTextBox)
@@ -136,6 +148,7 @@ Partial Class OfficialModifyProgramForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyProgramForm"
         Text = "OfficialModifyProgramForm"
         ResumeLayout(False)
@@ -151,4 +164,5 @@ Partial Class OfficialModifyProgramForm
     Friend WithEvents programIDTextBox As MaskedTextBox
     Friend WithEvents sectionBox As DomainUpDown
     Friend WithEvents Label4 As Label
+    Friend WithEvents backButton As Button
 End Class

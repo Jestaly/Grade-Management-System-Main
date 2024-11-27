@@ -47,4 +47,33 @@ Public Class CourseSectionForm
     Private Sub modifyCourseButton_Click(sender As Object, e As EventArgs) Handles modifyCourseButton.Click
         modifyCourseForm.Visible = True
     End Sub
+
+    Private Sub CourseSectionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        makeACFChild()
+        makeMCFChild()
+    End Sub
+    Private Sub makeACFChild()
+        addCourseForm.TopLevel = False
+        addCourseForm.Parent = Me
+        CenterACF()
+        addCourseForm.BringToFront()
+    End Sub
+
+    Private Sub CenterACF()
+        Dim x As Integer = (Me.ClientSize.Width - addCourseForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - addCourseForm.Height) \ 2
+        addCourseForm.Location = New Point(x, y)
+    End Sub
+    Private Sub makeMCFChild()
+        modifyCourseForm.TopLevel = False
+        modifyCourseForm.Parent = Me
+        CenterMCF()
+        modifyCourseForm.BringToFront()
+    End Sub
+
+    Private Sub CenterMCF()
+        Dim x As Integer = (Me.ClientSize.Width - modifyCourseForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - modifyCourseForm.Height) \ 2
+        modifyCourseForm.Location = New Point(x, y)
+    End Sub
 End Class

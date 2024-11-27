@@ -25,13 +25,14 @@ Partial Class ModifyCourseForm
         courseIDTextBox = New MaskedTextBox()
         searchButton = New Button()
         Label1 = New Label()
+        backButton = New Button()
         SuspendLayout()
         ' 
         ' courseIDTextBox
         ' 
         courseIDTextBox.AsciiOnly = True
         courseIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        courseIDTextBox.Location = New Point(173, 181)
+        courseIDTextBox.Location = New Point(81, 84)
         courseIDTextBox.Mask = "L-000"
         courseIDTextBox.Name = "courseIDTextBox"
         courseIDTextBox.PromptChar = "X"c
@@ -40,7 +41,7 @@ Partial Class ModifyCourseForm
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(197, 225)
+        searchButton.Location = New Point(114, 128)
         searchButton.Name = "searchButton"
         searchButton.Size = New Size(130, 45)
         searchButton.TabIndex = 5
@@ -51,20 +52,32 @@ Partial Class ModifyCourseForm
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(197, 135)
+        Label1.Location = New Point(105, 38)
         Label1.Name = "Label1"
         Label1.Size = New Size(112, 31)
         Label1.TabIndex = 4
         Label1.Text = "Course ID"
         ' 
+        ' backButton
+        ' 
+        backButton.Location = New Point(228, 12)
+        backButton.Name = "backButton"
+        backButton.Size = New Size(94, 29)
+        backButton.TabIndex = 18
+        backButton.Text = "Back"
+        backButton.UseVisualStyleBackColor = True
+        ' 
         ' ModifyCourseForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(560, 409)
+        BackColor = SystemColors.AppWorkspace
+        ClientSize = New Size(353, 197)
+        Controls.Add(backButton)
         Controls.Add(courseIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "ModifyCourseForm"
         Text = "ModifyCourseForm"
         ResumeLayout(False)
@@ -74,4 +87,5 @@ Partial Class ModifyCourseForm
     Friend WithEvents courseIDTextBox As MaskedTextBox
     Friend WithEvents searchButton As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents backButton As Button
 End Class

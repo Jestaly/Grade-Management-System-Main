@@ -58,6 +58,8 @@ Public Class ModifyStudentForm
             Next
             connector.connect.Close()
             getStudentData(rowIndex)
+            Me.Visible = False
+            makeOMSFChild()
             officialModifyStudentForm.Visible = True
         Catch ex As MySqlException
             connector.connect.Close()
@@ -140,4 +142,19 @@ Public Class ModifyStudentForm
         Return False
     End Function
 
+    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+        Me.Visible = False
+    End Sub
+    Private Sub makeOMSFChild()
+        officialModifyStudentForm.TopLevel = False
+        officialModifyStudentForm.Parent = Me.Parent
+        CenterOMSF()
+        officialModifyStudentForm.BringToFront()
+    End Sub
+
+    Private Sub CenterOMSF()
+        Dim x As Integer = (Me.Parent.ClientSize.Width - officialModifyStudentForm.Width) \ 2
+        Dim y As Integer = (Me.Parent.ClientSize.Height - officialModifyStudentForm.Height) \ 2
+        officialModifyStudentForm.Location = New Point(x, y)
+    End Sub
 End Class
