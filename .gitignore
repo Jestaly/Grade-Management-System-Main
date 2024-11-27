@@ -367,6 +367,5 @@ bin/Debug/net8.0-windows/
 
 Properties/launchSettings.json
 
-*.vbproj
 /GradeManagementSystem/My Project/launchSettings.json
-/GradeManagementSystem/GradeManagementSystem.vbproj
+
