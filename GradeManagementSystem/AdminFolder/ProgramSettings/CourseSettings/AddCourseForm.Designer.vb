@@ -29,8 +29,6 @@ Partial Class AddCourseForm
         unitTextBox = New TextBox()
         Button2 = New Button()
         addCourseButton = New Button()
-        programComboBox = New ComboBox()
-        Label1 = New Label()
         backButton = New Button()
         SuspendLayout()
         ' 
@@ -77,7 +75,7 @@ Partial Class AddCourseForm
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(154, 153)
+        Button2.Location = New Point(158, 139)
         Button2.Name = "Button2"
         Button2.Size = New Size(109, 29)
         Button2.TabIndex = 9
@@ -86,29 +84,12 @@ Partial Class AddCourseForm
         ' 
         ' addCourseButton
         ' 
-        addCourseButton.Location = New Point(39, 153)
+        addCourseButton.Location = New Point(43, 139)
         addCourseButton.Name = "addCourseButton"
         addCourseButton.Size = New Size(109, 29)
         addCourseButton.TabIndex = 8
         addCourseButton.Text = "Add Course"
         addCourseButton.UseVisualStyleBackColor = True
-        ' 
-        ' programComboBox
-        ' 
-        programComboBox.FormattingEnabled = True
-        programComboBox.Location = New Point(121, 119)
-        programComboBox.Name = "programComboBox"
-        programComboBox.Size = New Size(172, 28)
-        programComboBox.TabIndex = 15
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(48, 122)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(66, 20)
-        Label1.TabIndex = 16
-        Label1.Text = "Program"
         ' 
         ' backButton
         ' 
@@ -126,8 +107,6 @@ Partial Class AddCourseForm
         BackColor = SystemColors.AppWorkspace
         ClientSize = New Size(353, 197)
         Controls.Add(backButton)
-        Controls.Add(Label1)
-        Controls.Add(programComboBox)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(courseIDLabel)
@@ -149,7 +128,5 @@ Partial Class AddCourseForm
     Friend WithEvents unitTextBox As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents addCourseButton As Button
-    Friend WithEvents programComboBox As ComboBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents backButton As Button
 End Class

@@ -76,4 +76,21 @@ Public Class CourseSectionForm
         Dim y As Integer = (Me.ClientSize.Height - modifyCourseForm.Height) \ 2
         modifyCourseForm.Location = New Point(x, y)
     End Sub
+
+    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+        Try
+            connector.dataTable.Clear()
+            connector.connect.Open()
+            connector.query = "SELECT * FROM course;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
 End Class

@@ -29,4 +29,7 @@
         Hide()
     End Sub
 
+    Private Sub logoutButton_Click(sender As Object, e As EventArgs) Handles logoutButton.Click
+        End
+    End Sub
 End Class

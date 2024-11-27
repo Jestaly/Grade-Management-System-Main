@@ -22,34 +22,16 @@ Partial Class OfficialModifyCourseForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        programComboBox = New ComboBox()
         Label3 = New Label()
         Label2 = New Label()
-        courseIDLabel = New Label()
         courseNameTextBox = New TextBox()
         unitTextBox = New TextBox()
         Button2 = New Button()
         modifyCourseButton = New Button()
         backButton = New Button()
+        courseIDTextBox = New MaskedTextBox()
+        Label1 = New Label()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(41, 137)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(66, 20)
-        Label1.TabIndex = 34
-        Label1.Text = "Program"
-        ' 
-        ' programComboBox
-        ' 
-        programComboBox.FormattingEnabled = True
-        programComboBox.Location = New Point(114, 134)
-        programComboBox.Name = "programComboBox"
-        programComboBox.Size = New Size(172, 28)
-        programComboBox.TabIndex = 33
         ' 
         ' Label3
         ' 
@@ -68,15 +50,6 @@ Partial Class OfficialModifyCourseForm
         Label2.Size = New Size(98, 20)
         Label2.TabIndex = 31
         Label2.Text = "Course Name"
-        ' 
-        ' courseIDLabel
-        ' 
-        courseIDLabel.AutoSize = True
-        courseIDLabel.Location = New Point(60, 29)
-        courseIDLabel.Name = "courseIDLabel"
-        courseIDLabel.Size = New Size(48, 20)
-        courseIDLabel.TabIndex = 30
-        courseIDLabel.Text = "C-000"
         ' 
         ' courseNameTextBox
         ' 
@@ -112,12 +85,31 @@ Partial Class OfficialModifyCourseForm
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(232, 12)
+        backButton.Location = New Point(245, 12)
         backButton.Name = "backButton"
         backButton.Size = New Size(94, 29)
         backButton.TabIndex = 35
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
+        ' 
+        ' courseIDTextBox
+        ' 
+        courseIDTextBox.Enabled = False
+        courseIDTextBox.Location = New Point(114, 35)
+        courseIDTextBox.Mask = "L-000"
+        courseIDTextBox.Name = "courseIDTextBox"
+        courseIDTextBox.PromptChar = "X"c
+        courseIDTextBox.Size = New Size(107, 27)
+        courseIDTextBox.TabIndex = 37
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(23, 38)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(73, 20)
+        Label1.TabIndex = 36
+        Label1.Text = "Course ID"
         ' 
         ' OfficialModifyCourseForm
         ' 
@@ -125,12 +117,11 @@ Partial Class OfficialModifyCourseForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
         ClientSize = New Size(353, 221)
-        Controls.Add(backButton)
+        Controls.Add(courseIDTextBox)
         Controls.Add(Label1)
-        Controls.Add(programComboBox)
+        Controls.Add(backButton)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(courseIDLabel)
         Controls.Add(courseNameTextBox)
         Controls.Add(unitTextBox)
         Controls.Add(Button2)
@@ -141,15 +132,13 @@ Partial Class OfficialModifyCourseForm
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents programComboBox As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents courseIDLabel As Label
     Friend WithEvents courseNameTextBox As TextBox
     Friend WithEvents unitTextBox As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents modifyCourseButton As Button
     Friend WithEvents backButton As Button
+    Friend WithEvents courseIDTextBox As MaskedTextBox
+    Friend WithEvents Label1 As Label
 End Class

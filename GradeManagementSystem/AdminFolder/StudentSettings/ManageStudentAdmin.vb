@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Security.Permissions
+Imports MySql.Data.MySqlClient
 
 Public Class ManageStudentAdmin
     Private addStudentForm As New AddStudentAccount
@@ -38,7 +39,9 @@ Public Class ManageStudentAdmin
                 End If
             End While
             connector.connect.Close()
+            connector.reader.Close()
         Catch ex As MySqlException
+            connector.reader.Close()
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
