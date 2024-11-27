@@ -46,7 +46,29 @@ Public Class ManageProgramAdmin
             MessageBox.Show("Database Error")
         End Try
         addProgramForm.programIDLabel.Text = "P" & "-" & getZeros(pCount) & (pCount + 1)
+        loadDepartment()
         addProgramForm.Visible = True
+    End Sub
+
+    Private Sub loadDepartment()
+        Try
+            addProgramForm.departmentComboBox.Items.Clear()
+            connector.connect.Open()
+            connector.query = "SELECT dept_name FROM department;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader()
+            While connector.reader.Read()
+                Dim departmentName As String = connector.reader("dept_name").ToString()
+                If Not String.IsNullOrEmpty(departmentName) Then
+                    addProgramForm.departmentComboBox.Items.Add(departmentName)
+                End If
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
     End Sub
 
     Private Function getZeros(pCount As Integer) As String

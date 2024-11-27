@@ -144,6 +144,7 @@ Partial Class AddProgramForm
         ' 
         ' departmentComboBox
         ' 
+        departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         departmentComboBox.FormattingEnabled = True
         departmentComboBox.Location = New Point(141, 109)
         departmentComboBox.Name = "departmentComboBox"

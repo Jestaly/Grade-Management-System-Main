@@ -5,7 +5,7 @@ Public Class AddProgramForm
     Private Sub addProgramButton_Click(sender As Object, e As EventArgs) Handles addProgramButton.Click
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO program VALUES ('" & getProgramID() & "','" & programNameTextBox.Text & "','" & dateAddedTextBox.Text & "'," & sectionBox.Text & ");"
+            connector.query = "INSERT INTO program VALUES ('" & getProgramID() & "','" & programNameTextBox.Text & "','" & dateAddedTextBox.Text & "'," & sectionBox.Text & ", '" & getDepartmentID() & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
@@ -22,6 +22,29 @@ Public Class AddProgramForm
             MessageBox.Show("Database Error")
         End Try
     End Sub
+
+    Private Function getDepartmentID() As String
+        Dim selectedDept As String = departmentComboBox.Text
+        Dim deptID As String = ""
+        Try
+            connector.query = "SELECT * FROM department;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If connector.reader("dept_name").ToString IsNot Nothing And connector.reader("dept_name").ToString.Equals(selectedDept) Then
+                    deptID = connector.reader("dept_id").ToString
+                    connector.reader.Close()
+                    Return deptID
+                End If
+            End While
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return deptID
+    End Function
+
     Private Function getProgramID() As String
         Dim programID = programIDLabel.Text.Replace("-", "")
         Return programID
