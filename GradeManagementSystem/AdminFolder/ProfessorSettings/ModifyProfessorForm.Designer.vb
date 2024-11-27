@@ -78,6 +78,7 @@ Partial Class ModifyProfessorForm
         Controls.Add(professorIDLabel)
         FormBorderStyle = FormBorderStyle.None
         Name = "ModifyProfessorForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "ModifyProfessorForm"
         ResumeLayout(False)
         PerformLayout()

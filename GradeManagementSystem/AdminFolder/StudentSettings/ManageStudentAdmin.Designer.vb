@@ -97,6 +97,7 @@ Partial Class ManageStudentAdmin
         Controls.Add(addStudent)
         Controls.Add(searchStudentField)
         Name = "ManageStudentAdmin"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "  "
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

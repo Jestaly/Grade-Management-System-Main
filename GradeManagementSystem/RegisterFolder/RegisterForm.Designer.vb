@@ -146,6 +146,7 @@ Partial Class RegisterForm
         Controls.Add(passwordTextBoxRegister)
         Controls.Add(usernameTextBoxRegister)
         Name = "RegisterForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Register"
         ResumeLayout(False)
         PerformLayout()

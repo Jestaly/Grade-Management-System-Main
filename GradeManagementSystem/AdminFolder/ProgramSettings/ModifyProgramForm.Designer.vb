@@ -79,6 +79,7 @@ Partial Class ModifyProgramForm
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
         Name = "ModifyProgramForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "ModifyProgramForm"
         ResumeLayout(False)
         PerformLayout()

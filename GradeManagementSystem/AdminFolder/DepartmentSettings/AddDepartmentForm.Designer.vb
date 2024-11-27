@@ -116,7 +116,7 @@ Partial Class AddDepartmentForm
         Controls.Add(addDepartmentButton)
         FormBorderStyle = FormBorderStyle.None
         Name = "AddDepartmentForm"
-        StartPosition = FormStartPosition.CenterScreen
+        StartPosition = FormStartPosition.CenterParent
         Text = "AddDepartmentForm"
         ResumeLayout(False)
         PerformLayout()

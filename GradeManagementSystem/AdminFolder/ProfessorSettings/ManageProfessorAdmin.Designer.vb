@@ -96,6 +96,7 @@ Partial Class ManageProfessorAdmin
         Controls.Add(searchButton)
         Controls.Add(refreshButton)
         Name = "ManageProfessorAdmin"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ManageProfessorAdmin"
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

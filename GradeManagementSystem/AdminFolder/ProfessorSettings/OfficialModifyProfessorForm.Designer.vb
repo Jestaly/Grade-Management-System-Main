@@ -168,6 +168,7 @@ Partial Class OfficialModifyProfessorForm
         Controls.Add(profIDTextBox)
         FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyProfessorForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "OfficialModifyProfessorForm"
         ResumeLayout(False)
         PerformLayout()

@@ -133,6 +133,7 @@ Partial Class LoginForm
         Controls.Add(passwordLabel)
         Controls.Add(passwordLogin)
         Name = "LoginForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Login"
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

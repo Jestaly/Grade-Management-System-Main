@@ -14,7 +14,7 @@ Public Class ManageProgramAdmin
         Try
             connector.dataTable.Clear()
             connector.connect.Open()
-            connector.query = "SELECT * FROM program;"
+            connector.query = "SELECT program.program_id AS ID,program.program_name AS Program,department.dept_name AS Department,program.sections AS Sections,program.year_added AS 'Date created' FROM program LEFT JOIN department ON program.dept_id = department.dept_id;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command

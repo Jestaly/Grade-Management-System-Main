@@ -149,6 +149,7 @@ Partial Class AddProgramForm
         Controls.Add(addProgramButton)
         FormBorderStyle = FormBorderStyle.None
         Name = "AddProgramForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "AddProgramForm"
         ResumeLayout(False)
         PerformLayout()

@@ -107,6 +107,7 @@ Partial Class AdminForm
         Controls.Add(manageStudentButton)
         Controls.Add(dashboardButton)
         Name = "AdminForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "AdminForm"
         ResumeLayout(False)
     End Sub

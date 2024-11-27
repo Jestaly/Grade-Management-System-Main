@@ -150,6 +150,7 @@ Partial Class OfficialModifyProgramForm
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyProgramForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "OfficialModifyProgramForm"
         ResumeLayout(False)
         PerformLayout()

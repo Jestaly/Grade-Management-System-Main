@@ -107,6 +107,7 @@ Partial Class CourseSectionForm
         Controls.Add(searchCourseField)
         Controls.Add(backButton)
         Name = "CourseSectionForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "CourseSectionForm"
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

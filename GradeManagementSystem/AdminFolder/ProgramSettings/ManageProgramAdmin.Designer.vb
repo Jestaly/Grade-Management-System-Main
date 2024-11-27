@@ -107,6 +107,7 @@ Partial Class ManageProgramAdmin
         Controls.Add(courseSectionButton)
         Controls.Add(searchProgramField)
         Name = "ManageProgramAdmin"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ManageProgramAdmin"
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

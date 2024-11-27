@@ -252,6 +252,7 @@ Partial Class OfficialModifyStudentForm
         Controls.Add(firstnameTextBox)
         FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyStudentForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "OfficialModifyStudentForm"
         ResumeLayout(False)
         PerformLayout()

@@ -157,6 +157,7 @@ Partial Class AddProfessorAccount
         Controls.Add(lastnameTextBox)
         FormBorderStyle = FormBorderStyle.None
         Name = "AddProfessorAccount"
+        StartPosition = FormStartPosition.CenterParent
         Text = "AddProfessorAccount"
         ResumeLayout(False)
         PerformLayout()

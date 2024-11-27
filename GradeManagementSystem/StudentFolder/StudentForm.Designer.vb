@@ -42,6 +42,7 @@ Partial Class StudentForm
         ClientSize = New Size(800, 450)
         Controls.Add(Label1)
         Name = "StudentForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "StudentForm"
         ResumeLayout(False)
         PerformLayout()

@@ -103,6 +103,7 @@ Partial Class OfficialModifyDepartmentForm
         ' 
         ' deptIDTextBox
         ' 
+        deptIDTextBox.Enabled = False
         deptIDTextBox.Location = New Point(101, 5)
         deptIDTextBox.Mask = "L-000"
         deptIDTextBox.Name = "deptIDTextBox"
@@ -125,9 +126,9 @@ Partial Class OfficialModifyDepartmentForm
         Controls.Add(departmentHeadTextBox)
         Controls.Add(clearButton)
         Controls.Add(modifyDepartmentButton)
-        Enabled = False
         FormBorderStyle = FormBorderStyle.None
         Name = "OfficialModifyDepartmentForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "OfficialModifyDepartmentForm"
         ResumeLayout(False)
         PerformLayout()

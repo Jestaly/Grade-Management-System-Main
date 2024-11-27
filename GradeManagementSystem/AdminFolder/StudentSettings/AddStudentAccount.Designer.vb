@@ -254,6 +254,7 @@ Partial Class AddStudentAccount
         Controls.Add(firstnameTextBox)
         FormBorderStyle = FormBorderStyle.None
         Name = "AddStudentAccount"
+        StartPosition = FormStartPosition.CenterParent
         Text = "AddStudentForm"
         ResumeLayout(False)
         PerformLayout()

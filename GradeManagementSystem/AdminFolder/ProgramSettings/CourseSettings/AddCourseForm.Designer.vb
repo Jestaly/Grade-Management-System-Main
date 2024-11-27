@@ -116,6 +116,7 @@ Partial Class AddCourseForm
         Controls.Add(addCourseButton)
         FormBorderStyle = FormBorderStyle.None
         Name = "AddCourseForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "AddCourseForm"
         ResumeLayout(False)
         PerformLayout()

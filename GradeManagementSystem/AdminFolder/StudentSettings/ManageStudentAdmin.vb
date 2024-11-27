@@ -27,7 +27,6 @@ Public Class ManageStudentAdmin
     Private Sub loadProgram()
         Try
             connector.connect.Open()
-            connector.dataTable.Clear()
             connector.query = "SELECT program_name FROM program;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query

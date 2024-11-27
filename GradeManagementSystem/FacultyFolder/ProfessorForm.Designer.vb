@@ -42,6 +42,7 @@ Partial Class ProfessorForm
         ClientSize = New Size(800, 450)
         Controls.Add(Label1)
         Name = "ProfessorForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ProfessorForm"
         ResumeLayout(False)
         PerformLayout()
