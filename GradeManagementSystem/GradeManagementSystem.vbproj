@@ -19,7 +19,7 @@
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Transitions">
-      <HintPath>..\..\..\..\..\Downloads\Transitions.dll</HintPath>
+      <HintPath>C:\Users\acer\Downloads\transition - do not delete\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -44,10 +44,6 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="AdminFolder\AllocationSettings\" />
   </ItemGroup>
 
   <ItemGroup>
