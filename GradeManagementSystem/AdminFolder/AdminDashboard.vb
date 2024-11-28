@@ -15,7 +15,7 @@ Public Class AdminDashboard
         studbox.Show()
         studbox2.Hide()
         profbox2.Hide()
-        
+
         profbox.Show()
         originalSize = Panel1.Size
         expandedSize = New Size(originalSize.Width + 210, originalSize.Height + 210)
@@ -52,7 +52,7 @@ Public Class AdminDashboard
             expand = True
         End If
     End Sub
-    Private Sub Button3_MouseEnter(sender As Object, e As EventArgs) Handles Button3.MouseEnter
+    Private Sub Button3_MouseEnter(sender As Object, e As EventArgs) Handles Button7.MouseEnter
         If Not expand Then
             Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
@@ -87,7 +87,7 @@ Public Class AdminDashboard
             expand = False
         End If
     End Sub
-    Private Sub Button3_MouseLeave(sender As Object, e As EventArgs) Handles Button3.MouseLeave
+    Private Sub Button3_MouseLeave(sender As Object, e As EventArgs) Handles Button7.MouseLeave
         If expand Then
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(500))
@@ -124,7 +124,7 @@ Public Class AdminDashboard
         End If
     End Sub
 
-    Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter
+    Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -143,7 +143,7 @@ Public Class AdminDashboard
         End If
     End Sub
 
-    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs)
         Application.Exit()
 
     End Sub
@@ -176,7 +176,7 @@ Public Class AdminDashboard
 
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -188,29 +188,47 @@ Public Class AdminDashboard
 
     End Sub
 
-    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles studbox.Click
+    Private Sub PictureBox11_Click(sender As Object, e As EventArgs)
         Studets.Show()
     End Sub
 
-    Private Sub PictureBox11_MouseEnter(sender As Object, e As EventArgs) Handles studbox.MouseEnter
-        studbox.Hide()
-        studbox2.Show()
+    Private Sub PictureBox11_MouseEnter(sender As Object, e As EventArgs)
+        studbox.Hide
+        studbox2.Show
 
     End Sub
 
-    Private Sub PictureBox11_MouseLeave(sender As Object, e As EventArgs) Handles studbox.MouseLeave
-        studbox.Show()
-        studbox2.Hide()
+    Private Sub PictureBox11_MouseLeave(sender As Object, e As EventArgs)
+        studbox.Show
+        studbox2.Hide
     End Sub
 
-    Private Sub PictureBox12_MouseEnter(sender As Object, e As EventArgs) Handles profbox.MouseEnter
-        profbox2.Show()
-        profbox.Hide()
+    Private Sub PictureBox12_MouseEnter(sender As Object, e As EventArgs)
+        profbox2.Show
+        profbox.Hide
     End Sub
-    Private Sub PictureBox12_MouseLeave(sender As Object, e As EventArgs) Handles profbox.MouseLeave
-        studbox.Hide()
-        studbox2.Show()
+    Private Sub PictureBox12_MouseLeave(sender As Object, e As EventArgs)
+        studbox.Hide
+        studbox2.Show
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
+    End Sub
+
+    Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
+
+    End Sub
+
+    Private Sub Panel3_Paint_1(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+    End Sub
 End Class
