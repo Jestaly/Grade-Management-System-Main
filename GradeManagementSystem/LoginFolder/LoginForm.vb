@@ -15,7 +15,7 @@ Public Class LoginForm
         Dim pass As String = passwordLogin.Text
         Return pass
     End Function
-    Private Sub loginButton_Click(sender As Object, e As EventArgs) Handles loginButton.Click
+    Private Sub enterbttn_Click(sender As Object, e As EventArgs) Handles enterbttn.Click
         Try
             connector.connect.Open()
             connector.query = "SELECT student.id AS id, student.password AS password FROM student UNION SELECT professor.id AS id, professor.password AS password FROM professor UNION SELECT admin.id AS id, admin.password AS password FROM admin;"
@@ -49,9 +49,19 @@ Public Class LoginForm
         End Try
         MessageBox.Show("Wrong ID or password.")
     End Sub
-
     Private Sub registerAdmin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles registerAdmin.LinkClicked
         Me.Visible = False
         registerForm.Visible = True
     End Sub
+
+    Private Sub forgotpasscodeportal_Click(sender As Object, e As EventArgs) Handles forgotpasscodeportal.Click
+        Forgetpasscodeportal.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub exitbttn_Click(sender As Object, e As EventArgs) Handles exitbttn.Click
+        Application.Exit()
+    End Sub
+
+
 End Class
