@@ -45,6 +45,7 @@ Public Class OfficialModifyProgramForm
         End Try
         Me.Visible = False
     End Sub
+
     Private Function trimmedProgID() As String
         Dim progID As String = programIDTextBox.Text
         progID = progID.Replace("-", "")

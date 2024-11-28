@@ -34,6 +34,8 @@ Partial Class AddProfessorAccount
         Label4 = New Label()
         professorIDLabel = New Label()
         backButton = New Button()
+        departmentComboBox = New ComboBox()
+        Label5 = New Label()
         SuspendLayout()
         ' 
         ' lastnameTextBox
@@ -137,12 +139,32 @@ Partial Class AddProfessorAccount
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
         ' 
+        ' departmentComboBox
+        ' 
+        departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+        departmentComboBox.FormattingEnabled = True
+        departmentComboBox.Location = New Point(152, 134)
+        departmentComboBox.Name = "departmentComboBox"
+        departmentComboBox.Size = New Size(125, 28)
+        departmentComboBox.TabIndex = 21
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(152, 112)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(89, 20)
+        Label5.TabIndex = 20
+        Label5.Text = "Department"
+        ' 
         ' AddProfessorAccount
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
         ClientSize = New Size(311, 301)
+        Controls.Add(departmentComboBox)
+        Controls.Add(Label5)
         Controls.Add(backButton)
         Controls.Add(professorIDLabel)
         Controls.Add(Label4)
@@ -175,4 +197,6 @@ Partial Class AddProfessorAccount
     Friend WithEvents Label4 As Label
     Friend WithEvents professorIDLabel As Label
     Friend WithEvents backButton As Button
+    Friend WithEvents departmentComboBox As ComboBox
+    Friend WithEvents Label5 As Label
 End Class
