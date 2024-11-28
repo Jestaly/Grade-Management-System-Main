@@ -5,17 +5,37 @@ Public Class ModifyProfessorForm
     Private officialModifyProfessorForm As New OfficialModifyProfessorForm
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
+        loadDepartment()
         If (professorExists()) Then
             Me.Visible = False
             makeOMPFFChild()
             officialModifyProfessorForm.Visible = True
         End If
     End Sub
-
+    Private Sub loadDepartment()
+        Try
+            OfficialModifyProgramForm.departmentComboBox.Items.Clear()
+            connector.connect.Open()
+            connector.query = "SELECT dept_name FROM department;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader()
+            While connector.reader.Read()
+                Dim departmentName As String = connector.reader("dept_name").ToString()
+                If Not String.IsNullOrEmpty(departmentName) Then
+                    officialModifyProfessorForm.departmentComboBox.Items.Add(departmentName)
+                End If
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
     Private Function professorExists() As Boolean
         Try
             connector.connect.Open()
-            connector.query = "SELECT * FROM professor;"
+            connector.query = "SELECT professor.id,professor.lname,professor.fname,professor.mname,department.dept_name AS department,professor.email FROM professor LEFT JOIN department ON professor.dept_id = department.dept_id;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
@@ -25,6 +45,7 @@ Public Class ModifyProfessorForm
                     officialModifyProfessorForm.lastnameTextBox.Text = connector.reader("lname").ToString
                     officialModifyProfessorForm.firstnameTextBox.Text = connector.reader("fname").ToString
                     officialModifyProfessorForm.middlenameTextBox.Text = connector.reader("mname").ToString
+                    officialModifyProfessorForm.departmentComboBox.Text = connector.reader("department").ToString
                     officialModifyProfessorForm.emailTextBox.Text = connector.reader("email").ToString
                     connector.connect.Close()
                     connector.reader.Close()

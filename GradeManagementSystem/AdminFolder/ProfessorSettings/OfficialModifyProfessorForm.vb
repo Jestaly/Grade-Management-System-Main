@@ -10,7 +10,7 @@ Public Class OfficialModifyProfessorForm
     Private Sub modifyButton_Click(sender As Object, e As EventArgs) Handles modifyButton.Click
         Try
             connector.connect.Open()
-            connector.query = "UPDATE professor SET lname = '" & lastnameTextBox.Text & "', fname = '" & firstnameTextBox.Text & "', mname = '" & middlenameTextBox.Text & "', email = '" & emailTextBox.Text & "' WHERE id = " & trimmedProfID() & ";"
+            connector.query = "UPDATE professor SET lname = '" & lastnameTextBox.Text & "', fname = '" & firstnameTextBox.Text & "', mname = '" & middlenameTextBox.Text & "', email = '" & emailTextBox.Text & "','" & getDepartmentID() & "' WHERE id = " & trimmedProfID() & ";"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
@@ -22,6 +22,27 @@ Public Class OfficialModifyProfessorForm
         End Try
         Me.Visible = False
     End Sub
+    Private Function getDepartmentID() As String
+        Dim selectedDept As String = departmentComboBox.Text
+        Dim deptID As String = ""
+        Try
+            connector.query = "SELECT * FROM department;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If connector.reader("dept_name").ToString IsNot Nothing And connector.reader("dept_name").ToString.Equals(selectedDept) Then
+                    deptID = connector.reader("dept_id").ToString
+                    connector.reader.Close()
+                    Return deptID
+                End If
+            End While
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return deptID
+    End Function
 
     Private Function trimmedProfID() As String
         Dim profID As String = profIDTextBox.Text
