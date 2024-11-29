@@ -39,16 +39,16 @@ Partial Class AdminDashboard
         studbtn = New Button()
         profbtn = New Button()
         NotifyIcon1 = New NotifyIcon(components)
-        PictureBox9 = New PictureBox()
-        profilemenu = New PictureBox()
+        tuldok = New PictureBox()
         Label2 = New Label()
         Adminleft = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         Panel1 = New Panel()
         nameleft = New Label()
-        profileleft = New PictureBox()
         PanelLeft = New Panel()
+        profileleft = New picture.CirclePicture()
         Panel3 = New Panel()
+        profmenu = New picture.CirclePicture()
         PictureBox11 = New PictureBox()
         DateTimePicker1 = New DateTimePicker()
         Label3 = New Label()
@@ -57,9 +57,7 @@ Partial Class AdminDashboard
         courseBox = New PictureBox()
         progBox = New PictureBox()
         profBox = New PictureBox()
-        profpic = New PictureBox()
         profname = New Label()
-        Label6 = New Label()
         Gerald2 = New gerald.Gerald()
         emailIcon = New PictureBox()
         callIcon = New PictureBox()
@@ -73,6 +71,17 @@ Partial Class AdminDashboard
         depBox = New PictureBox()
         adminBox = New PictureBox()
         OpenFileDialog2 = New OpenFileDialog()
+        Component12 = New Component1(components)
+        profpic = New picture.CirclePicture()
+        eklavu1 = New Label()
+        eklavutxt = New TextBox()
+        eklavutxt2 = New TextBox()
+        eklavu2 = New Label()
+        tuldoklikod = New gerald.Gerald()
+        tuldokharap = New gerald.Gerald()
+        actlog = New Label()
+        seemore = New Label()
+        dtg1 = New DataGridView()
         Panel2.SuspendLayout()
         CType(depIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(alloIcon, ComponentModel.ISupportInitialize).BeginInit()
@@ -81,21 +90,23 @@ Partial Class AdminDashboard
         CType(studIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(homeIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(profilemenu, ComponentModel.ISupportInitialize).BeginInit()
+        CType(tuldok, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
+        PanelLeft.SuspendLayout()
         CType(profileleft, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
+        CType(profmenu, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
         CType(studBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(courseBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(progBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(profBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(profpic, ComponentModel.ISupportInitialize).BeginInit()
         CType(emailIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(callIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(depBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(adminBox, ComponentModel.ISupportInitialize).BeginInit()
+        CType(profpic, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dtg1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel2
@@ -293,29 +304,17 @@ Partial Class AdminDashboard
         NotifyIcon1.Text = "NotifyIcon1"
         NotifyIcon1.Visible = True
         ' 
-        ' PictureBox9
+        ' tuldok
         ' 
-        PictureBox9.BackColor = Color.Transparent
-        PictureBox9.BackgroundImage = CType(resources.GetObject("PictureBox9.BackgroundImage"), Image)
-        PictureBox9.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox9.Location = New Point(1259, 3)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(61, 59)
-        PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox9.TabIndex = 44
-        PictureBox9.TabStop = False
-        ' 
-        ' profilemenu
-        ' 
-        profilemenu.BackColor = Color.Transparent
-        profilemenu.BackgroundImage = CType(resources.GetObject("profilemenu.BackgroundImage"), Image)
-        profilemenu.BackgroundImageLayout = ImageLayout.Zoom
-        profilemenu.Location = New Point(1331, 3)
-        profilemenu.Name = "profilemenu"
-        profilemenu.Size = New Size(64, 59)
-        profilemenu.SizeMode = PictureBoxSizeMode.Zoom
-        profilemenu.TabIndex = 42
-        profilemenu.TabStop = False
+        tuldok.BackColor = Color.Transparent
+        tuldok.BackgroundImage = CType(resources.GetObject("tuldok.BackgroundImage"), Image)
+        tuldok.BackgroundImageLayout = ImageLayout.Zoom
+        tuldok.Location = New Point(1259, 3)
+        tuldok.Name = "tuldok"
+        tuldok.Size = New Size(61, 59)
+        tuldok.SizeMode = PictureBoxSizeMode.Zoom
+        tuldok.TabIndex = 44
+        tuldok.TabStop = False
         ' 
         ' Label2
         ' 
@@ -350,7 +349,6 @@ Partial Class AdminDashboard
         Panel1.BackColor = Color.DarkGreen
         Panel1.Controls.Add(Adminleft)
         Panel1.Controls.Add(nameleft)
-        Panel1.Controls.Add(profileleft)
         Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(PanelLeft)
         Panel1.Dock = DockStyle.Left
@@ -371,37 +369,60 @@ Partial Class AdminDashboard
         nameleft.TabIndex = 12
         nameleft.Text = "User"
         ' 
-        ' profileleft
-        ' 
-        profileleft.BackColor = Color.Transparent
-        profileleft.BackgroundImage = CType(resources.GetObject("profileleft.BackgroundImage"), Image)
-        profileleft.BackgroundImageLayout = ImageLayout.Zoom
-        profileleft.Location = New Point(56, 32)
-        profileleft.Name = "profileleft"
-        profileleft.Size = New Size(101, 79)
-        profileleft.SizeMode = PictureBoxSizeMode.Zoom
-        profileleft.TabIndex = 46
-        profileleft.TabStop = False
-        ' 
         ' PanelLeft
         ' 
+        PanelLeft.Controls.Add(profileleft)
         PanelLeft.Location = New Point(5, 3)
         PanelLeft.Name = "PanelLeft"
         PanelLeft.Size = New Size(364, 125)
         PanelLeft.TabIndex = 47
         ' 
+        ' profileleft
+        ' 
+        profileleft.BackColor = Color.White
+        profileleft.BackgroundImageLayout = ImageLayout.Zoom
+        profileleft.BorderRadius = 60
+        profileleft.ForeColor = Color.Black
+        profileleft.GradientAngle = 90F
+        profileleft.GradientBottomColor = Color.Transparent
+        profileleft.GradientTopColor = Color.Transparent
+        profileleft.Image = CType(resources.GetObject("profileleft.Image"), Image)
+        profileleft.Location = New Point(62, 29)
+        profileleft.Name = "profileleft"
+        profileleft.Size = New Size(69, 74)
+        profileleft.SizeMode = PictureBoxSizeMode.StretchImage
+        profileleft.TabIndex = 79
+        profileleft.TabStop = False
+        ' 
         ' Panel3
         ' 
         Panel3.BackgroundImage = CType(resources.GetObject("Panel3.BackgroundImage"), Image)
         Panel3.BackgroundImageLayout = ImageLayout.Stretch
+        Panel3.Controls.Add(profmenu)
         Panel3.Controls.Add(PictureBox11)
-        Panel3.Controls.Add(PictureBox9)
-        Panel3.Controls.Add(profilemenu)
+        Panel3.Controls.Add(tuldok)
         Panel3.Location = New Point(0, -1)
         Panel3.Margin = New Padding(2, 3, 2, 3)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1439, 65)
         Panel3.TabIndex = 53
+        ' 
+        ' profmenu
+        ' 
+        profmenu.BackColor = Color.White
+        profmenu.BackgroundImageLayout = ImageLayout.Zoom
+        profmenu.BorderRadius = 60
+        profmenu.ForeColor = Color.Black
+        profmenu.GradientAngle = 90F
+        profmenu.GradientBottomColor = Color.Transparent
+        profmenu.GradientTopColor = Color.Transparent
+        profmenu.Image = CType(resources.GetObject("profmenu.Image"), Image)
+        profmenu.Location = New Point(1326, 4)
+        profmenu.Name = "profmenu"
+        profmenu.Size = New Size(51, 49)
+        profmenu.SizeMode = PictureBoxSizeMode.StretchImage
+        profmenu.TabIndex = 78
+        profmenu.TabStop = False
         ' 
         ' PictureBox11
         ' 
@@ -432,7 +453,7 @@ Partial Class AdminDashboard
         Label3.AutoSize = True
         Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(423, 653)
+        Label3.Location = New Point(588, 644)
         Label3.Name = "Label3"
         Label3.Size = New Size(456, 25)
         Label3.TabIndex = 55
@@ -486,41 +507,17 @@ Partial Class AdminDashboard
         profBox.TabIndex = 57
         profBox.TabStop = False
         ' 
-        ' profpic
-        ' 
-        profpic.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        profpic.BackgroundImageLayout = ImageLayout.Zoom
-        profpic.Image = CType(resources.GetObject("profpic.Image"), Image)
-        profpic.Location = New Point(1197, 74)
-        profpic.Name = "profpic"
-        profpic.Size = New Size(122, 115)
-        profpic.SizeMode = PictureBoxSizeMode.Zoom
-        profpic.TabIndex = 46
-        profpic.TabStop = False
-        ' 
         ' profname
         ' 
         profname.AutoSize = True
         profname.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         profname.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         profname.ForeColor = Color.Green
-        profname.Location = New Point(1152, 210)
+        profname.Location = New Point(1162, 207)
         profname.Name = "profname"
         profname.Size = New Size(212, 31)
         profname.TabIndex = 64
         profname.Text = "Mary Ynah N. Korea"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        Label6.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label6.ForeColor = Color.Green
-        Label6.Location = New Point(1716, 274)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(114, 23)
-        Label6.TabIndex = 65
-        Label6.Text = "Administrator"
         ' 
         ' Gerald2
         ' 
@@ -530,7 +527,7 @@ Partial Class AdminDashboard
         Gerald2.GradientAngle = 90F
         Gerald2.GradientBottomColor = Color.DarkSeaGreen
         Gerald2.GradientTopColor = Color.DarkSeaGreen
-        Gerald2.Location = New Point(1135, 264)
+        Gerald2.Location = New Point(1145, 261)
         Gerald2.Name = "Gerald2"
         Gerald2.Size = New Size(229, 111)
         Gerald2.TabIndex = 66
@@ -541,7 +538,7 @@ Partial Class AdminDashboard
         ' 
         emailIcon.BackColor = Color.DarkSeaGreen
         emailIcon.Image = CType(resources.GetObject("emailIcon.Image"), Image)
-        emailIcon.Location = New Point(1161, 286)
+        emailIcon.Location = New Point(1171, 283)
         emailIcon.Name = "emailIcon"
         emailIcon.Size = New Size(30, 33)
         emailIcon.SizeMode = PictureBoxSizeMode.StretchImage
@@ -552,7 +549,7 @@ Partial Class AdminDashboard
         ' 
         callIcon.BackColor = Color.DarkSeaGreen
         callIcon.Image = CType(resources.GetObject("callIcon.Image"), Image)
-        callIcon.Location = New Point(1161, 321)
+        callIcon.Location = New Point(1171, 318)
         callIcon.Name = "callIcon"
         callIcon.Size = New Size(30, 33)
         callIcon.SizeMode = PictureBoxSizeMode.StretchImage
@@ -565,7 +562,7 @@ Partial Class AdminDashboard
         boxname.BackColor = Color.DarkSeaGreen
         boxname.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         boxname.ForeColor = Color.DarkGreen
-        boxname.Location = New Point(1197, 290)
+        boxname.Location = New Point(1207, 287)
         boxname.Name = "boxname"
         boxname.Size = New Size(143, 23)
         boxname.TabIndex = 70
@@ -577,7 +574,7 @@ Partial Class AdminDashboard
         boxnum.BackColor = Color.DarkSeaGreen
         boxnum.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         boxnum.ForeColor = Color.DarkGreen
-        boxnum.Location = New Point(1197, 325)
+        boxnum.Location = New Point(1207, 322)
         boxnum.Name = "boxnum"
         boxnum.Size = New Size(109, 23)
         boxnum.TabIndex = 71
@@ -589,7 +586,7 @@ Partial Class AdminDashboard
         editInfo.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         editInfo.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         editInfo.ForeColor = Color.Green
-        editInfo.Location = New Point(1217, 434)
+        editInfo.Location = New Point(1227, 442)
         editInfo.Name = "editInfo"
         editInfo.Size = New Size(89, 28)
         editInfo.TabIndex = 72
@@ -601,7 +598,7 @@ Partial Class AdminDashboard
         secu.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         secu.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         secu.ForeColor = Color.Green
-        secu.Location = New Point(1184, 472)
+        secu.Location = New Point(1194, 469)
         secu.Name = "secu"
         secu.Size = New Size(164, 28)
         secu.TabIndex = 74
@@ -617,7 +614,8 @@ Partial Class AdminDashboard
         Gerald1.GradientAngle = 90F
         Gerald1.GradientBottomColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         Gerald1.GradientTopColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        Gerald1.Location = New Point(1119, 61)
+        Gerald1.Location = New Point(1129, 58)
+        Gerald1.MinimumSize = New Size(276, 463)
         Gerald1.Name = "Gerald1"
         Gerald1.Size = New Size(276, 463)
         Gerald1.TabIndex = 62
@@ -633,7 +631,8 @@ Partial Class AdminDashboard
         Gerald5.GradientAngle = 90F
         Gerald5.GradientBottomColor = Color.Green
         Gerald5.GradientTopColor = Color.Green
-        Gerald5.Location = New Point(1115, 58)
+        Gerald5.Location = New Point(1125, 55)
+        Gerald5.MinimumSize = New Size(283, 468)
         Gerald5.Name = "Gerald5"
         Gerald5.Size = New Size(283, 468)
         Gerald5.TabIndex = 75
@@ -646,7 +645,7 @@ Partial Class AdminDashboard
         proftitle.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         proftitle.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         proftitle.ForeColor = Color.Green
-        proftitle.Location = New Point(1197, 238)
+        proftitle.Location = New Point(1207, 235)
         proftitle.Name = "proftitle"
         proftitle.Size = New Size(114, 23)
         proftitle.TabIndex = 76
@@ -680,6 +679,120 @@ Partial Class AdminDashboard
         ' 
         OpenFileDialog2.FileName = "OpenFileDialog2"
         ' 
+        ' profpic
+        ' 
+        profpic.BackColor = Color.White
+        profpic.BackgroundImageLayout = ImageLayout.Zoom
+        profpic.BorderRadius = 60
+        profpic.ForeColor = Color.Black
+        profpic.GradientAngle = 90F
+        profpic.GradientBottomColor = Color.Transparent
+        profpic.GradientTopColor = Color.Transparent
+        profpic.Image = CType(resources.GetObject("profpic.Image"), Image)
+        profpic.Location = New Point(1207, 73)
+        profpic.Name = "profpic"
+        profpic.Size = New Size(119, 110)
+        profpic.SizeMode = PictureBoxSizeMode.StretchImage
+        profpic.TabIndex = 77
+        profpic.TabStop = False
+        ' 
+        ' eklavu1
+        ' 
+        eklavu1.AutoSize = True
+        eklavu1.ForeColor = Color.Green
+        eklavu1.Location = New Point(1166, 541)
+        eklavu1.Name = "eklavu1"
+        eklavu1.Size = New Size(68, 20)
+        eklavu1.TabIndex = 78
+        eklavu1.Text = "EKLAVU: "
+        ' 
+        ' eklavutxt
+        ' 
+        eklavutxt.Location = New Point(1239, 534)
+        eklavutxt.Name = "eklavutxt"
+        eklavutxt.Size = New Size(125, 27)
+        eklavutxt.TabIndex = 79
+        ' 
+        ' eklavutxt2
+        ' 
+        eklavutxt2.Location = New Point(1239, 567)
+        eklavutxt2.Name = "eklavutxt2"
+        eklavutxt2.Size = New Size(125, 27)
+        eklavutxt2.TabIndex = 81
+        ' 
+        ' eklavu2
+        ' 
+        eklavu2.AutoSize = True
+        eklavu2.ForeColor = Color.Green
+        eklavu2.Location = New Point(1166, 574)
+        eklavu2.Name = "eklavu2"
+        eklavu2.Size = New Size(68, 20)
+        eklavu2.TabIndex = 80
+        eklavu2.Text = "EKLAVU: "
+        ' 
+        ' tuldoklikod
+        ' 
+        tuldoklikod.BackColor = Color.White
+        tuldoklikod.BorderRadius = 60
+        tuldoklikod.ForeColor = Color.Black
+        tuldoklikod.GradientAngle = 90F
+        tuldoklikod.GradientBottomColor = Color.Green
+        tuldoklikod.GradientTopColor = Color.Green
+        tuldoklikod.Location = New Point(531, 55)
+        tuldoklikod.Name = "tuldoklikod"
+        tuldoklikod.Size = New Size(810, 511)
+        tuldoklikod.TabIndex = 82
+        tuldoklikod.Text = "Gerald3"
+        tuldoklikod.UseVisualStyleBackColor = False
+        ' 
+        ' tuldokharap
+        ' 
+        tuldokharap.BackColor = Color.White
+        tuldokharap.BorderRadius = 60
+        tuldokharap.ForeColor = Color.Black
+        tuldokharap.GradientAngle = 90F
+        tuldokharap.GradientBottomColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
+        tuldokharap.GradientTopColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
+        tuldokharap.Location = New Point(536, 58)
+        tuldokharap.Name = "tuldokharap"
+        tuldokharap.Size = New Size(800, 505)
+        tuldokharap.TabIndex = 83
+        tuldokharap.Text = "Gerald3"
+        tuldokharap.UseVisualStyleBackColor = False
+        ' 
+        ' actlog
+        ' 
+        actlog.AutoSize = True
+        actlog.BackColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
+        actlog.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        actlog.ForeColor = Color.DarkGreen
+        actlog.Location = New Point(580, 103)
+        actlog.Name = "actlog"
+        actlog.Size = New Size(163, 25)
+        actlog.TabIndex = 84
+        actlog.Text = "ACTIVITY LOG"
+        ' 
+        ' seemore
+        ' 
+        seemore.AutoSize = True
+        seemore.BackColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
+        seemore.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        seemore.ForeColor = Color.Green
+        seemore.Location = New Point(911, 519)
+        seemore.Name = "seemore"
+        seemore.Size = New Size(107, 25)
+        seemore.TabIndex = 85
+        seemore.Text = "Sese more"
+        ' 
+        ' dtg1
+        ' 
+        dtg1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dtg1.Location = New Point(580, 157)
+        dtg1.Name = "dtg1"
+        dtg1.RowHeadersWidth = 51
+        dtg1.Size = New Size(666, 334)
+        dtg1.TabIndex = 86
+        ' 
         ' AdminDashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -687,6 +800,16 @@ Partial Class AdminDashboard
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1437, 697)
+        Controls.Add(dtg1)
+        Controls.Add(seemore)
+        Controls.Add(actlog)
+        Controls.Add(tuldokharap)
+        Controls.Add(tuldoklikod)
+        Controls.Add(eklavutxt2)
+        Controls.Add(eklavu2)
+        Controls.Add(eklavutxt)
+        Controls.Add(eklavu1)
+        Controls.Add(profpic)
         Controls.Add(boxnum)
         Controls.Add(boxname)
         Controls.Add(callIcon)
@@ -694,12 +817,10 @@ Partial Class AdminDashboard
         Controls.Add(Gerald2)
         Controls.Add(proftitle)
         Controls.Add(secu)
-        Controls.Add(profpic)
         Controls.Add(editInfo)
         Controls.Add(profname)
         Controls.Add(Gerald1)
         Controls.Add(Gerald5)
-        Controls.Add(Label6)
         Controls.Add(Label3)
         Controls.Add(DateTimePicker1)
         Controls.Add(Panel1)
@@ -715,6 +836,7 @@ Partial Class AdminDashboard
         FormBorderStyle = FormBorderStyle.None
         MinimumSize = New Size(1437, 697)
         Name = "AdminDashboard"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "AdminDashboard"
         Panel2.ResumeLayout(False)
         CType(depIcon, ComponentModel.ISupportInitialize).EndInit()
@@ -724,22 +846,24 @@ Partial Class AdminDashboard
         CType(studIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(homeIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(profilemenu, ComponentModel.ISupportInitialize).EndInit()
+        CType(tuldok, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        PanelLeft.ResumeLayout(False)
         CType(profileleft, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
+        CType(profmenu, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
         CType(studBox, ComponentModel.ISupportInitialize).EndInit()
         CType(courseBox, ComponentModel.ISupportInitialize).EndInit()
         CType(progBox, ComponentModel.ISupportInitialize).EndInit()
         CType(profBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(profpic, ComponentModel.ISupportInitialize).EndInit()
         CType(emailIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(callIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(depBox, ComponentModel.ISupportInitialize).EndInit()
         CType(adminBox, ComponentModel.ISupportInitialize).EndInit()
+        CType(profpic, ComponentModel.ISupportInitialize).EndInit()
+        CType(dtg1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -749,8 +873,7 @@ Partial Class AdminDashboard
     Friend WithEvents studbtn As Button
     Friend WithEvents profbtn As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
-    Friend WithEvents PictureBox9 As PictureBox
-    Friend WithEvents profilemenu As PictureBox
+    Friend WithEvents tuldok As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Adminleft As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
@@ -758,7 +881,6 @@ Partial Class AdminDashboard
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents nameleft As Label
-    Friend WithEvents profileleft As PictureBox
     Friend WithEvents progbtn As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
@@ -773,9 +895,7 @@ Partial Class AdminDashboard
     Friend WithEvents courseBox As PictureBox
     Friend WithEvents progBox As PictureBox
     Friend WithEvents profBox As PictureBox
-    Friend WithEvents profpic As PictureBox
     Friend WithEvents profname As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents Gerald2 As gerald.Gerald
     Friend WithEvents emailIcon As PictureBox
     Friend WithEvents callIcon As PictureBox
@@ -793,4 +913,17 @@ Partial Class AdminDashboard
     Friend WithEvents depIcon As PictureBox
     Friend WithEvents depBtn As Button
     Friend WithEvents PanelLeft As Panel
+    Friend WithEvents Component12 As Component1
+    Friend WithEvents profpic As picture.CirclePicture
+    Friend WithEvents profmenu As picture.CirclePicture
+    Friend WithEvents profileleft As picture.CirclePicture
+    Friend WithEvents eklavu1 As Label
+    Friend WithEvents eklavutxt As TextBox
+    Friend WithEvents eklavutxt2 As TextBox
+    Friend WithEvents eklavu2 As Label
+    Friend WithEvents tuldoklikod As gerald.Gerald
+    Friend WithEvents tuldokharap As gerald.Gerald
+    Friend WithEvents actlog As Label
+    Friend WithEvents seemore As Label
+    Friend WithEvents dtg1 As DataGridView
 End Class

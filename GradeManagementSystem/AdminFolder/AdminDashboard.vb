@@ -1,6 +1,7 @@
 ﻿Imports Transitions
 Imports System.IO
 Imports System.Drawing
+Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
@@ -9,6 +10,8 @@ Public Class AdminDashboard
     Dim filedialog As New OpenFileDialog()
     Dim originalSize As Size
     Dim expandedSize As Size
+    Dim originalSize1 As Size
+    Dim expandedSize1 As Size
     Dim home1 As Image = My.Resources.home1
     Dim home2 As Image = My.Resources.home2
     Dim stud1 As Image = My.Resources.stud1
@@ -34,6 +37,20 @@ Public Class AdminDashboard
     Dim department1 As Image = My.Resources.department1
     Dim department2 As Image = My.Resources.department2
 
+    Public Property CornerRadius As Integer = 30
+    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
+        MyBase.OnPaint(e)
+        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, CornerRadius, CornerRadius, 180, 90) ' Top-left corner
+        path.AddArc(Me.ClientSize.Width - CornerRadius, 0, CornerRadius, CornerRadius, 270, 90) ' Top-right corner
+        path.AddArc(Me.ClientSize.Width - CornerRadius, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 0, 90) ' Bottom-right corner
+        path.AddArc(0, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 90, 90) ' Bottom-left corner
+        path.CloseAllFigures()
+        Me.Region = New Region(path)
+        e.Graphics.DrawPath(New Pen(Color.Black, 2), path)
+    End Sub
+
 
     Private originalImage As Image
     Private hoverImage As Image
@@ -52,9 +69,22 @@ Public Class AdminDashboard
         profname.Hide()
         proftitle.Hide()
         emailIcon.Hide()
+        eklavu1.Hide()
+        eklavu2.Hide()
+        eklavutxt.Hide()
+        eklavutxt2.Hide()
+        tuldoklikod.Hide()
+        tuldokharap.Hide()
+        seemore.Hide()
+        actlog.Hide()
+        dtg1.Hide()
+
 
         originalSize = Panel1.Size
+
         expandedSize = New Size(originalSize.Width + 275, originalSize.Height + 210)
+        originalSize1 = Gerald1.Size
+        expandedSize1 = New Size(originalSize1.Width, originalSize1.Height + 115)
     End Sub
 
     Private Sub Panel1_MouseEnter(sender As Object, e As EventArgs) Handles Panel1.MouseEnter
@@ -204,6 +234,23 @@ Public Class AdminDashboard
         End If
     End Sub
 
+    Private Sub nameLeft_MouseLeave(sender As Object, e As EventArgs) Handles nameleft.MouseLeave,
+        Adminleft.MouseLeave, profileleft.MouseLeave
+        If Not expand Then
+            Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
+            Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
+            expand = True
+        End If
+    End Sub
+    Private Sub nameLeft_MouseEnter(sender As Object, e As EventArgs) Handles nameleft.MouseEnter,
+        Adminleft.MouseEnter, profileleft.MouseEnter
+        If Not expand Then
+            Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
+            Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
+            expand = True
+        End If
+    End Sub
+
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs)
         Application.Exit()
 
@@ -297,33 +344,10 @@ Public Class AdminDashboard
         courseBox.Image = courses1
     End Sub
 
-    Private Sub PictureBox8_MouseClick(sender As Object, e As MouseEventArgs) Handles profilemenu.Click
-        secu.Visible = Not secu.Visible
-        boxnum.Visible = Not boxnum.Visible
-        Gerald5.Visible = Not Gerald5.Visible
-        Gerald1.Visible = Not Gerald1.Visible
-        Gerald2.Visible = Not Gerald2.Visible
-        profpic.Visible = Not profpic.Visible
-        boxname.Visible = Not boxname.Visible
-        editInfo.Visible = Not editInfo.Visible
-        callIcon.Visible = Not callIcon.Visible
-        profname.Visible = Not profname.Visible
-        proftitle.Visible = Not proftitle.Visible
-        emailIcon.Visible = Not emailIcon.Visible
+    Private Sub PictureBox8_MouseClick(sender As Object, e As MouseEventArgs)
+
     End Sub
 
-    Private Sub profpic_Click(sender As Object, e As EventArgs) Handles profpic.Click
-        filedialog.Filter = "PNG Files (*.png)|*.png"
-        filedialog.Title = "Select a PNG Image"
-
-        If filedialog.ShowDialog() = DialogResult.OK Then
-
-            Dim selectedFile As String = filedialog.FileName
-            profpic.Image = Image.FromFile(selectedFile)
-            profilemenu.Image = Image.FromFile(selectedFile)
-            profileleft.Image = Image.FromFile(selectedFile)
-        End If
-    End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
 
@@ -334,7 +358,6 @@ Public Class AdminDashboard
     End Sub
 
     Private Sub PictureBox8_MouseClick(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub depBox_Click(sender As Object, e As EventArgs) Handles depBox.Click
@@ -354,6 +377,102 @@ Public Class AdminDashboard
     End Sub
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles depBtn.Click
+
+    End Sub
+
+    Private Sub profpic_MouseClick(sender As Object, e As MouseEventArgs) Handles profpic.MouseClick
+        filedialog.Filter = "PNG Files (*.png)|*.png"
+        filedialog.Title = "Select a PNG Image"
+
+        If filedialog.ShowDialog = DialogResult.OK Then
+
+            Dim selectedFile = filedialog.FileName
+            profmenu.Image = Image.FromFile(selectedFile)
+            profileleft.Image = Image.FromFile(selectedFile)
+            profpic.Image = Image.FromFile(selectedFile)
+        End If
+    End Sub
+
+    Private Sub profmenu_MouseClick(sender As Object, e As MouseEventArgs) Handles profmenu.MouseClick
+        secu.Visible = Not secu.Visible
+        boxnum.Visible = Not boxnum.Visible
+        Gerald5.Visible = Not Gerald5.Visible
+        Gerald1.Visible = Not Gerald1.Visible
+        Gerald2.Visible = Not Gerald2.Visible
+
+        boxname.Visible = Not boxname.Visible
+        editInfo.Visible = Not editInfo.Visible
+        callIcon.Visible = Not callIcon.Visible
+        profname.Visible = Not profname.Visible
+        proftitle.Visible = Not proftitle.Visible
+        emailIcon.Visible = Not emailIcon.Visible
+        profpic.Visible = Not profpic.Visible
+    End Sub
+
+    Private Sub editInfo_Click(sender As Object, e As MouseEventArgs) Handles editInfo.Click
+        If Not expand Then
+            Transition.run(Gerald1, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
+            Transition.run(Gerald1, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
+            Transition.run(Gerald5, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
+
+            editInfo.Location = New Point(1068, 480)
+            secu.Hide()
+            eklavu1.Show()
+            eklavu2.Show()
+            eklavutxt.Show()
+            eklavutxt2.Show()
+        Else
+            Transition.run(Gerald1, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
+            Transition.run(Gerald5, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
+
+            editInfo.Location = New Point(1068, 333)
+            secu.Show()
+            eklavu1.Hide()
+            eklavu2.Hide()
+            eklavutxt.Hide()
+            eklavutxt2.Hide()
+        End If
+        expand = Not expand
+    End Sub
+    Private Sub secu_Click(sender As Object, e As EventArgs) Handles secu.Click
+        If Not expand Then
+            Transition.run(Gerald1, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
+            Transition.run(Gerald1, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
+            Transition.run(Gerald5, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
+
+            secu.Location = New Point(1040, 470)
+            editInfo.Hide()
+            eklavu1.Show()
+            eklavu2.Show()
+            eklavutxt.Show()
+            eklavutxt2.Show()
+        Else
+            Transition.run(Gerald1, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
+            Transition.run(Gerald5, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
+
+            secu.Location = New Point(1040, 355)
+            editInfo.Show()
+            eklavu1.Hide()
+            eklavu2.Hide()
+            eklavutxt.Hide()
+            eklavutxt2.Hide()
+        End If
+        expand = Not expand
+    End Sub
+
+    Private Sub tuldok_Click(sender As Object, e As EventArgs) Handles tuldok.Click
+        tuldoklikod.Visible = Not tuldoklikod.Visible
+        tuldokharap.Visible = Not tuldokharap.Visible
+        seemore.Visible = Not seemore.Visible
+        actlog.Visible = Not actlog.Visible
+        dtg1.Visible = Not dtg1.Visible
+    End Sub
+
+    Private Sub tuldoklikod_Click(sender As Object, e As EventArgs) Handles tuldoklikod.Click
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
 
     End Sub
 End Class
