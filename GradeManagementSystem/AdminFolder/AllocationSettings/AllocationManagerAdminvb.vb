@@ -11,4 +11,9 @@ Public Class AllocationManagerAdminvb
         Me.Visible = False
         gradeSectionForm.Visible = True
     End Sub
+
+    Private Sub createClassButton_Click(sender As Object, e As EventArgs) Handles createClassButton.Click
+
+    End Sub
+
 End Class

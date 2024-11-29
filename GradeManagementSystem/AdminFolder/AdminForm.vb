@@ -3,6 +3,7 @@
     Private manageProfessorAdmin As New ManageProfessorAdmin
     Private manageProgramAdmin As New ManageProgramAdmin
     Private manageDepartmentAdmin As New ManageDepartmentAdmin
+    Private allocationManagerAdmin As New AllocationManagerAdminvb
     Private Sub manageStudentButton_Click(sender As Object, e As EventArgs) Handles manageStudentButton.Click
         manageStudentAdmin.Visible = True
     End Sub
@@ -31,5 +32,9 @@
 
     Private Sub logoutButton_Click(sender As Object, e As EventArgs) Handles logoutButton.Click
         End
+    End Sub
+
+    Private Sub allocationManager_Click(sender As Object, e As EventArgs) Handles allocationManager.Click
+        allocationManagerAdmin.Visible = True
     End Sub
 End Class
