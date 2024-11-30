@@ -31,6 +31,7 @@ Partial Class Studets
         Button1 = New Button()
         BindingSource1 = New BindingSource(components)
         DataGridView1 = New DataGridView()
+        Button2 = New Button()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -95,11 +96,21 @@ Partial Class Studets
         DataGridView1.Size = New Size(884, 378)
         DataGridView1.TabIndex = 13
         ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(448, 104)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(94, 29)
+        Button2.TabIndex = 14
+        Button2.Text = "Button2"
+        Button2.UseVisualStyleBackColor = True
+        ' 
         ' Studets
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1221, 809)
+        Controls.Add(Button2)
         Controls.Add(Label3)
         Controls.Add(ComboBox1)
         Controls.Add(Label2)
@@ -123,4 +134,5 @@ Partial Class Studets
     Friend WithEvents Button1 As Button
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button2 As Button
 End Class
