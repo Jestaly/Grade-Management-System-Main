@@ -42,6 +42,7 @@ Partial Class GradeSectionForm
         ClientSize = New Size(800, 450)
         Controls.Add(Label1)
         Name = "GradeSectionForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "GradeSectionForm"
         ResumeLayout(False)
         PerformLayout()
