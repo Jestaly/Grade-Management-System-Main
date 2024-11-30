@@ -43,7 +43,7 @@ Partial Class LoginForm
         ' 
         passwordLogin.Font = New Font("Tahoma", 11F)
         passwordLogin.ForeColor = Color.DarkGreen
-        passwordLogin.Location = New Point(154, 325)
+        passwordLogin.Location = New Point(148, 319)
         passwordLogin.Margin = New Padding(4)
         passwordLogin.Name = "passwordLogin"
         passwordLogin.Size = New Size(230, 34)
@@ -67,7 +67,7 @@ Partial Class LoginForm
         accountIDLogin.BackColor = Color.White
         accountIDLogin.Font = New Font("Tahoma", 11F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         accountIDLogin.ForeColor = Color.DarkGreen
-        accountIDLogin.Location = New Point(153, 256)
+        accountIDLogin.Location = New Point(148, 257)
         accountIDLogin.Margin = New Padding(4)
         accountIDLogin.Mask = "0-00-00000"
         accountIDLogin.Name = "accountIDLogin"
@@ -107,7 +107,7 @@ Partial Class LoginForm
         forgotpasscodeportal.BackColor = Color.Transparent
         forgotpasscodeportal.Font = New Font("Calibri", 12F, FontStyle.Bold Or FontStyle.Underline)
         forgotpasscodeportal.ForeColor = Color.White
-        forgotpasscodeportal.Location = New Point(165, 535)
+        forgotpasscodeportal.Location = New Point(165, 560)
         forgotpasscodeportal.Name = "forgotpasscodeportal"
         forgotpasscodeportal.Size = New Size(205, 29)
         forgotpasscodeportal.TabIndex = 0
@@ -133,7 +133,7 @@ Partial Class LoginForm
         PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox1.ImageLocation = ""
-        PictureBox1.Location = New Point(-7, 535)
+        PictureBox1.Location = New Point(-3, 560)
         PictureBox1.Margin = New Padding(4)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(540, 61)
@@ -147,7 +147,7 @@ Partial Class LoginForm
         enterbttn.BackgroundImage = CType(resources.GetObject("enterbttn.BackgroundImage"), Image)
         enterbttn.BackgroundImageLayout = ImageLayout.Stretch
         enterbttn.ImageLocation = ""
-        enterbttn.Location = New Point(162, 367)
+        enterbttn.Location = New Point(161, 361)
         enterbttn.Margin = New Padding(4)
         enterbttn.Name = "enterbttn"
         enterbttn.Size = New Size(217, 114)
@@ -161,7 +161,7 @@ Partial Class LoginForm
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(536, 598)
+        ClientSize = New Size(536, 619)
         Controls.Add(enterbttn)
         Controls.Add(forgotpasscodeportal)
         Controls.Add(PictureBox1)
