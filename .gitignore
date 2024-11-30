@@ -372,3 +372,6 @@ Properties/launchSettings.json
 /GradeManagementSystem/My Project/app.manifest
 /GradeManagementSystem/My Project/Application.myapp
 /GradeManagementSystem/My Project/Application.Designer.vb
+
+# Ignore all resx files
+*.resx
