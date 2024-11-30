@@ -326,8 +326,4 @@ Public Class AdminDashboard
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs)
         DateTimePicker1.Value = DateTime.Now
     End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
 End Class
