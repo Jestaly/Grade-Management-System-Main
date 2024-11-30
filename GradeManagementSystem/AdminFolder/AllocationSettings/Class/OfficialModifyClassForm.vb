@@ -2,7 +2,7 @@
 
 Public Class OfficialModifyClassForm
     Private connector As New DatabaseConnector
-    Private Sub createClassButton_Click(sender As Object, e As EventArgs) Handles modifyClassButton.Click
+    Private Sub modifyClassButton_Click(sender As Object, e As EventArgs) Handles modifyClassButton.Click
         Try
             connector.connect.Open()
             connector.query = "UPDATE class SET professor_id = '" & getProfessorID() & "', course_id = '" & getCourseID() & "' WHERE class_id = '" & trimmedClassID() & "';"

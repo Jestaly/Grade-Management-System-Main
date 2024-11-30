@@ -29,8 +29,8 @@ Partial Class AllocationManagerAdminvb
         gradeSectionButton = New Button()
         modifyClassButton = New Button()
         deleteClassButton = New Button()
-        Button1 = New Button()
-        Button2 = New Button()
+        deleteEnrollButton = New Button()
+        modifyEnrollButton = New Button()
         refreshButton = New Button()
         CType(classDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(enrollDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -99,23 +99,23 @@ Partial Class AllocationManagerAdminvb
         deleteClassButton.Text = "Delete"
         deleteClassButton.UseVisualStyleBackColor = True
         ' 
-        ' Button1
+        ' deleteEnrollButton
         ' 
-        Button1.Location = New Point(497, 60)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(88, 29)
-        Button1.TabIndex = 8
-        Button1.Text = "Delete"
-        Button1.UseVisualStyleBackColor = True
+        deleteEnrollButton.Location = New Point(497, 60)
+        deleteEnrollButton.Name = "deleteEnrollButton"
+        deleteEnrollButton.Size = New Size(88, 29)
+        deleteEnrollButton.TabIndex = 8
+        deleteEnrollButton.Text = "Delete"
+        deleteEnrollButton.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' modifyEnrollButton
         ' 
-        Button2.Location = New Point(497, 25)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(88, 29)
-        Button2.TabIndex = 7
-        Button2.Text = "Modify"
-        Button2.UseVisualStyleBackColor = True
+        modifyEnrollButton.Location = New Point(497, 25)
+        modifyEnrollButton.Name = "modifyEnrollButton"
+        modifyEnrollButton.Size = New Size(88, 29)
+        modifyEnrollButton.TabIndex = 7
+        modifyEnrollButton.Text = "Modify"
+        modifyEnrollButton.UseVisualStyleBackColor = True
         ' 
         ' refreshButton
         ' 
@@ -132,8 +132,8 @@ Partial Class AllocationManagerAdminvb
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(774, 378)
         Controls.Add(refreshButton)
-        Controls.Add(Button1)
-        Controls.Add(Button2)
+        Controls.Add(deleteEnrollButton)
+        Controls.Add(modifyEnrollButton)
         Controls.Add(deleteClassButton)
         Controls.Add(modifyClassButton)
         Controls.Add(gradeSectionButton)
@@ -156,7 +156,7 @@ Partial Class AllocationManagerAdminvb
     Friend WithEvents gradeSectionButton As Button
     Friend WithEvents modifyClassButton As Button
     Friend WithEvents deleteClassButton As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents deleteEnrollButton As Button
+    Friend WithEvents modifyEnrollButton As Button
     Friend WithEvents refreshButton As Button
 End Class
