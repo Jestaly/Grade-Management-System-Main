@@ -64,7 +64,7 @@ Partial Class AddProfessorAccount
         ' 
         emailTextBox.Location = New Point(39, 205)
         emailTextBox.Name = "emailTextBox"
-        emailTextBox.Size = New Size(256, 27)
+        emailTextBox.Size = New Size(194, 27)
         emailTextBox.TabIndex = 4
         ' 
         ' addProfessorButton

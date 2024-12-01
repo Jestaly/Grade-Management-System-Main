@@ -2,10 +2,21 @@
 
 Public Class AddProfessorAccount
     Private connector As New DatabaseConnector
+    Private mail As New Mail
+
+    Private Function getEmail() As String
+        Dim email As String = emailTextBox.Text.Trim
+        Return email
+    End Function
+
+    Private Function getPassCode() As String
+        Dim passCode As String = mail.mailMe(getEmail)
+        Return passCode
+    End Function
     Private Sub addProfessorButton_Click(sender As Object, e As EventArgs) Handles addProfessorButton.Click
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO professor(id,lname,fname,mname,email,dept_id) VALUES ('" & getProfID() & "','" & lastnameTextBox.Text & "','" & firstnameTextBox.Text & "','" & middlenameTextBox.Text & "','" & emailTextBox.Text & "','" & getDepartmentID() & "');"
+            connector.query = "INSERT INTO professor VALUES ('" & getProfID() & "','" & lastnameTextBox.Text & "','" & firstnameTextBox.Text & "','" & middlenameTextBox.Text & "','" & getEmail() & "','" & getPassCode() & "','" & getDepartmentID() & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
