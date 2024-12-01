@@ -45,7 +45,7 @@ Public Class ManageProgramAdmin
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        addProgramForm.programIDLabel.Text = "P" & "-" & getZeros(pCount) & (pCount + 1)
+        addProgramForm.programIDTextBox.Text = "P" & "-" & getZeros(pCount) & (pCount + 1)
         loadDepartment()
         addProgramForm.Visible = True
     End Sub

@@ -27,7 +27,7 @@ Public Class CourseSectionForm
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        addCourseForm.courseIDLabel.Text = "C" & "-" & getZeros(cCount) & (cCount + 1)
+        addCourseForm.courseIDTextBox.Text = "C" & "-" & getZeros(cCount) & (cCount + 1)
         addCourseForm.Visible = True
     End Sub
 

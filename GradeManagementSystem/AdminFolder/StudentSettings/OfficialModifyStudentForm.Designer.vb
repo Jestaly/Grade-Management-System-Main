@@ -39,10 +39,10 @@ Partial Class OfficialModifyStudentForm
         firstnameTextBox = New TextBox()
         sidTextBox = New TextBox()
         Label10 = New Label()
-        birthCalendar = New MonthCalendar()
         backButton = New Button()
         Label7 = New Label()
         Button2 = New Button()
+        birthDate = New DateTimePicker()
         SuspendLayout()
         ' 
         ' sectionComboBox
@@ -190,12 +190,6 @@ Partial Class OfficialModifyStudentForm
         Label10.TabIndex = 45
         Label10.Text = "SID"
         ' 
-        ' birthCalendar
-        ' 
-        birthCalendar.Location = New Point(170, 226)
-        birthCalendar.Name = "birthCalendar"
-        birthCalendar.TabIndex = 46
-        ' 
         ' backButton
         ' 
         backButton.Location = New Point(24, 296)
@@ -208,7 +202,7 @@ Partial Class OfficialModifyStudentForm
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(271, 197)
+        Label7.Location = New Point(241, 153)
         Label7.Name = "Label7"
         Label7.Size = New Size(70, 20)
         Label7.TabIndex = 48
@@ -223,16 +217,25 @@ Partial Class OfficialModifyStudentForm
         Button2.Text = "Clear"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' birthDate
+        ' 
+        birthDate.CustomFormat = "yyyy-MM-dd"
+        birthDate.Format = DateTimePickerFormat.Custom
+        birthDate.Location = New Point(241, 176)
+        birthDate.Name = "birthDate"
+        birthDate.Size = New Size(129, 27)
+        birthDate.TabIndex = 50
+        ' 
         ' OfficialModifyStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(468, 457)
+        ClientSize = New Size(445, 347)
+        Controls.Add(birthDate)
         Controls.Add(Button2)
         Controls.Add(Label7)
         Controls.Add(backButton)
-        Controls.Add(birthCalendar)
         Controls.Add(Label10)
         Controls.Add(sidTextBox)
         Controls.Add(sectionComboBox)
@@ -274,8 +277,8 @@ Partial Class OfficialModifyStudentForm
     Friend WithEvents firstnameTextBox As TextBox
     Friend WithEvents sidTextBox As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents birthCalendar As MonthCalendar
     Friend WithEvents backButton As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents birthDate As DateTimePicker
 End Class

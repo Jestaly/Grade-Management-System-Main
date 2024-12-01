@@ -35,7 +35,7 @@ Public Class ManageProfessorAdmin
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        addProfessorForm.professorIDLabel.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
+        addProfessorForm.professorIDTextBox.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
         loadDepartment()
         addProfessorForm.Visible = True
     End Sub

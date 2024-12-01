@@ -24,12 +24,13 @@ Partial Class AddDepartmentForm
     Private Sub InitializeComponent()
         Label3 = New Label()
         Label2 = New Label()
-        departmentIDLabel = New Label()
+        Label = New Label()
         departmentNameTextBox = New TextBox()
         departmentHeadTextBox = New TextBox()
         clearButton = New Button()
         addDepartmentButton = New Button()
         backButton = New Button()
+        departmentIDTextBox = New MaskedTextBox()
         SuspendLayout()
         ' 
         ' Label3
@@ -50,14 +51,14 @@ Partial Class AddDepartmentForm
         Label2.TabIndex = 13
         Label2.Text = "Department Name"
         ' 
-        ' departmentIDLabel
+        ' Label
         ' 
-        departmentIDLabel.AutoSize = True
-        departmentIDLabel.Location = New Point(79, 30)
-        departmentIDLabel.Name = "departmentIDLabel"
-        departmentIDLabel.Size = New Size(50, 20)
-        departmentIDLabel.TabIndex = 12
-        departmentIDLabel.Text = "D-000"
+        Label.AutoSize = True
+        Label.Location = New Point(48, 53)
+        Label.Name = "Label"
+        Label.Size = New Size(61, 20)
+        Label.TabIndex = 12
+        Label.Text = "Dept ID"
         ' 
         ' departmentNameTextBox
         ' 
@@ -75,7 +76,7 @@ Partial Class AddDepartmentForm
         ' 
         ' clearButton
         ' 
-        clearButton.Location = New Point(79, 270)
+        clearButton.Location = New Point(79, 248)
         clearButton.Name = "clearButton"
         clearButton.Size = New Size(129, 29)
         clearButton.TabIndex = 9
@@ -84,7 +85,7 @@ Partial Class AddDepartmentForm
         ' 
         ' addDepartmentButton
         ' 
-        addDepartmentButton.Location = New Point(79, 235)
+        addDepartmentButton.Location = New Point(79, 213)
         addDepartmentButton.Name = "addDepartmentButton"
         addDepartmentButton.Size = New Size(129, 29)
         addDepartmentButton.TabIndex = 8
@@ -100,16 +101,27 @@ Partial Class AddDepartmentForm
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
         ' 
+        ' departmentIDTextBox
+        ' 
+        departmentIDTextBox.Enabled = False
+        departmentIDTextBox.Location = New Point(115, 50)
+        departmentIDTextBox.Mask = "L-000"
+        departmentIDTextBox.Name = "departmentIDTextBox"
+        departmentIDTextBox.PromptChar = "X"c
+        departmentIDTextBox.Size = New Size(93, 27)
+        departmentIDTextBox.TabIndex = 16
+        ' 
         ' AddDepartmentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(407, 309)
+        ClientSize = New Size(407, 297)
+        Controls.Add(departmentIDTextBox)
         Controls.Add(backButton)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(departmentIDLabel)
+        Controls.Add(Label)
         Controls.Add(departmentNameTextBox)
         Controls.Add(departmentHeadTextBox)
         Controls.Add(clearButton)
@@ -124,10 +136,11 @@ Partial Class AddDepartmentForm
 
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents departmentIDLabel As Label
+    Friend WithEvents Label As Label
     Friend WithEvents departmentNameTextBox As TextBox
     Friend WithEvents departmentHeadTextBox As TextBox
     Friend WithEvents clearButton As Button
     Friend WithEvents addDepartmentButton As Button
     Friend WithEvents backButton As Button
+    Friend WithEvents departmentIDTextBox As MaskedTextBox
 End Class

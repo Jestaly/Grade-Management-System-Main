@@ -42,7 +42,7 @@ Public Class AddProfessorAccount
         Return deptID
     End Function
     Private Function getProfID() As String
-        Dim profID = professorIDLabel.Text.Replace("-", "")
+        Dim profID = professorIDTextBox.Text.Replace("-", "")
         Return profID
     End Function
 

@@ -28,7 +28,7 @@ Public Class AddDepartmentForm
         End Try
     End Sub
     Private Function getDepartmentID() As String
-        Dim programID = departmentIDLabel.Text.Replace("-", "")
+        Dim programID = departmentIDTextBox.Text.Replace("-", "")
         Return programID
     End Function
 

@@ -40,9 +40,9 @@ Partial Class AddStudentAccount
         sectionComboBox = New ComboBox()
         studentIDTextBox = New MaskedTextBox()
         Label10 = New Label()
-        birthCalendar = New MonthCalendar()
         Label7 = New Label()
         backButton = New Button()
+        birthDate = New DateTimePicker()
         SuspendLayout()
         ' 
         ' firstnameTextBox
@@ -201,16 +201,10 @@ Partial Class AddStudentAccount
         Label10.TabIndex = 26
         Label10.Text = "Student ID"
         ' 
-        ' birthCalendar
-        ' 
-        birthCalendar.Location = New Point(175, 225)
-        birthCalendar.Name = "birthCalendar"
-        birthCalendar.TabIndex = 27
-        ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(274, 196)
+        Label7.Location = New Point(274, 155)
         Label7.Name = "Label7"
         Label7.Size = New Size(70, 20)
         Label7.TabIndex = 28
@@ -225,15 +219,24 @@ Partial Class AddStudentAccount
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
         ' 
+        ' birthDate
+        ' 
+        birthDate.CustomFormat = "yyyy-MM-dd"
+        birthDate.Format = DateTimePickerFormat.Custom
+        birthDate.Location = New Point(274, 178)
+        birthDate.Name = "birthDate"
+        birthDate.Size = New Size(125, 27)
+        birthDate.TabIndex = 31
+        ' 
         ' AddStudentAccount
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(468, 457)
+        ClientSize = New Size(458, 339)
+        Controls.Add(birthDate)
         Controls.Add(backButton)
         Controls.Add(Label7)
-        Controls.Add(birthCalendar)
         Controls.Add(Label10)
         Controls.Add(studentIDTextBox)
         Controls.Add(sectionComboBox)
@@ -278,7 +281,7 @@ Partial Class AddStudentAccount
     Friend WithEvents sectionComboBox As ComboBox
     Friend WithEvents studentIDTextBox As MaskedTextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents birthCalendar As MonthCalendar
     Friend WithEvents Label7 As Label
     Friend WithEvents backButton As Button
+    Friend WithEvents birthDate As DateTimePicker
 End Class
