@@ -2,7 +2,7 @@
 
 Public Class LoginForm
     Public connector As New DatabaseConnector
-    Private adminForm As New AdminForm
+    Private adminForm As New AdminDashboard
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Private professorForm As New ProfessorForm
@@ -28,14 +28,17 @@ Public Class LoginForm
             For Each row As DataGridViewRow In dataView.Rows
                 If ((row.Cells("id").Value IsNot Nothing AndAlso row.Cells("id").Value.ToString.Equals(trimmedID())) And row.Cells("password").Value IsNot Nothing AndAlso row.Cells("password").Value.ToString.Equals(password())) Then
                     If (trimmedID().Chars(0) = "1") Then
+                        connector.connect.Close()
                         Me.Visible = False
                         studentForm.Visible = True
                         Return
                     ElseIf (trimmedID().Chars(0) = "2") Then
+                        connector.connect.Close()
                         Me.Visible = False
                         professorForm.Visible = True
                         Return
                     ElseIf (trimmedID().Chars(0) = "3") Then
+                        connector.connect.Close()
                         Me.Visible = False
                         adminForm.Visible = True
                         Return
@@ -60,8 +63,10 @@ Public Class LoginForm
     End Sub
 
     Private Sub exitbttn_Click(sender As Object, e As EventArgs) Handles exitbttn.Click
-        Application.Exit()
+        End
     End Sub
 
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
