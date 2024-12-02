@@ -3,6 +3,8 @@
 Public Class EnrollStudentForm
     Private connector As New DatabaseConnector
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+        showProfessorTextBox.Clear()
+        showCourseTextBox.Clear()
         Me.Visible = False
     End Sub
 
@@ -43,7 +45,7 @@ Public Class EnrollStudentForm
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
-            While connector.reader.Read
+            While connector.reader.Read()
                 If connector.reader("Student name").ToString IsNot Nothing And connector.reader("Student name").ToString.Equals(selectedStudent) Then
                     studentID = connector.reader("ID").ToString
                     connector.reader.Close()
@@ -57,4 +59,25 @@ Public Class EnrollStudentForm
         Return studentID
     End Function
 
+    Private Sub classComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles classComboBox.SelectedIndexChanged
+        Dim selectedClass As String = getClassID()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT class_id,CONCAT(professor.fname,' ',professor.mname,' ',professor.lname) AS Professor, course.course_name AS Course FROM class LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read()
+                If (connector.reader("class_id").ToString IsNot Nothing And connector.reader("class_id").ToString.Equals(selectedClass)) Then
+                    showProfessorTextBox.Text = connector.reader("Professor").ToString
+                    showCourseTextBox.Text = connector.reader("Course").ToString
+                    Exit While
+                End If
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
 End Class

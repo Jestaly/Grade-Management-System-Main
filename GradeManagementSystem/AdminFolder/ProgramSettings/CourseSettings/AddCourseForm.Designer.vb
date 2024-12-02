@@ -24,18 +24,19 @@ Partial Class AddCourseForm
     Private Sub InitializeComponent()
         Label3 = New Label()
         Label2 = New Label()
-        courseIDLabel = New Label()
+        Label = New Label()
         courseNameTextBox = New TextBox()
         unitTextBox = New TextBox()
         Button2 = New Button()
         addCourseButton = New Button()
         backButton = New Button()
+        courseIDTextBox = New MaskedTextBox()
         SuspendLayout()
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(73, 93)
+        Label3.Location = New Point(80, 113)
         Label3.Name = "Label3"
         Label3.Size = New Size(42, 20)
         Label3.TabIndex = 14
@@ -44,38 +45,38 @@ Partial Class AddCourseForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(16, 56)
+        Label2.Location = New Point(23, 76)
         Label2.Name = "Label2"
         Label2.Size = New Size(98, 20)
         Label2.TabIndex = 13
         Label2.Text = "Course Name"
         ' 
-        ' courseIDLabel
+        ' Label
         ' 
-        courseIDLabel.AutoSize = True
-        courseIDLabel.Location = New Point(33, 23)
-        courseIDLabel.Name = "courseIDLabel"
-        courseIDLabel.Size = New Size(48, 20)
-        courseIDLabel.TabIndex = 12
-        courseIDLabel.Text = "C-000"
+        Label.AutoSize = True
+        Label.Location = New Point(15, 34)
+        Label.Name = "Label"
+        Label.Size = New Size(73, 20)
+        Label.TabIndex = 12
+        Label.Text = "Course ID"
         ' 
         ' courseNameTextBox
         ' 
-        courseNameTextBox.Location = New Point(121, 53)
+        courseNameTextBox.Location = New Point(128, 73)
         courseNameTextBox.Name = "courseNameTextBox"
         courseNameTextBox.Size = New Size(172, 27)
         courseNameTextBox.TabIndex = 11
         ' 
         ' unitTextBox
         ' 
-        unitTextBox.Location = New Point(121, 86)
+        unitTextBox.Location = New Point(128, 106)
         unitTextBox.Name = "unitTextBox"
         unitTextBox.Size = New Size(172, 27)
         unitTextBox.TabIndex = 10
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(158, 139)
+        Button2.Location = New Point(165, 159)
         Button2.Name = "Button2"
         Button2.Size = New Size(109, 29)
         Button2.TabIndex = 9
@@ -84,7 +85,7 @@ Partial Class AddCourseForm
         ' 
         ' addCourseButton
         ' 
-        addCourseButton.Location = New Point(43, 139)
+        addCourseButton.Location = New Point(50, 159)
         addCourseButton.Name = "addCourseButton"
         addCourseButton.Size = New Size(109, 29)
         addCourseButton.TabIndex = 8
@@ -100,16 +101,27 @@ Partial Class AddCourseForm
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = True
         ' 
+        ' courseIDTextBox
+        ' 
+        courseIDTextBox.Enabled = False
+        courseIDTextBox.Location = New Point(94, 31)
+        courseIDTextBox.Mask = "L-000"
+        courseIDTextBox.Name = "courseIDTextBox"
+        courseIDTextBox.PromptChar = "X"c
+        courseIDTextBox.Size = New Size(96, 27)
+        courseIDTextBox.TabIndex = 19
+        ' 
         ' AddCourseForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(353, 197)
+        ClientSize = New Size(353, 210)
+        Controls.Add(courseIDTextBox)
         Controls.Add(backButton)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(courseIDLabel)
+        Controls.Add(Label)
         Controls.Add(courseNameTextBox)
         Controls.Add(unitTextBox)
         Controls.Add(Button2)
@@ -124,10 +136,11 @@ Partial Class AddCourseForm
 
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents courseIDLabel As Label
+    Friend WithEvents Label As Label
     Friend WithEvents courseNameTextBox As TextBox
     Friend WithEvents unitTextBox As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents addCourseButton As Button
     Friend WithEvents backButton As Button
+    Friend WithEvents courseIDTextBox As MaskedTextBox
 End Class

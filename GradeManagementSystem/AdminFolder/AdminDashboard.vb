@@ -78,7 +78,7 @@ Public Class AdminDashboard
         dtg1.Hide()
 
         originalSize = Panel1.Size
-        expandedSize = New Size(originalSize.Width + 275, originalSize.Height + 210)
+        expandedSize = New Size(originalSize.Width + 345, originalSize.Height + 280)
         originalSize1 = Gerald1.Size
         expandedSize1 = New Size(originalSize1.Width, originalSize1.Height + 115)
     End Sub
@@ -137,7 +137,8 @@ Public Class AdminDashboard
     End Sub
     '=====================================DASHBOARD BUTTON==============================='
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Application.Exit()
+        Me.Visible = False
+        LoginForm.Visible = True
     End Sub
     Private Sub studBox_Click(sender As Object, e As EventArgs) Handles studBox.Click
         StudentDashboard.Show()
@@ -327,7 +328,28 @@ Public Class AdminDashboard
         DateTimePicker1.Value = DateTime.Now
     End Sub
 
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
-
+    '========================================BACKEND========================================'
+    Private mngStudent As New ManageStudentAdmin
+    Private mngProgram As New ManageProgramAdmin
+    Private mngProfessor As New ManageProfessorAdmin
+    Private mngDepartment As New ManageDepartmentAdmin
+    Private allocMng As New AllocationManagerAdminvb
+    Private Sub dashbtn_Click(sender As Object, e As EventArgs) Handles dashbtn.Click
+        Me.Visible = True
+    End Sub
+    Private Sub studbtn_Click(sender As Object, e As EventArgs) Handles studbtn.Click
+        mngStudent.Visible = True
+    End Sub
+    Private Sub progbtn_Click(sender As Object, e As EventArgs) Handles progbtn.Click
+        mngProgram.Visible = True
+    End Sub
+    Private Sub profbtn_Click(sender As Object, e As EventArgs) Handles profbtn.Click
+        mngProfessor.Visible = True
+    End Sub
+    Private Sub depBtn_Click(sender As Object, e As EventArgs) Handles depBtn.Click
+        mngDepartment.Visible = True
+    End Sub
+    Private Sub managebtn_Click(sender As Object, e As EventArgs) Handles managebtn.Click
+        allocMng.Visible = True
     End Sub
 End Class

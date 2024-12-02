@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class AddStudentAccount
     Private connector As New DatabaseConnector
+    Private mail As New Mail
     Private Sub AddStudentForm_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
@@ -34,15 +35,20 @@ Public Class AddStudentAccount
         End Try
         Return programID
     End Function
-    Private Function birthDate() As String
-        Dim birthday As String = birthCalendar.SelectionStart.Year.ToString & "-" & birthCalendar.SelectionStart.Month.ToString & "-" & birthCalendar.SelectionStart.Day.ToString
-        Return birthday
+    Private Function getEmail() As String
+        Dim email As String = emailTextBox.Text.Trim
+        Return email
+    End Function
+
+    Private Function getPassCode() As String
+        Dim passCode As String = mail.mailMe(getEmail)
+        Return passCode
     End Function
 
     Private Sub addStudentButton_Click(sender As Object, e As EventArgs) Handles addStudentButton.Click
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO student VALUES ('" & getStudID() & "','" & lastnameTextBox.Text & "','" & firstnameTextBox.Text & "','" & middlenameTextBox.Text & "','" & birthDate() & "','" & getProgramID() & "'," & yearComboBox.Text & ",'" & sectionComboBox.Text & "','" & "password" & "','" & emailTextBox.Text & "');"
+            connector.query = "INSERT INTO student VALUES ('" & getStudID() & "','" & lastnameTextBox.Text & "','" & firstnameTextBox.Text & "','" & middlenameTextBox.Text & "','" & birthDate.Text & "','" & getProgramID() & "'," & yearComboBox.Text & ",'" & sectionComboBox.Text & "','" & getPassCode() & "','" & getEmail() & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
@@ -115,4 +121,5 @@ Public Class AddStudentAccount
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
         Me.Visible = False
     End Sub
+
 End Class

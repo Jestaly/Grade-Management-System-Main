@@ -29,7 +29,8 @@ Public Class AddCourseForm
         End Try
     End Sub
     Private Function getCourseID() As String
-        Dim courseID = courseIDLabel.Text.Replace("-", "")
+        Dim courseID = courseIDTextBox.Text.Replace("-", "")
         Return courseID
     End Function
+
 End Class

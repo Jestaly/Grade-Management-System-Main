@@ -54,7 +54,7 @@ Public Class ModifyStudentForm
                     officialModifyStudentForm.lastnameTextBox.Text = connector.reader("lname").ToString
                     officialModifyStudentForm.firstnameTextBox.Text = connector.reader("fname").ToString
                     officialModifyStudentForm.middlenameTextBox.Text = connector.reader("mname").ToString
-                    officialModifyStudentForm.birthCalendar.SetDate(connector.reader("birthdate").ToString)
+                    officialModifyStudentForm.birthDate.Text = connector.reader("birthdate").ToString
                     officialModifyStudentForm.programComboBox.Text = connector.reader("program_name").ToString
                     officialModifyStudentForm.yearComboBox.Text = connector.reader("year").ToString
                     officialModifyStudentForm.emailTextBox.Text = connector.reader("email").ToString
