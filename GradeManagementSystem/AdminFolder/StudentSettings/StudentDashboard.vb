@@ -5,6 +5,7 @@ Imports System.Windows.Forms
 Public Class StudentDashboard
     Inherits Form
     Public Property CornerRadius As Integer = 30
+    Public Property UserChoice As DialogResult = DialogResult.Cancel
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
         e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
@@ -82,5 +83,7 @@ Public Class StudentDashboard
             Application.Exit()
         End If
     End Sub
+
+
 
 End Class
