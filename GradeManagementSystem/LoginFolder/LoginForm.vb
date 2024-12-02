@@ -1,11 +1,25 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Drawing.Drawing2D
+Imports MySql.Data.MySqlClient
 
 Public Class LoginForm
     Public connector As New DatabaseConnector
-    Private adminForm As New AdminForm
+    ' Private adminForm As New AdminForm
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Private professorForm As New ProfessorForm
+    Public Property CornerRadius As Integer = 60
+    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
+        MyBase.OnPaint(e)
+        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, CornerRadius, CornerRadius, 180, 90) ' Top-left corner
+        path.AddArc(Me.ClientSize.Width - CornerRadius, 0, CornerRadius, CornerRadius, 270, 90) ' Top-right corner
+        path.AddArc(Me.ClientSize.Width - CornerRadius, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 0, 90) ' Bottom-right corner
+        path.AddArc(0, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 90, 90) ' Bottom-left corner
+        path.CloseAllFigures()
+        Me.Region = New Region(path)
+        e.Graphics.DrawPath(New Pen(Color.Black, 2), path)
+    End Sub
 
     Private Function trimmedID() As String
         Dim id As String = accountIDLogin.Text.Replace("-", "")
@@ -37,7 +51,7 @@ Public Class LoginForm
                         Return
                     ElseIf (trimmedID().Chars(0) = "3") Then
                         Me.Visible = False
-                        adminForm.Visible = True
+                        AdminDashboard.Visible = True
                         Return
                     End If
                 End If
@@ -47,10 +61,15 @@ Public Class LoginForm
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
+        accountIDLogin.BackColor = Color.FromArgb(255, 128, 128)
+        passwordLogin.BackColor = Color.FromArgb(255, 128, 128)
+        Panel1.BackColor = Color.FromArgb(255, 128, 128)
+        Panel2.BackColor = Color.FromArgb(255, 128, 128)
+
         MessageBox.Show("Wrong ID or password.")
     End Sub
-    Private Sub registerAdmin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles registerAdmin.LinkClicked
-        Me.Visible = False
+    Private Sub registerAdmin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+        Visible = False
         registerForm.Visible = True
     End Sub
 
@@ -63,5 +82,7 @@ Public Class LoginForm
         Application.Exit()
     End Sub
 
+    Private Sub accountIDLogin_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles accountIDLogin.MaskInputRejected
 
+    End Sub
 End Class
