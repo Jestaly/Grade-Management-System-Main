@@ -33,6 +33,10 @@ Partial Class OfficialModifyEnrollStudentFormvb
         modifyEnrollButton = New Button()
         Label2 = New Label()
         Label1 = New Label()
+        Label6 = New Label()
+        Label5 = New Label()
+        showProfessorTextBox = New TextBox()
+        showCourseTextBox = New TextBox()
         SuspendLayout()
         ' 
         ' Label4
@@ -55,7 +59,7 @@ Partial Class OfficialModifyEnrollStudentFormvb
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(274, 14)
+        backButton.Location = New Point(362, 12)
         backButton.Name = "backButton"
         backButton.Size = New Size(100, 29)
         backButton.TabIndex = 39
@@ -135,12 +139,50 @@ Partial Class OfficialModifyEnrollStudentFormvb
         Label1.TabIndex = 31
         Label1.Text = "Enrollment ID"
         ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(299, 136)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(54, 20)
+        Label6.TabIndex = 45
+        Label6.Text = "Course"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(299, 69)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(70, 20)
+        Label5.TabIndex = 44
+        Label5.Text = "Professor"
+        ' 
+        ' showProfessorTextBox
+        ' 
+        showProfessorTextBox.Enabled = False
+        showProfessorTextBox.Location = New Point(299, 92)
+        showProfessorTextBox.Name = "showProfessorTextBox"
+        showProfessorTextBox.Size = New Size(151, 27)
+        showProfessorTextBox.TabIndex = 43
+        ' 
+        ' showCourseTextBox
+        ' 
+        showCourseTextBox.Enabled = False
+        showCourseTextBox.Location = New Point(299, 159)
+        showCourseTextBox.Name = "showCourseTextBox"
+        showCourseTextBox.Size = New Size(151, 27)
+        showCourseTextBox.TabIndex = 42
+        ' 
         ' OfficialModifyEnrollStudentFormvb
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(389, 245)
+        ClientSize = New Size(484, 245)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(showProfessorTextBox)
+        Controls.Add(showCourseTextBox)
         Controls.Add(Label4)
         Controls.Add(enrollmentDate)
         Controls.Add(backButton)
@@ -170,4 +212,8 @@ Partial Class OfficialModifyEnrollStudentFormvb
     Friend WithEvents modifyEnrollButton As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents showProfessorTextBox As TextBox
+    Friend WithEvents showCourseTextBox As TextBox
 End Class

@@ -33,11 +33,15 @@ Partial Class EnrollStudentForm
         Label1 = New Label()
         enrollmentDate = New DateTimePicker()
         Label4 = New Label()
+        showCourseTextBox = New TextBox()
+        showProfessorTextBox = New TextBox()
+        Label5 = New Label()
+        Label6 = New Label()
         SuspendLayout()
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(277, 20)
+        backButton.Location = New Point(362, 16)
         backButton.Name = "backButton"
         backButton.Size = New Size(100, 29)
         backButton.TabIndex = 28
@@ -48,7 +52,7 @@ Partial Class EnrollStudentForm
         ' 
         studentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         studentComboBox.FormattingEnabled = True
-        studentComboBox.Location = New Point(129, 122)
+        studentComboBox.Location = New Point(129, 119)
         studentComboBox.Name = "studentComboBox"
         studentComboBox.Size = New Size(151, 28)
         studentComboBox.TabIndex = 27
@@ -57,14 +61,14 @@ Partial Class EnrollStudentForm
         ' 
         classComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         classComboBox.FormattingEnabled = True
-        classComboBox.Location = New Point(129, 86)
+        classComboBox.Location = New Point(129, 83)
         classComboBox.Name = "classComboBox"
         classComboBox.Size = New Size(151, 28)
         classComboBox.TabIndex = 26
         ' 
         ' clearButton
         ' 
-        clearButton.Location = New Point(207, 198)
+        clearButton.Location = New Point(195, 198)
         clearButton.Name = "clearButton"
         clearButton.Size = New Size(85, 29)
         clearButton.TabIndex = 25
@@ -84,7 +88,7 @@ Partial Class EnrollStudentForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(63, 122)
+        Label3.Location = New Point(63, 119)
         Label3.Name = "Label3"
         Label3.Size = New Size(60, 20)
         Label3.TabIndex = 23
@@ -92,7 +96,7 @@ Partial Class EnrollStudentForm
         ' 
         ' enrollButton
         ' 
-        enrollButton.Location = New Point(116, 198)
+        enrollButton.Location = New Point(104, 198)
         enrollButton.Name = "enrollButton"
         enrollButton.Size = New Size(85, 29)
         enrollButton.TabIndex = 22
@@ -102,7 +106,7 @@ Partial Class EnrollStudentForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(81, 89)
+        Label2.Location = New Point(81, 86)
         Label2.Name = "Label2"
         Label2.Size = New Size(42, 20)
         Label2.TabIndex = 21
@@ -121,7 +125,7 @@ Partial Class EnrollStudentForm
         ' 
         enrollmentDate.CustomFormat = "yyyy-MM-dd"
         enrollmentDate.Format = DateTimePickerFormat.Custom
-        enrollmentDate.Location = New Point(129, 156)
+        enrollmentDate.Location = New Point(129, 153)
         enrollmentDate.Name = "enrollmentDate"
         enrollmentDate.Size = New Size(151, 27)
         enrollmentDate.TabIndex = 29
@@ -129,18 +133,56 @@ Partial Class EnrollStudentForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(6, 156)
+        Label4.Location = New Point(6, 153)
         Label4.Name = "Label4"
         Label4.Size = New Size(117, 20)
         Label4.TabIndex = 30
         Label4.Text = "Enrollment Date"
+        ' 
+        ' showCourseTextBox
+        ' 
+        showCourseTextBox.Enabled = False
+        showCourseTextBox.Location = New Point(311, 170)
+        showCourseTextBox.Name = "showCourseTextBox"
+        showCourseTextBox.Size = New Size(151, 27)
+        showCourseTextBox.TabIndex = 31
+        ' 
+        ' showProfessorTextBox
+        ' 
+        showProfessorTextBox.Enabled = False
+        showProfessorTextBox.Location = New Point(311, 103)
+        showProfessorTextBox.Name = "showProfessorTextBox"
+        showProfessorTextBox.Size = New Size(151, 27)
+        showProfessorTextBox.TabIndex = 32
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(311, 80)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(70, 20)
+        Label5.TabIndex = 33
+        Label5.Text = "Professor"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(311, 147)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(54, 20)
+        Label6.TabIndex = 34
+        Label6.Text = "Course"
         ' 
         ' EnrollStudentForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(396, 251)
+        ClientSize = New Size(501, 251)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(showProfessorTextBox)
+        Controls.Add(showCourseTextBox)
         Controls.Add(Label4)
         Controls.Add(enrollmentDate)
         Controls.Add(backButton)
@@ -170,4 +212,8 @@ Partial Class EnrollStudentForm
     Friend WithEvents Label1 As Label
     Friend WithEvents enrollmentDate As DateTimePicker
     Friend WithEvents Label4 As Label
+    Friend WithEvents showCourseTextBox As TextBox
+    Friend WithEvents showProfessorTextBox As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

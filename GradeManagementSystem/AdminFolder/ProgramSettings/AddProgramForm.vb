@@ -46,7 +46,7 @@ Public Class AddProgramForm
     End Function
 
     Private Function getProgramID() As String
-        Dim programID = programIDLabel.Text.Replace("-", "")
+        Dim programID = programIDTextBox.Text.Replace("-", "")
         Return programID
     End Function
 

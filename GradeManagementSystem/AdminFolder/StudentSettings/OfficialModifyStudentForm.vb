@@ -29,15 +29,10 @@ Public Class OfficialModifyStudentForm
         Return programID
     End Function
 
-    Private Function birthDate() As String
-        Dim birthday As String = birthCalendar.SelectionStart.Year.ToString & "-" & birthCalendar.SelectionStart.Month.ToString & "-" & birthCalendar.SelectionStart.Day.ToString
-        Return birthday
-    End Function
-
     Private Sub modifyStudentButton_Click(sender As Object, e As EventArgs) Handles modifyStudentButton.Click
         Try
             connector.connect.Open()
-            connector.query = "UPDATE student SET lname = '" & lastnameTextBox.Text & "', fname = '" & firstnameTextBox.Text & "', mname = '" & middlenameTextBox.Text & "', birthdate = '" & birthDate() & "', program_id = '" & getProgramID() & "', year = " & yearComboBox.Text & ", section = '" & sectionComboBox.Text & "', email = '" & emailTextBox.Text & "'  WHERE id = " & sidTextBox.Text & ";"
+            connector.query = "UPDATE student SET lname = '" & lastnameTextBox.Text & "', fname = '" & firstnameTextBox.Text & "', mname = '" & middlenameTextBox.Text & "', birthdate = '" & birthDate.Text & "', program_id = '" & getProgramID() & "', year = " & yearComboBox.Text & ", section = '" & sectionComboBox.Text & "', email = '" & emailTextBox.Text & "'  WHERE id = " & sidTextBox.Text & ";"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()

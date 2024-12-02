@@ -37,7 +37,7 @@ Public Class ManageDepartmentAdmin
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        addDepartmentForm.departmentIDLabel.Text = "D" & "-" & getZeros(dCount) & (dCount + 1)
+        addDepartmentForm.departmentIDTextBox.Text = "D" & "-" & getZeros(dCount) & (dCount + 1)
         addDepartmentForm.Visible = True
     End Sub
 
