@@ -29,10 +29,10 @@ Partial Class AdminDashboard
         depBtn = New Button()
         alloIcon = New PictureBox()
         profIcon = New PictureBox()
+        PictureBox2 = New PictureBox()
         progIcon = New PictureBox()
         studIcon = New PictureBox()
         homeIcon = New PictureBox()
-        PictureBox2 = New PictureBox()
         dashbtn = New Button()
         managebtn = New Button()
         progbtn = New Button()
@@ -86,10 +86,10 @@ Partial Class AdminDashboard
         CType(depIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(alloIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(profIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(progIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(studIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(homeIcon, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(tuldok, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         PanelLeft.SuspendLayout()
@@ -151,7 +151,7 @@ Partial Class AdminDashboard
         depBtn.Name = "depBtn"
         depBtn.Size = New Size(313, 65)
         depBtn.TabIndex = 57
-        depBtn.Text = "M A N A G E D E P A R T M E N T S"
+        depBtn.Text = "M A N A G E  D E P A R T M E N T "
         depBtn.TextAlign = ContentAlignment.MiddleRight
         depBtn.UseVisualStyleBackColor = False
         ' 
@@ -178,6 +178,18 @@ Partial Class AdminDashboard
         profIcon.SizeMode = PictureBoxSizeMode.Zoom
         profIcon.TabIndex = 50
         profIcon.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
+        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox2.Location = New Point(129, 457)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(121, 80)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 47
+        PictureBox2.TabStop = False
         ' 
         ' progIcon
         ' 
@@ -215,18 +227,6 @@ Partial Class AdminDashboard
         homeIcon.SizeMode = PictureBoxSizeMode.Zoom
         homeIcon.TabIndex = 47
         homeIcon.TabStop = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
-        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox2.Location = New Point(129, 457)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(121, 80)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 47
-        PictureBox2.TabStop = False
         ' 
         ' dashbtn
         ' 
@@ -842,10 +842,10 @@ Partial Class AdminDashboard
         CType(depIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(alloIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(profIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(progIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(studIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(homeIcon, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(tuldok, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
