@@ -28,6 +28,7 @@ Partial Class ManageDepartmentAdmin
         refreshButton = New Button()
         searchDepartmentField = New TextBox()
         dataView = New DataGridView()
+        removeDeptButton = New Button()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -42,18 +43,18 @@ Partial Class ManageDepartmentAdmin
         ' 
         ' addDepartment
         ' 
-        addDepartment.Location = New Point(514, 30)
+        addDepartment.Location = New Point(496, 24)
         addDepartment.Name = "addDepartment"
-        addDepartment.Size = New Size(148, 29)
+        addDepartment.Size = New Size(166, 29)
         addDepartment.TabIndex = 1
         addDepartment.Text = "Add Department"
         addDepartment.UseVisualStyleBackColor = True
         ' 
         ' modifyButton
         ' 
-        modifyButton.Location = New Point(514, 63)
+        modifyButton.Location = New Point(496, 57)
         modifyButton.Name = "modifyButton"
-        modifyButton.Size = New Size(148, 29)
+        modifyButton.Size = New Size(166, 29)
         modifyButton.TabIndex = 2
         modifyButton.Text = "Modify Department"
         modifyButton.UseVisualStyleBackColor = True
@@ -83,11 +84,21 @@ Partial Class ManageDepartmentAdmin
         dataView.Size = New Size(629, 265)
         dataView.TabIndex = 5
         ' 
+        ' removeDeptButton
+        ' 
+        removeDeptButton.Location = New Point(496, 92)
+        removeDeptButton.Name = "removeDeptButton"
+        removeDeptButton.Size = New Size(166, 29)
+        removeDeptButton.TabIndex = 6
+        removeDeptButton.Text = "Remove Department"
+        removeDeptButton.UseVisualStyleBackColor = True
+        ' 
         ' ManageDepartmentAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(692, 405)
+        Controls.Add(removeDeptButton)
         Controls.Add(dataView)
         Controls.Add(searchDepartmentField)
         Controls.Add(refreshButton)
@@ -108,4 +119,5 @@ Partial Class ManageDepartmentAdmin
     Friend WithEvents refreshButton As Button
     Friend WithEvents searchDepartmentField As TextBox
     Friend WithEvents dataView As DataGridView
+    Friend WithEvents removeDeptButton As Button
 End Class

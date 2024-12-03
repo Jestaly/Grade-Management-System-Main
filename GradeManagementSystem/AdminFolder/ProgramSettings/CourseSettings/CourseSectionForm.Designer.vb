@@ -29,6 +29,7 @@ Partial Class CourseSectionForm
         searchButton = New Button()
         refreshButton = New Button()
         searchCourseField = New TextBox()
+        removeCourseButton = New Button()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -94,11 +95,21 @@ Partial Class CourseSectionForm
         searchCourseField.Size = New Size(206, 27)
         searchCourseField.TabIndex = 7
         ' 
+        ' removeCourseButton
+        ' 
+        removeCourseButton.Location = New Point(444, 111)
+        removeCourseButton.Name = "removeCourseButton"
+        removeCourseButton.Size = New Size(127, 29)
+        removeCourseButton.TabIndex = 14
+        removeCourseButton.Text = "Remove Course"
+        removeCourseButton.UseVisualStyleBackColor = True
+        ' 
         ' CourseSectionForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(760, 431)
+        Controls.Add(removeCourseButton)
         Controls.Add(dataView)
         Controls.Add(addCourseButton)
         Controls.Add(modifyCourseButton)
@@ -120,4 +131,5 @@ Partial Class CourseSectionForm
     Friend WithEvents searchButton As Button
     Friend WithEvents refreshButton As Button
     Friend WithEvents searchCourseField As TextBox
+    Friend WithEvents removeCourseButton As Button
 End Class

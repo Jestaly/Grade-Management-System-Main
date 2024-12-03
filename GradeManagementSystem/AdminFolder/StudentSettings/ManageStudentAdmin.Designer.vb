@@ -28,6 +28,7 @@ Partial Class ManageStudentAdmin
         searchStudent = New Button()
         dataView = New DataGridView()
         refreshButton = New Button()
+        removeStudent = New Button()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -84,12 +85,22 @@ Partial Class ManageStudentAdmin
         refreshButton.Text = "Refresh"
         refreshButton.UseVisualStyleBackColor = True
         ' 
+        ' removeStudent
+        ' 
+        removeStudent.Location = New Point(646, 68)
+        removeStudent.Name = "removeStudent"
+        removeStudent.Size = New Size(126, 29)
+        removeStudent.TabIndex = 6
+        removeStudent.Text = "Remove Student"
+        removeStudent.UseVisualStyleBackColor = True
+        ' 
         ' ManageStudentAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveBorder
         ClientSize = New Size(800, 450)
+        Controls.Add(removeStudent)
         Controls.Add(refreshButton)
         Controls.Add(dataView)
         Controls.Add(searchStudent)
@@ -110,4 +121,5 @@ Partial Class ManageStudentAdmin
     Friend WithEvents searchStudent As Button
     Friend WithEvents refreshButton As Button
     Public WithEvents dataView As DataGridView
+    Friend WithEvents removeStudent As Button
 End Class
