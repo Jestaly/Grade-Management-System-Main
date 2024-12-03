@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Security.Permissions
+Imports MySql.Data.MySqlClient
 
 Public Class ModifyClassForm
     Private connector As New DatabaseConnector
@@ -61,11 +62,54 @@ Public Class ModifyClassForm
             MessageBox.Show("Database Error")
         End Try
     End Sub
+    Private Function getPMAbb() As String
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM time_history;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (connector.reader("class_id").Equals(trimmedClassID)) Then
+                    Dim endAbb As String = connector.reader("end_abbreviation").ToString
+                    connector.reader.Close()
+                    connector.connect.Close()
+                    Return endAbb
+                End If
+            End While
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return ""
+    End Function
 
+    Private Function getAMAbb() As String
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM time_history;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (connector.reader("class_id").Equals(trimmedClassID)) Then
+                    Dim startAbb As String = connector.reader("start_abbreviation").ToString
+                    connector.reader.Close()
+                    connector.connect.Close()
+                    Return startAbb
+                End If
+            End While
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return ""
+    End Function
     Private Function classExists() As Boolean
         Try
             connector.connect.Open()
-            connector.query = "SELECT class.class_id,CONCAT(professor.fname,' ',professor.mname,' ', professor.lname) AS 'Professor', course.course_name AS Course FROM class LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id;"
+            connector.query = "SELECT class.class_id,CONCAT(professor.fname,' ',professor.mname,' ', professor.lname) AS 'Professor', course.course_name AS Course, time_start, time_end, day AS Day FROM class LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id LEFT JOIN time_history ON class.class_id = time_history.class_id;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
@@ -74,8 +118,13 @@ Public Class ModifyClassForm
                     officialModifyClassForm.classIDTextBox.Text = connector.reader("class_id").ToString
                     officialModifyClassForm.professorComboBox.Text = connector.reader("Professor").ToString
                     officialModifyClassForm.courseComboBox.Text = connector.reader("Course").ToString
+                    officialModifyClassForm.classSeshComboBox.Text = connector.reader("Day").ToString
+                    officialModifyClassForm.startTimePicker.Text = connector.reader("time_start").ToString
+                    officialModifyClassForm.endTimePicker.Text = connector.reader("time_end").ToString
                     connector.connect.Close()
                     connector.reader.Close()
+                    'officialModifyClassForm.startTimePicker.Text &= getAMAbb()
+                    'officialModifyClassForm.endTimePicker.Text &= getPMAbb()
                     Return True
                 End If
             End While
