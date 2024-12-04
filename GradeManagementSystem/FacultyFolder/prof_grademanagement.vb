@@ -1,10 +1,12 @@
-﻿Public Class Forgetpasscodeportal
-
+﻿Public Class prof_grademanagement
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
         MyBase.OnPaint(e)
 
+
         Dim g As Graphics = e.Graphics
+
         Dim rect As New Rectangle(0, 0, Me.Width, Me.Height)
+
         Dim radius As Integer = 30
         Dim path As New Drawing2D.GraphicsPath()
 
@@ -18,19 +20,11 @@
         Me.Region = New Region(path)
     End Sub
 
-    Private Sub emailaddress_TextChanged(sender As Object, e As EventArgs) Handles emailaddress.TextChanged
+    Private Sub prof_grademanagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
-    Private Sub resetpasscodebttn_Click_1(sender As Object, e As EventArgs) Handles resetpasscodebttn.Click
-    End Sub
+    Private Sub Gerald2_Click(sender As Object, e As EventArgs)
 
-    Private Sub backtologinclick_Click(sender As Object, e As EventArgs) Handles backtologinclick.Click
-        LoginForm.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub backtologinicon_Click(sender As Object, e As EventArgs) Handles backtologinicon.Click
-        LoginForm.Show()
-        Me.Hide()
     End Sub
 End Class

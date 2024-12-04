@@ -50,10 +50,10 @@ Partial Class ResetPasscodeportal
         Label1.AutoSize = True
         Label1.Font = New Font("Verdana", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.DarkGreen
-        Label1.Location = New Point(69, 29)
+        Label1.Location = New Point(86, 36)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(340, 29)
+        Label1.Size = New Size(416, 34)
         Label1.TabIndex = 1
         Label1.Text = "C h e c k  y o u r  e m a i l !"
         ' 
@@ -62,10 +62,10 @@ Partial Class ResetPasscodeportal
         Label2.AutoSize = True
         Label2.Font = New Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.DimGray
-        Label2.Location = New Point(34, 71)
+        Label2.Location = New Point(42, 89)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(396, 18)
+        Label2.Size = New Size(479, 22)
         Label2.TabIndex = 2
         Label2.Text = "Input the 6-digit code, then set your new password."
         Label2.TextAlign = ContentAlignment.MiddleCenter
@@ -76,10 +76,10 @@ Partial Class ResetPasscodeportal
         Label3.BackColor = Color.SeaGreen
         Label3.Font = New Font("Segoe UI", 25F)
         Label3.ForeColor = Color.SeaGreen
-        Label3.Location = New Point(69, 134)
+        Label3.Location = New Point(86, 168)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(335, 57)
+        Label3.Size = New Size(393, 67)
         Label3.TabIndex = 4
         Label3.Text = "anong label niyo"
         ' 
@@ -89,10 +89,10 @@ Partial Class ResetPasscodeportal
         digitcodetxt.BorderStyle = BorderStyle.None
         digitcodetxt.Font = New Font("Segoe UI", 11F)
         digitcodetxt.ForeColor = Color.White
-        digitcodetxt.Location = New Point(81, 150)
-        digitcodetxt.Margin = New Padding(2, 2, 2, 2)
+        digitcodetxt.Location = New Point(101, 188)
+        digitcodetxt.Margin = New Padding(2)
         digitcodetxt.Name = "digitcodetxt"
-        digitcodetxt.Size = New Size(287, 25)
+        digitcodetxt.Size = New Size(359, 30)
         digitcodetxt.TabIndex = 5
         digitcodetxt.TextAlign = HorizontalAlignment.Center
         ' 
@@ -101,10 +101,10 @@ Partial Class ResetPasscodeportal
         Label4.AutoSize = True
         Label4.Font = New Font("Verdana", 7F)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(73, 117)
+        Label4.Location = New Point(91, 146)
         Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(127, 14)
+        Label4.Size = New Size(145, 17)
         Label4.TabIndex = 6
         Label4.Text = "Enter 6 - digit code"
         ' 
@@ -114,10 +114,10 @@ Partial Class ResetPasscodeportal
         Label5.BackColor = Color.FromArgb(CByte(148), CByte(219), CByte(179))
         Label5.Font = New Font("Segoe UI", 25F)
         Label5.ForeColor = Color.FromArgb(CByte(148), CByte(219), CByte(179))
-        Label5.Location = New Point(69, 237)
+        Label5.Location = New Point(86, 296)
         Label5.Margin = New Padding(2, 0, 2, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(335, 57)
+        Label5.Size = New Size(393, 67)
         Label5.TabIndex = 7
         Label5.Text = "anong label niyo"
         ' 
@@ -127,10 +127,10 @@ Partial Class ResetPasscodeportal
         newpasswordtxt.BorderStyle = BorderStyle.None
         newpasswordtxt.Font = New Font("Segoe UI", 11F)
         newpasswordtxt.ForeColor = Color.White
-        newpasswordtxt.Location = New Point(81, 253)
-        newpasswordtxt.Margin = New Padding(2, 2, 2, 2)
+        newpasswordtxt.Location = New Point(101, 316)
+        newpasswordtxt.Margin = New Padding(2)
         newpasswordtxt.Name = "newpasswordtxt"
-        newpasswordtxt.Size = New Size(287, 25)
+        newpasswordtxt.Size = New Size(359, 30)
         newpasswordtxt.TabIndex = 8
         newpasswordtxt.TextAlign = HorizontalAlignment.Center
         ' 
@@ -140,10 +140,10 @@ Partial Class ResetPasscodeportal
         confirmnewpasswordtxt.BorderStyle = BorderStyle.None
         confirmnewpasswordtxt.Font = New Font("Segoe UI", 11F)
         confirmnewpasswordtxt.ForeColor = Color.White
-        confirmnewpasswordtxt.Location = New Point(81, 356)
-        confirmnewpasswordtxt.Margin = New Padding(2, 2, 2, 2)
+        confirmnewpasswordtxt.Location = New Point(101, 445)
+        confirmnewpasswordtxt.Margin = New Padding(2)
         confirmnewpasswordtxt.Name = "confirmnewpasswordtxt"
-        confirmnewpasswordtxt.Size = New Size(287, 25)
+        confirmnewpasswordtxt.Size = New Size(359, 30)
         confirmnewpasswordtxt.TabIndex = 10
         confirmnewpasswordtxt.TextAlign = HorizontalAlignment.Center
         ' 
@@ -153,10 +153,10 @@ Partial Class ResetPasscodeportal
         Label6.BackColor = Color.FromArgb(CByte(148), CByte(219), CByte(179))
         Label6.Font = New Font("Segoe UI", 25F)
         Label6.ForeColor = Color.FromArgb(CByte(148), CByte(219), CByte(179))
-        Label6.Location = New Point(69, 340)
+        Label6.Location = New Point(86, 425)
         Label6.Margin = New Padding(2, 0, 2, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(335, 57)
+        Label6.Size = New Size(393, 67)
         Label6.TabIndex = 9
         Label6.Text = "anong label niyo"
         ' 
@@ -165,10 +165,10 @@ Partial Class ResetPasscodeportal
         Label7.AutoSize = True
         Label7.Font = New Font("Verdana", 7F)
         Label7.ForeColor = Color.DarkGreen
-        Label7.Location = New Point(73, 219)
+        Label7.Location = New Point(91, 274)
         Label7.Margin = New Padding(2, 0, 2, 0)
         Label7.Name = "Label7"
-        Label7.Size = New Size(137, 14)
+        Label7.Size = New Size(150, 17)
         Label7.TabIndex = 11
         Label7.Text = "Enter New Passcode"
         ' 
@@ -177,10 +177,10 @@ Partial Class ResetPasscodeportal
         Label8.AutoSize = True
         Label8.Font = New Font("Verdana", 7F)
         Label8.ForeColor = Color.DarkGreen
-        Label8.Location = New Point(73, 322)
+        Label8.Location = New Point(91, 402)
         Label8.Margin = New Padding(2, 0, 2, 0)
         Label8.Name = "Label8"
-        Label8.Size = New Size(151, 14)
+        Label8.Size = New Size(167, 17)
         Label8.TabIndex = 12
         Label8.Text = "Confirm New Passcode"
         ' 
@@ -189,10 +189,10 @@ Partial Class ResetPasscodeportal
         digitcode_errormessage.AutoSize = True
         digitcode_errormessage.Font = New Font("Verdana", 7F)
         digitcode_errormessage.ForeColor = Color.Red
-        digitcode_errormessage.Location = New Point(69, 187)
+        digitcode_errormessage.Location = New Point(86, 234)
         digitcode_errormessage.Margin = New Padding(2, 0, 2, 0)
         digitcode_errormessage.Name = "digitcode_errormessage"
-        digitcode_errormessage.Size = New Size(0, 14)
+        digitcode_errormessage.Size = New Size(0, 17)
         digitcode_errormessage.TabIndex = 13
         ' 
         ' newpassword_errormessage
@@ -200,10 +200,10 @@ Partial Class ResetPasscodeportal
         newpassword_errormessage.AutoSize = True
         newpassword_errormessage.Font = New Font("Verdana", 7F)
         newpassword_errormessage.ForeColor = Color.Red
-        newpassword_errormessage.Location = New Point(71, 290)
+        newpassword_errormessage.Location = New Point(89, 362)
         newpassword_errormessage.Margin = New Padding(2, 0, 2, 0)
         newpassword_errormessage.Name = "newpassword_errormessage"
-        newpassword_errormessage.Size = New Size(0, 14)
+        newpassword_errormessage.Size = New Size(0, 17)
         newpassword_errormessage.TabIndex = 14
         ' 
         ' confirmnewpassword_errormessage
@@ -211,10 +211,10 @@ Partial Class ResetPasscodeportal
         confirmnewpassword_errormessage.AutoSize = True
         confirmnewpassword_errormessage.Font = New Font("Verdana", 7F)
         confirmnewpassword_errormessage.ForeColor = Color.Red
-        confirmnewpassword_errormessage.Location = New Point(69, 416)
+        confirmnewpassword_errormessage.Location = New Point(86, 520)
         confirmnewpassword_errormessage.Margin = New Padding(2, 0, 2, 0)
         confirmnewpassword_errormessage.Name = "confirmnewpassword_errormessage"
-        confirmnewpassword_errormessage.Size = New Size(0, 14)
+        confirmnewpassword_errormessage.Size = New Size(0, 17)
         confirmnewpassword_errormessage.TabIndex = 15
         ' 
         ' PictureBox9
@@ -223,9 +223,10 @@ Partial Class ResetPasscodeportal
         PictureBox9.BackgroundImage = CType(resources.GetObject("PictureBox9.BackgroundImage"), Image)
         PictureBox9.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox9.ImageLocation = ""
-        PictureBox9.Location = New Point(86, 516)
+        PictureBox9.Location = New Point(108, 645)
+        PictureBox9.Margin = New Padding(4, 4, 4, 4)
         PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(102, 46)
+        PictureBox9.Size = New Size(128, 58)
         PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox9.TabIndex = 47
         PictureBox9.TabStop = False
@@ -235,10 +236,10 @@ Partial Class ResetPasscodeportal
         tryagainclick.AutoSize = True
         tryagainclick.Font = New Font("Verdana", 10F)
         tryagainclick.ForeColor = Color.DimGray
-        tryagainclick.Location = New Point(182, 528)
+        tryagainclick.Location = New Point(228, 660)
         tryagainclick.Margin = New Padding(2, 0, 2, 0)
         tryagainclick.Name = "tryagainclick"
-        tryagainclick.Size = New Size(89, 20)
+        tryagainclick.Size = New Size(107, 25)
         tryagainclick.TabIndex = 48
         tryagainclick.Text = "Try Again"
         ' 
@@ -248,9 +249,10 @@ Partial Class ResetPasscodeportal
         resetpasscodebttn.BackgroundImage = CType(resources.GetObject("resetpasscodebttn.BackgroundImage"), Image)
         resetpasscodebttn.BackgroundImageLayout = ImageLayout.Stretch
         resetpasscodebttn.ImageLocation = ""
-        resetpasscodebttn.Location = New Point(146, 416)
+        resetpasscodebttn.Location = New Point(182, 520)
+        resetpasscodebttn.Margin = New Padding(4, 4, 4, 4)
         resetpasscodebttn.Name = "resetpasscodebttn"
-        resetpasscodebttn.Size = New Size(150, 69)
+        resetpasscodebttn.Size = New Size(188, 86)
         resetpasscodebttn.SizeMode = PictureBoxSizeMode.Zoom
         resetpasscodebttn.TabIndex = 50
         resetpasscodebttn.TabStop = False
@@ -260,18 +262,18 @@ Partial Class ResetPasscodeportal
         confirmnewpasscode_errormessage.AutoSize = True
         confirmnewpasscode_errormessage.Font = New Font("Verdana", 7F)
         confirmnewpasscode_errormessage.ForeColor = Color.Red
-        confirmnewpasscode_errormessage.Location = New Point(71, 394)
+        confirmnewpasscode_errormessage.Location = New Point(89, 492)
         confirmnewpasscode_errormessage.Margin = New Padding(2, 0, 2, 0)
         confirmnewpasscode_errormessage.Name = "confirmnewpasscode_errormessage"
-        confirmnewpasscode_errormessage.Size = New Size(0, 14)
+        confirmnewpasscode_errormessage.Size = New Size(0, 17)
         confirmnewpasscode_errormessage.TabIndex = 51
         ' 
         ' ResetPasscodeportal
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.MintCream
-        ClientSize = New Size(455, 602)
+        ClientSize = New Size(569, 752)
         Controls.Add(confirmnewpasscode_errormessage)
         Controls.Add(tryagainclick)
         Controls.Add(PictureBox9)
@@ -291,7 +293,7 @@ Partial Class ResetPasscodeportal
         Controls.Add(Label1)
         Controls.Add(resetpasscodebttn)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(2, 2, 2, 2)
+        Margin = New Padding(2)
         Name = "ResetPasscodeportal"
         Text = "ResetPasscodeportal"
         CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
