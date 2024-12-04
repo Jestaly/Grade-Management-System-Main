@@ -48,6 +48,9 @@ Public Class LoginForm
                         Return
                     ElseIf (trimmedID().Chars(0) = "2") Then
                         connector.connect.Close()
+                        loadClass()
+                        getProfName()
+                        professorForm.classChooseBox.SelectedIndex = 0
                         Me.Visible = False
                         professorForm.Visible = True
                         Return
@@ -70,6 +73,44 @@ Public Class LoginForm
         Panel2.BackColor = Color.FromArgb(255, 128, 128)
 
         MessageBox.Show("Wrong ID or password.")
+    End Sub
+
+    Public Sub loadClass()
+        Dim classID As String = ""
+        Try
+            professorForm.classChooseBox.Items.Clear()
+            connector.connect.Open()
+            connector.query = "SELECT class_id AS 'Class ID' FROM class WHERE class.professor_id = '" & trimmedID() & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (connector.reader("Class ID").ToString IsNot Nothing) Then
+                    classID = connector.reader("Class ID").ToString
+                    professorForm.classChooseBox.Items.Add(classID)
+                End If
+            End While
+            professorForm.classChooseBox.SelectedIndex = 0
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Public Sub getProfName()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT CONCAT(fname,' ',mname,' ',lname) AS Professor FROM professor WHERE id = '" & trimmedID() & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            Dim profName As String = connector.command.ExecuteScalar
+            professorForm.profTextBox.Text = profName
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
     End Sub
 
     Public Function getProfID() As String

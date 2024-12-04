@@ -167,6 +167,7 @@ Partial Class AddGradeWeightForm
         Controls.Add(quizTextBox)
         FormBorderStyle = FormBorderStyle.None
         Name = "AddGradeWeightForm"
+        StartPosition = FormStartPosition.CenterParent
         Text = "AddGradeWeightForm"
         ResumeLayout(False)
         PerformLayout()

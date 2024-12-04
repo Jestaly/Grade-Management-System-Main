@@ -112,6 +112,7 @@ Partial Class OfficialModifyGradeWeightForm
         ' deptComboBox
         ' 
         deptComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+        deptComboBox.Enabled = False
         deptComboBox.FormattingEnabled = True
         deptComboBox.Location = New Point(154, 173)
         deptComboBox.Name = "deptComboBox"
