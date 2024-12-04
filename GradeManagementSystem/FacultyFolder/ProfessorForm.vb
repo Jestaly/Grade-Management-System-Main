@@ -1,5 +1,4 @@
-﻿Imports System.Security.Permissions
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class ProfessorForm
     Private connector As New DatabaseConnector

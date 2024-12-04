@@ -40,20 +40,20 @@ Partial Class ProfessorForm
         profTextBox = New TextBox()
         timeTextBox = New TextBox()
         Panel1 = New Panel()
-        Panel2 = New Panel()
-        Panel3 = New Panel()
-        Panel4 = New Panel()
-        Panel5 = New Panel()
-        Panel6 = New Panel()
-        Panel7 = New Panel()
-        Panel8 = New Panel()
         Label1 = New Label()
+        Panel2 = New Panel()
         Label2 = New Label()
+        Panel3 = New Panel()
         Label3 = New Label()
+        Panel4 = New Panel()
         Label4 = New Label()
+        Panel5 = New Panel()
         Label5 = New Label()
+        Panel6 = New Panel()
         Label6 = New Label()
+        Panel7 = New Panel()
         Label7 = New Label()
+        Panel8 = New Panel()
         Label8 = New Label()
         CType(quizDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(attendanceData, ComponentModel.ISupportInitialize).BeginInit()
@@ -239,75 +239,12 @@ Partial Class ProfessorForm
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.Green
+        Panel1.BackColor = Color.LimeGreen
         Panel1.Controls.Add(Label1)
         Panel1.Location = New Point(98, 134)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(296, 36)
         Panel1.TabIndex = 27
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = Color.Green
-        Panel2.Controls.Add(Label2)
-        Panel2.Location = New Point(394, 134)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(166, 36)
-        Panel2.TabIndex = 28
-        ' 
-        ' Panel3
-        ' 
-        Panel3.BackColor = Color.Green
-        Panel3.Controls.Add(Label3)
-        Panel3.Location = New Point(560, 134)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(197, 36)
-        Panel3.TabIndex = 29
-        ' 
-        ' Panel4
-        ' 
-        Panel4.BackColor = Color.Green
-        Panel4.Controls.Add(Label4)
-        Panel4.Location = New Point(757, 134)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(197, 36)
-        Panel4.TabIndex = 30
-        ' 
-        ' Panel5
-        ' 
-        Panel5.BackColor = Color.Green
-        Panel5.Controls.Add(Label5)
-        Panel5.Location = New Point(954, 134)
-        Panel5.Name = "Panel5"
-        Panel5.Size = New Size(81, 36)
-        Panel5.TabIndex = 31
-        ' 
-        ' Panel6
-        ' 
-        Panel6.BackColor = Color.Green
-        Panel6.Controls.Add(Label6)
-        Panel6.Location = New Point(1035, 134)
-        Panel6.Name = "Panel6"
-        Panel6.Size = New Size(81, 36)
-        Panel6.TabIndex = 32
-        ' 
-        ' Panel7
-        ' 
-        Panel7.BackColor = Color.Green
-        Panel7.Controls.Add(Label7)
-        Panel7.Location = New Point(1116, 134)
-        Panel7.Name = "Panel7"
-        Panel7.Size = New Size(98, 36)
-        Panel7.TabIndex = 33
-        ' 
-        ' Panel8
-        ' 
-        Panel8.BackColor = Color.Green
-        Panel8.Controls.Add(Label8)
-        Panel8.Location = New Point(1214, 134)
-        Panel8.Name = "Panel8"
-        Panel8.Size = New Size(99, 36)
-        Panel8.TabIndex = 34
         ' 
         ' Label1
         ' 
@@ -318,6 +255,15 @@ Partial Class ProfessorForm
         Label1.TabIndex = 0
         Label1.Text = "STUDENT INFORMATION"
         ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.LimeGreen
+        Panel2.Controls.Add(Label2)
+        Panel2.Location = New Point(394, 134)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(166, 36)
+        Panel2.TabIndex = 28
+        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
@@ -326,6 +272,15 @@ Partial Class ProfessorForm
         Label2.Size = New Size(102, 20)
         Label2.TabIndex = 1
         Label2.Text = "ATTENDANCE"
+        ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.LimeGreen
+        Panel3.Controls.Add(Label3)
+        Panel3.Location = New Point(560, 134)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(197, 36)
+        Panel3.TabIndex = 29
         ' 
         ' Label3
         ' 
@@ -336,6 +291,15 @@ Partial Class ProfessorForm
         Label3.TabIndex = 2
         Label3.Text = "QUIZZES"
         ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.LimeGreen
+        Panel4.Controls.Add(Label4)
+        Panel4.Location = New Point(757, 134)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(197, 36)
+        Panel4.TabIndex = 30
+        ' 
         ' Label4
         ' 
         Label4.AutoSize = True
@@ -344,6 +308,15 @@ Partial Class ProfessorForm
         Label4.Size = New Size(75, 20)
         Label4.TabIndex = 2
         Label4.Text = "PROJECTS"
+        ' 
+        ' Panel5
+        ' 
+        Panel5.BackColor = Color.LimeGreen
+        Panel5.Controls.Add(Label5)
+        Panel5.Location = New Point(954, 134)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(81, 36)
+        Panel5.TabIndex = 31
         ' 
         ' Label5
         ' 
@@ -354,6 +327,15 @@ Partial Class ProfessorForm
         Label5.TabIndex = 3
         Label5.Text = "EXAM"
         ' 
+        ' Panel6
+        ' 
+        Panel6.BackColor = Color.LimeGreen
+        Panel6.Controls.Add(Label6)
+        Panel6.Location = New Point(1035, 134)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(81, 36)
+        Panel6.TabIndex = 32
+        ' 
         ' Label6
         ' 
         Label6.AutoSize = True
@@ -362,6 +344,15 @@ Partial Class ProfessorForm
         Label6.Size = New Size(57, 20)
         Label6.TabIndex = 4
         Label6.Text = "GRADE"
+        ' 
+        ' Panel7
+        ' 
+        Panel7.BackColor = Color.LimeGreen
+        Panel7.Controls.Add(Label7)
+        Panel7.Location = New Point(1116, 134)
+        Panel7.Name = "Panel7"
+        Panel7.Size = New Size(98, 36)
+        Panel7.TabIndex = 33
         ' 
         ' Label7
         ' 
@@ -372,6 +363,15 @@ Partial Class ProfessorForm
         Label7.Size = New Size(82, 17)
         Label7.TabIndex = 5
         Label7.Text = "EQUIVALENT"
+        ' 
+        ' Panel8
+        ' 
+        Panel8.BackColor = Color.LimeGreen
+        Panel8.Controls.Add(Label8)
+        Panel8.Location = New Point(1214, 134)
+        Panel8.Name = "Panel8"
+        Panel8.Size = New Size(99, 36)
+        Panel8.TabIndex = 34
         ' 
         ' Label8
         ' 
