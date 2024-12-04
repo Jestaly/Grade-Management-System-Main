@@ -29,6 +29,7 @@ Partial Class ManageProgramAdmin
         modifyProgramButton = New Button()
         addProgramButton = New Button()
         dataView = New DataGridView()
+        removeProgramForm = New Button()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -94,11 +95,21 @@ Partial Class ManageProgramAdmin
         dataView.Size = New Size(644, 273)
         dataView.TabIndex = 6
         ' 
+        ' removeProgramForm
+        ' 
+        removeProgramForm.Location = New Point(416, 83)
+        removeProgramForm.Name = "removeProgramForm"
+        removeProgramForm.Size = New Size(135, 29)
+        removeProgramForm.TabIndex = 7
+        removeProgramForm.Text = "Remove Program"
+        removeProgramForm.UseVisualStyleBackColor = True
+        ' 
         ' ManageProgramAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(711, 421)
+        Controls.Add(removeProgramForm)
         Controls.Add(dataView)
         Controls.Add(addProgramButton)
         Controls.Add(modifyProgramButton)
@@ -121,4 +132,5 @@ Partial Class ManageProgramAdmin
     Friend WithEvents modifyProgramButton As Button
     Friend WithEvents addProgramButton As Button
     Friend WithEvents dataView As DataGridView
+    Friend WithEvents removeProgramForm As Button
 End Class

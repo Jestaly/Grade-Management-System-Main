@@ -22,31 +22,79 @@ Partial Class GradeSectionForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
+        refreshButton = New Button()
+        deleteGradeWeightButton = New Button()
+        modifyGradeWeightButton = New Button()
+        gradeWeightDataView = New DataGridView()
+        addGradeWeightButton = New Button()
+        CType(gradeWeightDataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Label1
+        ' refreshButton
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(61, 167)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(655, 81)
-        Label1.TabIndex = 0
-        Label1.Text = "GRADE SECTION FORM"
+        refreshButton.Location = New Point(351, 55)
+        refreshButton.Name = "refreshButton"
+        refreshButton.Size = New Size(88, 29)
+        refreshButton.TabIndex = 16
+        refreshButton.Text = "Refresh"
+        refreshButton.UseVisualStyleBackColor = True
+        ' 
+        ' deleteGradeWeightButton
+        ' 
+        deleteGradeWeightButton.Location = New Point(445, 55)
+        deleteGradeWeightButton.Name = "deleteGradeWeightButton"
+        deleteGradeWeightButton.Size = New Size(88, 29)
+        deleteGradeWeightButton.TabIndex = 15
+        deleteGradeWeightButton.Text = "Delete"
+        deleteGradeWeightButton.UseVisualStyleBackColor = True
+        ' 
+        ' modifyGradeWeightButton
+        ' 
+        modifyGradeWeightButton.Location = New Point(445, 20)
+        modifyGradeWeightButton.Name = "modifyGradeWeightButton"
+        modifyGradeWeightButton.Size = New Size(88, 29)
+        modifyGradeWeightButton.TabIndex = 14
+        modifyGradeWeightButton.Text = "Modify"
+        modifyGradeWeightButton.UseVisualStyleBackColor = True
+        ' 
+        ' gradeWeightDataView
+        ' 
+        gradeWeightDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        gradeWeightDataView.Location = New Point(117, 90)
+        gradeWeightDataView.Name = "gradeWeightDataView"
+        gradeWeightDataView.RowHeadersWidth = 51
+        gradeWeightDataView.Size = New Size(416, 271)
+        gradeWeightDataView.TabIndex = 13
+        ' 
+        ' addGradeWeightButton
+        ' 
+        addGradeWeightButton.Location = New Point(117, 44)
+        addGradeWeightButton.Name = "addGradeWeightButton"
+        addGradeWeightButton.Size = New Size(167, 40)
+        addGradeWeightButton.TabIndex = 12
+        addGradeWeightButton.Text = "ADD GRADE WEIGHT"
+        addGradeWeightButton.UseVisualStyleBackColor = True
         ' 
         ' GradeSectionForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(Label1)
+        ClientSize = New Size(651, 380)
+        Controls.Add(refreshButton)
+        Controls.Add(deleteGradeWeightButton)
+        Controls.Add(modifyGradeWeightButton)
+        Controls.Add(gradeWeightDataView)
+        Controls.Add(addGradeWeightButton)
         Name = "GradeSectionForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "GradeSectionForm"
+        CType(gradeWeightDataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents refreshButton As Button
+    Friend WithEvents deleteGradeWeightButton As Button
+    Friend WithEvents modifyGradeWeightButton As Button
+    Friend WithEvents gradeWeightDataView As DataGridView
+    Friend WithEvents addGradeWeightButton As Button
 End Class

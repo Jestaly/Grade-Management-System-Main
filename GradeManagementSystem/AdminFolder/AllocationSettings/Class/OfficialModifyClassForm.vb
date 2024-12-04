@@ -1,22 +1,51 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.Win32
+Imports MySql.Data.MySqlClient
 
 Public Class OfficialModifyClassForm
     Private connector As New DatabaseConnector
     Private Sub modifyClassButton_Click(sender As Object, e As EventArgs) Handles modifyClassButton.Click
         Try
             connector.connect.Open()
-            connector.query = "UPDATE class SET professor_id = '" & getProfessorID() & "', course_id = '" & getCourseID() & "' WHERE class_id = '" & trimmedClassID() & "';"
+            connector.query = "UPDATE class SET professor_id = '" & getProfessorID() & "', course_id = '" & getCourseID() & "', time_start = '" & getStartTime() & "', time_end = '" & getEndTime() & "', day = '" & classSeshComboBox.Text & "' WHERE class_id = '" & trimmedClassID() & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
             MessageBox.Show("Modified Successfully!")
             connector.connect.Close()
+            setTimeAbb()
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
         Me.Visible = False
     End Sub
+
+    Private Sub setTimeAbb()
+        Dim startTimeAbb As String = startTimePicker.Text.Chars(8) & startTimePicker.Text.Chars(9)
+        Dim endTimeAbb As String = endTimePicker.Text.Chars(8) & endTimePicker.Text.Chars(9)
+        Try
+            connector.connect.Open()
+            connector.query = "UPDATE time_history SET start_abbreviation = '" & startTimeAbb & "', end_abbreviation = '" & endTimeAbb & "' WHERE class_id = '" & trimmedClassID() & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Function getStartTime() As String
+        Dim startTime As String = startTimePicker.Text
+        startTime = startTime.Replace("pm", "").Replace("am", "").Trim
+        Return startTime
+    End Function
+    Private Function getEndTime() As String
+        Dim endTime As String = endTimePicker.Text
+        endTime = endTime.Replace("pm", "").Replace("am", "").Trim
+        Return endTime
+    End Function
 
     Private Function getProfessorID() As String
         Dim selectedProf As String = professorComboBox.Text
