@@ -58,6 +58,11 @@ Partial Class ProfessorForm
         logoutButton = New Button()
         dayTextBox = New TextBox()
         semestralButton = New Button()
+        Label9 = New Label()
+        Label10 = New Label()
+        Label11 = New Label()
+        Label12 = New Label()
+        Label13 = New Label()
         CType(quizDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(attendanceDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(studentInfoDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -123,10 +128,10 @@ Partial Class ProfessorForm
         ' 
         ' classChooseBox
         ' 
-        classChooseBox.Location = New Point(603, 58)
+        classChooseBox.Location = New Point(499, 36)
         classChooseBox.Name = "classChooseBox"
         classChooseBox.ReadOnly = True
-        classChooseBox.Size = New Size(195, 27)
+        classChooseBox.Size = New Size(112, 27)
         classChooseBox.TabIndex = 13
         ' 
         ' projectDataView
@@ -228,7 +233,7 @@ Partial Class ProfessorForm
         ' courseTextBox
         ' 
         courseTextBox.Enabled = False
-        courseTextBox.Location = New Point(283, 90)
+        courseTextBox.Location = New Point(298, 88)
         courseTextBox.Name = "courseTextBox"
         courseTextBox.Size = New Size(195, 27)
         courseTextBox.TabIndex = 23
@@ -236,7 +241,7 @@ Partial Class ProfessorForm
         ' profTextBox
         ' 
         profTextBox.Enabled = False
-        profTextBox.Location = New Point(283, 57)
+        profTextBox.Location = New Point(298, 35)
         profTextBox.Name = "profTextBox"
         profTextBox.Size = New Size(195, 27)
         profTextBox.TabIndex = 24
@@ -244,9 +249,9 @@ Partial Class ProfessorForm
         ' timeTextBox
         ' 
         timeTextBox.Enabled = False
-        timeTextBox.Location = New Point(603, 90)
+        timeTextBox.Location = New Point(683, 88)
         timeTextBox.Name = "timeTextBox"
-        timeTextBox.Size = New Size(195, 27)
+        timeTextBox.Size = New Size(153, 27)
         timeTextBox.TabIndex = 26
         ' 
         ' Panel1
@@ -409,9 +414,9 @@ Partial Class ProfessorForm
         ' dayTextBox
         ' 
         dayTextBox.Enabled = False
-        dayTextBox.Location = New Point(804, 90)
+        dayTextBox.Location = New Point(884, 89)
         dayTextBox.Name = "dayTextBox"
-        dayTextBox.Size = New Size(111, 27)
+        dayTextBox.Size = New Size(153, 27)
         dayTextBox.TabIndex = 36
         ' 
         ' semestralButton
@@ -423,12 +428,62 @@ Partial Class ProfessorForm
         semestralButton.Text = "Semestral"
         semestralButton.UseVisualStyleBackColor = True
         ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(298, 12)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(70, 20)
+        Label9.TabIndex = 38
+        Label9.Text = "Professor"
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Location = New Point(298, 65)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(54, 20)
+        Label10.TabIndex = 39
+        Label10.Text = "Course"
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Location = New Point(499, 13)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(42, 20)
+        Label11.TabIndex = 40
+        Label11.Text = "Class"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Location = New Point(683, 65)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(88, 20)
+        Label12.TabIndex = 41
+        Label12.Text = "Time Period"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Location = New Point(884, 65)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(35, 20)
+        Label13.TabIndex = 42
+        Label13.Text = "Day"
+        ' 
         ' ProfessorForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.GrayText
         ClientSize = New Size(1419, 650)
+        Controls.Add(Label13)
+        Controls.Add(Label12)
+        Controls.Add(Label11)
+        Controls.Add(Label10)
+        Controls.Add(Label9)
         Controls.Add(semestralButton)
         Controls.Add(dayTextBox)
         Controls.Add(logoutButton)
@@ -524,4 +579,9 @@ Partial Class ProfessorForm
     Friend WithEvents logoutButton As Button
     Friend WithEvents dayTextBox As TextBox
     Friend WithEvents semestralButton As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
 End Class
