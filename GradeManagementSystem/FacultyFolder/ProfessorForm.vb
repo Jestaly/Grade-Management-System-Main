@@ -1,7 +1,9 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Security.Permissions
+Imports MySql.Data.MySqlClient
 
 Public Class ProfessorForm
     Private connector As New DatabaseConnector
+
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
         Try
             connector.connect.Open()
@@ -11,9 +13,9 @@ Public Class ProfessorForm
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
             connector.dataAdapter.Fill(connector.dataTable)
-            dataGridView1.DataSource = connector.dataTable
-            dataGridView2.DataSource = connector.dataTable
-            dataGridView3.DataSource = connector.dataTable
+            studentInfoDataView.DataSource = connector.dataTable
+            attendanceData.DataSource = connector.dataTable
+            quizDataView.DataSource = connector.dataTable
             connector.connect.Close()
             connector.command.Parameters.Clear()
         Catch ex As MySqlException
@@ -23,10 +25,10 @@ Public Class ProfessorForm
         End Try
     End Sub
 
-    Private Sub dataGridView3_Scroll(sender As Object, e As ScrollEventArgs) Handles dataGridView3.Scroll
-        If e.ScrollOrientation = ScrollOrientation.VerticalScroll Then
-            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView3.FirstDisplayedScrollingRowIndex
-            dataGridView2.FirstDisplayedScrollingRowIndex = dataGridView3.FirstDisplayedScrollingRowIndex
-        End If
-    End Sub
+    'Private Sub dataGridView3_Scroll(sender As Object, e As ScrollEventArgs) Handles dataGridView3.Scroll
+    'If e.ScrollOrientation = ScrollOrientation.VerticalScroll Then
+    '       dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView3.FirstDisplayedScrollingRowIndex
+    '      dataGridView2.FirstDisplayedScrollingRowIndex = dataGridView3.FirstDisplayedScrollingRowIndex
+    'End If
+    'End Sub
 End Class

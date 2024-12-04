@@ -71,6 +71,10 @@ Public Class LoginForm
 
         MessageBox.Show("Wrong ID or password.")
     End Sub
+
+    Public Function getProfID() As String
+        Return accountIDLogin.Text
+    End Function
     Private Sub registerAdmin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Visible = False
         registerForm.Visible = True
