@@ -63,6 +63,14 @@ Partial Class ProfessorForm
         Label11 = New Label()
         Label12 = New Label()
         Label13 = New Label()
+        editItemButton = New Button()
+        daysColumn = New DataGridViewTextBoxColumn()
+        presentColumn = New DataGridViewTextBoxColumn()
+        absentColumn = New DataGridViewTextBoxColumn()
+        examColumn = New DataGridViewTextBoxColumn()
+        gradeColumn = New DataGridViewTextBoxColumn()
+        equivalentColumn = New DataGridViewTextBoxColumn()
+        remarksColumn = New DataGridViewTextBoxColumn()
         CType(quizDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(attendanceDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(studentInfoDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +114,7 @@ Partial Class ProfessorForm
         ' 
         attendanceDataView.BackgroundColor = SystemColors.ButtonFace
         attendanceDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        attendanceDataView.Columns.AddRange(New DataGridViewColumn() {daysColumn, presentColumn, absentColumn})
         attendanceDataView.Location = New Point(395, 170)
         attendanceDataView.Name = "attendanceDataView"
         attendanceDataView.RowHeadersVisible = False
@@ -150,6 +159,7 @@ Partial Class ProfessorForm
         ' 
         examDataView.BackgroundColor = SystemColors.ButtonFace
         examDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        examDataView.Columns.AddRange(New DataGridViewColumn() {examColumn})
         examDataView.Location = New Point(958, 170)
         examDataView.Name = "examDataView"
         examDataView.RowHeadersVisible = False
@@ -162,6 +172,7 @@ Partial Class ProfessorForm
         ' 
         gradeDataView.BackgroundColor = SystemColors.ButtonFace
         gradeDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        gradeDataView.Columns.AddRange(New DataGridViewColumn() {gradeColumn})
         gradeDataView.Location = New Point(1040, 170)
         gradeDataView.Name = "gradeDataView"
         gradeDataView.RowHeadersVisible = False
@@ -174,6 +185,7 @@ Partial Class ProfessorForm
         ' 
         equivalentDataView.BackgroundColor = SystemColors.ButtonFace
         equivalentDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        equivalentDataView.Columns.AddRange(New DataGridViewColumn() {equivalentColumn})
         equivalentDataView.Location = New Point(1122, 170)
         equivalentDataView.Name = "equivalentDataView"
         equivalentDataView.RowHeadersVisible = False
@@ -186,6 +198,7 @@ Partial Class ProfessorForm
         ' 
         remarkDataView.BackgroundColor = SystemColors.ButtonFace
         remarkDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        remarkDataView.Columns.AddRange(New DataGridViewColumn() {remarksColumn})
         remarkDataView.Location = New Point(1221, 170)
         remarkDataView.Name = "remarkDataView"
         remarkDataView.RowHeadersVisible = False
@@ -205,6 +218,7 @@ Partial Class ProfessorForm
         ' 
         ' finalButton
         ' 
+        finalButton.Enabled = False
         finalButton.Location = New Point(198, 576)
         finalButton.Name = "finalButton"
         finalButton.Size = New Size(94, 29)
@@ -214,7 +228,7 @@ Partial Class ProfessorForm
         ' 
         ' addItemButton
         ' 
-        addItemButton.Location = New Point(1106, 576)
+        addItemButton.Location = New Point(996, 576)
         addItemButton.Name = "addItemButton"
         addItemButton.Size = New Size(104, 29)
         addItemButton.TabIndex = 21
@@ -249,7 +263,7 @@ Partial Class ProfessorForm
         ' timeTextBox
         ' 
         timeTextBox.Enabled = False
-        timeTextBox.Location = New Point(683, 88)
+        timeTextBox.Location = New Point(499, 88)
         timeTextBox.Name = "timeTextBox"
         timeTextBox.Size = New Size(153, 27)
         timeTextBox.TabIndex = 26
@@ -414,7 +428,7 @@ Partial Class ProfessorForm
         ' dayTextBox
         ' 
         dayTextBox.Enabled = False
-        dayTextBox.Location = New Point(884, 89)
+        dayTextBox.Location = New Point(658, 88)
         dayTextBox.Name = "dayTextBox"
         dayTextBox.Size = New Size(153, 27)
         dayTextBox.TabIndex = 36
@@ -458,7 +472,7 @@ Partial Class ProfessorForm
         ' Label12
         ' 
         Label12.AutoSize = True
-        Label12.Location = New Point(683, 65)
+        Label12.Location = New Point(499, 65)
         Label12.Name = "Label12"
         Label12.Size = New Size(88, 20)
         Label12.TabIndex = 41
@@ -467,11 +481,69 @@ Partial Class ProfessorForm
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Location = New Point(884, 65)
+        Label13.Location = New Point(658, 64)
         Label13.Name = "Label13"
         Label13.Size = New Size(35, 20)
         Label13.TabIndex = 42
         Label13.Text = "Day"
+        ' 
+        ' editItemButton
+        ' 
+        editItemButton.Location = New Point(1106, 576)
+        editItemButton.Name = "editItemButton"
+        editItemButton.Size = New Size(104, 29)
+        editItemButton.TabIndex = 43
+        editItemButton.Text = "Edit Item"
+        editItemButton.UseVisualStyleBackColor = True
+        ' 
+        ' daysColumn
+        ' 
+        daysColumn.HeaderText = "Days"
+        daysColumn.MinimumWidth = 6
+        daysColumn.Name = "daysColumn"
+        daysColumn.Width = 56
+        ' 
+        ' presentColumn
+        ' 
+        presentColumn.HeaderText = "P"
+        presentColumn.MinimumWidth = 6
+        presentColumn.Name = "presentColumn"
+        presentColumn.Width = 56
+        ' 
+        ' absentColumn
+        ' 
+        absentColumn.HeaderText = "A"
+        absentColumn.MinimumWidth = 6
+        absentColumn.Name = "absentColumn"
+        absentColumn.Width = 56
+        ' 
+        ' examColumn
+        ' 
+        examColumn.HeaderText = "Exam"
+        examColumn.MinimumWidth = 6
+        examColumn.Name = "examColumn"
+        examColumn.Width = 81
+        ' 
+        ' gradeColumn
+        ' 
+        gradeColumn.HeaderText = "Grade"
+        gradeColumn.MinimumWidth = 6
+        gradeColumn.Name = "gradeColumn"
+        gradeColumn.Width = 81
+        ' 
+        ' equivalentColumn
+        ' 
+        equivalentColumn.HeaderText = "Equivalent"
+        equivalentColumn.MinimumWidth = 6
+        equivalentColumn.Name = "equivalentColumn"
+        equivalentColumn.Width = 98
+        ' 
+        ' remarksColumn
+        ' 
+        remarksColumn.HeaderText = "Remarks"
+        remarksColumn.MinimumWidth = 6
+        remarksColumn.Name = "remarksColumn"
+        remarksColumn.Width = 99
         ' 
         ' ProfessorForm
         ' 
@@ -479,6 +551,7 @@ Partial Class ProfessorForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.GrayText
         ClientSize = New Size(1419, 650)
+        Controls.Add(editItemButton)
         Controls.Add(Label13)
         Controls.Add(Label12)
         Controls.Add(Label11)
@@ -584,4 +657,12 @@ Partial Class ProfessorForm
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents editItemButton As Button
+    Friend WithEvents daysColumn As DataGridViewTextBoxColumn
+    Friend WithEvents presentColumn As DataGridViewTextBoxColumn
+    Friend WithEvents absentColumn As DataGridViewTextBoxColumn
+    Friend WithEvents examColumn As DataGridViewTextBoxColumn
+    Friend WithEvents gradeColumn As DataGridViewTextBoxColumn
+    Friend WithEvents equivalentColumn As DataGridViewTextBoxColumn
+    Friend WithEvents remarksColumn As DataGridViewTextBoxColumn
 End Class
