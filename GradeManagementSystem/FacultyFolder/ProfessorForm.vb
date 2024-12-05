@@ -4,8 +4,13 @@ Imports MySql.Data.MySqlClient
 Public Class ProfessorForm
     Private connector As New DatabaseConnector
     Private addItemForm As New AddItemForm
+    Private term As String = "Midterm"
 
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+        refreshForm()
+    End Sub
+
+    Public Sub refreshForm()
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
@@ -89,4 +94,22 @@ Public Class ProfessorForm
         Me.Visible = False
         LoginForm.Visible = True
     End Sub
+
+    Private Sub midtermButton_Click(sender As Object, e As EventArgs) Handles midtermButton.Click
+        term = "Midterm"
+        refreshForm()
+    End Sub
+
+    Private Sub finalButton_Click(sender As Object, e As EventArgs) Handles finalButton.Click
+        term = "Final"
+        refreshForm()
+    End Sub
+
+    Public Function getTerm() As String
+        Return term
+    End Function
+
+    Public Function getClass() As String
+        Return classChooseBox.Text
+    End Function
 End Class

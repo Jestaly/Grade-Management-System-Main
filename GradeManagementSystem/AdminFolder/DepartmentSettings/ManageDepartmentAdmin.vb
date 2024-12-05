@@ -31,7 +31,10 @@ Public Class ManageDepartmentAdmin
             connector.query = "SELECT * FROM dept_count_history ORDER BY count DESC LIMIT 1;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            dCount = connector.command.ExecuteScalar
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                dCount = Integer.Parse(connector.reader("count").ToString())
+            End While
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()

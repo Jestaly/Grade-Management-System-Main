@@ -39,7 +39,10 @@ Public Class ManageProgramAdmin
             connector.query = "SELECT * FROM prog_count_history ORDER BY count DESC LIMIT 1;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            pCount = connector.command.ExecuteScalar
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                pCount = Integer.Parse(connector.reader("count").ToString())
+            End While
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
