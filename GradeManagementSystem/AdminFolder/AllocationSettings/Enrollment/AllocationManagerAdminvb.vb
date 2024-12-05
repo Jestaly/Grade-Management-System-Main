@@ -82,7 +82,10 @@ Public Class AllocationManagerAdminvb
             connector.query = "SELECT * FROM enrollment_count_history ORDER BY count DESC LIMIT 1;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            eCount = connector.command.ExecuteScalar
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                eCount = Integer.Parse(connector.reader("count").ToString())
+            End While
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
