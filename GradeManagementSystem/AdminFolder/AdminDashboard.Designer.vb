@@ -877,9 +877,8 @@ Partial Class AdminDashboard
         Controls.Add(adminBox)
         Controls.Add(depBox)
         DoubleBuffered = True
-        FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4)
-        MinimumSize = New Size(1796, 871)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        MinimumSize = New Size(1437, 697)
         Name = "AdminDashboard"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminDashboard"

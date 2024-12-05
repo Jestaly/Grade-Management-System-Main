@@ -36,6 +36,7 @@ Partial Class LoginForm
         CType(exitbttn, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(enterbttn, ComponentModel.ISupportInitialize).BeginInit()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' passwordLogin
@@ -67,7 +68,7 @@ Partial Class LoginForm
         accountIDLogin.BorderStyle = BorderStyle.None
         accountIDLogin.Font = New Font("Tahoma", 11F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         accountIDLogin.ForeColor = Color.DarkGreen
-        accountIDLogin.Location = New Point(129, 298)
+        accountIDLogin.Location = New Point(13, 13)
         accountIDLogin.Mask = "0-00-00000"
         accountIDLogin.Name = "accountIDLogin"
         accountIDLogin.PromptChar = "X"c
@@ -137,6 +138,7 @@ Partial Class LoginForm
         ' Panel2
         ' 
         Panel2.BackColor = Color.WhiteSmoke
+        Panel2.Controls.Add(accountIDLogin)
         Panel2.Location = New Point(113, 284)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(214, 50)
@@ -153,7 +155,6 @@ Partial Class LoginForm
         Controls.Add(forgotpasscodeportal)
         Controls.Add(PictureBox1)
         Controls.Add(exitbttn)
-        Controls.Add(accountIDLogin)
         Controls.Add(dataView)
         Controls.Add(passwordLogin)
         Controls.Add(Panel1)
@@ -167,6 +168,8 @@ Partial Class LoginForm
         CType(exitbttn, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(enterbttn, ComponentModel.ISupportInitialize).EndInit()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
