@@ -3,10 +3,10 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <StartupObject>GradeManagementSystem.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ImportedNamespaces>guna=False,Guna.UI.Animation=False,Guna.UI.Animation.Material=False,Guna.UI.Lib=False,Guna.UI.WinForms=False,System.Data=False,System.Drawing=False,System.Windows.Forms=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,GradeManagementSystem=True</ImportedNamespaces>
+    <StartupObject>GradeManagementSystem.My.MyApplication</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +28,7 @@
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Transitions">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.1\Transitions.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
 

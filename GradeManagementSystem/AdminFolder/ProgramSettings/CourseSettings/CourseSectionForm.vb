@@ -21,7 +21,10 @@ Public Class CourseSectionForm
             connector.query = "SELECT * FROM course_count_history ORDER BY count DESC LIMIT 1;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            cCount = connector.command.ExecuteScalar
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                cCount = Integer.Parse(connector.reader("count").ToString())
+            End While
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
