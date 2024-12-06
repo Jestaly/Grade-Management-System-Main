@@ -336,7 +336,7 @@ Partial Class AdminDashboard
         dashbtn.BackColor = Color.Green
         dashbtn.BackgroundImageLayout = ImageLayout.None
         dashbtn.FlatStyle = FlatStyle.Flat
-        dashbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        dashbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         dashbtn.ForeColor = Color.White
         dashbtn.Location = New Point(70, 0)
         dashbtn.Margin = New Padding(4)
@@ -366,7 +366,7 @@ Partial Class AdminDashboard
         ' 
         progbtn.BackColor = Color.Green
         progbtn.FlatStyle = FlatStyle.Flat
-        progbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
+        progbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         progbtn.ForeColor = Color.White
         progbtn.Location = New Point(70, 171)
         progbtn.Margin = New Padding(4)
@@ -381,7 +381,7 @@ Partial Class AdminDashboard
         ' 
         studbtn.BackColor = Color.Green
         studbtn.FlatStyle = FlatStyle.Flat
-        studbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
+        studbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         studbtn.ForeColor = Color.White
         studbtn.Location = New Point(70, 86)
         studbtn.Margin = New Padding(4)
@@ -396,7 +396,7 @@ Partial Class AdminDashboard
         ' 
         profbtn.BackColor = Color.Green
         profbtn.FlatStyle = FlatStyle.Flat
-        profbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
+        profbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         profbtn.ForeColor = Color.White
         profbtn.Location = New Point(70, 256)
         profbtn.Margin = New Padding(4)
@@ -428,7 +428,7 @@ Partial Class AdminDashboard
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Microsoft Sans Serif", 15.0F, FontStyle.Bold)
+        Label2.Font = New Font("Microsoft Sans Serif", 15F, FontStyle.Bold)
         Label2.ForeColor = Color.Green
         Label2.Location = New Point(474, 106)
         Label2.Margin = New Padding(4, 0, 4, 0)
@@ -440,7 +440,7 @@ Partial Class AdminDashboard
         ' Adminleft
         ' 
         Adminleft.AutoSize = True
-        Adminleft.Font = New Font("Arial", 9.0F, FontStyle.Bold)
+        Adminleft.Font = New Font("Arial", 9F, FontStyle.Bold)
         Adminleft.ForeColor = Color.White
         Adminleft.Location = New Point(189, 95)
         Adminleft.Margin = New Padding(4, 0, 4, 0)
@@ -473,7 +473,7 @@ Partial Class AdminDashboard
         ' nameleft
         ' 
         nameleft.AutoSize = True
-        nameleft.Font = New Font("Arial", 12.0F, FontStyle.Bold)
+        nameleft.Font = New Font("Arial", 12F, FontStyle.Bold)
         nameleft.ForeColor = Color.White
         nameleft.Location = New Point(189, 65)
         nameleft.Margin = New Padding(4, 0, 4, 0)
@@ -497,7 +497,7 @@ Partial Class AdminDashboard
         profileleft.BackgroundImageLayout = ImageLayout.Zoom
         profileleft.BorderRadius = 60
         profileleft.ForeColor = Color.Black
-        profileleft.GradientAngle = 90.0F
+        profileleft.GradientAngle = 90F
         profileleft.GradientBottomColor = Color.Transparent
         profileleft.GradientTopColor = Color.Transparent
         profileleft.Image = CType(resources.GetObject("profileleft.Image"), Image)
@@ -528,7 +528,7 @@ Partial Class AdminDashboard
         profmenu.BackgroundImageLayout = ImageLayout.Zoom
         profmenu.BorderRadius = 60
         profmenu.ForeColor = Color.Black
-        profmenu.GradientAngle = 90.0F
+        profmenu.GradientAngle = 90F
         profmenu.GradientBottomColor = Color.Transparent
         profmenu.GradientTopColor = Color.Transparent
         profmenu.Image = CType(resources.GetObject("profmenu.Image"), Image)
@@ -555,7 +555,7 @@ Partial Class AdminDashboard
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.CalendarFont = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
+        DateTimePicker1.CalendarFont = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
         DateTimePicker1.CustomFormat = "  hh:mm tt dddd, MMMM dd, yyyy"
         DateTimePicker1.Enabled = False
         DateTimePicker1.Format = DateTimePickerFormat.Custom
@@ -568,7 +568,7 @@ Partial Class AdminDashboard
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.DarkGreen
         Label3.Location = New Point(474, 806)
         Label3.Margin = New Padding(4, 0, 4, 0)
@@ -643,7 +643,7 @@ Partial Class AdminDashboard
         Gerald2.BackColor = Color.White
         Gerald2.BorderRadius = 60
         Gerald2.ForeColor = Color.Black
-        Gerald2.GradientAngle = 90.0F
+        Gerald2.GradientAngle = 90F
         Gerald2.GradientBottomColor = Color.DarkSeaGreen
         Gerald2.GradientTopColor = Color.DarkSeaGreen
         Gerald2.Location = New Point(1414, 310)
@@ -708,7 +708,7 @@ Partial Class AdminDashboard
         ' 
         editInfo.AutoSize = True
         editInfo.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        editInfo.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        editInfo.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         editInfo.ForeColor = Color.Green
         editInfo.Location = New Point(1516, 536)
         editInfo.Margin = New Padding(4, 0, 4, 0)
@@ -721,7 +721,7 @@ Partial Class AdminDashboard
         ' 
         secu.AutoSize = True
         secu.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        secu.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        secu.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         secu.ForeColor = Color.Green
         secu.Location = New Point(1475, 570)
         secu.Margin = New Padding(4, 0, 4, 0)
@@ -737,7 +737,7 @@ Partial Class AdminDashboard
         Gerald1.FlatAppearance.BorderColor = Color.Green
         Gerald1.FlatAppearance.BorderSize = 100000000
         Gerald1.ForeColor = Color.Black
-        Gerald1.GradientAngle = 90.0F
+        Gerald1.GradientAngle = 90F
         Gerald1.GradientBottomColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         Gerald1.GradientTopColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         Gerald1.Location = New Point(1400, 72)
@@ -755,7 +755,7 @@ Partial Class AdminDashboard
         Gerald5.BackColor = Color.White
         Gerald5.BorderRadius = 60
         Gerald5.ForeColor = Color.Black
-        Gerald5.GradientAngle = 90.0F
+        Gerald5.GradientAngle = 90F
         Gerald5.GradientBottomColor = Color.Green
         Gerald5.GradientTopColor = Color.Green
         Gerald5.Location = New Point(1395, 69)
@@ -814,7 +814,7 @@ Partial Class AdminDashboard
         profpic.BackgroundImageLayout = ImageLayout.Zoom
         profpic.BorderRadius = 60
         profpic.ForeColor = Color.Black
-        profpic.GradientAngle = 90.0F
+        profpic.GradientAngle = 90F
         profpic.GradientBottomColor = Color.Transparent
         profpic.GradientTopColor = Color.Transparent
         profpic.Image = CType(resources.GetObject("profpic.Image"), Image)
@@ -869,7 +869,7 @@ Partial Class AdminDashboard
         tuldoklikod.BackColor = Color.White
         tuldoklikod.BorderRadius = 60
         tuldoklikod.ForeColor = Color.Black
-        tuldoklikod.GradientAngle = 90.0F
+        tuldoklikod.GradientAngle = 90F
         tuldoklikod.GradientBottomColor = Color.Green
         tuldoklikod.GradientTopColor = Color.Green
         tuldoklikod.Location = New Point(664, 71)
@@ -885,7 +885,7 @@ Partial Class AdminDashboard
         tuldokharap.BackColor = Color.White
         tuldokharap.BorderRadius = 60
         tuldokharap.ForeColor = Color.Black
-        tuldokharap.GradientAngle = 90.0F
+        tuldokharap.GradientAngle = 90F
         tuldokharap.GradientBottomColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
         tuldokharap.GradientTopColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
         tuldokharap.Location = New Point(670, 75)
@@ -900,7 +900,7 @@ Partial Class AdminDashboard
         ' 
         actlog.AutoSize = True
         actlog.BackColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
-        actlog.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        actlog.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         actlog.ForeColor = Color.DarkGreen
         actlog.Location = New Point(725, 131)
         actlog.Margin = New Padding(4, 0, 4, 0)
@@ -913,7 +913,7 @@ Partial Class AdminDashboard
         ' 
         seemore.AutoSize = True
         seemore.BackColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
-        seemore.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        seemore.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         seemore.ForeColor = Color.Green
         seemore.Location = New Point(1135, 649)
         seemore.Margin = New Padding(4, 0, 4, 0)
@@ -942,7 +942,7 @@ Partial Class AdminDashboard
         ' 
         ' AdminDashboard
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
@@ -980,7 +980,7 @@ Partial Class AdminDashboard
         Controls.Add(depBox)
         Controls.Add(progBox)
         DoubleBuffered = True
-        FormBorderStyle = FormBorderStyle.FixedSingle
+        FormBorderStyle = FormBorderStyle.None
         MinimumSize = New Size(1437, 697)
         Name = "AdminDashboard"
         StartPosition = FormStartPosition.CenterScreen
