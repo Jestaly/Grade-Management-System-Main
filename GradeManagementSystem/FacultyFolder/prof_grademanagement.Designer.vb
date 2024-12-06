@@ -473,7 +473,7 @@ Partial Class prof_grademanagement
         Button3.FlatStyle = FlatStyle.Popup
         Button3.Font = New Font("Segoe UI Black", 10F, FontStyle.Bold)
         Button3.ForeColor = Color.DarkGreen
-        Button3.Location = New Point(349, 709)
+        Button3.Location = New Point(348, 709)
         Button3.Name = "Button3"
         Button3.Size = New Size(129, 39)
         Button3.TabIndex = 43
