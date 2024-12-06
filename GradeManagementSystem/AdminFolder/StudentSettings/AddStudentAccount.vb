@@ -56,11 +56,10 @@ Public Class AddStudentAccount
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
             connector.connect.Close()
-            connector.command.Parameters.Clear()
             MessageBox.Show("Student Added!")
         Catch ex As MySqlException
             connector.connect.Close()
-            connector.command.Parameters.Clear()
+            'problem
             MessageBox.Show("Database Error")
         End Try
 
