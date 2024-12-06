@@ -4,14 +4,18 @@ Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports MySql.Data.MySqlClient
 
 
 Public Class AdminDashboard
     Dim filedialog As New OpenFileDialog()
     Dim originalSize As Size
-    Dim expandedSize As Size
     Dim originalSize1 As Size
+    Dim expandedSize As Size
+    Dim originalSize2 As Size
     Dim expandedSize1 As Size
+    Public connector As New DatabaseConnector
+
     Dim home1 As Image = My.Resources.home1
     Dim home2 As Image = My.Resources.home2
     Dim stud1 As Image = My.Resources.stud1
@@ -36,12 +40,16 @@ Public Class AdminDashboard
     Dim departments2 As Image = My.Resources.departments2
     Dim department1 As Image = My.Resources.department1
     Dim department2 As Image = My.Resources.department2
+    Private originalPositions As Dictionary(Of Control, Integer)
 
     Private originalImage As Image
     Private hoverImage As Image
     Private expand As Boolean = False
 
     Public Property CornerRadius As Integer = 30
+    Private Const MAX_SLIDE_OFFSET As Integer = 100
+    Dim slideOffset As Integer = 100
+
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
         e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
@@ -76,20 +84,50 @@ Public Class AdminDashboard
         seemore.Hide()
         actlog.Hide()
         dtg1.Hide()
+        dashIcon2.Hide()
+        studIcon2.Hide()
+        profIcon2.Hide()
+        progIcon2.Hide()
+        depIcon2.Hide()
+        alloIcon2.Hide()
 
         originalSize = Panel1.Size
         expandedSize = New Size(originalSize.Width + 345, originalSize.Height + 280)
         originalSize1 = Gerald1.Size
+        originalSize2 = studBox.Size
         expandedSize1 = New Size(originalSize1.Width, originalSize1.Height + 115)
+
+        originalPositions = New Dictionary(Of Control, Integer) From {
+            {studBox, studBox.Left},
+            {adminBox, adminBox.Left},
+            {profBox, profBox.Left},
+            {progBox, progBox.Left},
+            {depBox, depBox.Left},
+            {courseBox, courseBox.Left}
+            }
+
     End Sub
     '===========================================MOUSE ENTER=================================='
-    Private Sub Panel1_MouseEnter(sender As Object, e As EventArgs) Handles Panel1.MouseEnter,
+    Private Sub Panel2_MouseEnter(sender As Object, e As EventArgs) Handles Panel1.MouseEnter,
         PanelLeft.MouseEnter, dashbtn.MouseEnter, progbtn.MouseEnter, profbtn.MouseEnter, managebtn.MouseEnter,
         depBtn.MouseEnter, studbtn.MouseEnter, Panel2.MouseEnter, PictureBox2.MouseEnter, homeIcon.MouseEnter,
         studIcon.MouseEnter, profIcon.MouseEnter, progIcon.MouseEnter, alloIcon.MouseEnter, depIcon.MouseEnter
         If Not expand Then
+            Dim newStudBoxLeft As Integer = Math.Min(originalPositions(studBox) + slideOffset, originalPositions(studBox) + MAX_SLIDE_OFFSET)
+            Dim newAdminBoxLeft As Integer = Math.Min(originalPositions(adminBox) + slideOffset, originalPositions(adminBox) + MAX_SLIDE_OFFSET)
+            Dim newProgBoxLeft As Integer = Math.Min(originalPositions(progBox) + slideOffset, originalPositions(progBox) + MAX_SLIDE_OFFSET)
+            Dim newProfBoxLeft As Integer = Math.Min(originalPositions(profBox) + slideOffset, originalPositions(profBox) + MAX_SLIDE_OFFSET)
+            Dim newDepBoxLeft As Integer = Math.Min(originalPositions(depBox) + slideOffset, originalPositions(depBox) + MAX_SLIDE_OFFSET)
+            Dim newCourseBoxLeft As Integer = Math.Min(originalPositions(courseBox) + slideOffset, originalPositions(courseBox) + MAX_SLIDE_OFFSET)
+
             Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
+            Transition.run(studBox, "Left", newStudBoxLeft, New TransitionType_Deceleration(500))
+            Transition.run(adminBox, "Left", newAdminBoxLeft, New TransitionType_Deceleration(500))
+            Transition.run(progBox, "Left", newProgBoxLeft, New TransitionType_Deceleration(500))
+            Transition.run(profBox, "Left", newProfBoxLeft, New TransitionType_Deceleration(500))
+            Transition.run(depBox, "Left", newDepBoxLeft, New TransitionType_Deceleration(500))
+            Transition.run(courseBox, "Left", newCourseBoxLeft, New TransitionType_Deceleration(500))
             expand = True
         End If
     End Sub
@@ -98,16 +136,30 @@ Public Class AdminDashboard
         If Not expand Then
             Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
+
             expand = True
         End If
     End Sub
     '==========================================MOUSE LEAVE===================================='
-    Private Sub Panel1_MouseLeave(sender As Object, e As EventArgs) Handles Panel1.MouseLeave,
-            PanelLeft.MouseLeave, dashbtn.MouseLeave, progbtn.MouseLeave, profbtn.MouseLeave, managebtn.MouseLeave,
+    Private Sub Panel2_MouseLeave(sender As Object, e As EventArgs) Handles PanelLeft.MouseLeave,
+            dashbtn.MouseLeave, progbtn.MouseLeave, profbtn.MouseLeave, managebtn.MouseLeave,
         depBtn.MouseLeave, Panel2.MouseLeave
+        If expand Then
+            Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(100))
+            Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(100))
+            expand = False
+        End If
+    End Sub
+    Private Sub Panel1_MouseLeave(sender As Object, e As EventArgs) Handles Panel1.MouseLeave
         If expand Then
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(500))
+            Transition.run(studBox, "Left", studBox.Left - slideOffset, New TransitionType_Deceleration(500))
+            Transition.run(adminBox, "Left", adminBox.Left - slideOffset, New TransitionType_Deceleration(500))
+            Transition.run(progBox, "Left", progBox.Left - slideOffset, New TransitionType_Deceleration(500))
+            Transition.run(profBox, "Left", profBox.Left - slideOffset, New TransitionType_Deceleration(500))
+            Transition.run(depBox, "Left", depBox.Left - slideOffset, New TransitionType_Deceleration(500))
+            Transition.run(courseBox, "Left", courseBox.Left - slideOffset, New TransitionType_Deceleration(500))
             expand = False
         End If
     End Sub
@@ -336,20 +388,113 @@ Public Class AdminDashboard
     Private allocMng As New AllocationManagerAdminvb
     Private Sub dashbtn_Click(sender As Object, e As EventArgs) Handles dashbtn.Click
         Me.Visible = True
+        dashIcon2.Show()
+        studIcon2.Hide()
+        progIcon2.Hide()
+        profIcon2.Hide()
+        depIcon2.Hide()
+        alloIcon2.Hide()
     End Sub
     Private Sub studbtn_Click(sender As Object, e As EventArgs) Handles studbtn.Click
-        mngStudent.Visible = True
+        mngStudent.Visible = Not mngStudent.Visible
+        dashIcon2.Hide()
+        studIcon2.Show()
+        progIcon2.Hide()
+        profIcon2.Hide()
+        depIcon2.Hide()
+        alloIcon2.Hide()
+
     End Sub
     Private Sub progbtn_Click(sender As Object, e As EventArgs) Handles progbtn.Click
-        mngProgram.Visible = True
+        mngProgram.Visible = Not mngProgram.Visible
+        dashIcon2.Hide()
+        studIcon2.Hide()
+        progIcon2.Show()
+        profIcon2.Hide()
+        depIcon2.Hide()
+        alloIcon2.Hide()
     End Sub
     Private Sub profbtn_Click(sender As Object, e As EventArgs) Handles profbtn.Click
-        mngProfessor.Visible = True
+        mngProfessor.Visible = Not mngProfessor.Visible
+        dashIcon2.Hide()
+        studIcon2.Hide()
+        progIcon2.Hide()
+        profIcon2.Hide()
+        depIcon2.Hide()
+        alloIcon2.Hide()
     End Sub
     Private Sub depBtn_Click(sender As Object, e As EventArgs) Handles depBtn.Click
-        mngDepartment.Visible = True
+        mngDepartment.Visible = Not mngDepartment.Visible
+        dashIcon2.Hide()
+        studIcon2.Hide()
+        progIcon2.Hide()
+        profIcon2.Hide()
+        depIcon2.Show()
+        alloIcon2.Hide()
     End Sub
     Private Sub managebtn_Click(sender As Object, e As EventArgs) Handles managebtn.Click
-        allocMng.Visible = True
+        allocMng.Visible = Not allocMng.Visible
+        dashIcon2.Hide()
+        studIcon2.Hide()
+        progIcon2.Hide()
+        profIcon2.Hide()
+        depIcon2.Hide()
+        alloIcon2.Show()
+    End Sub
+
+    Private Sub dashbtn_MouseHover(sender As Object, e As EventArgs) Handles dashbtn.MouseEnter
+        homeIcon.Image = home2
+    End Sub
+    Private Sub studbtn_MouseHover(sender As Object, e As EventArgs) Handles studbtn.MouseEnter
+        studIcon.Image = stud2
+    End Sub
+    Private Sub progbtn_MouseHover(sender As Object, e As EventArgs) Handles progbtn.MouseEnter
+        progIcon.Image = prog2
+    End Sub
+    Private Sub profbtn_MouseHover(sender As Object, e As EventArgs) Handles profbtn.MouseEnter
+        profIcon.Image = prof2
+    End Sub
+    Private Sub depbtn_MouseHover(sender As Object, e As EventArgs) Handles depBtn.MouseEnter
+        depIcon.Image = department2
+    End Sub
+    Private Sub managebtn_MouseHover(sender As Object, e As EventArgs) Handles managebtn.MouseEnter
+        alloIcon.Image = allo2
+    End Sub
+    Private Sub dashbtn_MouseLeave(sender As Object, e As EventArgs) Handles dashbtn.MouseLeave
+        homeIcon.Image = home1
+    End Sub
+    Private Sub studbtn_MouseLeave(sender As Object, e As EventArgs) Handles studbtn.MouseLeave
+        studIcon.Image = stud1
+    End Sub
+    Private Sub progbtn_MouseLeave(sender As Object, e As EventArgs) Handles progbtn.MouseLeave
+        progIcon.Image = prog1
+    End Sub
+    Private Sub profbtn_MouseLeave(sender As Object, e As EventArgs) Handles profbtn.MouseLeave
+        profIcon.Image = prof1
+    End Sub
+    Private Sub depbtn_MouseLeave(sender As Object, e As EventArgs) Handles depBtn.MouseLeave
+        depIcon.Image = department1
+    End Sub
+    Private Sub managebtn_MouseLeave(sender As Object, e As EventArgs) Handles managebtn.MouseLeave
+        alloIcon.Image = allo1
+    End Sub
+
+    Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
+        Try
+            connector.connect.Open()
+            connector.command.Connection = connector.connect
+
+            connector.query = "INSERT INTO testNotif2 (NotifDate) VALUES (NOW())"
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
+            connector.query = "SELECT * FROM testNotif2"
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+
+            connector.dataAdapter.Fill(connector.dataTable)
+            dtg1.DataSource = connector.dataTable
+        Finally
+
+        End Try
     End Sub
 End Class
