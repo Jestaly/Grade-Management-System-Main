@@ -25,6 +25,12 @@ Partial Class AdminDashboard
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminDashboard))
         Panel2 = New Panel()
+        alloIcon2 = New PictureBox()
+        depIcon2 = New PictureBox()
+        profIcon2 = New PictureBox()
+        progIcon2 = New PictureBox()
+        studIcon2 = New PictureBox()
+        dashIcon2 = New PictureBox()
         depIcon = New PictureBox()
         depBtn = New Button()
         alloIcon = New PictureBox()
@@ -82,7 +88,15 @@ Partial Class AdminDashboard
         actlog = New Label()
         seemore = New Label()
         dtg1 = New DataGridView()
+        DatabaseConnectorBindingSource1 = New BindingSource(components)
+        DatabaseConnectorBindingSource = New BindingSource(components)
         Panel2.SuspendLayout()
+        CType(alloIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(depIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(profIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(progIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(studIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(dashIcon2, ComponentModel.ISupportInitialize).BeginInit()
         CType(depIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(alloIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(profIcon, ComponentModel.ISupportInitialize).BeginInit()
@@ -107,10 +121,18 @@ Partial Class AdminDashboard
         CType(adminBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(profpic, ComponentModel.ISupportInitialize).BeginInit()
         CType(dtg1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DatabaseConnectorBindingSource1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DatabaseConnectorBindingSource, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel2
         ' 
+        Panel2.Controls.Add(alloIcon2)
+        Panel2.Controls.Add(depIcon2)
+        Panel2.Controls.Add(profIcon2)
+        Panel2.Controls.Add(progIcon2)
+        Panel2.Controls.Add(studIcon2)
+        Panel2.Controls.Add(dashIcon2)
         Panel2.Controls.Add(depIcon)
         Panel2.Controls.Add(depBtn)
         Panel2.Controls.Add(alloIcon)
@@ -129,6 +151,79 @@ Partial Class AdminDashboard
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(468, 671)
         Panel2.TabIndex = 11
+        ' 
+        ' alloIcon2
+        ' 
+        alloIcon2.BackColor = Color.Transparent
+        alloIcon2.BackgroundImage = CType(resources.GetObject("alloIcon2.BackgroundImage"), Image)
+        alloIcon2.BackgroundImageLayout = ImageLayout.Zoom
+        alloIcon2.Location = New Point(3, 341)
+        alloIcon2.Name = "alloIcon2"
+        alloIcon2.Size = New Size(50, 65)
+        alloIcon2.SizeMode = PictureBoxSizeMode.Zoom
+        alloIcon2.TabIndex = 64
+        alloIcon2.TabStop = False
+        ' 
+        ' depIcon2
+        ' 
+        depIcon2.BackColor = Color.Transparent
+        depIcon2.BackgroundImage = CType(resources.GetObject("depIcon2.BackgroundImage"), Image)
+        depIcon2.BackgroundImageLayout = ImageLayout.Zoom
+        depIcon2.Location = New Point(5, 273)
+        depIcon2.Name = "depIcon2"
+        depIcon2.Size = New Size(50, 65)
+        depIcon2.SizeMode = PictureBoxSizeMode.Zoom
+        depIcon2.TabIndex = 63
+        depIcon2.TabStop = False
+        ' 
+        ' profIcon2
+        ' 
+        profIcon2.BackColor = Color.Transparent
+        profIcon2.BackgroundImage = CType(resources.GetObject("profIcon2.BackgroundImage"), Image)
+        profIcon2.BackgroundImageLayout = ImageLayout.Zoom
+        profIcon2.Location = New Point(4, 205)
+        profIcon2.Name = "profIcon2"
+        profIcon2.Size = New Size(50, 65)
+        profIcon2.SizeMode = PictureBoxSizeMode.Zoom
+        profIcon2.TabIndex = 62
+        profIcon2.TabStop = False
+        ' 
+        ' progIcon2
+        ' 
+        progIcon2.BackColor = Color.Transparent
+        progIcon2.BackgroundImage = CType(resources.GetObject("progIcon2.BackgroundImage"), Image)
+        progIcon2.BackgroundImageLayout = ImageLayout.Zoom
+        progIcon2.Location = New Point(5, 137)
+        progIcon2.Name = "progIcon2"
+        progIcon2.Size = New Size(49, 65)
+        progIcon2.SizeMode = PictureBoxSizeMode.Zoom
+        progIcon2.TabIndex = 61
+        progIcon2.TabStop = False
+        ' 
+        ' studIcon2
+        ' 
+        studIcon2.BackColor = Color.Transparent
+        studIcon2.BackgroundImage = CType(resources.GetObject("studIcon2.BackgroundImage"), Image)
+        studIcon2.BackgroundImageLayout = ImageLayout.Zoom
+        studIcon2.Location = New Point(4, 69)
+        studIcon2.Name = "studIcon2"
+        studIcon2.Size = New Size(49, 65)
+        studIcon2.SizeMode = PictureBoxSizeMode.Zoom
+        studIcon2.TabIndex = 60
+        studIcon2.TabStop = False
+        ' 
+        ' dashIcon2
+        ' 
+        dashIcon2.BackColor = Color.Transparent
+        dashIcon2.BackgroundImage = CType(resources.GetObject("dashIcon2.BackgroundImage"), Image)
+        dashIcon2.BackgroundImageLayout = ImageLayout.Zoom
+        dashIcon2.InitialImage = CType(resources.GetObject("dashIcon2.InitialImage"), Image)
+        dashIcon2.Location = New Point(5, 5)
+        dashIcon2.Name = "dashIcon2"
+        dashIcon2.Size = New Size(49, 60)
+        dashIcon2.SizeMode = PictureBoxSizeMode.Zoom
+        dashIcon2.TabIndex = 59
+        dashIcon2.TabStop = False
         ' 
         ' depIcon
         ' 
@@ -837,13 +932,23 @@ Partial Class AdminDashboard
         dtg1.Size = New Size(832, 418)
         dtg1.TabIndex = 86
         ' 
+        ' DatabaseConnectorBindingSource1
+        ' 
+        DatabaseConnectorBindingSource1.DataSource = GetType(DatabaseConnector)
+        ' 
+        ' DatabaseConnectorBindingSource
+        ' 
+        DatabaseConnectorBindingSource.DataSource = GetType(DatabaseConnector)
+        ' 
         ' AdminDashboard
         ' 
         AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1796, 871)
+        ClientSize = New Size(1437, 697)
+        Controls.Add(Panel1)
+        Controls.Add(studBox)
         Controls.Add(dtg1)
         Controls.Add(seemore)
         Controls.Add(actlog)
@@ -865,17 +970,15 @@ Partial Class AdminDashboard
         Controls.Add(profname)
         Controls.Add(Gerald1)
         Controls.Add(Gerald5)
-        Controls.Add(Label3)
         Controls.Add(DateTimePicker1)
-        Controls.Add(Panel1)
         Controls.Add(Panel3)
         Controls.Add(Label2)
-        Controls.Add(profBox)
-        Controls.Add(studBox)
-        Controls.Add(courseBox)
-        Controls.Add(progBox)
         Controls.Add(adminBox)
+        Controls.Add(Label3)
+        Controls.Add(profBox)
+        Controls.Add(courseBox)
         Controls.Add(depBox)
+        Controls.Add(progBox)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.FixedSingle
         MinimumSize = New Size(1437, 697)
@@ -883,6 +986,12 @@ Partial Class AdminDashboard
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminDashboard"
         Panel2.ResumeLayout(False)
+        CType(alloIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(depIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(profIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(progIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(studIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(dashIcon2, ComponentModel.ISupportInitialize).EndInit()
         CType(depIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(alloIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(profIcon, ComponentModel.ISupportInitialize).EndInit()
@@ -908,6 +1017,8 @@ Partial Class AdminDashboard
         CType(adminBox, ComponentModel.ISupportInitialize).EndInit()
         CType(profpic, ComponentModel.ISupportInitialize).EndInit()
         CType(dtg1, ComponentModel.ISupportInitialize).EndInit()
+        CType(DatabaseConnectorBindingSource1, ComponentModel.ISupportInitialize).EndInit()
+        CType(DatabaseConnectorBindingSource, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -970,4 +1081,12 @@ Partial Class AdminDashboard
     Friend WithEvents actlog As Label
     Friend WithEvents seemore As Label
     Friend WithEvents dtg1 As DataGridView
+    Friend WithEvents alloIcon2 As PictureBox
+    Friend WithEvents depIcon2 As PictureBox
+    Friend WithEvents profIcon2 As PictureBox
+    Friend WithEvents progIcon2 As PictureBox
+    Friend WithEvents studIcon2 As PictureBox
+    Friend WithEvents dashIcon2 As PictureBox
+    Friend WithEvents DatabaseConnectorBindingSource As BindingSource
+    Friend WithEvents DatabaseConnectorBindingSource1 As BindingSource
 End Class

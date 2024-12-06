@@ -25,13 +25,20 @@ Partial Class ProfessorForm
         refreshButton = New Button()
         quizDataView = New DataGridView()
         attendanceDataView = New DataGridView()
+        daysColumn = New DataGridViewTextBoxColumn()
+        presentColumn = New DataGridViewTextBoxColumn()
+        absentColumn = New DataGridViewTextBoxColumn()
         studentInfoDataView = New DataGridView()
         classChooseBox = New DomainUpDown()
         projectDataView = New DataGridView()
         examDataView = New DataGridView()
+        examColumn = New DataGridViewTextBoxColumn()
         gradeDataView = New DataGridView()
+        gradeColumn = New DataGridViewTextBoxColumn()
         equivalentDataView = New DataGridView()
+        equivalentColumn = New DataGridViewTextBoxColumn()
         remarkDataView = New DataGridView()
+        remarksColumn = New DataGridViewTextBoxColumn()
         midtermButton = New Button()
         finalButton = New Button()
         addItemButton = New Button()
@@ -64,13 +71,6 @@ Partial Class ProfessorForm
         Label12 = New Label()
         Label13 = New Label()
         editItemButton = New Button()
-        daysColumn = New DataGridViewTextBoxColumn()
-        presentColumn = New DataGridViewTextBoxColumn()
-        absentColumn = New DataGridViewTextBoxColumn()
-        examColumn = New DataGridViewTextBoxColumn()
-        gradeColumn = New DataGridViewTextBoxColumn()
-        equivalentColumn = New DataGridViewTextBoxColumn()
-        remarksColumn = New DataGridViewTextBoxColumn()
         CType(quizDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(attendanceDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(studentInfoDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -123,6 +123,27 @@ Partial Class ProfessorForm
         attendanceDataView.Size = New Size(166, 400)
         attendanceDataView.TabIndex = 10
         ' 
+        ' daysColumn
+        ' 
+        daysColumn.HeaderText = "Days"
+        daysColumn.MinimumWidth = 6
+        daysColumn.Name = "daysColumn"
+        daysColumn.Width = 56
+        ' 
+        ' presentColumn
+        ' 
+        presentColumn.HeaderText = "P"
+        presentColumn.MinimumWidth = 6
+        presentColumn.Name = "presentColumn"
+        presentColumn.Width = 56
+        ' 
+        ' absentColumn
+        ' 
+        absentColumn.HeaderText = "A"
+        absentColumn.MinimumWidth = 6
+        absentColumn.Name = "absentColumn"
+        absentColumn.Width = 56
+        ' 
         ' studentInfoDataView
         ' 
         studentInfoDataView.BackgroundColor = SystemColors.ButtonFace
@@ -168,6 +189,13 @@ Partial Class ProfessorForm
         examDataView.Size = New Size(81, 400)
         examDataView.TabIndex = 15
         ' 
+        ' examColumn
+        ' 
+        examColumn.HeaderText = "Exam"
+        examColumn.MinimumWidth = 6
+        examColumn.Name = "examColumn"
+        examColumn.Width = 81
+        ' 
         ' gradeDataView
         ' 
         gradeDataView.BackgroundColor = SystemColors.ButtonFace
@@ -180,6 +208,13 @@ Partial Class ProfessorForm
         gradeDataView.ScrollBars = ScrollBars.None
         gradeDataView.Size = New Size(81, 400)
         gradeDataView.TabIndex = 16
+        ' 
+        ' gradeColumn
+        ' 
+        gradeColumn.HeaderText = "Grade"
+        gradeColumn.MinimumWidth = 6
+        gradeColumn.Name = "gradeColumn"
+        gradeColumn.Width = 81
         ' 
         ' equivalentDataView
         ' 
@@ -194,6 +229,13 @@ Partial Class ProfessorForm
         equivalentDataView.Size = New Size(98, 400)
         equivalentDataView.TabIndex = 17
         ' 
+        ' equivalentColumn
+        ' 
+        equivalentColumn.HeaderText = "Equivalent"
+        equivalentColumn.MinimumWidth = 6
+        equivalentColumn.Name = "equivalentColumn"
+        equivalentColumn.Width = 98
+        ' 
         ' remarkDataView
         ' 
         remarkDataView.BackgroundColor = SystemColors.ButtonFace
@@ -206,6 +248,13 @@ Partial Class ProfessorForm
         remarkDataView.ScrollBars = ScrollBars.Vertical
         remarkDataView.Size = New Size(99, 400)
         remarkDataView.TabIndex = 18
+        ' 
+        ' remarksColumn
+        ' 
+        remarksColumn.HeaderText = "Remarks"
+        remarksColumn.MinimumWidth = 6
+        remarksColumn.Name = "remarksColumn"
+        remarksColumn.Width = 99
         ' 
         ' midtermButton
         ' 
@@ -495,55 +544,6 @@ Partial Class ProfessorForm
         editItemButton.TabIndex = 43
         editItemButton.Text = "Edit Item"
         editItemButton.UseVisualStyleBackColor = True
-        ' 
-        ' daysColumn
-        ' 
-        daysColumn.HeaderText = "Days"
-        daysColumn.MinimumWidth = 6
-        daysColumn.Name = "daysColumn"
-        daysColumn.Width = 56
-        ' 
-        ' presentColumn
-        ' 
-        presentColumn.HeaderText = "P"
-        presentColumn.MinimumWidth = 6
-        presentColumn.Name = "presentColumn"
-        presentColumn.Width = 56
-        ' 
-        ' absentColumn
-        ' 
-        absentColumn.HeaderText = "A"
-        absentColumn.MinimumWidth = 6
-        absentColumn.Name = "absentColumn"
-        absentColumn.Width = 56
-        ' 
-        ' examColumn
-        ' 
-        examColumn.HeaderText = "Exam"
-        examColumn.MinimumWidth = 6
-        examColumn.Name = "examColumn"
-        examColumn.Width = 81
-        ' 
-        ' gradeColumn
-        ' 
-        gradeColumn.HeaderText = "Grade"
-        gradeColumn.MinimumWidth = 6
-        gradeColumn.Name = "gradeColumn"
-        gradeColumn.Width = 81
-        ' 
-        ' equivalentColumn
-        ' 
-        equivalentColumn.HeaderText = "Equivalent"
-        equivalentColumn.MinimumWidth = 6
-        equivalentColumn.Name = "equivalentColumn"
-        equivalentColumn.Width = 98
-        ' 
-        ' remarksColumn
-        ' 
-        remarksColumn.HeaderText = "Remarks"
-        remarksColumn.MinimumWidth = 6
-        remarksColumn.Name = "remarksColumn"
-        remarksColumn.Width = 99
         ' 
         ' ProfessorForm
         ' 
