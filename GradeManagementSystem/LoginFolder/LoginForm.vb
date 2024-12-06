@@ -6,7 +6,7 @@ Public Class LoginForm
     ' Private adminForm As New AdminForm
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
-    Private professorForm As New ProfessorX
+    Private professorForm As New ProfessorForm
     Public Property CornerRadius As Integer = 60
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
