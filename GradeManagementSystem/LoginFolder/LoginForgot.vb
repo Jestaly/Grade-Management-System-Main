@@ -1,14 +1,19 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Windows
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports MySql.Data.MySqlClient
+Imports Mysqlx
+Imports Mysqlx.XDevAPI.Common
 Imports Transitions
 
 Public Class LoginForgot
-    Dim originallocation As Size
-    Dim hiddenlocation As Size
-    Dim originallocation_fpass As Size
-    Dim hiddenlocation_fpass As Size
-
     Dim hidden As Boolean
+    Dim idinputTracker As Integer
+
+    Public connector As New DatabaseConnector
+    Private registerForm As New RegisterForm
+    Private studentForm As New StudentForm
+    Private professorForm As New ProfessorForm
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -30,24 +35,38 @@ Public Class LoginForgot
         p_login.Location = New Point(0, 0)
         p_forgotpass.Location = New Point(800, 0)
 
+        p_wid.Visible = False
+        p_wpassword.Visible = False
+        pb_wid.Visible = False
+        lbl_invalid.Visible = False
+
         hidden = True
     End Sub
 
     Private Sub btn_forgotpass_Click(sender As Object, e As EventArgs) Handles btn_forgotpass.Click
+
+        ds_forgot.BringToFront()
         p_forgotpass.BringToFront()
         Transition.run(p_login, "Left", -350, New TransitionType_Deceleration(900))
-        ShowForgotPass()
+        Transition.run(ds_login, "Left", -298, New TransitionType_Deceleration(900))
+
         Transition.run(p_forgotpass, "Left", 450, New TransitionType_Deceleration(1100))
+        Transition.run(ds_forgot, "Left", 426, New TransitionType_Deceleration(1100))
+        ShowForgotPass()
     End Sub
     Private Sub btn_signin_Click(sender As Object, e As EventArgs) Handles btn_signin.Click
+
+        ds_login.BringToFront()
         p_login.BringToFront()
         Transition.run(p_forgotpass, "Left", 800, New TransitionType_Deceleration(900))
-        ShowLogin()
-        Transition.run(p_login, "Left", 0, New TransitionType_Deceleration(1100))
-
+        Transition.run(ds_forgot, "Left", 800, New TransitionType_Deceleration(900))
         Transition.run(p_verification, "Left", 800, New TransitionType_Deceleration(900))
         Transition.run(p_changepass, "Left", 800, New TransitionType_Deceleration(900))
 
+        Transition.run(p_login, "Left", 0, New TransitionType_Deceleration(1100))
+        Transition.run(ds_login, "Left", 297, New TransitionType_Deceleration(1100))
+
+        ShowLogin()
     End Sub
     Sub ShowForgotPass()
         lbl_welcome.Visible = False
@@ -171,7 +190,136 @@ Public Class LoginForgot
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        End
+
+    Private Sub txtb_userid_TextChanged(sender As Object, e As EventArgs) Handles txtb_userid.TextChanged
+        Dim cursorPosition As Integer = txtb_userid.SelectionStart
+        Dim textWithoutDashes As String = txtb_userid.Text.Replace("-", "")
+
+        Dim formattedText As String = ""
+        If textWithoutDashes.Length > 0 Then
+            formattedText = textWithoutDashes.Substring(0, 1)
+        End If
+        If textWithoutDashes.Length > 1 Then
+            formattedText &= "-" & textWithoutDashes.Substring(1, Math.Min(2, textWithoutDashes.Length - 1))
+        End If
+        If textWithoutDashes.Length > 3 Then
+            formattedText &= "-" & textWithoutDashes.Substring(3, Math.Min(5, textWithoutDashes.Length - 3))
+        End If
+
+        Dim dashCountBeforeCursor As Integer = txtb_userid.Text.Substring(0, Math.Min(cursorPosition, txtb_userid.Text.Length)).Count(Function(c) c = "-")
+        Dim dashCountAfterFormatting As Integer = formattedText.Substring(0, Math.Min(cursorPosition, formattedText.Length)).Count(Function(c) c = "-")
+
+        cursorPosition += (dashCountAfterFormatting - dashCountBeforeCursor)
+
+        txtb_userid.Text = formattedText
+        txtb_userid.SelectionStart = Math.Min(cursorPosition, txtb_userid.Text.Length)
     End Sub
+
+
+    Private Function trimmedID() As String
+        Dim id As String = txtb_userid.Text.Replace("-", "")
+        Return id
+    End Function
+    Private Function password() As String
+        Dim pass As String = txtb_userid.Text
+        Return pass
+    End Function
+
+    Private Sub enterbttn_Click(sender As Object, e As EventArgs) Handles enterbttn.Click
+        Dim result As Boolean
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT student.id AS id, student.password AS password FROM student UNION SELECT professor.id AS id, professor.password AS password FROM professor UNION SELECT admin.id AS id, admin.password AS password FROM admin;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.command.ExecuteNonQuery()
+
+            Using command As New MySqlCommand(connector.query, connector.command.Connection)
+
+                command.Parameters.AddWithValue("@id", trimmedID())
+                command.Parameters.AddWithValue("@password", password())
+
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                result = (count > 0)
+
+                If result = True Then
+                    If (trimmedID().Chars(0) = "1") Then
+                        connector.connect.Close()
+                        Me.Visible = False
+                        studentForm.Visible = True
+                        Return
+                    ElseIf (trimmedID().Chars(0) = "2") Then
+                        connector.connect.Close()
+                        loadClass()
+                        getProfName()
+                        professorForm.classChooseBox.SelectedIndex = 0
+                        Me.Visible = False
+                        professorForm.Visible = True
+                        Return
+                    ElseIf (trimmedID().Chars(0) = "3") Then
+                        connector.connect.Close()
+                        Me.Visible = False
+                        AdminDashboard.Visible = True
+                        Return
+                    End If
+                End If
+            End Using
+
+            txtb_userid.Clear()
+            txtb_password.Clear()
+
+            p_wid.Visible = True
+            p_wpassword.Visible = True
+            pb_wid.Visible = True
+            lbl_invalid.Visible = True
+
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+
+    Public Sub loadClass()
+        Dim classID As String = ""
+        Try
+            professorForm.classChooseBox.Items.Clear()
+            connector.connect.Open()
+            connector.query = "SELECT class_id AS 'Class ID' FROM class WHERE class.professor_id = '" & trimmedID() & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (connector.reader("Class ID").ToString IsNot Nothing) Then
+                    classID = connector.reader("Class ID").ToString
+                    professorForm.classChooseBox.Items.Add(classID)
+                End If
+            End While
+            professorForm.classChooseBox.SelectedIndex = 0
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+    Public Sub getProfName()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT CONCAT(fname,' ',mname,' ',lname) AS Professor FROM professor WHERE id = '" & trimmedID() & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            Dim profName As String = connector.command.ExecuteScalar
+            professorForm.profTextBox.Text = profName
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Friend WithEvents dataView As DataGridView
+
 End Class
