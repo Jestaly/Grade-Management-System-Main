@@ -28,6 +28,7 @@ Partial Class ManageProfessorAdmin
         modifyProfessorButton = New Button()
         searchProfessorField = New TextBox()
         dataView = New DataGridView()
+        removeProfButton = New Button()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -51,18 +52,18 @@ Partial Class ManageProfessorAdmin
         ' 
         ' addProfessorButton
         ' 
-        addProfessorButton.Location = New Point(508, 30)
+        addProfessorButton.Location = New Point(642, 30)
         addProfessorButton.Name = "addProfessorButton"
-        addProfessorButton.Size = New Size(133, 29)
+        addProfessorButton.Size = New Size(138, 29)
         addProfessorButton.TabIndex = 2
         addProfessorButton.Text = "Add Professor"
         addProfessorButton.UseVisualStyleBackColor = True
         ' 
         ' modifyProfessorButton
         ' 
-        modifyProfessorButton.Location = New Point(647, 30)
+        modifyProfessorButton.Location = New Point(490, 30)
         modifyProfessorButton.Name = "modifyProfessorButton"
-        modifyProfessorButton.Size = New Size(133, 29)
+        modifyProfessorButton.Size = New Size(146, 29)
         modifyProfessorButton.TabIndex = 3
         modifyProfessorButton.Text = "Modify Professor"
         modifyProfessorButton.UseVisualStyleBackColor = True
@@ -84,11 +85,21 @@ Partial Class ManageProfessorAdmin
         dataView.Size = New Size(764, 318)
         dataView.TabIndex = 5
         ' 
+        ' removeProfButton
+        ' 
+        removeProfButton.Location = New Point(639, 65)
+        removeProfButton.Name = "removeProfButton"
+        removeProfButton.Size = New Size(141, 29)
+        removeProfButton.TabIndex = 6
+        removeProfButton.Text = "Remove Professor"
+        removeProfButton.UseVisualStyleBackColor = True
+        ' 
         ' ManageProfessorAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(removeProfButton)
         Controls.Add(dataView)
         Controls.Add(searchProfessorField)
         Controls.Add(modifyProfessorButton)
@@ -109,4 +120,5 @@ Partial Class ManageProfessorAdmin
     Friend WithEvents modifyProfessorButton As Button
     Friend WithEvents searchProfessorField As TextBox
     Friend WithEvents dataView As DataGridView
+    Friend WithEvents removeProfButton As Button
 End Class

@@ -1,12 +1,12 @@
-﻿Imports System.Drawing
+Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
 
 Public Class StudentDashboard
     Inherits Form
     Public Property CornerRadius As Integer = 30
+    Public Property UserChoice As DialogResult = DialogResult.Cancel
     Public Property CornerRadius1 As Integer = 60
-
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
         e.Graphics.SmoothingMode = SmoothingMode.AntiAlias

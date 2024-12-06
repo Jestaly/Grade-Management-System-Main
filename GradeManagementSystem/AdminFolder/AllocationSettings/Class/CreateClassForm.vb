@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Runtime.CompilerServices
+Imports MySql.Data.MySqlClient
 
 Public Class CreateClassForm
     Private connector As New DatabaseConnector
@@ -6,10 +7,37 @@ Public Class CreateClassForm
         Me.Visible = False
     End Sub
 
+    Private Sub setTimeAbb()
+        Dim startTimeAbb As String = startTimePicker.Text.Chars(8) & startTimePicker.Text.Chars(9)
+        Dim endTimeAbb As String = endTimePicker.Text.Chars(8) & endTimePicker.Text.Chars(9)
+        Try
+            connector.connect.Open()
+            connector.query = "INSERT INTO time_history VALUES ('" & getClassID() & "','" & startTimeAbb & "','" & endTimeAbb & "');"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Function getStartTime() As String
+        Dim startTime As String = startTimePicker.Text
+        startTime = startTime.Replace("pm", "").Replace("am", "").Trim
+        Return startTime
+    End Function
+    Private Function getEndTime() As String
+        Dim endTime As String = endTimePicker.Text
+        endTime = endTime.Replace("pm", "").Replace("am", "").Trim
+        Return endTime
+    End Function
+
     Private Sub createClassButton_Click(sender As Object, e As EventArgs) Handles createClassButton.Click
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO class VALUES ('" & getClassID() & "','" & getProfessorID() & "','" & getCourseID() & "');"
+            connector.query = "INSERT INTO class VALUES ('" & getClassID() & "','" & getProfessorID() & "','" & getCourseID() & "','" & getStartTime() & "','" & getEndTime() & "','" & classSeshComboBox.Text & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
@@ -18,6 +46,7 @@ Public Class CreateClassForm
             connector.command.ExecuteNonQuery()
             MessageBox.Show("Added Succesfully!")
             connector.connect.Close()
+            setTimeAbb()
             Me.Visible = False
         Catch ex As MySqlException
             connector.connect.Close()

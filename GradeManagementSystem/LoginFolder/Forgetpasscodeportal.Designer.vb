@@ -28,10 +28,10 @@ Partial Class Forgetpasscodeportal
         Label3 = New Label()
         emailaddress = New TextBox()
         Label4 = New Label()
-        PictureBox9 = New PictureBox()
+        backtologinicon = New PictureBox()
         backtologinclick = New Label()
         resetpasscodebttn = New PictureBox()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
+        CType(backtologinicon, ComponentModel.ISupportInitialize).BeginInit()
         CType(resetpasscodebttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -92,19 +92,19 @@ Partial Class Forgetpasscodeportal
         Label4.TabIndex = 4
         Label4.Text = "Enter Email Address"
         ' 
-        ' PictureBox9
+        ' backtologinicon
         ' 
-        PictureBox9.BackColor = Color.Transparent
-        PictureBox9.BackgroundImage = CType(resources.GetObject("PictureBox9.BackgroundImage"), Image)
-        PictureBox9.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox9.ImageLocation = ""
-        PictureBox9.Location = New Point(87, 458)
-        PictureBox9.Margin = New Padding(4)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(123, 57)
-        PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox9.TabIndex = 46
-        PictureBox9.TabStop = False
+        backtologinicon.BackColor = Color.Transparent
+        backtologinicon.BackgroundImage = CType(resources.GetObject("backtologinicon.BackgroundImage"), Image)
+        backtologinicon.BackgroundImageLayout = ImageLayout.Zoom
+        backtologinicon.ImageLocation = ""
+        backtologinicon.Location = New Point(93, 458)
+        backtologinicon.Margin = New Padding(4)
+        backtologinicon.Name = "backtologinicon"
+        backtologinicon.Size = New Size(123, 57)
+        backtologinicon.SizeMode = PictureBoxSizeMode.Zoom
+        backtologinicon.TabIndex = 46
+        backtologinicon.TabStop = False
         ' 
         ' backtologinclick
         ' 
@@ -139,7 +139,7 @@ Partial Class Forgetpasscodeportal
         ClientSize = New Size(574, 589)
         Controls.Add(resetpasscodebttn)
         Controls.Add(backtologinclick)
-        Controls.Add(PictureBox9)
+        Controls.Add(backtologinicon)
         Controls.Add(Label4)
         Controls.Add(emailaddress)
         Controls.Add(Label3)
@@ -147,8 +147,9 @@ Partial Class Forgetpasscodeportal
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
         Name = "Forgetpasscodeportal"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Forgetpasscodeportal"
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
+        CType(backtologinicon, ComponentModel.ISupportInitialize).EndInit()
         CType(resetpasscodebttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -159,7 +160,7 @@ Partial Class Forgetpasscodeportal
     Friend WithEvents Label3 As Label
     Friend WithEvents emailaddress As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents backtologinicon As PictureBox
     Friend WithEvents backtologinclick As Label
     Friend WithEvents resetpasscodebttn As PictureBox
 End Class

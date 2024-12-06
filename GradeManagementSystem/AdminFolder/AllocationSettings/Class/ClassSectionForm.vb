@@ -11,7 +11,10 @@ Public Class ClassSectionForm
             connector.query = "SELECT * FROM class_count_history ORDER BY count DESC LIMIT 1;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            clCount = connector.command.ExecuteScalar
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                clCount = Integer.Parse(connector.reader("count").ToString())
+            End While
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
@@ -86,7 +89,7 @@ Public Class ClassSectionForm
         Try
             connector.dataTable.Clear()
             connector.connect.Open()
-            connector.query = "SELECT class.class_id,CONCAT(professor.fname,' ',professor.mname,' ', professor.lname) AS 'Professor', course.course_name FROM class LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id;"
+            connector.query = "SELECT class.class_id,CONCAT(professor.fname,' ',professor.mname,' ', professor.lname) AS 'Professor', course.course_name, CONCAT(DATE_FORMAT(time_start, '%H:%i'),time_history.start_abbreviation,'-',DATE_FORMAT(time_end, '%H:%i'),time_history.end_abbreviation) AS 'Class Period', day AS Day FROM class LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id LEFT JOIN time_history ON class.class_id = time_history.class_id;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
