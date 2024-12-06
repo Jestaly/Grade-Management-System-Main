@@ -36,13 +36,14 @@ Partial Class LoginForm
         CType(exitbttn, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(enterbttn, ComponentModel.ISupportInitialize).BeginInit()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' passwordLogin
         ' 
         passwordLogin.BackColor = Color.WhiteSmoke
         passwordLogin.BorderStyle = BorderStyle.None
-        passwordLogin.Font = New Font("Tahoma", 11F)
+        passwordLogin.Font = New Font("Tahoma", 11.0F)
         passwordLogin.ForeColor = Color.DarkGreen
         passwordLogin.Location = New Point(160, 454)
         passwordLogin.Margin = New Padding(4, 4, 4, 4)
@@ -67,10 +68,9 @@ Partial Class LoginForm
         ' 
         accountIDLogin.BackColor = Color.WhiteSmoke
         accountIDLogin.BorderStyle = BorderStyle.None
-        accountIDLogin.Font = New Font("Tahoma", 11F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        accountIDLogin.Font = New Font("Tahoma", 11.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         accountIDLogin.ForeColor = Color.DarkGreen
-        accountIDLogin.Location = New Point(161, 372)
-        accountIDLogin.Margin = New Padding(4, 4, 4, 4)
+        accountIDLogin.Location = New Point(13, 13)
         accountIDLogin.Mask = "0-00-00000"
         accountIDLogin.Name = "accountIDLogin"
         accountIDLogin.PromptChar = "X"c
@@ -82,7 +82,7 @@ Partial Class LoginForm
         ' 
         forgotpasscodeportal.AutoSize = True
         forgotpasscodeportal.BackColor = Color.Transparent
-        forgotpasscodeportal.Font = New Font("Calibri", 12F, FontStyle.Bold Or FontStyle.Underline)
+        forgotpasscodeportal.Font = New Font("Calibri", 12.0F, FontStyle.Bold Or FontStyle.Underline)
         forgotpasscodeportal.ForeColor = Color.White
         forgotpasscodeportal.Location = New Point(175, 695)
         forgotpasscodeportal.Margin = New Padding(2, 0, 2, 0)
@@ -144,15 +144,15 @@ Partial Class LoginForm
         ' Panel2
         ' 
         Panel2.BackColor = Color.WhiteSmoke
-        Panel2.Location = New Point(141, 355)
-        Panel2.Margin = New Padding(4, 4, 4, 4)
+        Panel2.Controls.Add(accountIDLogin)
+        Panel2.Location = New Point(113, 284)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(268, 62)
         Panel2.TabIndex = 51
         ' 
         ' LoginForm
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
@@ -161,7 +161,6 @@ Partial Class LoginForm
         Controls.Add(forgotpasscodeportal)
         Controls.Add(PictureBox1)
         Controls.Add(exitbttn)
-        Controls.Add(accountIDLogin)
         Controls.Add(dataView)
         Controls.Add(passwordLogin)
         Controls.Add(Panel1)
@@ -176,6 +175,8 @@ Partial Class LoginForm
         CType(exitbttn, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(enterbttn, ComponentModel.ISupportInitialize).EndInit()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub

@@ -3,7 +3,7 @@ Imports System.Threading
 Imports MySql.Data.MySqlClient
 Public Class AddProjectForm
     Private connector As New DatabaseConnector
-    Private professorForm As New ProfessorForm
+
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
         Me.Visible = False
     End Sub
@@ -42,7 +42,7 @@ Public Class AddProjectForm
         Dim itemName = "Project " & (getNumProject() + 1)
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO item VALUES('" & itemID & "','" & itemName & "','Project'," & maxScore & ",'" & professorForm.getTerm & "','" & professorForm.getClass & "')"
+            connector.query = "INSERT INTO item VALUES('" & itemID & "','" & itemName & "','Project'," & maxScore & ",'" & ProfessorForm.getTerm & "','" & ProfessorForm.getClass & "')"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
@@ -55,7 +55,7 @@ Public Class AddProjectForm
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        professorForm.refreshForm()
+        ProfessorForm.refreshForm()
     End Sub
 
     Private Function getItemID() As String

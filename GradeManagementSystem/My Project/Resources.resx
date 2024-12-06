@@ -118,91 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="administrator1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\1-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="administrator2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="allocation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>allocation1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="allocation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>allocation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="asdhjasgdkjahsdjahsda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\11-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="courses1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\3-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="courses2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\4-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="department1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\panel\department1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="department2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\panel\department2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="departments1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AdminFolder\Resources\dashboard\Untitled_design-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="departments2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\12-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>home1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="home2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>home2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="output-onlinepngtools" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\output-onlinepngtools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prof1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>prof1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prof2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>prof2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="professors1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\7-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="professors2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\8-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PROFILE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>PROFILE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PROFILE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>PROFILE2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prog1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>prog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="prog2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>prog2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="programs1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AdminFolder\Resources\dashboard\5-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="programs2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\6-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Screenshot_2024-11-28_210802-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\Screenshot_2024-11-28_210802-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stud1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>stud1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="courses2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\4-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stud2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>stud2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="students1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\9-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PROFILE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PROFILE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="professors1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\7-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="output-onlinepngtools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\output-onlinepngtools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stud1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>stud1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PLPBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PLPBG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PROFILE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PROFILE2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="courses1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\3-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_envelope" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_envelope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="students2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AdminFolder\Resources\dashboard\10-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prof2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>prof2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>home1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="administrator1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\1-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="department1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\panel\department1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_leftarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_leftarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2024-11-28_210802-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\Screenshot_2024-11-28_210802-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="allocation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>allocation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="allocation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>allocation1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>home2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="professors2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\8-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="departments2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\12-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="department2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\panel\department2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="administrator2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prog2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>prog2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="students1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\9-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="asdhjasgdkjahsdjahsda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\11-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PLP LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PLP LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prog1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>prog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="programs2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\dashboard\6-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_id" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_id.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prof1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>prof1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_eyeslash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_eyeslash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
