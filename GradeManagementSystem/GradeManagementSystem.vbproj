@@ -10,6 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <COMReference Include="VBScript_RegExp_10">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>3f4daca7-160d-11d2-a8e9-00104b365c9f</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Import Include="guna" />
     <Import Include="Guna.UI.Animation" />
     <Import Include="Guna.UI.Animation.Material" />
