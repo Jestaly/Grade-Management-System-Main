@@ -857,12 +857,12 @@ Partial Class AdminDashboard
         ' 
         eklavu2.AutoSize = True
         eklavu2.ForeColor = Color.Green
-        eklavu2.Location = New Point(1458, 718)
+        eklavu2.Location = New Point(1488, 712)
         eklavu2.Margin = New Padding(4, 0, 4, 0)
         eklavu2.Name = "eklavu2"
-        eklavu2.Size = New Size(83, 25)
+        eklavu2.Size = New Size(63, 25)
         eklavu2.TabIndex = 80
-        eklavu2.Text = "EKLAVU: "
+        eklavu2.Text = "Email: "
         ' 
         ' tuldoklikod
         ' 
@@ -918,9 +918,9 @@ Partial Class AdminDashboard
         seemore.Location = New Point(1135, 649)
         seemore.Margin = New Padding(4, 0, 4, 0)
         seemore.Name = "seemore"
-        seemore.Size = New Size(131, 29)
+        seemore.Size = New Size(119, 29)
         seemore.TabIndex = 85
-        seemore.Text = "Sese more"
+        seemore.Text = "See more"
         ' 
         ' dtg1
         ' 
@@ -946,7 +946,7 @@ Partial Class AdminDashboard
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1437, 697)
+        ClientSize = New Size(1793, 749)
         Controls.Add(Panel1)
         Controls.Add(studBox)
         Controls.Add(dtg1)
