@@ -28,7 +28,7 @@
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Transitions">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.1\Transitions.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 9.1\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
