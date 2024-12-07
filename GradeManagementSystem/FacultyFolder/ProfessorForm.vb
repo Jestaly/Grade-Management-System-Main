@@ -28,8 +28,31 @@ Public Class ProfessorForm
             MessageBox.Show("Database Error")
         End Try
     End Sub
+    Private Sub refreshProject()
+        Dim colCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT COUNT(*) AS 'Number of Project' FROM item WHERE item_type = 'Quiz' AND class_id = 'CL008'AND term = 'Midterm';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                colCount = Integer.Parse(connector.reader("Number of Project").ToString)
+            End While
 
+            For i As Integer = 1 To colCount
+                quizDataView.Columns.Add("quiz" & i, "Q" & i)
+            Next
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Public classID As String
     Private Sub loadData(selectedClass As String)
+        classID = selectedClass
         Try
             connector.connect.Open()
             connector.query = "SELECT CONCAT(professor.fname,' ',professor.mname,' ',professor.lname) AS Professor, course.course_name AS Course, CONCAT(DATE_FORMAT(time_start, '%H:%i'),time_history.start_abbreviation,'-',DATE_FORMAT(time_end,'%H:%i'),time_history.end_abbreviation) AS 'Time Period', day AS 'Day' FROM class  LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id LEFT JOIN time_history ON class.class_id = time_history.class_id WHERE class.class_id = '" & selectedClass & "';"
@@ -83,7 +106,8 @@ Public Class ProfessorForm
         End If
     End Sub
 
-    Private Sub classChooseBox_SelectedItemChanged(sender As Object, e As EventArgs) Handles classChooseBox.SelectedItemChanged
+
+    Private Sub classChooseBox_SelectedItemChanged(sender As Object, e As EventArgs) Handles classChooseBox.SelectedIndexChanged
         '--------------CAUTION ON RUNNING CODE HERE----------------
         'MIGHT INTERCHANGE ALL DATA IN GRADING TABLES FROM DATABASE
         Dim selectedClass As String = classChooseBox.Text
@@ -96,6 +120,7 @@ Public Class ProfessorForm
     End Sub
 
     Private Sub midtermButton_Click(sender As Object, e As EventArgs) Handles midtermButton.Click
+        MessageBox.Show(classID)
         term = "Midterm"
         refreshForm()
     End Sub
@@ -110,6 +135,11 @@ Public Class ProfessorForm
     End Function
 
     Public Function getClass() As String
-        Return classChooseBox.Text
+        Return classID
     End Function
+
+    Private Sub studentInfoDataView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles studentInfoDataView.CellContentClick
+
+    End Sub
+
 End Class

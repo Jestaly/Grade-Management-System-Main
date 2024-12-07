@@ -29,7 +29,6 @@ Partial Class ProfessorForm
         presentColumn = New DataGridViewTextBoxColumn()
         absentColumn = New DataGridViewTextBoxColumn()
         studentInfoDataView = New DataGridView()
-        classChooseBox = New DomainUpDown()
         projectDataView = New DataGridView()
         examDataView = New DataGridView()
         examColumn = New DataGridViewTextBoxColumn()
@@ -71,6 +70,7 @@ Partial Class ProfessorForm
         Label12 = New Label()
         Label13 = New Label()
         editItemButton = New Button()
+        classChooseBox = New ComboBox()
         CType(quizDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(attendanceDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(studentInfoDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -155,14 +155,6 @@ Partial Class ProfessorForm
         studentInfoDataView.ScrollBars = ScrollBars.Horizontal
         studentInfoDataView.Size = New Size(296, 400)
         studentInfoDataView.TabIndex = 9
-        ' 
-        ' classChooseBox
-        ' 
-        classChooseBox.Location = New Point(499, 36)
-        classChooseBox.Name = "classChooseBox"
-        classChooseBox.ReadOnly = True
-        classChooseBox.Size = New Size(112, 27)
-        classChooseBox.TabIndex = 13
         ' 
         ' projectDataView
         ' 
@@ -545,12 +537,22 @@ Partial Class ProfessorForm
         editItemButton.Text = "Edit Item"
         editItemButton.UseVisualStyleBackColor = True
         ' 
+        ' classChooseBox
+        ' 
+        classChooseBox.DropDownStyle = ComboBoxStyle.DropDownList
+        classChooseBox.FormattingEnabled = True
+        classChooseBox.Location = New Point(499, 36)
+        classChooseBox.Name = "classChooseBox"
+        classChooseBox.Size = New Size(151, 28)
+        classChooseBox.TabIndex = 44
+        ' 
         ' ProfessorForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.GrayText
         ClientSize = New Size(1419, 650)
+        Controls.Add(classChooseBox)
         Controls.Add(editItemButton)
         Controls.Add(Label13)
         Controls.Add(Label12)
@@ -580,7 +582,6 @@ Partial Class ProfessorForm
         Controls.Add(gradeDataView)
         Controls.Add(examDataView)
         Controls.Add(projectDataView)
-        Controls.Add(classChooseBox)
         Controls.Add(refreshButton)
         Controls.Add(quizDataView)
         Controls.Add(attendanceDataView)
@@ -620,7 +621,6 @@ Partial Class ProfessorForm
     Friend WithEvents quizDataView As DataGridView
     Friend WithEvents attendanceDataView As DataGridView
     Friend WithEvents studentInfoDataView As DataGridView
-    Friend WithEvents classChooseBox As DomainUpDown
     Friend WithEvents projectDataView As DataGridView
     Friend WithEvents examDataView As DataGridView
     Friend WithEvents gradeDataView As DataGridView
@@ -665,4 +665,5 @@ Partial Class ProfessorForm
     Friend WithEvents gradeColumn As DataGridViewTextBoxColumn
     Friend WithEvents equivalentColumn As DataGridViewTextBoxColumn
     Friend WithEvents remarksColumn As DataGridViewTextBoxColumn
+    Public WithEvents classChooseBox As ComboBox
 End Class

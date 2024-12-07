@@ -15,7 +15,7 @@ Public Class AddProjectForm
     Private Function getNumProject() As Integer
         Try
             connector.connect.Open()
-            connector.query = "SELECT COUNT(item_type) AS num_of_project FROM item WHERE class_id = '" & professorForm.getClass & "' AND item_type = 'Project' AND term = '" & professorForm.getTerm & "' ORDER BY item_type;"
+            connector.query = "SELECT COUNT(item_type) AS num_of_project FROM item WHERE class_id = '" & ProfessorForm.getClass & "' AND item_type = 'Project' AND term = '" & ProfessorForm.getTerm & "' ORDER BY item_type;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
@@ -38,13 +38,16 @@ Public Class AddProjectForm
 
     Private Sub maxScoreButton_Click(sender As Object, e As EventArgs) Handles maxScoreButton.Click
         Dim itemID As String = getItemID()
-        Dim maxScore As Integer = maxScoreTextBox.Text
+        Dim maxScore As Integer = Integer.Parse(maxScoreTextBox.Text)
         Dim itemName = "Project " & (getNumProject() + 1)
+
+        MessageBox.Show(ProfessorForm.classChooseBox.SelectedValue.ToString)
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO item VALUES('" & itemID & "','" & itemName & "','Project'," & maxScore & ",'" & ProfessorForm.getTerm & "','" & ProfessorForm.getClass & "')"
+            connector.query = "INSERT INTO item VALUES('" & itemID & "','" & itemName & "','Project'," & maxScore & ",'" & ProfessorForm.getTerm & "','" & ProfessorForm.getClass & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
+            MessageBox.Show("EXECUTED")
             connector.command.ExecuteNonQuery()
             connector.query = "INSERT INTO item_count_history VALUES();"
             connector.command.Connection = connector.connect
@@ -84,9 +87,9 @@ Public Class AddProjectForm
         Return itemID
     End Function
 
-    Private Function getZeros(pCount As Integer) As String
+    Private Function getZeros(iCount As Integer) As String
         Dim zeros As String = "000"
-        Select Case pCount.ToString.Length
+        Select Case iCount.ToString.Length
             Case 1
                 zeros = "00"
             Case 2

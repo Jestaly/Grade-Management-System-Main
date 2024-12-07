@@ -13,18 +13,19 @@
     Private Sub addProjectButton_Click(sender As Object, e As EventArgs) Handles addProjectButton.Click
         Me.Visible = False
         addProjectForm.Visible = True
+        MessageBox.Show(ProfessorForm.classChooseBox.Items.Count.ToString)
     End Sub
 
     Private Sub makeAPFChild()
         addProjectForm.TopLevel = False
-        addProjectForm.Parent = Me.Parent
+        addProjectForm.Parent = Me
         CenterAPF()
         addProjectForm.BringToFront()
     End Sub
 
     Private Sub CenterAPF()
-        Dim x As Integer = (Me.Parent.ClientSize.Width - addProjectForm.Width) \ 2
-        Dim y As Integer = (Me.Parent.ClientSize.Height - addProjectForm.Height) \ 2
+        Dim x As Integer = (Me.ClientSize.Width - addProjectForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - addProjectForm.Height) \ 2
         addProjectForm.Location = New Point(x, y)
     End Sub
 

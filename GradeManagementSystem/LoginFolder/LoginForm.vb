@@ -50,7 +50,6 @@ Public Class LoginForm
                         connector.connect.Close()
                         loadClass()
                         getProfName()
-                        professorForm.classChooseBox.SelectedIndex = 0
                         Me.Visible = False
                         professorForm.Visible = True
                         Return
@@ -90,7 +89,6 @@ Public Class LoginForm
                     professorForm.classChooseBox.Items.Add(classID)
                 End If
             End While
-            professorForm.classChooseBox.SelectedIndex = 0
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
