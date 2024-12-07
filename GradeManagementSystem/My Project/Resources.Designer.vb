@@ -173,6 +173,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property dropshadow() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dropshadow", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property dropshadow_left() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dropshadow_left", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property home1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("home1", resourceCulture)
@@ -196,6 +216,16 @@ Namespace My.Resources
         Friend ReadOnly Property icon_envelope() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icon_envelope", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property icon_exclamationcircle() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("icon_exclamationcircle", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -246,6 +276,16 @@ Namespace My.Resources
         Friend ReadOnly Property icon_lock() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icon_lock", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property icon_xmark() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("icon_xmark", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
