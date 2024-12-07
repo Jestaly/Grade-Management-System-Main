@@ -910,7 +910,7 @@ Partial Class AdminDashboard
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1942, 674)
+        ClientSize = New Size(1793, 749)
         Controls.Add(Panel1)
         Controls.Add(studBox)
         Controls.Add(dtg1)
