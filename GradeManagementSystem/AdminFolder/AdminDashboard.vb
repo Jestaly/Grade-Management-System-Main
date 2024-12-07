@@ -75,8 +75,8 @@ Public Class AdminDashboard
         profname.Hide()
         proftitle.Hide()
         emailIcon.Hide()
-        eklavu1.Hide()
-        eklavu2.Hide()
+        changeEmail.Hide()
+        changeNumber.Hide()
         eklavutxt.Hide()
         eklavutxt2.Hide()
         tuldoklikod.Hide()
@@ -303,6 +303,23 @@ Public Class AdminDashboard
         End If
     End Sub
     Private Sub profmenu_MouseClick(sender As Object, e As MouseEventArgs) Handles profmenu.MouseClick
+        secu.Location = New Point(1000, 500)
+        boxnum.Visible = Not boxnum.Visible
+        Gerald5.Location = New Point(1100, 50)
+        Gerald1.Location = New Point(1104, 53)
+        Gerald2.Location = New Point(1115, 180)
+
+        boxname.Location = New Point(1104, 200)
+        editInfo.Visible = Not editInfo.Visible
+        callIcon.Visible = Not callIcon.Visible
+        profname.Visible = Not profname.Visible
+        proftitle.Visible = Not proftitle.Visible
+        emailIcon.Visible = Not emailIcon.Visible
+        profpic.Location = New Point(1185, 60)
+
+
+
+
         secu.Visible = Not secu.Visible
         boxnum.Visible = Not boxnum.Visible
         Gerald5.Visible = Not Gerald5.Visible
@@ -326,8 +343,8 @@ Public Class AdminDashboard
 
             editInfo.Location = New Point(1070, 480)
             secu.Hide()
-            eklavu1.Show()
-            eklavu2.Show()
+            changeEmail.Show()
+            changeNumber.Show()
             eklavutxt.Show()
             eklavutxt2.Show()
         Else
@@ -336,8 +353,8 @@ Public Class AdminDashboard
 
             editInfo.Location = New Point(1065, 323)
             secu.Show()
-            eklavu1.Hide()
-            eklavu2.Hide()
+            changeEmail.Hide()
+            changeNumber.Hide()
             eklavutxt.Hide()
             eklavutxt2.Hide()
         End If
@@ -351,8 +368,8 @@ Public Class AdminDashboard
 
             secu.Location = New Point(1040, 470)
             editInfo.Hide()
-            eklavu1.Show()
-            eklavu2.Show()
+            changeEmail.Show()
+            changeNumber.Show()
             eklavutxt.Show()
             eklavutxt2.Show()
         Else
@@ -361,8 +378,8 @@ Public Class AdminDashboard
 
             secu.Location = New Point(1040, 355)
             editInfo.Show()
-            eklavu1.Hide()
-            eklavu2.Hide()
+            changeEmail.Hide()
+            changeNumber.Hide()
             eklavutxt.Hide()
             eklavutxt2.Hide()
         End If
@@ -496,5 +513,9 @@ Public Class AdminDashboard
         Finally
 
         End Try
+    End Sub
+
+    Private Sub Gerald1_Click(sender As Object, e As EventArgs) Handles Gerald1.Click
+
     End Sub
 End Class
