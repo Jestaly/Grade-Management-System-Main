@@ -23,17 +23,20 @@ Partial Class LoginForgot
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         p_login = New Panel()
+        p_wid = New gerald.Gerald()
+        txtb_userid = New TextBox()
         enterbttn = New Button()
         Gerald3 = New gerald.Gerald()
         PictureBox3 = New PictureBox()
-        accountIDLogin = New MaskedTextBox()
         PictureBox2 = New PictureBox()
         Gerald2 = New gerald.Gerald()
         PictureBox1 = New PictureBox()
-        passwordLogin = New TextBox()
+        txtb_password = New TextBox()
         Gerald1 = New gerald.Gerald()
         lbl_invalid = New Label()
         p_base = New Panel()
+        ds_forgot = New PictureBox()
+        PictureBox5 = New PictureBox()
         p_changepass = New Panel()
         btn_eye = New PictureBox()
         txtb_confirmpassword = New TextBox()
@@ -82,12 +85,16 @@ Partial Class LoginForgot
         btn_signin = New Button()
         btnbg_signin = New gerald.Gerald()
         bg_signin = New gerald.Gerald()
-        Button2 = New Button()
+        ds_login = New PictureBox()
+        p_wpassword = New gerald.Gerald()
+        pb_wid = New PictureBox()
         p_login.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         p_base.SuspendLayout()
+        CType(ds_forgot, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         p_changepass.SuspendLayout()
         CType(btn_eye, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -95,26 +102,60 @@ Partial Class LoginForgot
         CType(btn_back, ComponentModel.ISupportInitialize).BeginInit()
         p_forgotpass.SuspendLayout()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ds_login, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pb_wid, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' p_login
         ' 
         p_login.BackColor = Color.White
         p_login.CausesValidation = False
+        p_login.Controls.Add(pb_wid)
+        p_login.Controls.Add(txtb_userid)
         p_login.Controls.Add(enterbttn)
         p_login.Controls.Add(Gerald3)
         p_login.Controls.Add(PictureBox3)
-        p_login.Controls.Add(accountIDLogin)
         p_login.Controls.Add(PictureBox2)
         p_login.Controls.Add(Gerald2)
         p_login.Controls.Add(PictureBox1)
-        p_login.Controls.Add(passwordLogin)
+        p_login.Controls.Add(txtb_password)
         p_login.Controls.Add(Gerald1)
         p_login.Controls.Add(lbl_invalid)
+        p_login.Controls.Add(p_wid)
+        p_login.Controls.Add(p_wpassword)
         p_login.Location = New Point(0, 0)
         p_login.Name = "p_login"
         p_login.Size = New Size(350, 600)
         p_login.TabIndex = 0
+        ' 
+        ' p_wid
+        ' 
+        p_wid.BackColor = Color.White
+        p_wid.BorderRadius = 21
+        p_wid.FlatAppearance.BorderColor = Color.Red
+        p_wid.ForeColor = Color.Black
+        p_wid.GradientAngle = 90.0F
+        p_wid.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
+        p_wid.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
+        p_wid.Location = New Point(32, 237)
+        p_wid.Name = "p_wid"
+        p_wid.Size = New Size(285, 45)
+        p_wid.TabIndex = 8
+        p_wid.Text = "Gerald13"
+        p_wid.UseVisualStyleBackColor = False
+        p_wid.Visible = False
+        ' 
+        ' txtb_userid
+        ' 
+        txtb_userid.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
+        txtb_userid.BorderStyle = BorderStyle.None
+        txtb_userid.Font = New Font("Segoe UI", 9.0F)
+        txtb_userid.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
+        txtb_userid.Location = New Point(80, 249)
+        txtb_userid.Name = "txtb_userid"
+        txtb_userid.PlaceholderText = "User ID"
+        txtb_userid.Size = New Size(211, 20)
+        txtb_userid.TabIndex = 7
         ' 
         ' enterbttn
         ' 
@@ -136,7 +177,7 @@ Partial Class LoginForgot
         Gerald3.BackColor = Color.White
         Gerald3.BorderRadius = 40
         Gerald3.ForeColor = Color.Black
-        Gerald3.GradientAngle = 90F
+        Gerald3.GradientAngle = 90.0F
         Gerald3.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald3.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald3.Location = New Point(75, 430)
@@ -156,19 +197,6 @@ Partial Class LoginForgot
         PictureBox3.TabIndex = 0
         PictureBox3.TabStop = False
         ' 
-        ' accountIDLogin
-        ' 
-        accountIDLogin.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
-        accountIDLogin.BorderStyle = BorderStyle.None
-        accountIDLogin.Font = New Font("Segoe UI", 9F)
-        accountIDLogin.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
-        accountIDLogin.Location = New Point(84, 250)
-        accountIDLogin.Mask = "0-00-00000"
-        accountIDLogin.Name = "accountIDLogin"
-        accountIDLogin.Size = New Size(211, 20)
-        accountIDLogin.TabIndex = 5
-        accountIDLogin.Text = "00000000"
-        ' 
         ' PictureBox2
         ' 
         PictureBox2.Image = My.Resources.Resources.icon_id
@@ -183,8 +211,9 @@ Partial Class LoginForgot
         ' 
         Gerald2.BackColor = Color.White
         Gerald2.BorderRadius = 20
+        Gerald2.FlatAppearance.BorderColor = Color.Red
         Gerald2.ForeColor = Color.Black
-        Gerald2.GradientAngle = 90F
+        Gerald2.GradientAngle = 90.0F
         Gerald2.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald2.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald2.Location = New Point(35, 240)
@@ -204,24 +233,25 @@ Partial Class LoginForgot
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
-        ' passwordLogin
+        ' txtb_password
         ' 
-        passwordLogin.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
-        passwordLogin.BorderStyle = BorderStyle.None
-        passwordLogin.Font = New Font("Segoe UI", 9F)
-        passwordLogin.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
-        passwordLogin.Location = New Point(84, 310)
-        passwordLogin.Name = "passwordLogin"
-        passwordLogin.PlaceholderText = "Password"
-        passwordLogin.Size = New Size(211, 20)
-        passwordLogin.TabIndex = 0
+        txtb_password.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
+        txtb_password.BorderStyle = BorderStyle.None
+        txtb_password.Font = New Font("Segoe UI", 9.0F)
+        txtb_password.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
+        txtb_password.Location = New Point(80, 310)
+        txtb_password.Name = "txtb_password"
+        txtb_password.PasswordChar = "•"c
+        txtb_password.PlaceholderText = "Password"
+        txtb_password.Size = New Size(211, 20)
+        txtb_password.TabIndex = 0
         ' 
         ' Gerald1
         ' 
         Gerald1.BackColor = Color.White
         Gerald1.BorderRadius = 20
         Gerald1.ForeColor = Color.Black
-        Gerald1.GradientAngle = 90F
+        Gerald1.GradientAngle = 90.0F
         Gerald1.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald1.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald1.Location = New Point(35, 300)
@@ -236,7 +266,7 @@ Partial Class LoginForgot
         lbl_invalid.AutoSize = True
         lbl_invalid.Font = New Font("Microsoft Sans Serif", 8.25F)
         lbl_invalid.ForeColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
-        lbl_invalid.Location = New Point(35, 348)
+        lbl_invalid.Location = New Point(35, 351)
         lbl_invalid.Name = "lbl_invalid"
         lbl_invalid.Size = New Size(151, 17)
         lbl_invalid.TabIndex = 0
@@ -248,7 +278,8 @@ Partial Class LoginForgot
         p_base.BackgroundImage = My.Resources.Resources.PLPBG
         p_base.BackgroundImageLayout = ImageLayout.Center
         p_base.CausesValidation = False
-        p_base.Controls.Add(Button2)
+        p_base.Controls.Add(ds_forgot)
+        p_base.Controls.Add(PictureBox5)
         p_base.Controls.Add(p_changepass)
         p_base.Controls.Add(p_verification)
         p_base.Controls.Add(p_login)
@@ -264,10 +295,33 @@ Partial Class LoginForgot
         p_base.Controls.Add(btn_signin)
         p_base.Controls.Add(btnbg_signin)
         p_base.Controls.Add(bg_signin)
+        p_base.Controls.Add(ds_login)
         p_base.Location = New Point(0, 0)
         p_base.Name = "p_base"
         p_base.Size = New Size(800, 600)
         p_base.TabIndex = 1
+        ' 
+        ' ds_forgot
+        ' 
+        ds_forgot.BackColor = Color.Transparent
+        ds_forgot.Image = My.Resources.Resources.dropshadow_left
+        ds_forgot.Location = New Point(800, 0)
+        ds_forgot.Name = "ds_forgot"
+        ds_forgot.Size = New Size(77, 609)
+        ds_forgot.SizeMode = PictureBoxSizeMode.StretchImage
+        ds_forgot.TabIndex = 21
+        ds_forgot.TabStop = False
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackColor = Color.Transparent
+        PictureBox5.Image = My.Resources.Resources.icon_xmark
+        PictureBox5.Location = New Point(767, 3)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(30, 30)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 19
+        PictureBox5.TabStop = False
         ' 
         ' p_changepass
         ' 
@@ -302,7 +356,7 @@ Partial Class LoginForgot
         ' 
         txtb_confirmpassword.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_confirmpassword.BorderStyle = BorderStyle.None
-        txtb_confirmpassword.Font = New Font("Segoe UI", 9F)
+        txtb_confirmpassword.Font = New Font("Segoe UI", 9.0F)
         txtb_confirmpassword.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_confirmpassword.Location = New Point(84, 354)
         txtb_confirmpassword.Name = "txtb_confirmpassword"
@@ -315,7 +369,7 @@ Partial Class LoginForgot
         Gerald12.BackColor = Color.White
         Gerald12.BorderRadius = 20
         Gerald12.ForeColor = Color.Black
-        Gerald12.GradientAngle = 90F
+        Gerald12.GradientAngle = 90.0F
         Gerald12.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald12.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald12.Location = New Point(35, 344)
@@ -329,7 +383,7 @@ Partial Class LoginForgot
         ' 
         txtb_newpassword.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_newpassword.BorderStyle = BorderStyle.None
-        txtb_newpassword.Font = New Font("Segoe UI", 9F)
+        txtb_newpassword.Font = New Font("Segoe UI", 9.0F)
         txtb_newpassword.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_newpassword.Location = New Point(84, 297)
         txtb_newpassword.Name = "txtb_newpassword"
@@ -352,7 +406,7 @@ Partial Class LoginForgot
         Gerald4.BackColor = Color.White
         Gerald4.BorderRadius = 20
         Gerald4.ForeColor = Color.Black
-        Gerald4.GradientAngle = 90F
+        Gerald4.GradientAngle = 90.0F
         Gerald4.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald4.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald4.Location = New Point(35, 287)
@@ -365,7 +419,7 @@ Partial Class LoginForgot
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         Label1.Location = New Point(23, 165)
         Label1.Name = "Label1"
@@ -407,7 +461,7 @@ Partial Class LoginForgot
         Gerald17.BorderRadius = 40
         Gerald17.Enabled = False
         Gerald17.ForeColor = Color.Black
-        Gerald17.GradientAngle = 90F
+        Gerald17.GradientAngle = 90.0F
         Gerald17.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald17.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald17.Location = New Point(71, 432)
@@ -471,7 +525,7 @@ Partial Class LoginForgot
         Gerald11.BackColor = Color.White
         Gerald11.BorderRadius = 20
         Gerald11.ForeColor = Color.Black
-        Gerald11.GradientAngle = 90F
+        Gerald11.GradientAngle = 90.0F
         Gerald11.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald11.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald11.Location = New Point(280, 300)
@@ -499,7 +553,7 @@ Partial Class LoginForgot
         Gerald10.BackColor = Color.White
         Gerald10.BorderRadius = 20
         Gerald10.ForeColor = Color.Black
-        Gerald10.GradientAngle = 90F
+        Gerald10.GradientAngle = 90.0F
         Gerald10.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald10.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald10.Location = New Point(230, 300)
@@ -527,7 +581,7 @@ Partial Class LoginForgot
         Gerald7.BackColor = Color.White
         Gerald7.BorderRadius = 20
         Gerald7.ForeColor = Color.Black
-        Gerald7.GradientAngle = 90F
+        Gerald7.GradientAngle = 90.0F
         Gerald7.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald7.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald7.Location = New Point(180, 300)
@@ -555,7 +609,7 @@ Partial Class LoginForgot
         Gerald6.BackColor = Color.White
         Gerald6.BorderRadius = 20
         Gerald6.ForeColor = Color.Black
-        Gerald6.GradientAngle = 90F
+        Gerald6.GradientAngle = 90.0F
         Gerald6.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald6.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald6.Location = New Point(130, 300)
@@ -583,7 +637,7 @@ Partial Class LoginForgot
         Gerald5.BackColor = Color.White
         Gerald5.BorderRadius = 20
         Gerald5.ForeColor = Color.Black
-        Gerald5.GradientAngle = 90F
+        Gerald5.GradientAngle = 90.0F
         Gerald5.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald5.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald5.Location = New Point(80, 300)
@@ -609,7 +663,7 @@ Partial Class LoginForgot
         ' lbl_verification
         ' 
         lbl_verification.AutoSize = True
-        lbl_verification.Font = New Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbl_verification.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbl_verification.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         lbl_verification.Location = New Point(83, 179)
         lbl_verification.Name = "lbl_verification"
@@ -634,7 +688,7 @@ Partial Class LoginForgot
         bg_code.BackColor = Color.White
         bg_code.BorderRadius = 20
         bg_code.ForeColor = Color.Black
-        bg_code.GradientAngle = 90F
+        bg_code.GradientAngle = 90.0F
         bg_code.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         bg_code.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         bg_code.Location = New Point(30, 300)
@@ -666,7 +720,7 @@ Partial Class LoginForgot
         btnbg_verify.BorderRadius = 40
         btnbg_verify.Enabled = False
         btnbg_verify.ForeColor = Color.Black
-        btnbg_verify.GradientAngle = 90F
+        btnbg_verify.GradientAngle = 90.0F
         btnbg_verify.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_verify.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_verify.Location = New Point(63, 384)
@@ -723,7 +777,7 @@ Partial Class LoginForgot
         ' lbl_resetpass
         ' 
         lbl_resetpass.AutoSize = True
-        lbl_resetpass.Font = New Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbl_resetpass.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbl_resetpass.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         lbl_resetpass.Location = New Point(22, 180)
         lbl_resetpass.Name = "lbl_resetpass"
@@ -747,7 +801,7 @@ Partial Class LoginForgot
         ' 
         TextBox2.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         TextBox2.BorderStyle = BorderStyle.None
-        TextBox2.Font = New Font("Segoe UI", 9F)
+        TextBox2.Font = New Font("Segoe UI", 9.0F)
         TextBox2.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         TextBox2.Location = New Point(76, 309)
         TextBox2.Name = "TextBox2"
@@ -775,7 +829,7 @@ Partial Class LoginForgot
         Gerald8.BackColor = Color.White
         Gerald8.BorderRadius = 40
         Gerald8.ForeColor = Color.Black
-        Gerald8.GradientAngle = 90F
+        Gerald8.GradientAngle = 90.0F
         Gerald8.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald8.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald8.Location = New Point(63, 384)
@@ -800,7 +854,7 @@ Partial Class LoginForgot
         Gerald9.BackColor = Color.White
         Gerald9.BorderRadius = 20
         Gerald9.ForeColor = Color.Black
-        Gerald9.GradientAngle = 90F
+        Gerald9.GradientAngle = 90.0F
         Gerald9.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald9.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald9.Location = New Point(23, 297)
@@ -815,7 +869,7 @@ Partial Class LoginForgot
         lbl_fpass.AutoSize = True
         lbl_fpass.BackColor = Color.Transparent
         lbl_fpass.Enabled = False
-        lbl_fpass.Font = New Font("Segoe UI", 6F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_fpass.Font = New Font("Segoe UI", 6.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lbl_fpass.ForeColor = Color.White
         lbl_fpass.Location = New Point(509, 386)
         lbl_fpass.Name = "lbl_fpass"
@@ -870,7 +924,7 @@ Partial Class LoginForgot
         btnbg_forgotpass.BackColor = Color.White
         btnbg_forgotpass.BorderRadius = 40
         btnbg_forgotpass.ForeColor = Color.Black
-        btnbg_forgotpass.GradientAngle = 90F
+        btnbg_forgotpass.GradientAngle = 90.0F
         btnbg_forgotpass.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_forgotpass.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_forgotpass.Location = New Point(475, 345)
@@ -885,7 +939,7 @@ Partial Class LoginForgot
         bg_fpass.BackColor = Color.White
         bg_fpass.BorderRadius = 40
         bg_fpass.ForeColor = Color.Black
-        bg_fpass.GradientAngle = 90F
+        bg_fpass.GradientAngle = 90.0F
         bg_fpass.GradientBottomColor = Color.White
         bg_fpass.GradientTopColor = Color.White
         bg_fpass.Location = New Point(473, 343)
@@ -916,7 +970,7 @@ Partial Class LoginForgot
         btnbg_signin.BackColor = Color.White
         btnbg_signin.BorderRadius = 40
         btnbg_signin.ForeColor = Color.Black
-        btnbg_signin.GradientAngle = 90F
+        btnbg_signin.GradientAngle = 90.0F
         btnbg_signin.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_signin.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_signin.Location = New Point(125, 350)
@@ -932,7 +986,7 @@ Partial Class LoginForgot
         bg_signin.BackColor = Color.White
         bg_signin.BorderRadius = 40
         bg_signin.ForeColor = Color.Black
-        bg_signin.GradientAngle = 90F
+        bg_signin.GradientAngle = 90.0F
         bg_signin.GradientBottomColor = Color.White
         bg_signin.GradientTopColor = Color.White
         bg_signin.Location = New Point(123, 348)
@@ -943,19 +997,50 @@ Partial Class LoginForgot
         bg_signin.UseVisualStyleBackColor = False
         bg_signin.Visible = False
         ' 
-        ' Button2
+        ' ds_login
         ' 
-        Button2.Location = New Point(607, 48)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(94, 29)
-        Button2.TabIndex = 2
-        Button2.Text = "Button2"
-        Button2.UseVisualStyleBackColor = True
+        ds_login.BackColor = Color.Transparent
+        ds_login.Image = My.Resources.Resources.dropshadow
+        ds_login.Location = New Point(298, 0)
+        ds_login.Name = "ds_login"
+        ds_login.Size = New Size(77, 609)
+        ds_login.SizeMode = PictureBoxSizeMode.StretchImage
+        ds_login.TabIndex = 20
+        ds_login.TabStop = False
+        ' 
+        ' p_wpassword
+        ' 
+        p_wpassword.BackColor = Color.White
+        p_wpassword.BorderRadius = 21
+        p_wpassword.FlatAppearance.BorderColor = Color.Red
+        p_wpassword.ForeColor = Color.Black
+        p_wpassword.GradientAngle = 90.0F
+        p_wpassword.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
+        p_wpassword.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
+        p_wpassword.Location = New Point(32, 297)
+        p_wpassword.Name = "p_wpassword"
+        p_wpassword.Size = New Size(285, 45)
+        p_wpassword.TabIndex = 9
+        p_wpassword.Text = "Gerald14"
+        p_wpassword.UseVisualStyleBackColor = False
+        p_wpassword.Visible = False
+        ' 
+        ' pb_wid
+        ' 
+        pb_wid.BackColor = Color.Transparent
+        pb_wid.Image = My.Resources.Resources.icon_exclamationcircle
+        pb_wid.Location = New Point(289, 226)
+        pb_wid.Name = "pb_wid"
+        pb_wid.Size = New Size(20, 20)
+        pb_wid.SizeMode = PictureBoxSizeMode.Zoom
+        pb_wid.TabIndex = 22
+        pb_wid.TabStop = False
+        pb_wid.Visible = False
         ' 
         ' LoginForgot
         ' 
         AllowDrop = True
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 600)
         Controls.Add(p_base)
@@ -970,6 +1055,8 @@ Partial Class LoginForgot
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         p_base.ResumeLayout(False)
         p_base.PerformLayout()
+        CType(ds_forgot, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         p_changepass.ResumeLayout(False)
         p_changepass.PerformLayout()
         CType(btn_eye, ComponentModel.ISupportInitialize).EndInit()
@@ -980,6 +1067,8 @@ Partial Class LoginForgot
         p_forgotpass.ResumeLayout(False)
         p_forgotpass.PerformLayout()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(ds_login, ComponentModel.ISupportInitialize).EndInit()
+        CType(pb_wid, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -987,11 +1076,10 @@ Partial Class LoginForgot
     Friend WithEvents p_base As Panel
     Friend WithEvents lbl_invalid As Label
     Friend WithEvents Gerald1 As gerald.Gerald
-    Friend WithEvents passwordLogin As TextBox
+    Friend WithEvents txtb_password As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Gerald2 As gerald.Gerald
-    Friend WithEvents accountIDLogin As MaskedTextBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Gerald3 As gerald.Gerald
     Friend WithEvents enterbttn As Button
@@ -1043,5 +1131,11 @@ Partial Class LoginForgot
     Friend WithEvents txtb_confirmpassword As TextBox
     Friend WithEvents Gerald12 As gerald.Gerald
     Friend WithEvents btn_eye As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents ds_login As PictureBox
+    Friend WithEvents ds_forgot As PictureBox
+    Friend WithEvents txtb_userid As TextBox
+    Friend WithEvents p_wid As gerald.Gerald
+    Friend WithEvents pb_wid As PictureBox
+    Friend WithEvents p_wpassword As gerald.Gerald
 End Class
