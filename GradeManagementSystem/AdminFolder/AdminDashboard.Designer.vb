@@ -50,9 +50,9 @@ Partial Class AdminDashboard
         Adminleft = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         Panel1 = New Panel()
-        nameleft = New Label()
         PanelLeft = New Panel()
         profileleft = New picture.CirclePicture()
+        nameleft = New Label()
         Panel3 = New Panel()
         profmenu = New picture.CirclePicture()
         PictureBox11 = New PictureBox()
@@ -449,27 +449,16 @@ Partial Class AdminDashboard
         ' Panel1
         ' 
         Panel1.BackColor = Color.DarkGreen
-        Panel1.Controls.Add(Adminleft)
-        Panel1.Controls.Add(nameleft)
         Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(PanelLeft)
+        Panel1.Controls.Add(Adminleft)
+        Panel1.Controls.Add(nameleft)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
         Panel1.MinimumSize = New Size(55, 697)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(55, 697)
+        Panel1.Size = New Size(55, 749)
         Panel1.TabIndex = 40
-        ' 
-        ' nameleft
-        ' 
-        nameleft.AutoSize = True
-        nameleft.Font = New Font("Arial", 12F, FontStyle.Bold)
-        nameleft.ForeColor = Color.White
-        nameleft.Location = New Point(151, 52)
-        nameleft.Name = "nameleft"
-        nameleft.Size = New Size(54, 24)
-        nameleft.TabIndex = 12
-        nameleft.Text = "User"
         ' 
         ' PanelLeft
         ' 
@@ -495,6 +484,17 @@ Partial Class AdminDashboard
         profileleft.SizeMode = PictureBoxSizeMode.StretchImage
         profileleft.TabIndex = 79
         profileleft.TabStop = False
+        ' 
+        ' nameleft
+        ' 
+        nameleft.AutoSize = True
+        nameleft.Font = New Font("Arial", 12F, FontStyle.Bold)
+        nameleft.ForeColor = Color.White
+        nameleft.Location = New Point(151, 52)
+        nameleft.Name = "nameleft"
+        nameleft.Size = New Size(54, 24)
+        nameleft.TabIndex = 12
+        nameleft.Text = "User"
         ' 
         ' Panel3
         ' 
@@ -802,7 +802,7 @@ Partial Class AdminDashboard
         ' 
         changeEmail.AutoSize = True
         changeEmail.ForeColor = Color.Green
-        changeEmail.Location = New Point(1501, 535)
+        changeEmail.Location = New Point(1122, 506)
         changeEmail.Name = "changeEmail"
         changeEmail.Size = New Size(110, 20)
         changeEmail.TabIndex = 78
@@ -810,14 +810,14 @@ Partial Class AdminDashboard
         ' 
         ' eklavutxt
         ' 
-        eklavutxt.Location = New Point(1610, 528)
+        eklavutxt.Location = New Point(1231, 499)
         eklavutxt.Name = "eklavutxt"
         eklavutxt.Size = New Size(125, 27)
         eklavutxt.TabIndex = 79
         ' 
         ' eklavutxt2
         ' 
-        eklavutxt2.Location = New Point(1610, 561)
+        eklavutxt2.Location = New Point(1231, 532)
         eklavutxt2.Name = "eklavutxt2"
         eklavutxt2.Size = New Size(125, 27)
         eklavutxt2.TabIndex = 81
@@ -826,7 +826,7 @@ Partial Class AdminDashboard
         ' 
         changeNumber.AutoSize = True
         changeNumber.ForeColor = Color.Green
-        changeNumber.Location = New Point(1496, 564)
+        changeNumber.Location = New Point(1117, 535)
         changeNumber.Name = "changeNumber"
         changeNumber.Size = New Size(115, 20)
         changeNumber.TabIndex = 80
@@ -910,7 +910,7 @@ Partial Class AdminDashboard
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1793, 749)
+        ClientSize = New Size(1436, 749)
         Controls.Add(Panel1)
         Controls.Add(studBox)
         Controls.Add(dtg1)
