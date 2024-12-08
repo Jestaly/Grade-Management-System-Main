@@ -31,52 +31,64 @@ Partial Class ModifyProfessorForm
         ' professorIDLabel
         ' 
         professorIDLabel.AutoSize = True
-        professorIDLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        professorIDLabel.Location = New Point(80, 54)
+        professorIDLabel.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        professorIDLabel.ForeColor = Color.DarkGreen
+        professorIDLabel.Location = New Point(49, 72)
+        professorIDLabel.Margin = New Padding(4, 0, 4, 0)
         professorIDLabel.Name = "professorIDLabel"
-        professorIDLabel.Size = New Size(136, 31)
+        professorIDLabel.Size = New Size(152, 40)
         professorIDLabel.TabIndex = 1
         professorIDLabel.Text = "Professor ID"
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(76, 167)
+        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.FlatStyle = FlatStyle.Popup
+        searchButton.Location = New Point(153, 213)
+        searchButton.Margin = New Padding(4, 4, 4, 4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(140, 59)
+        searchButton.Size = New Size(93, 36)
         searchButton.TabIndex = 2
         searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        searchButton.UseVisualStyleBackColor = False
         ' 
         ' profIDTextBox
         ' 
-        profIDTextBox.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        profIDTextBox.Location = New Point(21, 97)
+        profIDTextBox.Font = New Font("Segoe UI", 19F)
+        profIDTextBox.Location = New Point(47, 114)
+        profIDTextBox.Margin = New Padding(4, 4, 4, 4)
         profIDTextBox.Mask = "0-00-00000"
         profIDTextBox.Name = "profIDTextBox"
         profIDTextBox.PromptChar = "X"c
-        profIDTextBox.Size = New Size(251, 51)
+        profIDTextBox.Size = New Size(313, 58)
         profIDTextBox.TabIndex = 3
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(187, 12)
+        backButton.BackColor = Color.Red
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 8F)
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(337, 13)
+        backButton.Margin = New Padding(4, 4, 4, 4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(53, 30)
         backButton.TabIndex = 16
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' ModifyProfessorForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(293, 254)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(403, 280)
         Controls.Add(backButton)
         Controls.Add(profIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(professorIDLabel)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ModifyProfessorForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "ModifyProfessorForm"

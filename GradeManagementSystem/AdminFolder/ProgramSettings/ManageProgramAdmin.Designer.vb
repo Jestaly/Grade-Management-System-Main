@@ -22,115 +22,157 @@ Partial Class ManageProgramAdmin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManageProgramAdmin))
         searchProgramField = New TextBox()
-        courseSectionButton = New Button()
         refreshButton = New Button()
-        searchButton = New Button()
         modifyProgramButton = New Button()
         addProgramButton = New Button()
         dataView = New DataGridView()
         removeProgramForm = New Button()
+        searchbttn = New PictureBox()
+        courseSecButton = New PictureBox()
+        Label1 = New Label()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(courseSecButton, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' searchProgramField
         ' 
-        searchProgramField.Location = New Point(30, 29)
+        searchProgramField.Font = New Font("Sitka Banner", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        searchProgramField.Location = New Point(51, 35)
+        searchProgramField.Margin = New Padding(4, 4, 4, 4)
         searchProgramField.Name = "searchProgramField"
-        searchProgramField.PlaceholderText = "Search Program here.."
-        searchProgramField.Size = New Size(206, 27)
+        searchProgramField.PlaceholderText = "Search Program here..."
+        searchProgramField.Size = New Size(322, 33)
         searchProgramField.TabIndex = 0
-        ' 
-        ' courseSectionButton
-        ' 
-        courseSectionButton.Location = New Point(555, 27)
-        courseSectionButton.Name = "courseSectionButton"
-        courseSectionButton.Size = New Size(119, 29)
-        courseSectionButton.TabIndex = 1
-        courseSectionButton.Text = "Course Section"
-        courseSectionButton.UseVisualStyleBackColor = True
         ' 
         ' refreshButton
         ' 
-        refreshButton.Location = New Point(30, 83)
+        refreshButton.BackColor = Color.DarkSeaGreen
+        refreshButton.FlatStyle = FlatStyle.Popup
+        refreshButton.Font = New Font("Sitka Banner", 9F)
+        refreshButton.Location = New Point(51, 149)
+        refreshButton.Margin = New Padding(4, 4, 4, 4)
         refreshButton.Name = "refreshButton"
-        refreshButton.Size = New Size(94, 29)
+        refreshButton.Size = New Size(106, 37)
         refreshButton.TabIndex = 2
         refreshButton.Text = "Refresh"
-        refreshButton.UseVisualStyleBackColor = True
-        ' 
-        ' searchButton
-        ' 
-        searchButton.Location = New Point(242, 29)
-        searchButton.Name = "searchButton"
-        searchButton.Size = New Size(94, 29)
-        searchButton.TabIndex = 3
-        searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        refreshButton.UseVisualStyleBackColor = False
         ' 
         ' modifyProgramButton
         ' 
-        modifyProgramButton.Location = New Point(283, 83)
+        modifyProgramButton.BackColor = Color.DarkSeaGreen
+        modifyProgramButton.FlatStyle = FlatStyle.Popup
+        modifyProgramButton.Font = New Font("Sitka Banner", 9F)
+        modifyProgramButton.Location = New Point(666, 149)
+        modifyProgramButton.Margin = New Padding(4, 4, 4, 4)
         modifyProgramButton.Name = "modifyProgramButton"
-        modifyProgramButton.Size = New Size(127, 29)
+        modifyProgramButton.Size = New Size(142, 37)
         modifyProgramButton.TabIndex = 4
         modifyProgramButton.Text = "Modify Program"
-        modifyProgramButton.UseVisualStyleBackColor = True
+        modifyProgramButton.UseVisualStyleBackColor = False
         ' 
         ' addProgramButton
         ' 
-        addProgramButton.Location = New Point(153, 83)
+        addProgramButton.BackColor = Color.DarkSeaGreen
+        addProgramButton.FlatStyle = FlatStyle.Popup
+        addProgramButton.Font = New Font("Sitka Banner", 9F)
+        addProgramButton.Location = New Point(518, 149)
+        addProgramButton.Margin = New Padding(4, 4, 4, 4)
         addProgramButton.Name = "addProgramButton"
-        addProgramButton.Size = New Size(124, 29)
+        addProgramButton.Size = New Size(140, 37)
         addProgramButton.TabIndex = 5
         addProgramButton.Text = "Add Program"
-        addProgramButton.UseVisualStyleBackColor = True
+        addProgramButton.UseVisualStyleBackColor = False
         ' 
         ' dataView
         ' 
         dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dataView.Location = New Point(30, 118)
+        dataView.Location = New Point(51, 194)
+        dataView.Margin = New Padding(4, 4, 4, 4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(644, 273)
+        dataView.Size = New Size(757, 395)
         dataView.TabIndex = 6
         ' 
         ' removeProgramForm
         ' 
-        removeProgramForm.Location = New Point(416, 83)
+        removeProgramForm.BackColor = Color.DarkSeaGreen
+        removeProgramForm.FlatStyle = FlatStyle.Popup
+        removeProgramForm.Font = New Font("Sitka Banner", 9F)
+        removeProgramForm.Location = New Point(657, 597)
+        removeProgramForm.Margin = New Padding(4, 4, 4, 4)
         removeProgramForm.Name = "removeProgramForm"
-        removeProgramForm.Size = New Size(135, 29)
+        removeProgramForm.Size = New Size(151, 37)
         removeProgramForm.TabIndex = 7
         removeProgramForm.Text = "Remove Program"
-        removeProgramForm.UseVisualStyleBackColor = True
+        removeProgramForm.UseVisualStyleBackColor = False
+        ' 
+        ' searchbttn
+        ' 
+        searchbttn.BackgroundImage = CType(resources.GetObject("searchbttn.BackgroundImage"), Image)
+        searchbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchbttn.Location = New Point(368, 34)
+        searchbttn.Name = "searchbttn"
+        searchbttn.Size = New Size(38, 35)
+        searchbttn.TabIndex = 8
+        searchbttn.TabStop = False
+        ' 
+        ' courseSecButton
+        ' 
+        courseSecButton.BackgroundImage = CType(resources.GetObject("courseSecButton.BackgroundImage"), Image)
+        courseSecButton.BackgroundImageLayout = ImageLayout.Stretch
+        courseSecButton.Location = New Point(788, 28)
+        courseSecButton.Name = "courseSecButton"
+        courseSecButton.Size = New Size(55, 34)
+        courseSecButton.TabIndex = 9
+        courseSecButton.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Sitka Banner", 7F)
+        Label1.Location = New Point(705, 34)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(87, 20)
+        Label1.TabIndex = 10
+        Label1.Text = "Course Section"
         ' 
         ' ManageProgramAdmin
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(9F, 26F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(711, 421)
+        ClientSize = New Size(864, 670)
+        Controls.Add(Label1)
+        Controls.Add(courseSecButton)
+        Controls.Add(searchbttn)
         Controls.Add(removeProgramForm)
         Controls.Add(dataView)
         Controls.Add(addProgramButton)
         Controls.Add(modifyProgramButton)
-        Controls.Add(searchButton)
         Controls.Add(refreshButton)
-        Controls.Add(courseSectionButton)
         Controls.Add(searchProgramField)
+        Font = New Font("Sitka Banner", 9F)
+        FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ManageProgramAdmin"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ManageProgramAdmin"
         CType(dataView, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(courseSecButton, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents searchProgramField As TextBox
-    Friend WithEvents courseSectionButton As Button
     Friend WithEvents refreshButton As Button
-    Friend WithEvents searchButton As Button
     Friend WithEvents modifyProgramButton As Button
     Friend WithEvents addProgramButton As Button
     Friend WithEvents dataView As DataGridView
     Friend WithEvents removeProgramForm As Button
+    Friend WithEvents searchbttn As PictureBox
+    Friend WithEvents courseSecButton As PictureBox
+    Friend WithEvents Label1 As Label
 End Class

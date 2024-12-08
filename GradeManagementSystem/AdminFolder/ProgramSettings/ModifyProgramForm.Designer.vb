@@ -31,53 +31,66 @@ Partial Class ModifyProgramForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(114, 43)
+        Label1.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(82, 67)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(130, 31)
+        Label1.Size = New Size(145, 40)
         Label1.TabIndex = 1
         Label1.Text = "Program ID"
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(114, 133)
+        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.FlatStyle = FlatStyle.Popup
+        searchButton.Font = New Font("Sitka Banner", 9F)
+        searchButton.Location = New Point(162, 207)
+        searchButton.Margin = New Padding(4, 4, 4, 4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(130, 45)
+        searchButton.Size = New Size(108, 41)
         searchButton.TabIndex = 2
         searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        searchButton.UseVisualStyleBackColor = False
         ' 
         ' programIDTextBox
         ' 
         programIDTextBox.AsciiOnly = True
-        programIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        programIDTextBox.Location = New Point(90, 89)
+        programIDTextBox.Font = New Font("Sitka Banner", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        programIDTextBox.Location = New Point(82, 111)
+        programIDTextBox.Margin = New Padding(4, 4, 4, 4)
         programIDTextBox.Mask = "L-000"
         programIDTextBox.Name = "programIDTextBox"
         programIDTextBox.PromptChar = "X"c
-        programIDTextBox.Size = New Size(184, 38)
+        programIDTextBox.Size = New Size(256, 43)
         programIDTextBox.TabIndex = 3
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(265, 12)
+        backButton.BackColor = Color.Red
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 8F)
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(355, 13)
+        backButton.Margin = New Padding(4, 4, 4, 4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(61, 34)
         backButton.TabIndex = 17
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' ModifyProgramForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(371, 215)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(441, 277)
         Controls.Add(backButton)
         Controls.Add(programIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ModifyProgramForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "ModifyProgramForm"
