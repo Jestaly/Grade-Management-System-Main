@@ -201,17 +201,23 @@ Public Class AdminDashboard
         LoginForm.Visible = True
     End Sub
     Private Sub studBox_Click(sender As Object, e As EventArgs) Handles studBox.Click
-
         searchstudent.Show()
-        searchstudent.Size = New Size(1045, 680)
-        searchstudent.Location = New Point(220, 200)
-
-
     End Sub
     Private Sub profBox_Click(sender As Object, e As EventArgs) Handles profBox.Click
-        StudentForm.Show()
+        searchprofessor.Show()
     End Sub
-
+    Private Sub adminBox_Click(sender As Object, e As EventArgs) Handles adminBox.Click
+        searchadmin.Show()
+    End Sub
+    Private Sub courseBox_Click(sender As Object, e As EventArgs) Handles courseBox.Click
+        searchprogram.Show()
+    End Sub
+    Private Sub progBox_Click(sender As Object, e As EventArgs) Handles progBox.Click
+        searchprogram.Show()
+    End Sub
+    Private Sub depBox_Click(sender As Object, e As EventArgs) Handles depBox.Click
+        searchdepartment.Show()
+    End Sub
     '=======================================ICON MOUSE ENTER========================================='
     Private Sub homeIcon_MouseEnter(sender As Object, e As EventArgs) Handles homeIcon.MouseEnter
         homeIcon.Image = home2
@@ -543,4 +549,6 @@ Public Class AdminDashboard
     Private Sub Gerald1_Click(sender As Object, e As EventArgs) Handles Gerald1.Click
 
     End Sub
+
+
 End Class
