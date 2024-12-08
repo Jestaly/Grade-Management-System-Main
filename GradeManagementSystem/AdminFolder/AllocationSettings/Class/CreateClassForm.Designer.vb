@@ -22,7 +22,7 @@ Partial Class CreateClassForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim Label5 As Label
+        Label5 = New Label()
         backButton = New Button()
         courseComboBox = New ComboBox()
         professorComboBox = New ComboBox()
@@ -35,167 +35,191 @@ Partial Class CreateClassForm
         startTimePicker = New DateTimePicker()
         Label4 = New Label()
         endTimePicker = New DateTimePicker()
-        Label6 = New Label()
         classSeshComboBox = New ComboBox()
         Label7 = New Label()
-        Label5 = New Label()
         SuspendLayout()
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label5.ForeColor = Color.DarkGreen
+        Label5.Location = New Point(640, 171)
+        Label5.Margin = New Padding(4, 0, 4, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(91, 29)
+        Label5.TabIndex = 23
+        Label5.Text = "End Time"
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(344, 18)
+        backButton.BackColor = Color.DarkSeaGreen
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 8F)
+        backButton.Location = New Point(684, 291)
+        backButton.Margin = New Padding(4, 4, 4, 4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(100, 29)
+        backButton.Size = New Size(74, 42)
         backButton.TabIndex = 19
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' courseComboBox
         ' 
         courseComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         courseComboBox.FormattingEnabled = True
-        courseComboBox.Location = New Point(92, 115)
+        courseComboBox.Location = New Point(115, 198)
+        courseComboBox.Margin = New Padding(4, 4, 4, 4)
         courseComboBox.Name = "courseComboBox"
-        courseComboBox.Size = New Size(151, 28)
+        courseComboBox.Size = New Size(305, 33)
         courseComboBox.TabIndex = 18
         ' 
         ' professorComboBox
         ' 
         professorComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         professorComboBox.FormattingEnabled = True
-        professorComboBox.Location = New Point(92, 79)
+        professorComboBox.Location = New Point(115, 144)
+        professorComboBox.Margin = New Padding(4, 4, 4, 4)
         professorComboBox.Name = "professorComboBox"
-        professorComboBox.Size = New Size(151, 28)
+        professorComboBox.Size = New Size(305, 33)
         professorComboBox.TabIndex = 17
         ' 
         ' clearButton
         ' 
-        clearButton.Location = New Point(92, 192)
+        clearButton.BackColor = Color.DarkSeaGreen
+        clearButton.FlatStyle = FlatStyle.Popup
+        clearButton.Font = New Font("Sitka Banner", 8F)
+        clearButton.Location = New Point(580, 291)
+        clearButton.Margin = New Padding(4, 4, 4, 4)
         clearButton.Name = "clearButton"
-        clearButton.Size = New Size(100, 29)
+        clearButton.Size = New Size(87, 42)
         clearButton.TabIndex = 16
         clearButton.Text = "Clear"
-        clearButton.UseVisualStyleBackColor = True
+        clearButton.UseVisualStyleBackColor = False
         ' 
         ' classIDTextBox
         ' 
         classIDTextBox.Enabled = False
-        classIDTextBox.Location = New Point(75, 24)
+        classIDTextBox.Location = New Point(115, 98)
+        classIDTextBox.Margin = New Padding(4, 4, 4, 4)
         classIDTextBox.Mask = "LL-000"
         classIDTextBox.Name = "classIDTextBox"
         classIDTextBox.PromptChar = "X"c
-        classIDTextBox.Size = New Size(100, 27)
+        classIDTextBox.Size = New Size(305, 31)
         classIDTextBox.TabIndex = 15
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(32, 115)
+        Label3.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label3.ForeColor = Color.DarkGreen
+        Label3.Location = New Point(44, 201)
+        Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(54, 20)
+        Label3.Size = New Size(74, 29)
         Label3.TabIndex = 14
-        Label3.Text = "Course"
+        Label3.Text = "Course:"
         ' 
         ' createClassButton
         ' 
-        createClassButton.Location = New Point(92, 157)
+        createClassButton.BackColor = Color.DarkSeaGreen
+        createClassButton.FlatStyle = FlatStyle.Popup
+        createClassButton.Font = New Font("Sitka Banner", 8F)
+        createClassButton.Location = New Point(115, 291)
+        createClassButton.Margin = New Padding(4, 4, 4, 4)
         createClassButton.Name = "createClassButton"
-        createClassButton.Size = New Size(100, 29)
+        createClassButton.Size = New Size(125, 42)
         createClassButton.TabIndex = 13
         createClassButton.Text = "Create Class"
-        createClassButton.UseVisualStyleBackColor = True
+        createClassButton.UseVisualStyleBackColor = False
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(16, 82)
+        Label2.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label2.ForeColor = Color.DarkGreen
+        Label2.Location = New Point(24, 144)
+        Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(70, 20)
+        Label2.Size = New Size(94, 29)
         Label2.TabIndex = 12
-        Label2.Text = "Professor"
+        Label2.Text = "Professor:"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(16, 27)
+        Label1.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(37, 101)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(61, 20)
+        Label1.Size = New Size(83, 29)
         Label1.TabIndex = 11
-        Label1.Text = "Class ID"
+        Label1.Text = "Class ID:"
         ' 
         ' startTimePicker
         ' 
         startTimePicker.Format = DateTimePickerFormat.Time
-        startTimePicker.Location = New Point(266, 115)
+        startTimePicker.Location = New Point(474, 200)
+        startTimePicker.Margin = New Padding(4, 4, 4, 4)
         startTimePicker.Name = "startTimePicker"
         startTimePicker.ShowUpDown = True
-        startTimePicker.Size = New Size(111, 27)
+        startTimePicker.Size = New Size(138, 31)
         startTimePicker.TabIndex = 20
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(266, 92)
+        Label4.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label4.ForeColor = Color.DarkGreen
+        Label4.Location = New Point(499, 171)
+        Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(77, 20)
+        Label4.Size = New Size(98, 29)
         Label4.TabIndex = 21
         Label4.Text = "Start Time"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(397, 93)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(71, 20)
-        Label5.TabIndex = 23
-        Label5.Text = "End Time"
         ' 
         ' endTimePicker
         ' 
         endTimePicker.Format = DateTimePickerFormat.Time
-        endTimePicker.Location = New Point(397, 116)
+        endTimePicker.Location = New Point(620, 201)
+        endTimePicker.Margin = New Padding(4, 4, 4, 4)
         endTimePicker.Name = "endTimePicker"
         endTimePicker.ShowUpDown = True
-        endTimePicker.Size = New Size(111, 27)
+        endTimePicker.Size = New Size(138, 31)
         endTimePicker.TabIndex = 22
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(380, 119)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(15, 20)
-        Label6.TabIndex = 24
-        Label6.Text = "-"
         ' 
         ' classSeshComboBox
         ' 
         classSeshComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         classSeshComboBox.FormattingEnabled = True
         classSeshComboBox.Items.AddRange(New Object() {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"})
-        classSeshComboBox.Location = New Point(266, 179)
+        classSeshComboBox.Location = New Point(465, 117)
+        classSeshComboBox.Margin = New Padding(4, 4, 4, 4)
         classSeshComboBox.Name = "classSeshComboBox"
-        classSeshComboBox.Size = New Size(111, 28)
+        classSeshComboBox.Size = New Size(302, 33)
         classSeshComboBox.TabIndex = 25
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(266, 156)
+        Label7.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label7.ForeColor = Color.DarkGreen
+        Label7.Location = New Point(465, 88)
+        Label7.Margin = New Padding(4, 0, 4, 0)
         Label7.Name = "Label7"
-        Label7.Size = New Size(95, 20)
+        Label7.Size = New Size(119, 29)
         Label7.TabIndex = 26
         Label7.Text = "Class Session"
         ' 
         ' CreateClassForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(564, 250)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(814, 375)
         Controls.Add(Label7)
         Controls.Add(classSeshComboBox)
-        Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(endTimePicker)
         Controls.Add(Label4)
@@ -210,6 +234,7 @@ Partial Class CreateClassForm
         Controls.Add(Label2)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "CreateClassForm"
         Text = "CreateClassForm"
         ResumeLayout(False)
@@ -229,7 +254,6 @@ Partial Class CreateClassForm
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents endTimePicker As DateTimePicker
-    Friend WithEvents Label6 As Label
     Friend WithEvents classSeshComboBox As ComboBox
     Friend WithEvents Label7 As Label
 End Class

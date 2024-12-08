@@ -1,19 +1,30 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports System.Text.RegularExpressions
 Imports System.Windows
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
+Imports Microsoft.VisualBasic.ApplicationServices
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
 Imports Mysqlx.XDevAPI.Common
 Imports Transitions
 
+
+
+
 Public Class LoginForgot
     Dim hidden As Boolean
     Dim idinputTracker As Integer
+    Dim randomcode As String
+    Dim email As String
+
 
     Public connector As New DatabaseConnector
+    Private emailSender As New email
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Private professorForm As New ProfessorForm
+
+
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -52,6 +63,8 @@ Public Class LoginForgot
 
         Transition.run(p_forgotpass, "Left", 450, New TransitionType_Deceleration(1100))
         Transition.run(ds_forgot, "Left", 426, New TransitionType_Deceleration(1100))
+
+        resetSignin()
         ShowForgotPass()
     End Sub
     Private Sub btn_signin_Click(sender As Object, e As EventArgs) Handles btn_signin.Click
@@ -66,6 +79,7 @@ Public Class LoginForgot
         Transition.run(p_login, "Left", 0, New TransitionType_Deceleration(1100))
         Transition.run(ds_login, "Left", 297, New TransitionType_Deceleration(1100))
 
+        resetForgot()
         ShowLogin()
     End Sub
     Sub ShowForgotPass()
@@ -118,6 +132,26 @@ Public Class LoginForgot
         End If
     End Sub
 
+    Sub resetForgot()
+        pb_wemail.Visible = False
+        pb_emailerror.Visible = False
+
+        p_wc1.Visible = False
+        p_wc2.Visible = False
+        p_wc3.Visible = False
+        p_wc4.Visible = False
+        p_wc5.Visible = False
+        p_wc6.Visible = False
+        lbl_wrongcode.Visible = False
+    End Sub
+
+    Sub resetSignin()
+        pb_wid.Visible = False
+        p_wid.Visible = False
+        p_wpassword.Visible = False
+    End Sub
+
+
     Sub checkcodeinput(previous As TextBox, following As TextBox, e As KeyPressEventArgs)
         If (Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57) Or (Asc(e.KeyChar) >= 65 And Asc(e.KeyChar) <= 90) Then
             following.Focus()
@@ -162,15 +196,7 @@ Public Class LoginForgot
         Transition.run(p_verification, "Left", 800, New TransitionType_Deceleration(900))
     End Sub
 
-    Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
-        p_verification.BringToFront()
-        Transition.run(p_verification, "Left", 450, New TransitionType_Deceleration(900))
-    End Sub
 
-    Private Sub btn_verify_Click(sender As Object, e As EventArgs) Handles btn_verify.Click
-        p_changepass.BringToFront()
-        Transition.run(p_changepass, "Left", 450, New TransitionType_Deceleration(900))
-    End Sub
 
     Private Sub btn_eye_Click(sender As Object, e As EventArgs) Handles btn_eye.Click
 
@@ -300,6 +326,7 @@ Public Class LoginForgot
             End While
             professorForm.classChooseBox.SelectedIndex = 0
             connector.connect.Close()
+            connector.reader.Close()
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error")
@@ -322,4 +349,213 @@ Public Class LoginForgot
 
     Friend WithEvents dataView As DataGridView
 
+    '''''EMAIL VERIFICATION PANEL --------------------------------------------------------------------------
+
+    Private Sub txtb_email_TextChanged(sender As Object, e As EventArgs) Handles txtb_email.TextChanged
+        If isEmail(txtb_email.Text) = True Then
+            btn_reset.Enabled = True
+        Else
+            btn_reset.Enabled = False
+        End If
+    End Sub
+
+    Function isEmail(eml As String) As Boolean
+        Dim emailPattern As String = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$"
+        Dim emailRegEx As New Regex(emailPattern, RegexOptions.IgnoreCase)
+        Return emailRegEx.IsMatch(eml)
+    End Function
+
+    Sub numbergen()
+        randomcode = ""
+        Dim Characters(35) As String
+        For i = 0 To 9   ' digits
+            Characters(i) = Chr(i + 48)
+        Next i
+        For i = 10 To 35   ' uppercase alphabet
+            Characters(i) = Chr(i + 55)
+        Next i
+        Randomize()
+        For j = 1 To 6
+            randomcode = randomcode + Characters(Int(35 * Rnd()) - 1)
+        Next j
+    End Sub
+
+    Function SendCode()
+        emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
+    End Function
+
+    Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
+        Dim result As Boolean
+
+        connector.connect.Open()
+        connector.query = "SELECT student.email as email FROM student UNION SELECT professor.email as email FROM professor;"
+        connector.command.Connection = connector.connect
+        connector.command.CommandText = connector.query
+
+
+        Using command As New MySqlCommand(connector.query, connector.command.Connection)
+            Dim read As MySqlDataReader
+            Dim emailText As String = txtb_email.Text
+            read = command.ExecuteReader
+
+            While read.Read
+                If (Not read("email").ToString.Equals("") And read("email").ToString.Equals(emailText)) Then
+                    result = True
+                End If
+            End While
+
+            If result = True Then
+                Try
+                    numbergen()
+                Catch
+                    numbergen()
+                End Try
+
+                SendCode()
+
+                email = emailText
+                p_verification.BringToFront()
+                Transition.run(p_verification, "Left", 450, New TransitionType_Deceleration(900))
+            ElseIf result = False Then
+                txtb_email.Text = ""
+                pb_emailerror.Visible = True
+                pb_wemail.Visible = True
+            End If
+            read.Close()
+        End Using
+        connector.connect.Close()
+    End Sub
+
+    '''''CODE VERIFICATION PANEL --------------------------------------------------------------------------
+
+    Private Sub btn_verify_Click(sender As Object, e As EventArgs) Handles btn_verify.Click
+
+        Dim code As String
+
+        code = txtb_c1.Text & txtb_c2.Text & txtb_c3.Text & txtb_c4.Text & txtb_c5.Text & txtb_c6.Text
+
+        If code = randomcode Then
+            p_changepass.BringToFront()
+            Transition.run(p_changepass, "Left", 450, New TransitionType_Deceleration(900))
+        Else
+            p_wc1.Visible = True
+            p_wc2.Visible = True
+            p_wc3.Visible = True
+            p_wc4.Visible = True
+            p_wc5.Visible = True
+            p_wc6.Visible = True
+            lbl_wrongcode.Visible = True
+        End If
+
+    End Sub
+
+    Sub verifyCodetxtb()
+        If txtb_c1.Text = "" And txtb_c2.Text = "" And txtb_c3.Text = "" And txtb_c4.Text = "" And txtb_c5.Text = "" And txtb_c6.Text = "" Then
+            btn_verify.Enabled = True
+        Else
+            btn_verify.Enabled = False
+        End If
+    End Sub
+
+    Private Sub txtb_c1_TextChanged(sender As Object, e As EventArgs) Handles txtb_c1.TextChanged
+        verifyCodetxtb()
+    End Sub
+
+    Private Sub txtb_c2_TextChanged(sender As Object, e As EventArgs) Handles txtb_c2.TextChanged
+        verifyCodetxtb()
+    End Sub
+
+    Private Sub txtb_c3_TextChanged(sender As Object, e As EventArgs) Handles txtb_c3.TextChanged
+        verifyCodetxtb()
+    End Sub
+
+    Private Sub txtb_c4_TextChanged(sender As Object, e As EventArgs) Handles txtb_c4.TextChanged
+        verifyCodetxtb()
+    End Sub
+
+    Private Sub txtb_c5_TextChanged(sender As Object, e As EventArgs) Handles txtb_c5.TextChanged
+        verifyCodetxtb()
+    End Sub
+
+    Private Sub txtb_c6_TextChanged(sender As Object, e As EventArgs) Handles txtb_c6.TextChanged
+        verifyCodetxtb()
+    End Sub
+
+    '''''CHANGE PASSWORD PANEL PANEL --------------------------------------------------------------------------
+
+    Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
+        Dim userID As String
+        Dim accountTypeIdentifier As String
+
+        If txtb_newpassword.Text = txtb_confirmpassword.Text Then
+            connector.connect.Open()
+            connector.query = "SELECT student.id as id, student.email as email from student union SELECT professor.id as id, professor.email as email FROM professor;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+
+            Using command As New MySqlCommand(connector.query, connector.command.Connection)
+                Dim read As MySqlDataReader
+                read = command.ExecuteReader
+
+                While read.Read
+                    If (read("email").Equals(email)) Then
+                        userID = read("id")
+                        Exit While
+
+                    End If
+                End While
+                read.Close()
+            End Using
+
+            If userID <> "" Then
+                accountTypeIdentifier = userID.Substring(0, 1)
+
+                If accountTypeIdentifier = 1 Then
+                    connector.query = "UPDATE student SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
+                    signin()
+                ElseIf accountTypeIdentifier = 2 Then
+                    connector.query = "UPDATE professor SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
+                    signin()
+                End If
+                connector.command.Connection = connector.connect
+                connector.command.CommandText = connector.query
+                connector.command.ExecuteNonQuery()
+            End If
+            connector.connect.Close()
+        End If
+
+
+
+    End Sub
+
+    Private Sub txtb_newpassword_TextChanged(sender As Object, e As EventArgs) Handles txtb_newpassword.TextChanged
+        If txtb_newpassword.Text = "" Or txtb_confirmpassword.Text = "" Then
+            btn_confirm.Enabled = False
+        Else
+            btn_confirm.Enabled = True
+        End If
+    End Sub
+
+    Private Sub txtb_confirmpassword_TextChanged(sender As Object, e As EventArgs) Handles txtb_confirmpassword.TextChanged
+        If txtb_newpassword.Text = "" Or txtb_confirmpassword.Text = "" Then
+            btn_confirm.Enabled = False
+        Else
+            btn_confirm.Enabled = True
+        End If
+    End Sub
+
+    Sub signin()
+        ds_login.BringToFront()
+        p_login.BringToFront()
+        Transition.run(p_forgotpass, "Left", 800, New TransitionType_Deceleration(900))
+        Transition.run(ds_forgot, "Left", 800, New TransitionType_Deceleration(900))
+        Transition.run(p_verification, "Left", 800, New TransitionType_Deceleration(900))
+        Transition.run(p_changepass, "Left", 800, New TransitionType_Deceleration(900))
+
+        Transition.run(p_login, "Left", 0, New TransitionType_Deceleration(1100))
+        Transition.run(ds_login, "Left", 297, New TransitionType_Deceleration(1100))
+
+        resetForgot()
+        ShowLogin()
+    End Sub
 End Class

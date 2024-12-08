@@ -30,54 +30,67 @@ Partial Class ModifyClassForm
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(226, 20)
+        backButton.BackColor = Color.Red
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 9F)
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(215, 172)
+        backButton.Margin = New Padding(4, 4, 4, 4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(106, 42)
         backButton.TabIndex = 21
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' classIDTextBox
         ' 
         classIDTextBox.AsciiOnly = True
-        classIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        classIDTextBox.Location = New Point(73, 108)
+        classIDTextBox.Font = New Font("Sitka Banner", 14F)
+        classIDTextBox.Location = New Point(63, 84)
+        classIDTextBox.Margin = New Padding(4, 4, 4, 4)
         classIDTextBox.Mask = "LL-000"
         classIDTextBox.Name = "classIDTextBox"
         classIDTextBox.PromptChar = "X"c
-        classIDTextBox.Size = New Size(184, 38)
+        classIDTextBox.Size = New Size(281, 43)
         classIDTextBox.TabIndex = 20
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(97, 152)
+        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.FlatStyle = FlatStyle.Popup
+        searchButton.Font = New Font("Sitka Banner", 9F)
+        searchButton.Location = New Point(87, 170)
+        searchButton.Margin = New Padding(4, 4, 4, 4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(130, 45)
+        searchButton.Size = New Size(110, 44)
         searchButton.TabIndex = 19
         searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        searchButton.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(116, 65)
+        Label1.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(54, 40)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(94, 31)
+        Label1.Size = New Size(105, 40)
         Label1.TabIndex = 18
         Label1.Text = "Class ID"
         ' 
         ' ModifyClassForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(340, 229)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(412, 262)
         Controls.Add(backButton)
         Controls.Add(classIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ModifyClassForm"
         Text = "ModifyClassForm"
         ResumeLayout(False)

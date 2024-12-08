@@ -84,9 +84,6 @@ Public Class AddStudentAccount
         emailTextBox.Clear()
     End Sub
 
-    Private Sub AddStudentAccount_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub programComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles programComboBox.SelectedIndexChanged
         sectionComboBox.Items.Clear()
@@ -120,5 +117,6 @@ Public Class AddStudentAccount
     Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
         Me.Visible = False
     End Sub
+
 
 End Class

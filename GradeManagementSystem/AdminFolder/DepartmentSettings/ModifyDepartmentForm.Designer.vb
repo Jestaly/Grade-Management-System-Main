@@ -32,52 +32,66 @@ Partial Class ModifyDepartmentForm
         ' 
         departmentIDTextBox.AsciiOnly = True
         departmentIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        departmentIDTextBox.Location = New Point(96, 110)
+        departmentIDTextBox.Location = New Point(64, 131)
+        departmentIDTextBox.Margin = New Padding(4, 4, 4, 4)
         departmentIDTextBox.Mask = "L-000"
         departmentIDTextBox.Name = "departmentIDTextBox"
         departmentIDTextBox.PromptChar = "X"c
-        departmentIDTextBox.Size = New Size(195, 38)
+        departmentIDTextBox.Size = New Size(317, 44)
         departmentIDTextBox.TabIndex = 6
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(124, 154)
+        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.FlatStyle = FlatStyle.Popup
+        searchButton.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        searchButton.ForeColor = Color.Black
+        searchButton.Location = New Point(170, 222)
+        searchButton.Margin = New Padding(4, 4, 4, 4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(130, 45)
+        searchButton.Size = New Size(118, 45)
         searchButton.TabIndex = 5
         searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        searchButton.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(109, 67)
+        Label1.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(60, 88)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(165, 31)
+        Label1.Size = New Size(182, 40)
         Label1.TabIndex = 4
         Label1.Text = "Department ID"
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(261, 21)
+        backButton.BackColor = Color.Red
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(378, 13)
+        backButton.Margin = New Padding(4, 4, 4, 4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(59, 33)
         backButton.TabIndex = 16
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' ModifyDepartmentForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(389, 262)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(450, 310)
         Controls.Add(backButton)
         Controls.Add(departmentIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ModifyDepartmentForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "ModifyDepartmentForm"

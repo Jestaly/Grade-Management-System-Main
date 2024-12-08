@@ -30,54 +30,67 @@ Partial Class ModifyEnrollStudentForm
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(226, 12)
+        backButton.BackColor = Color.Red
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(229, 177)
+        backButton.Margin = New Padding(4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(108, 40)
         backButton.TabIndex = 21
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' enrollmentIDTextBox
         ' 
         enrollmentIDTextBox.AsciiOnly = True
         enrollmentIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        enrollmentIDTextBox.Location = New Point(73, 93)
+        enrollmentIDTextBox.Location = New Point(61, 100)
+        enrollmentIDTextBox.Margin = New Padding(4)
         enrollmentIDTextBox.Mask = "L-000"
         enrollmentIDTextBox.Name = "enrollmentIDTextBox"
         enrollmentIDTextBox.PromptChar = "X"c
-        enrollmentIDTextBox.Size = New Size(187, 38)
+        enrollmentIDTextBox.Size = New Size(300, 44)
         enrollmentIDTextBox.TabIndex = 20
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(102, 137)
+        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.FlatStyle = FlatStyle.Popup
+        searchButton.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        searchButton.Location = New Point(92, 177)
+        searchButton.Margin = New Padding(4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(130, 45)
+        searchButton.Size = New Size(106, 40)
         searchButton.TabIndex = 19
         searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        searchButton.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(92, 59)
+        Label1.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(61, 58)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(153, 31)
+        Label1.Size = New Size(174, 40)
         Label1.TabIndex = 18
         Label1.Text = "Enrollment ID"
         ' 
         ' ModifyEnrollStudentForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(346, 220)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(432, 275)
         Controls.Add(backButton)
         Controls.Add(enrollmentIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4)
         Name = "ModifyEnrollStudentForm"
         Text = "ModifyEnrollStudentForm"
         ResumeLayout(False)
