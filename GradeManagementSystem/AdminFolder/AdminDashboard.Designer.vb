@@ -50,9 +50,9 @@ Partial Class AdminDashboard
         Adminleft = New Label()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         Panel1 = New Panel()
-        nameleft = New Label()
         PanelLeft = New Panel()
         profileleft = New picture.CirclePicture()
+        nameleft = New Label()
         Panel3 = New Panel()
         profmenu = New picture.CirclePicture()
         PictureBox11 = New PictureBox()
@@ -465,10 +465,10 @@ Partial Class AdminDashboard
         ' Panel1
         ' 
         Panel1.BackColor = Color.DarkGreen
-        Panel1.Controls.Add(Adminleft)
-        Panel1.Controls.Add(nameleft)
         Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(PanelLeft)
+        Panel1.Controls.Add(Adminleft)
+        Panel1.Controls.Add(nameleft)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(4)
@@ -515,6 +515,17 @@ Partial Class AdminDashboard
         profileleft.SizeMode = PictureBoxSizeMode.StretchImage
         profileleft.TabIndex = 79
         profileleft.TabStop = False
+        ' 
+        ' nameleft
+        ' 
+        nameleft.AutoSize = True
+        nameleft.Font = New Font("Arial", 12F, FontStyle.Bold)
+        nameleft.ForeColor = Color.White
+        nameleft.Location = New Point(151, 52)
+        nameleft.Name = "nameleft"
+        nameleft.Size = New Size(54, 24)
+        nameleft.TabIndex = 12
+        nameleft.Text = "User"
         ' 
         ' Panel3
         ' 

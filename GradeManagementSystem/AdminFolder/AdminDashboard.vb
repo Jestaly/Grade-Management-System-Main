@@ -5,6 +5,7 @@ Imports System.Drawing.Drawing2D
 Imports System.Windows.Forms
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
+Imports System.Linq.Expressions
 
 
 Public Class AdminDashboard
@@ -49,6 +50,8 @@ Public Class AdminDashboard
     Public Property CornerRadius As Integer = 30
     Private Const MAX_SLIDE_OFFSET As Integer = 100
     Dim slideOffset As Integer = 100
+    Private Const SLIDE_DISTANCE As Integer = 278
+    Private Const MAXSLIDE_DISTANCE As Integer = 278
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -105,7 +108,7 @@ Public Class AdminDashboard
             {depBox, depBox.Left},
             {courseBox, courseBox.Left}
             }
-
+        Panel2.BringToFront()
     End Sub
     '===========================================MOUSE ENTER=================================='
     Private Sub Panel2_MouseEnter(sender As Object, e As EventArgs) Handles Panel1.MouseEnter,
@@ -119,7 +122,9 @@ Public Class AdminDashboard
             Dim newProfBoxLeft As Integer = Math.Min(originalPositions(profBox) + slideOffset, originalPositions(profBox) + MAX_SLIDE_OFFSET)
             Dim newDepBoxLeft As Integer = Math.Min(originalPositions(depBox) + slideOffset, originalPositions(depBox) + MAX_SLIDE_OFFSET)
             Dim newCourseBoxLeft As Integer = Math.Min(originalPositions(courseBox) + slideOffset, originalPositions(courseBox) + MAX_SLIDE_OFFSET)
-
+            ' Dim newLeft As Integer = Me.Width - searchstudent.Width - SLIDE_DISTANCE
+            searchstudent.Location = New Point(485, 200)
+            ' Transition.run(searchstudent, "Left", newLeft, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
             Transition.run(studBox, "Left", newStudBoxLeft, New TransitionType_Deceleration(500))
@@ -145,13 +150,16 @@ Public Class AdminDashboard
             dashbtn.MouseLeave, progbtn.MouseLeave, profbtn.MouseLeave, managebtn.MouseLeave,
         depBtn.MouseLeave, Panel2.MouseLeave
         If expand Then
+            searchstudent.Location = New Point(220, 200)
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(100))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(100))
+            searchstudent.Location = New Point(220, 200)
             expand = False
         End If
     End Sub
     Private Sub Panel1_MouseLeave(sender As Object, e As EventArgs) Handles Panel1.MouseLeave
         If expand Then
+
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(500))
             Transition.run(studBox, "Left", studBox.Left - slideOffset, New TransitionType_Deceleration(500))
@@ -314,22 +322,19 @@ Public Class AdminDashboard
         End If
     End Sub
     Private Sub profmenu_MouseClick(sender As Object, e As MouseEventArgs) Handles profmenu.MouseClick
-        secu.Location = New Point(1000, 500)
-        boxnum.Visible = Not boxnum.Visible
+        secu.Location = New Point(1160, 440)
+        boxnum.Location = New Point(1180, 310)
         Gerald5.Location = New Point(1100, 50)
         Gerald1.Location = New Point(1104, 53)
-        Gerald2.Location = New Point(1115, 180)
+        Gerald2.Location = New Point(1115, 250)
 
-        boxname.Location = New Point(1104, 200)
-        editInfo.Visible = Not editInfo.Visible
-        callIcon.Visible = Not callIcon.Visible
-        profname.Visible = Not profname.Visible
-        proftitle.Visible = Not proftitle.Visible
-        emailIcon.Visible = Not emailIcon.Visible
-        profpic.Location = New Point(1185, 60)
-
-
-
+        boxname.Location = New Point(1180, 270)
+        editInfo.Location = New Point(1200, 410)
+        callIcon.Location = New Point(1140, 305)
+        profname.Location = New Point(1140, 180)
+        proftitle.Location = New Point(1195, 215)
+        emailIcon.Location = New Point(1140, 265)
+        profpic.Location = New Point(1190, 60)
 
         secu.Visible = Not secu.Visible
         boxnum.Visible = Not boxnum.Visible
@@ -352,22 +357,22 @@ Public Class AdminDashboard
             Transition.run(Gerald1, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
             Transition.run(Gerald5, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
 
-            editInfo.Location = New Point(1070, 480)
+            editInfo.Location = New Point(1200, 600)
             secu.Hide()
-            changeEmail.Show()
-            changeNumber.Show()
-            eklavutxt.Show()
-            eklavutxt2.Show()
+            changeEmail.Visible = True
+            changeNumber.Visible = True
+            eklavutxt.Visible = True
+            eklavutxt2.Visible = True
         Else
             Transition.run(Gerald1, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
             Transition.run(Gerald5, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
 
-            editInfo.Location = New Point(1065, 323)
+            editInfo.Location = New Point(1200, 410)
             secu.Show()
-            changeEmail.Hide()
-            changeNumber.Hide()
-            eklavutxt.Hide()
-            eklavutxt2.Hide()
+            changeEmail.Visible = False
+            changeNumber.Visible = False
+            eklavutxt.Visible = False
+            eklavutxt2.Visible = False
         End If
         expand = Not expand
     End Sub
@@ -377,26 +382,41 @@ Public Class AdminDashboard
             Transition.run(Gerald1, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
             Transition.run(Gerald5, "Height", expandedSize1.Height, New TransitionType_Deceleration(100))
 
-            secu.Location = New Point(1040, 470)
+            secu.Location = New Point(1170, 600)
             editInfo.Hide()
-            changeEmail.Show()
-            changeNumber.Show()
-            eklavutxt.Show()
-            eklavutxt2.Show()
+            changeEmail.Visible = True
+            changeNumber.Visible = True
+            eklavutxt.Visible = True
+            eklavutxt2.Visible = True
+
         Else
             Transition.run(Gerald1, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
             Transition.run(Gerald5, "Height", originalSize1.Height, New TransitionType_Deceleration(100))
 
-            secu.Location = New Point(1040, 355)
+            secu.Location = New Point(1160, 440)
             editInfo.Show()
-            changeEmail.Hide()
-            changeNumber.Hide()
-            eklavutxt.Hide()
-            eklavutxt2.Hide()
+            changeEmail.BackColor = Color.Transparent
+            changeNumber.BackColor = Color.Transparent
+            changeEmail.Visible = False
+            changeNumber.Visible = False
+            eklavutxt.Visible = False
+            eklavutxt2.Visible = False
         End If
         expand = Not expand
     End Sub
     Private Sub tuldok_Click(sender As Object, e As EventArgs) Handles tuldok.Click
+        tuldoklikod.BringToFront()
+        tuldoklikod.Location = New Point(600, 50)
+        tuldokharap.BringToFront()
+        tuldokharap.Location = New Point(606, 54)
+        seemore.BringToFront()
+        seemore.Location = New Point(980, 500)
+        actlog.BringToFront()
+        actlog.Location = New Point(670, 80)
+        dtg1.BringToFront()
+        dtg1.Location = New Point(665, 120)
+
+
         tuldoklikod.Visible = Not tuldoklikod.Visible
         tuldokharap.Visible = Not tuldokharap.Visible
         seemore.Visible = Not seemore.Visible
