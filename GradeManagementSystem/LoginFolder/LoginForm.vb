@@ -3,10 +3,9 @@ Imports MySql.Data.MySqlClient
 
 Public Class LoginForm
     Public connector As New DatabaseConnector
-    ' Private adminForm As New AdminForm
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
-    Private professorForm As New ProfessorForm
+    Public professorForm As New ProfessorForm
     Public Property CornerRadius As Integer = 60
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -88,6 +87,7 @@ Public Class LoginForm
                     classID = connector.reader("Class ID").ToString
                     professorForm.classChooseBox.Items.Add(classID)
                 End If
+                professorForm.classChooseBox.SelectedIndex = 0
             End While
             connector.connect.Close()
         Catch ex As MySqlException

@@ -71,6 +71,8 @@ Partial Class ProfessorForm
         Label13 = New Label()
         editItemButton = New Button()
         classChooseBox = New ComboBox()
+        saveButton = New Button()
+        submitButton = New Button()
         CType(quizDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(attendanceDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(studentInfoDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -546,12 +548,32 @@ Partial Class ProfessorForm
         classChooseBox.Size = New Size(151, 28)
         classChooseBox.TabIndex = 44
         ' 
+        ' saveButton
+        ' 
+        saveButton.Location = New Point(1134, 99)
+        saveButton.Name = "saveButton"
+        saveButton.Size = New Size(90, 29)
+        saveButton.TabIndex = 45
+        saveButton.Text = "Save"
+        saveButton.UseVisualStyleBackColor = True
+        ' 
+        ' submitButton
+        ' 
+        submitButton.Location = New Point(1230, 99)
+        submitButton.Name = "submitButton"
+        submitButton.Size = New Size(90, 29)
+        submitButton.TabIndex = 46
+        submitButton.Text = "Submit"
+        submitButton.UseVisualStyleBackColor = True
+        ' 
         ' ProfessorForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.GrayText
         ClientSize = New Size(1419, 650)
+        Controls.Add(submitButton)
+        Controls.Add(saveButton)
         Controls.Add(classChooseBox)
         Controls.Add(editItemButton)
         Controls.Add(Label13)
@@ -666,4 +688,6 @@ Partial Class ProfessorForm
     Friend WithEvents equivalentColumn As DataGridViewTextBoxColumn
     Friend WithEvents remarksColumn As DataGridViewTextBoxColumn
     Public WithEvents classChooseBox As ComboBox
+    Friend WithEvents saveButton As Button
+    Friend WithEvents submitButton As Button
 End Class
