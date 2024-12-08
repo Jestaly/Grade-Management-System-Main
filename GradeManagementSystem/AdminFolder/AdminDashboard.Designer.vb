@@ -649,7 +649,7 @@ Partial Class AdminDashboard
         profname.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         profname.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         profname.ForeColor = Color.Green
-        profname.Location = New Point(1899, 235)
+        profname.Location = New Point(1899, 233)
         profname.Margin = New Padding(4, 0, 4, 0)
         profname.Name = "profname"
         profname.Size = New Size(260, 38)

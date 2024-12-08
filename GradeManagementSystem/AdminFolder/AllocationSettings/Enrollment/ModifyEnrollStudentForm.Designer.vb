@@ -34,10 +34,10 @@ Partial Class ModifyEnrollStudentForm
         backButton.FlatStyle = FlatStyle.Popup
         backButton.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         backButton.ForeColor = Color.White
-        backButton.Location = New Point(365, 13)
-        backButton.Margin = New Padding(4, 4, 4, 4)
+        backButton.Location = New Point(229, 177)
+        backButton.Margin = New Padding(4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(54, 34)
+        backButton.Size = New Size(108, 40)
         backButton.TabIndex = 21
         backButton.Text = "Back"
         backButton.UseVisualStyleBackColor = False
@@ -46,8 +46,8 @@ Partial Class ModifyEnrollStudentForm
         ' 
         enrollmentIDTextBox.AsciiOnly = True
         enrollmentIDTextBox.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        enrollmentIDTextBox.Location = New Point(59, 116)
-        enrollmentIDTextBox.Margin = New Padding(4, 4, 4, 4)
+        enrollmentIDTextBox.Location = New Point(61, 100)
+        enrollmentIDTextBox.Margin = New Padding(4)
         enrollmentIDTextBox.Mask = "L-000"
         enrollmentIDTextBox.Name = "enrollmentIDTextBox"
         enrollmentIDTextBox.PromptChar = "X"c
@@ -59,8 +59,8 @@ Partial Class ModifyEnrollStudentForm
         searchButton.BackColor = Color.DarkSeaGreen
         searchButton.FlatStyle = FlatStyle.Popup
         searchButton.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        searchButton.Location = New Point(154, 201)
-        searchButton.Margin = New Padding(4, 4, 4, 4)
+        searchButton.Location = New Point(92, 177)
+        searchButton.Margin = New Padding(4)
         searchButton.Name = "searchButton"
         searchButton.Size = New Size(106, 40)
         searchButton.TabIndex = 19
@@ -72,7 +72,7 @@ Partial Class ModifyEnrollStudentForm
         Label1.AutoSize = True
         Label1.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.DarkGreen
-        Label1.Location = New Point(59, 74)
+        Label1.Location = New Point(61, 58)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(174, 40)
@@ -90,7 +90,7 @@ Partial Class ModifyEnrollStudentForm
         Controls.Add(searchButton)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "ModifyEnrollStudentForm"
         Text = "ModifyEnrollStudentForm"
         ResumeLayout(False)
