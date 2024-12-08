@@ -31,52 +31,65 @@ Partial Class ModifyStudentForm
         ' StudentIDLabel
         ' 
         StudentIDLabel.AutoSize = True
-        StudentIDLabel.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        StudentIDLabel.Location = New Point(112, 56)
+        StudentIDLabel.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        StudentIDLabel.ForeColor = Color.DarkGreen
+        StudentIDLabel.Location = New Point(44, 66)
+        StudentIDLabel.Margin = New Padding(4, 0, 4, 0)
         StudentIDLabel.Name = "StudentIDLabel"
-        StudentIDLabel.Size = New Size(121, 31)
+        StudentIDLabel.Size = New Size(136, 40)
         StudentIDLabel.TabIndex = 1
         StudentIDLabel.Text = "Student ID"
         ' 
         ' searchButton
         ' 
-        searchButton.Location = New Point(112, 162)
+        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.FlatStyle = FlatStyle.Popup
+        searchButton.Font = New Font("Sitka Banner", 9F)
+        searchButton.Location = New Point(164, 216)
+        searchButton.Margin = New Padding(4, 4, 4, 4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(137, 59)
+        searchButton.Size = New Size(132, 46)
         searchButton.TabIndex = 2
         searchButton.Text = "Search"
-        searchButton.UseVisualStyleBackColor = True
+        searchButton.UseVisualStyleBackColor = False
         ' 
         ' studentIDTextBox
         ' 
         studentIDTextBox.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        studentIDTextBox.Location = New Point(37, 90)
+        studentIDTextBox.Location = New Point(48, 111)
+        studentIDTextBox.Margin = New Padding(4, 4, 4, 4)
         studentIDTextBox.Mask = "0-00-00000"
         studentIDTextBox.Name = "studentIDTextBox"
         studentIDTextBox.PromptChar = "X"c
-        studentIDTextBox.Size = New Size(287, 51)
+        studentIDTextBox.Size = New Size(358, 60)
         studentIDTextBox.TabIndex = 3
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(243, 21)
+        backButton.BackColor = Color.Red
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.Font = New Font("Sitka Banner", 9F)
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(378, 12)
+        backButton.Margin = New Padding(4, 4, 4, 4)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(65, 33)
         backButton.TabIndex = 19
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' ModifyStudentForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(365, 245)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(456, 298)
         Controls.Add(backButton)
         Controls.Add(studentIDTextBox)
         Controls.Add(searchButton)
         Controls.Add(StudentIDLabel)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ModifyStudentForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "ModifyStudentForm"

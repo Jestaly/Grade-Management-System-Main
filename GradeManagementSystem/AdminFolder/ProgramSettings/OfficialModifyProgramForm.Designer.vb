@@ -39,61 +39,80 @@ Partial Class OfficialModifyProgramForm
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(27, 7)
+        Label1.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(97, 81)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(85, 20)
+        Label1.Size = New Size(112, 29)
         Label1.TabIndex = 0
-        Label1.Text = "Program ID"
+        Label1.Text = "Program ID:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(2, 40)
+        Label2.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label2.ForeColor = Color.DarkGreen
+        Label2.Location = New Point(68, 128)
+        Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(110, 20)
+        Label2.Size = New Size(141, 29)
         Label2.TabIndex = 1
-        Label2.Text = "Program Name"
+        Label2.Text = "Program Name:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(19, 73)
+        Label3.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label3.ForeColor = Color.DarkGreen
+        Label3.Location = New Point(97, 176)
+        Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(90, 20)
+        Label3.Size = New Size(110, 29)
         Label3.TabIndex = 2
-        Label3.Text = "Date Added"
+        Label3.Text = "Date Added:"
         ' 
         ' modifyButton
         ' 
-        modifyButton.Location = New Point(23, 170)
+        modifyButton.BackColor = Color.DarkSeaGreen
+        modifyButton.FlatStyle = FlatStyle.Popup
+        modifyButton.ForeColor = Color.Black
+        modifyButton.Location = New Point(69, 385)
+        modifyButton.Margin = New Padding(4, 5, 4, 5)
         modifyButton.Name = "modifyButton"
-        modifyButton.Size = New Size(128, 29)
+        modifyButton.Size = New Size(160, 42)
         modifyButton.TabIndex = 3
         modifyButton.Text = "Modify Program"
-        modifyButton.UseVisualStyleBackColor = True
+        modifyButton.UseVisualStyleBackColor = False
         ' 
         ' yearAddedTextBox
         ' 
-        yearAddedTextBox.Location = New Point(118, 70)
+        yearAddedTextBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        yearAddedTextBox.Location = New Point(212, 180)
+        yearAddedTextBox.Margin = New Padding(4, 5, 4, 5)
         yearAddedTextBox.Name = "yearAddedTextBox"
-        yearAddedTextBox.Size = New Size(125, 27)
+        yearAddedTextBox.Size = New Size(155, 33)
         yearAddedTextBox.TabIndex = 4
         ' 
         ' programnameTextBox
         ' 
-        programnameTextBox.Location = New Point(118, 37)
+        programnameTextBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        programnameTextBox.Location = New Point(212, 131)
+        programnameTextBox.Margin = New Padding(4, 5, 4, 5)
         programnameTextBox.Name = "programnameTextBox"
-        programnameTextBox.Size = New Size(169, 27)
+        programnameTextBox.Size = New Size(210, 33)
         programnameTextBox.TabIndex = 5
         ' 
         ' programIDTextBox
         ' 
         programIDTextBox.Enabled = False
-        programIDTextBox.Location = New Point(118, 4)
+        programIDTextBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        programIDTextBox.Location = New Point(212, 83)
+        programIDTextBox.Margin = New Padding(4, 5, 4, 5)
         programIDTextBox.Mask = "L-000"
         programIDTextBox.Name = "programIDTextBox"
         programIDTextBox.PromptChar = "X"c
-        programIDTextBox.Size = New Size(125, 27)
+        programIDTextBox.Size = New Size(155, 33)
         programIDTextBox.TabIndex = 6
         ' 
         ' sectionBox
@@ -109,55 +128,68 @@ Partial Class OfficialModifyProgramForm
         sectionBox.Items.Add("8")
         sectionBox.Items.Add("9")
         sectionBox.Items.Add("10")
-        sectionBox.Location = New Point(115, 136)
+        sectionBox.Location = New Point(214, 275)
+        sectionBox.Margin = New Padding(4, 6, 4, 6)
         sectionBox.Name = "sectionBox"
         sectionBox.ReadOnly = True
-        sectionBox.Size = New Size(76, 27)
+        sectionBox.Size = New Size(95, 33)
         sectionBox.TabIndex = 12
         sectionBox.Text = "1"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(45, 139)
+        Label4.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label4.ForeColor = Color.DarkGreen
+        Label4.Location = New Point(121, 272)
+        Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(64, 20)
+        Label4.Size = New Size(85, 29)
         Label4.TabIndex = 11
-        Label4.Text = "Sections"
+        Label4.Text = "Sections:"
         ' 
         ' backButton
         ' 
-        backButton.Location = New Point(235, 165)
+        backButton.BackColor = Color.DarkSeaGreen
+        backButton.FlatStyle = FlatStyle.Popup
+        backButton.ForeColor = Color.Black
+        backButton.Location = New Point(304, 385)
+        backButton.Margin = New Padding(4, 5, 4, 5)
         backButton.Name = "backButton"
-        backButton.Size = New Size(94, 29)
+        backButton.Size = New Size(118, 42)
         backButton.TabIndex = 18
         backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = True
+        backButton.UseVisualStyleBackColor = False
         ' 
         ' departmentComboBox
         ' 
         departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
+        departmentComboBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
         departmentComboBox.FormattingEnabled = True
-        departmentComboBox.Location = New Point(115, 103)
+        departmentComboBox.Location = New Point(212, 227)
+        departmentComboBox.Margin = New Padding(4, 5, 4, 5)
         departmentComboBox.Name = "departmentComboBox"
-        departmentComboBox.Size = New Size(172, 28)
+        departmentComboBox.Size = New Size(214, 37)
         departmentComboBox.TabIndex = 21
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(23, 105)
+        Label5.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label5.ForeColor = Color.DarkGreen
+        Label5.Location = New Point(93, 222)
+        Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(89, 20)
+        Label5.Size = New Size(115, 29)
         Label5.TabIndex = 20
-        Label5.Text = "Department"
+        Label5.Text = "Department:"
         ' 
         ' OfficialModifyProgramForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 29F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(353, 211)
+        BackColor = SystemColors.Control
+        ClientSize = New Size(504, 496)
         Controls.Add(departmentComboBox)
         Controls.Add(Label5)
         Controls.Add(backButton)
@@ -170,7 +202,9 @@ Partial Class OfficialModifyProgramForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 5, 4, 5)
         Name = "OfficialModifyProgramForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "OfficialModifyProgramForm"

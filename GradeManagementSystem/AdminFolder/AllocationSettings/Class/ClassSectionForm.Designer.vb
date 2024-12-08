@@ -22,7 +22,6 @@ Partial Class ClassSectionForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        deleteClassButton = New Button()
         modifyClassButton = New Button()
         classDataView = New DataGridView()
         createClassButton = New Button()
@@ -31,79 +30,86 @@ Partial Class ClassSectionForm
         CType(classDataView, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' deleteClassButton
-        ' 
-        deleteClassButton.Location = New Point(394, 58)
-        deleteClassButton.Name = "deleteClassButton"
-        deleteClassButton.Size = New Size(88, 29)
-        deleteClassButton.TabIndex = 10
-        deleteClassButton.Text = "Delete"
-        deleteClassButton.UseVisualStyleBackColor = True
-        ' 
         ' modifyClassButton
         ' 
-        modifyClassButton.Location = New Point(394, 23)
+        modifyClassButton.BackColor = Color.DarkSeaGreen
+        modifyClassButton.FlatStyle = FlatStyle.Popup
+        modifyClassButton.Font = New Font("Sitka Banner", 9F)
+        modifyClassButton.Location = New Point(808, 517)
+        modifyClassButton.Margin = New Padding(4, 4, 4, 4)
         modifyClassButton.Name = "modifyClassButton"
-        modifyClassButton.Size = New Size(88, 29)
+        modifyClassButton.Size = New Size(110, 36)
         modifyClassButton.TabIndex = 9
         modifyClassButton.Text = "Modify"
-        modifyClassButton.UseVisualStyleBackColor = True
+        modifyClassButton.UseVisualStyleBackColor = False
         ' 
         ' classDataView
         ' 
         classDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        classDataView.Location = New Point(66, 93)
+        classDataView.Location = New Point(59, 158)
+        classDataView.Margin = New Padding(4, 4, 4, 4)
         classDataView.Name = "classDataView"
         classDataView.RowHeadersWidth = 51
-        classDataView.Size = New Size(416, 271)
+        classDataView.Size = New Size(859, 351)
         classDataView.TabIndex = 8
         ' 
         ' createClassButton
         ' 
-        createClassButton.Location = New Point(66, 47)
+        createClassButton.BackColor = Color.DarkSeaGreen
+        createClassButton.FlatStyle = FlatStyle.Popup
+        createClassButton.Font = New Font("Sitka Banner", 9F)
+        createClassButton.Location = New Point(59, 517)
+        createClassButton.Margin = New Padding(4, 4, 4, 4)
         createClassButton.Name = "createClassButton"
-        createClassButton.Size = New Size(141, 40)
+        createClassButton.Size = New Size(176, 50)
         createClassButton.TabIndex = 7
         createClassButton.Text = "CREATE CLASS"
-        createClassButton.UseVisualStyleBackColor = True
+        createClassButton.UseVisualStyleBackColor = False
         ' 
         ' refreshButton
         ' 
-        refreshButton.Location = New Point(300, 58)
+        refreshButton.BackColor = Color.DarkSeaGreen
+        refreshButton.FlatStyle = FlatStyle.Popup
+        refreshButton.Font = New Font("Sitka Banner", 9F)
+        refreshButton.Location = New Point(59, 114)
+        refreshButton.Margin = New Padding(4, 4, 4, 4)
         refreshButton.Name = "refreshButton"
-        refreshButton.Size = New Size(88, 29)
+        refreshButton.Size = New Size(110, 36)
         refreshButton.TabIndex = 11
         refreshButton.Text = "Refresh"
-        refreshButton.UseVisualStyleBackColor = True
+        refreshButton.UseVisualStyleBackColor = False
         ' 
         ' enrollmentSectionButton
         ' 
-        enrollmentSectionButton.Location = New Point(488, 12)
+        enrollmentSectionButton.BackColor = Color.DarkSeaGreen
+        enrollmentSectionButton.FlatStyle = FlatStyle.Popup
+        enrollmentSectionButton.Font = New Font("Sitka Banner", 9F)
+        enrollmentSectionButton.Location = New Point(739, 23)
+        enrollmentSectionButton.Margin = New Padding(4, 4, 4, 4)
         enrollmentSectionButton.Name = "enrollmentSectionButton"
-        enrollmentSectionButton.Size = New Size(143, 28)
+        enrollmentSectionButton.Size = New Size(179, 35)
         enrollmentSectionButton.TabIndex = 12
         enrollmentSectionButton.Text = "Enrollment Section"
-        enrollmentSectionButton.UseVisualStyleBackColor = True
+        enrollmentSectionButton.UseVisualStyleBackColor = False
         ' 
         ' ClassSectionForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(642, 391)
+        ClientSize = New Size(981, 611)
         Controls.Add(enrollmentSectionButton)
         Controls.Add(refreshButton)
-        Controls.Add(deleteClassButton)
         Controls.Add(modifyClassButton)
         Controls.Add(classDataView)
         Controls.Add(createClassButton)
+        FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 4, 4, 4)
         Name = "ClassSectionForm"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ClassSectionForm"
         CType(classDataView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents deleteClassButton As Button
     Friend WithEvents modifyClassButton As Button
     Friend WithEvents classDataView As DataGridView
     Friend WithEvents createClassButton As Button

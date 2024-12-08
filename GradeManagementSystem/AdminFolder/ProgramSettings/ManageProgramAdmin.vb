@@ -27,9 +27,9 @@ Public Class ManageProgramAdmin
         End Try
     End Sub
 
-    Private Sub courseSectionButton_Click(sender As Object, e As EventArgs) Handles courseSectionButton.Click
+    Private Sub courseSecButton_Click(sender As Object, e As EventArgs)
         courseSectionForm.Visible = True
-        Me.Visible = False
+        Visible = False
     End Sub
 
     Private Sub addProgramButton_Click(sender As Object, e As EventArgs) Handles addProgramButton.Click
@@ -120,5 +120,9 @@ Public Class ManageProgramAdmin
         Dim x As Integer = (Me.Width - modifyProgramForm.Width) \ 2
         Dim y As Integer = (Me.Height - modifyProgramForm.Height) \ 2
         modifyProgramForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub searchButton_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class
