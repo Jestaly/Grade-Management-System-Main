@@ -40,7 +40,7 @@ Public Class AddProjectForm
     Private Sub maxScoreButton_Click(sender As Object, e As EventArgs) Handles maxScoreButton.Click
         Dim itemID As String = getItemID()
         Dim maxScore As Integer = Integer.Parse(maxScoreTextBox.Text)
-        Dim itemName = "Project " & (getNumProject() + 1)
+        Dim itemName = "P" & (getNumProject() + 1)
         Dim classID As String = LoginForm.professorForm.classChooseBox.Text
         Try
             connector.connect.Open()
