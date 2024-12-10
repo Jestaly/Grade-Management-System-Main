@@ -9,14 +9,17 @@ Public Class ProfessorForm
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
         refreshForm()
         refreshProjCol()
+        refreshProjRows()
         refreshScores()
+        isRefreshed = False
     End Sub
 
+    Private isRefreshed As Boolean = False
     Public Sub refreshForm()
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
-            connector.query = "SELECT enrollment.student_id AS 'Student ID', CONCAT(student.lname,' ',student.fname,' ',student.lname) AS 'Student Name' from enrollment LEFT JOIN student ON enrollment.student_id = student.id  WHERE enrollment.class_id = '" & classID & "';"
+            connector.query = "SELECT enrollment.student_id AS 'Student ID', CONCAT(student.lname,' ',student.fname,' ',student.lname) AS 'Student' from enrollment LEFT JOIN student ON enrollment.student_id = student.id  WHERE enrollment.class_id = '" & classID & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
@@ -26,7 +29,7 @@ Public Class ProfessorForm
         Catch ex As MySqlException
             connector.connect.Close()
             connector.command.Parameters.Clear()
-            MessageBox.Show("Database Error")
+            MessageBox.Show("Database Error refresh form")
         End Try
     End Sub
 
@@ -50,14 +53,14 @@ Public Class ProfessorForm
             Next
 
             For i As Integer = 0 To colCount - 1
-                projectDataView.Columns.Add("project" & (i + 1), "P" & (i + 1))
+                projectDataView.Columns.Add("P" & (i + 1), "P" & (i + 1))
             Next
+
             connector.reader.Close()
             connector.connect.Close()
-            refreshProjRows()
         Catch ex As MySqlException
             connector.connect.Close()
-            MessageBox.Show("Database Error")
+            MessageBox.Show("Database Error refreshProjCol()")
         End Try
     End Sub
 
@@ -82,7 +85,7 @@ Public Class ProfessorForm
             connector.reader.Close()
         Catch ex As MySqlException
             connector.connect.Close()
-            MessageBox.Show("Database Error")
+            MessageBox.Show("Database Error refreshProjRows()")
         End Try
     End Sub
 
@@ -107,7 +110,7 @@ Public Class ProfessorForm
         Catch ex As MySqlException
             connector.reader.Close()
             connector.connect.Close()
-            MessageBox.Show("Database Error")
+            MessageBox.Show("Database Error getRowNum()")
         End Try
         Return rowCount
     End Function
@@ -132,29 +135,143 @@ Public Class ProfessorForm
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
-            MessageBox.Show("Database Error")
+            MessageBox.Show("Database Error getColumnNum()")
         End Try
         Return colCount
     End Function
 
-    'stopped here
     Private Sub refreshScores()
+        isRefreshed = True
+        Dim numOfColumn As Integer = projectDataView.ColumnCount
+        Dim numOfRow As Integer = projectDataView.RowCount
+        Dim projItem(projectDataView.ColumnCount) As String
         Try
             connector.connect.Open()
-            connector.query = "SELECT "
+            connector.query = "SELECT item_name FROM item WHERE item_type = 'Project' AND class_id = '" & classID & "' AND term = '" & term & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                projItem(i) = connector.reader("item_name").ToString
+                i += 1
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error refreshScores()")
+        End Try
+
+        placeScores(numOfColumn, projItem)
+    End Sub
+
+    Private Sub placeScores(numOfColumn As Integer, projItem() As String)
+        Try
+            connector.connect.Open()
+            For i As Integer = 0 To numOfColumn
+                connector.query = "SELECT score FROM score_record LEFT JOIN item ON score_record.item_id = item.item_id WHERE item_name = '" & projItem(i) & "' AND class_id = '" & classID & "' AND term = '" & term & "' ORDER BY enrollment_id;"
+                connector.command.CommandText = connector.query
+                connector.reader = connector.command.ExecuteReader
+                Dim j As Integer = 0
+                While connector.reader.Read
+                    projectDataView.Rows(j).Cells(i).Value = connector.reader("score").ToString
+                    j += 1
+                End While
+                connector.reader.Close()
+            Next
+            connector.reader.Close()
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
-            MessageBox.Show("Database Error")
+            connector.reader.Close()
+            MessageBox.Show("Database Error refreshScores()2")
         End Try
+    End Sub
+    Private Sub projectDataView_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles projectDataView.CellValueChanged
+        If (isRefreshed = False) Then
+            Dim rowIndex As Integer = e.RowIndex
+            Dim columnIndex As Integer = e.ColumnIndex
+            If rowIndex >= 0 And columnIndex >= 0 Then
+                setProjectScore(rowIndex, columnIndex)
+            End If
+        End If
+    End Sub
 
-        For i As Integer = 0 To getColumnNum() - 1
-            For j As Integer = 0 To getRowNum() - 1
-                projectDataView.Rows(j).Cells(i).Value = 0
-            Next
-        Next
+    Private Function getEnrollmentID(rowIndex As Integer) As String
+        Dim studentID As String = studentInfoDataView.Rows(rowIndex).Cells(0).Value.ToString()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT enrollment_id FROM enrollment WHERE student_id = '" & studentID & "' AND class_id = '" & classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("enrollment_id").ToString.Equals("")) Then
+                    Dim enrollmentID As String = connector.reader("enrollment_id").ToString
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return enrollmentID
+                End If
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error getEnrollmentID")
+        End Try
+        Return Nothing
+    End Function
+
+    Private Function getProjectScore(rowIndex As Integer, columnIndex As Integer) As Integer
+        Dim newValue As Integer = Integer.Parse(projectDataView.Rows(rowIndex).Cells(columnIndex).Value.ToString)
+        Return newValue
+    End Function
+    Private Function getItemID(columnIndex As Integer) As String
+        Dim columnName As String = projectDataView.Columns(columnIndex).Name
+        MessageBox.Show(columnName)
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_id FROM item WHERE item_name = '" & columnName & "' AND term = '" & term & "' AND class_id = '" & classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("item_id").ToString.Equals("")) Then
+                    Dim itemID As String = connector.reader("item_id").ToString
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return itemID
+                End If
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error getItemID")
+        End Try
+        Return Nothing
+    End Function
+
+    Private Sub setProjectScore(rowIndex As Integer, columnIndex As Integer)
+        Dim projectScore As Integer = getProjectScore(rowIndex, columnIndex)
+        Dim enrollmentID As String = getEnrollmentID(rowIndex)
+        Dim itemID As String = getItemID(columnIndex)
+
+        Try
+            connector.connect.Open()
+            connector.query = "UPDATE score_record SET score = '" & projectScore & "' WHERE enrollment_id = '" & enrollmentID & "' AND item_id = '" & itemID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error setProjectScore")
+        End Try
     End Sub
 
     Public classID As String
@@ -203,6 +320,7 @@ Public Class ProfessorForm
     End Sub
 
     Private Sub initializeDVS()
+        'PROFESSOR CANNOT ADD ROWS
         projectDataView.AllowUserToAddRows = False
         studentInfoDataView.AllowUserToAddRows = False
         attendanceDataView.AllowUserToAddRows = False
@@ -211,6 +329,62 @@ Public Class ProfessorForm
         gradeDataView.AllowUserToAddRows = False
         equivalentDataView.AllowUserToAddRows = False
         remarkDataView.AllowUserToAddRows = False
+
+        'PROFESSOR CANNOT DELETE ROWS
+        projectDataView.AllowUserToDeleteRows = False
+        studentInfoDataView.AllowUserToDeleteRows = False
+        attendanceDataView.AllowUserToDeleteRows = False
+        quizDataView.AllowUserToDeleteRows = False
+        examDataView.AllowUserToDeleteRows = False
+        gradeDataView.AllowUserToDeleteRows = False
+        equivalentDataView.AllowUserToDeleteRows = False
+        remarkDataView.AllowUserToDeleteRows = False
+
+        'PROFESSOR CANNOT ORDER COLUMNS BY ID AND NAMES
+        projectDataView.AllowUserToOrderColumns = False
+        studentInfoDataView.AllowUserToOrderColumns = False
+        attendanceDataView.AllowUserToOrderColumns = False
+        quizDataView.AllowUserToOrderColumns = False
+        examDataView.AllowUserToOrderColumns = False
+        gradeDataView.AllowUserToOrderColumns = False
+        equivalentDataView.AllowUserToOrderColumns = False
+        remarkDataView.AllowUserToOrderColumns = False
+
+        'PROFESSOR CANNOT RESIZE COLUMNS
+        projectDataView.AllowUserToResizeColumns = False
+        studentInfoDataView.AllowUserToResizeColumns = False
+        attendanceDataView.AllowUserToResizeColumns = False
+        quizDataView.AllowUserToResizeColumns = False
+        examDataView.AllowUserToResizeColumns = False
+        gradeDataView.AllowUserToResizeColumns = False
+        equivalentDataView.AllowUserToResizeColumns = False
+        remarkDataView.AllowUserToResizeColumns = False
+
+        'PROFESSOR CANNOT ORDER ROWS BY ID AND NAMES
+        For Each column As DataGridViewColumn In projectDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In studentInfoDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In attendanceDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In quizDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In examDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In gradeDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In equivalentDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In remarkDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
     End Sub
 
     Private Sub allDataView_Scroll(sender As Object, e As ScrollEventArgs) Handles remarkDataView.Scroll
@@ -234,7 +408,7 @@ Public Class ProfessorForm
 
     Private Sub logoutButton_Click(sender As Object, e As EventArgs) Handles logoutButton.Click
         Me.Visible = False
-        LoginForm.Visible = True
+        LoginForgot.Visible = True
     End Sub
 
     Private Sub midtermButton_Click(sender As Object, e As EventArgs) Handles midtermButton.Click
