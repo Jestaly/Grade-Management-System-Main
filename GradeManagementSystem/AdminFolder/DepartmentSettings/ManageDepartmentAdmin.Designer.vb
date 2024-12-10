@@ -40,8 +40,8 @@ Partial Class ManageDepartmentAdmin
         addDepartment.FlatStyle = FlatStyle.Popup
         addDepartment.Font = New Font("Sitka Banner", 9F)
         addDepartment.ForeColor = Color.Black
-        addDepartment.Location = New Point(590, 115)
-        addDepartment.Margin = New Padding(4, 4, 4, 4)
+        addDepartment.Location = New Point(985, 116)
+        addDepartment.Margin = New Padding(4)
         addDepartment.Name = "addDepartment"
         addDepartment.Size = New Size(147, 36)
         addDepartment.TabIndex = 1
@@ -54,8 +54,8 @@ Partial Class ManageDepartmentAdmin
         modifyButton.FlatStyle = FlatStyle.Popup
         modifyButton.Font = New Font("Sitka Banner", 9F)
         modifyButton.ForeColor = Color.Black
-        modifyButton.Location = New Point(759, 115)
-        modifyButton.Margin = New Padding(4, 4, 4, 4)
+        modifyButton.Location = New Point(1155, 115)
+        modifyButton.Margin = New Padding(4)
         modifyButton.Name = "modifyButton"
         modifyButton.Size = New Size(156, 36)
         modifyButton.TabIndex = 2
@@ -68,8 +68,8 @@ Partial Class ManageDepartmentAdmin
         refreshButton.FlatStyle = FlatStyle.Popup
         refreshButton.Font = New Font("Sitka Banner", 9F)
         refreshButton.ForeColor = Color.Black
-        refreshButton.Location = New Point(60, 116)
-        refreshButton.Margin = New Padding(4, 4, 4, 4)
+        refreshButton.Location = New Point(68, 116)
+        refreshButton.Margin = New Padding(4)
         refreshButton.Name = "refreshButton"
         refreshButton.Size = New Size(118, 36)
         refreshButton.TabIndex = 3
@@ -79,21 +79,21 @@ Partial Class ManageDepartmentAdmin
         ' searchDepartmentField
         ' 
         searchDepartmentField.Font = New Font("Sitka Banner Semibold", 11F, FontStyle.Bold)
-        searchDepartmentField.Location = New Point(60, 37)
-        searchDepartmentField.Margin = New Padding(4, 4, 4, 4)
+        searchDepartmentField.Location = New Point(68, 37)
+        searchDepartmentField.Margin = New Padding(4)
         searchDepartmentField.Name = "searchDepartmentField"
-        searchDepartmentField.PlaceholderText = "Search Department here..."
-        searchDepartmentField.Size = New Size(319, 35)
+        searchDepartmentField.PlaceholderText = "Search Department ID here..."
+        searchDepartmentField.Size = New Size(446, 35)
         searchDepartmentField.TabIndex = 4
         ' 
         ' dataView
         ' 
         dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dataView.Location = New Point(60, 159)
-        dataView.Margin = New Padding(4, 4, 4, 4)
+        dataView.Location = New Point(68, 159)
+        dataView.Margin = New Padding(4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(855, 356)
+        dataView.Size = New Size(1243, 504)
         dataView.TabIndex = 5
         ' 
         ' removeDeptButton
@@ -102,8 +102,8 @@ Partial Class ManageDepartmentAdmin
         removeDeptButton.FlatStyle = FlatStyle.Popup
         removeDeptButton.Font = New Font("Sitka Banner", 9F)
         removeDeptButton.ForeColor = Color.Black
-        removeDeptButton.Location = New Point(741, 523)
-        removeDeptButton.Margin = New Padding(4, 4, 4, 4)
+        removeDeptButton.Location = New Point(1137, 671)
+        removeDeptButton.Margin = New Padding(4)
         removeDeptButton.Name = "removeDeptButton"
         removeDeptButton.Size = New Size(174, 36)
         removeDeptButton.TabIndex = 6
@@ -114,7 +114,7 @@ Partial Class ManageDepartmentAdmin
         ' 
         searchbttn.BackgroundImage = CType(resources.GetObject("searchbttn.BackgroundImage"), Image)
         searchbttn.BackgroundImageLayout = ImageLayout.Stretch
-        searchbttn.Location = New Point(377, 37)
+        searchbttn.Location = New Point(511, 37)
         searchbttn.Name = "searchbttn"
         searchbttn.Size = New Size(38, 35)
         searchbttn.TabIndex = 9
@@ -124,7 +124,7 @@ Partial Class ManageDepartmentAdmin
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(982, 609)
+        ClientSize = New Size(1383, 749)
         Controls.Add(searchbttn)
         Controls.Add(removeDeptButton)
         Controls.Add(dataView)
@@ -133,7 +133,7 @@ Partial Class ManageDepartmentAdmin
         Controls.Add(modifyButton)
         Controls.Add(addDepartment)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "ManageDepartmentAdmin"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ManageDepartmentAdmin"
