@@ -39,8 +39,8 @@ Partial Class ManageProfessorAdmin
         refreshButton.BackColor = Color.DarkSeaGreen
         refreshButton.FlatStyle = FlatStyle.Popup
         refreshButton.Font = New Font("Sitka Banner", 9F)
-        refreshButton.Location = New Point(37, 127)
-        refreshButton.Margin = New Padding(4, 4, 4, 4)
+        refreshButton.Location = New Point(49, 127)
+        refreshButton.Margin = New Padding(4)
         refreshButton.Name = "refreshButton"
         refreshButton.Size = New Size(118, 36)
         refreshButton.TabIndex = 0
@@ -52,8 +52,8 @@ Partial Class ManageProfessorAdmin
         addProfessorButton.BackColor = Color.DarkSeaGreen
         addProfessorButton.FlatStyle = FlatStyle.Popup
         addProfessorButton.Font = New Font("Sitka Banner", 9F)
-        addProfessorButton.Location = New Point(840, 127)
-        addProfessorButton.Margin = New Padding(4, 4, 4, 4)
+        addProfessorButton.Location = New Point(1158, 127)
+        addProfessorButton.Margin = New Padding(4)
         addProfessorButton.Name = "addProfessorButton"
         addProfessorButton.Size = New Size(152, 36)
         addProfessorButton.TabIndex = 2
@@ -65,8 +65,8 @@ Partial Class ManageProfessorAdmin
         modifyProfessorButton.BackColor = Color.DarkSeaGreen
         modifyProfessorButton.FlatStyle = FlatStyle.Popup
         modifyProfessorButton.Font = New Font("Sitka Banner", 9F)
-        modifyProfessorButton.Location = New Point(673, 127)
-        modifyProfessorButton.Margin = New Padding(4, 4, 4, 4)
+        modifyProfessorButton.Location = New Point(991, 127)
+        modifyProfessorButton.Margin = New Padding(4)
         modifyProfessorButton.Name = "modifyProfessorButton"
         modifyProfessorButton.Size = New Size(159, 36)
         modifyProfessorButton.TabIndex = 3
@@ -75,22 +75,22 @@ Partial Class ManageProfessorAdmin
         ' 
         ' searchProfessorField
         ' 
-        searchProfessorField.Font = New Font("Sitka Banner", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        searchProfessorField.Font = New Font("Sitka Banner", 11F)
         searchProfessorField.Location = New Point(37, 39)
-        searchProfessorField.Margin = New Padding(4, 4, 4, 4)
+        searchProfessorField.Margin = New Padding(4)
         searchProfessorField.Name = "searchProfessorField"
-        searchProfessorField.PlaceholderText = "Search Professor here..."
-        searchProfessorField.Size = New Size(333, 33)
+        searchProfessorField.PlaceholderText = "Search Professor ID here..."
+        searchProfessorField.Size = New Size(394, 35)
         searchProfessorField.TabIndex = 4
         ' 
         ' dataView
         ' 
         dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dataView.Location = New Point(37, 171)
-        dataView.Margin = New Padding(4, 4, 4, 4)
+        dataView.Location = New Point(49, 171)
+        dataView.Margin = New Padding(4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(955, 398)
+        dataView.Size = New Size(1261, 498)
         dataView.TabIndex = 5
         ' 
         ' removeProfButton
@@ -98,8 +98,8 @@ Partial Class ManageProfessorAdmin
         removeProfButton.BackColor = Color.DarkSeaGreen
         removeProfButton.FlatStyle = FlatStyle.Popup
         removeProfButton.Font = New Font("Sitka Banner", 9F)
-        removeProfButton.Location = New Point(816, 577)
-        removeProfButton.Margin = New Padding(4, 4, 4, 4)
+        removeProfButton.Location = New Point(1134, 677)
+        removeProfButton.Margin = New Padding(4)
         removeProfButton.Name = "removeProfButton"
         removeProfButton.Size = New Size(176, 36)
         removeProfButton.TabIndex = 6
@@ -110,7 +110,7 @@ Partial Class ManageProfessorAdmin
         ' 
         searchbttn.BackgroundImage = CType(resources.GetObject("searchbttn.BackgroundImage"), Image)
         searchbttn.BackgroundImageLayout = ImageLayout.Stretch
-        searchbttn.Location = New Point(371, 37)
+        searchbttn.Location = New Point(430, 39)
         searchbttn.Name = "searchbttn"
         searchbttn.Size = New Size(38, 35)
         searchbttn.TabIndex = 9
@@ -120,7 +120,7 @@ Partial Class ManageProfessorAdmin
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1031, 654)
+        ClientSize = New Size(1383, 749)
         Controls.Add(searchbttn)
         Controls.Add(removeProfButton)
         Controls.Add(dataView)
@@ -129,7 +129,7 @@ Partial Class ManageProfessorAdmin
         Controls.Add(addProfessorButton)
         Controls.Add(refreshButton)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "ManageProfessorAdmin"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ManageProfessorAdmin"

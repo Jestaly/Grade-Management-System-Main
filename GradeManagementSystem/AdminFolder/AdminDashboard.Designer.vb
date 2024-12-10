@@ -90,6 +90,7 @@ Partial Class AdminDashboard
         DatabaseConnectorBindingSource1 = New BindingSource(components)
         DatabaseConnectorBindingSource = New BindingSource(components)
         tuldoklikod = New gerald.Gerald()
+        time = New Label()
         Panel2.SuspendLayout()
         CType(alloIcon2, ComponentModel.ISupportInitialize).BeginInit()
         CType(depIcon2, ComponentModel.ISupportInitialize).BeginInit()
@@ -285,7 +286,7 @@ Partial Class AdminDashboard
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
         PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox2.Location = New Point(103, 366)
+        PictureBox2.Location = New Point(130, 589)
         PictureBox2.Margin = New Padding(2)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(97, 64)
@@ -411,9 +412,10 @@ Partial Class AdminDashboard
         tuldok.BackColor = Color.Transparent
         tuldok.BackgroundImage = CType(resources.GetObject("tuldok.BackgroundImage"), Image)
         tuldok.BackgroundImageLayout = ImageLayout.Zoom
-        tuldok.Location = New Point(1259, 3)
+        tuldok.Location = New Point(1574, 14)
+        tuldok.Margin = New Padding(4)
         tuldok.Name = "tuldok"
-        tuldok.Size = New Size(61, 59)
+        tuldok.Size = New Size(58, 52)
         tuldok.SizeMode = PictureBoxSizeMode.Zoom
         tuldok.TabIndex = 44
         tuldok.TabStop = False
@@ -421,11 +423,12 @@ Partial Class AdminDashboard
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Microsoft Sans Serif", 15F, FontStyle.Bold)
+        Label2.Font = New Font("Sitka Banner", 14.999999F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.Green
-        Label2.Location = New Point(379, 85)
+        Label2.Location = New Point(319, 118)
+        Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(245, 29)
+        Label2.Size = New Size(237, 43)
         Label2.TabIndex = 41
         Label2.Text = "D A S H B O A R D"
         ' 
@@ -490,9 +493,10 @@ Partial Class AdminDashboard
         nameleft.AutoSize = True
         nameleft.Font = New Font("Arial", 12F, FontStyle.Bold)
         nameleft.ForeColor = Color.White
-        nameleft.Location = New Point(121, 42)
+        nameleft.Location = New Point(151, 52)
+        nameleft.Margin = New Padding(4, 0, 4, 0)
         nameleft.Name = "nameleft"
-        nameleft.Size = New Size(54, 24)
+        nameleft.Size = New Size(65, 29)
         nameleft.TabIndex = 12
         nameleft.Text = "User"
         ' 
@@ -503,6 +507,7 @@ Partial Class AdminDashboard
         Panel3.Controls.Add(profmenu)
         Panel3.Controls.Add(PictureBox11)
         Panel3.Controls.Add(tuldok)
+        Panel3.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Panel3.Location = New Point(0, -1)
         Panel3.Margin = New Padding(2, 3, 2, 3)
         Panel3.Name = "Panel3"
@@ -519,9 +524,10 @@ Partial Class AdminDashboard
         profmenu.GradientBottomColor = Color.Transparent
         profmenu.GradientTopColor = Color.Transparent
         profmenu.Image = CType(resources.GetObject("profmenu.Image"), Image)
-        profmenu.Location = New Point(1326, 4)
+        profmenu.Location = New Point(1667, 14)
+        profmenu.Margin = New Padding(4)
         profmenu.Name = "profmenu"
-        profmenu.Size = New Size(51, 49)
+        profmenu.Size = New Size(55, 52)
         profmenu.SizeMode = PictureBoxSizeMode.StretchImage
         profmenu.TabIndex = 78
         profmenu.TabStop = False
@@ -531,9 +537,10 @@ Partial Class AdminDashboard
         PictureBox11.BackColor = Color.Transparent
         PictureBox11.BackgroundImage = CType(resources.GetObject("PictureBox11.BackgroundImage"), Image)
         PictureBox11.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox11.Location = New Point(1191, 1)
+        PictureBox11.Location = New Point(1519, 14)
+        PictureBox11.Margin = New Padding(4)
         PictureBox11.Name = "PictureBox11"
-        PictureBox11.Size = New Size(55, 57)
+        PictureBox11.Size = New Size(51, 52)
         PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox11.TabIndex = 45
         PictureBox11.TabStop = False
@@ -904,13 +911,24 @@ Partial Class AdminDashboard
         tuldoklikod.Text = "Gerald3"
         tuldoklikod.UseVisualStyleBackColor = False
         ' 
+        ' time
+        ' 
+        time.AutoSize = True
+        time.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        time.Location = New Point(1415, 134)
+        time.Name = "time"
+        time.Size = New Size(145, 26)
+        time.TabIndex = 88
+        time.Text = "Real Time and Date"
+        ' 
         ' AdminDashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1554, 749)
+        ClientSize = New Size(1795, 936)
+        Controls.Add(time)
         Controls.Add(Panel1)
         Controls.Add(studBox)
         Controls.Add(dtg1)
@@ -1054,4 +1072,5 @@ Partial Class AdminDashboard
     Friend WithEvents DatabaseConnectorBindingSource As BindingSource
     Friend WithEvents DatabaseConnectorBindingSource1 As BindingSource
     Friend WithEvents tuldoklikod As gerald.Gerald
+    Friend WithEvents time As Label
 End Class

@@ -107,7 +107,7 @@ Public Class ManageStudentAdmin
         modifyStudentForm.Visible = True
     End Sub
 
-    Private Sub searchStudent_Click(sender As Object, e As EventArgs) Handles searchStudent.Click
+    Private Sub searchStudent_Click(sender As Object, e As EventArgs)
         Try
             Dim studentDetail = searchStudentField.Text
             connector.connect.Open()
@@ -157,4 +157,6 @@ Public Class ManageStudentAdmin
         Dim y As Integer = (Me.ClientSize.Height - modifyStudentForm.Height) \ 2
         modifyStudentForm.Location = New Point(x, y)
     End Sub
+
+
 End Class
