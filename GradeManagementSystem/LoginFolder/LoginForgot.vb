@@ -380,9 +380,9 @@ Public Class LoginForgot
         Next j
     End Sub
 
-    Function SendCode()
+    Private Sub SendCode()
         emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
-    End Function
+    End Sub
 
     Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
         Dim result As Boolean
@@ -484,7 +484,7 @@ Public Class LoginForgot
     '''''CHANGE PASSWORD PANEL PANEL --------------------------------------------------------------------------
 
     Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-        Dim userID As String
+        Dim userID As String = ""
         Dim accountTypeIdentifier As String
 
         If txtb_newpassword.Text = txtb_confirmpassword.Text Then

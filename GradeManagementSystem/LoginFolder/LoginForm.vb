@@ -119,11 +119,6 @@ Public Class LoginForm
         registerForm.Visible = True
     End Sub
 
-    Private Sub forgotpasscodeportal_Click(sender As Object, e As EventArgs) Handles forgotpasscodeportal.Click
-        Forgetpasscodeportal.Show()
-        Me.Hide()
-    End Sub
-
     Private Sub exitbttn_Click(sender As Object, e As EventArgs) Handles exitbttn.Click
         End
     End Sub

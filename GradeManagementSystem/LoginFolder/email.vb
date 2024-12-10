@@ -1,7 +1,7 @@
 ﻿Imports System.Net.Mail
 
 Public Class email
-    Public Function emailReset(emailRecipient As String, emailSubject As String, emailName As String, code As String)
+    Public Sub emailReset(emailRecipient As String, emailSubject As String, emailName As String, code As String)
         Try
             Dim Smtp_Server As New SmtpClient
             Dim e_mail As New MailMessage()
@@ -57,5 +57,6 @@ Public Class email
         Catch error_t As Exception
             MsgBox("Error: " & error_t.Message, MsgBoxStyle.Critical)
         End Try
-    End Function
+
+    End Sub
 End Class

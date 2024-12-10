@@ -35,10 +35,10 @@ Partial Class AllocationManagerAdminvb
         ' 
         enrollDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         enrollDataView.Location = New Point(65, 139)
-        enrollDataView.Margin = New Padding(4, 4, 4, 4)
+        enrollDataView.Margin = New Padding(4)
         enrollDataView.Name = "enrollDataView"
         enrollDataView.RowHeadersWidth = 51
-        enrollDataView.Size = New Size(915, 372)
+        enrollDataView.Size = New Size(1239, 512)
         enrollDataView.TabIndex = 3
         ' 
         ' enrollStudentButton
@@ -46,8 +46,8 @@ Partial Class AllocationManagerAdminvb
         enrollStudentButton.BackColor = Color.DarkSeaGreen
         enrollStudentButton.FlatStyle = FlatStyle.Popup
         enrollStudentButton.Font = New Font("Sitka Banner", 9F)
-        enrollStudentButton.Location = New Point(65, 531)
-        enrollStudentButton.Margin = New Padding(4, 4, 4, 4)
+        enrollStudentButton.Location = New Point(65, 659)
+        enrollStudentButton.Margin = New Padding(4)
         enrollStudentButton.Name = "enrollStudentButton"
         enrollStudentButton.Size = New Size(176, 49)
         enrollStudentButton.TabIndex = 2
@@ -59,8 +59,8 @@ Partial Class AllocationManagerAdminvb
         gradeSectionButton.BackColor = Color.DarkSeaGreen
         gradeSectionButton.FlatStyle = FlatStyle.Popup
         gradeSectionButton.Font = New Font("Sitka Banner", 9F)
-        gradeSectionButton.Location = New Point(842, 40)
-        gradeSectionButton.Margin = New Padding(4, 4, 4, 4)
+        gradeSectionButton.Location = New Point(1166, 35)
+        gradeSectionButton.Margin = New Padding(4)
         gradeSectionButton.Name = "gradeSectionButton"
         gradeSectionButton.Size = New Size(138, 34)
         gradeSectionButton.TabIndex = 4
@@ -72,8 +72,8 @@ Partial Class AllocationManagerAdminvb
         modifyEnrollButton.BackColor = Color.DarkSeaGreen
         modifyEnrollButton.FlatStyle = FlatStyle.Popup
         modifyEnrollButton.Font = New Font("Sitka Banner", 9F)
-        modifyEnrollButton.Location = New Point(870, 531)
-        modifyEnrollButton.Margin = New Padding(4, 4, 4, 4)
+        modifyEnrollButton.Location = New Point(1194, 685)
+        modifyEnrollButton.Margin = New Padding(4)
         modifyEnrollButton.Name = "modifyEnrollButton"
         modifyEnrollButton.Size = New Size(110, 36)
         modifyEnrollButton.TabIndex = 7
@@ -86,7 +86,7 @@ Partial Class AllocationManagerAdminvb
         refreshButton.FlatStyle = FlatStyle.Popup
         refreshButton.Font = New Font("Sitka Banner", 8F)
         refreshButton.Location = New Point(65, 96)
-        refreshButton.Margin = New Padding(4, 4, 4, 4)
+        refreshButton.Margin = New Padding(4)
         refreshButton.Name = "refreshButton"
         refreshButton.Size = New Size(110, 35)
         refreshButton.TabIndex = 9
@@ -98,8 +98,8 @@ Partial Class AllocationManagerAdminvb
         classSectionButton.BackColor = Color.DarkSeaGreen
         classSectionButton.FlatStyle = FlatStyle.Popup
         classSectionButton.Font = New Font("Sitka Banner", 9F)
-        classSectionButton.Location = New Point(680, 40)
-        classSectionButton.Margin = New Padding(4, 4, 4, 4)
+        classSectionButton.Location = New Point(1001, 35)
+        classSectionButton.Margin = New Padding(4)
         classSectionButton.Name = "classSectionButton"
         classSectionButton.Size = New Size(138, 35)
         classSectionButton.TabIndex = 10
@@ -110,7 +110,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1049, 615)
+        ClientSize = New Size(1379, 749)
         Controls.Add(classSectionButton)
         Controls.Add(refreshButton)
         Controls.Add(modifyEnrollButton)
@@ -118,7 +118,7 @@ Partial Class AllocationManagerAdminvb
         Controls.Add(enrollDataView)
         Controls.Add(enrollStudentButton)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "AllocationManagerAdminvb"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AllocationManagerAdminvb"
