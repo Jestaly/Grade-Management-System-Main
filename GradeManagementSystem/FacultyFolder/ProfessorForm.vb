@@ -19,7 +19,7 @@ Public Class ProfessorForm
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
-            connector.query = "SELECT enrollment.student_id AS 'Student ID', CONCAT(student.lname,' ',student.fname,' ',student.lname) AS 'Student Name' from enrollment LEFT JOIN student ON enrollment.student_id = student.id  WHERE enrollment.class_id = '" & classID & "';"
+            connector.query = "SELECT enrollment.student_id AS 'Student ID', CONCAT(student.lname,' ',student.fname,' ',student.lname) AS 'Student' from enrollment LEFT JOIN student ON enrollment.student_id = student.id  WHERE enrollment.class_id = '" & classID & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
@@ -140,11 +140,10 @@ Public Class ProfessorForm
         Return colCount
     End Function
 
-    'stopped here
     Private Sub refreshScores()
         isRefreshed = True
-        Dim numOfColumn As Integer = getColumnNum() - 1
-        Dim numOfRow As Integer = getRowNum() - 1
+        Dim numOfColumn As Integer = projectDataView.ColumnCount
+        Dim numOfRow As Integer = projectDataView.RowCount
         Dim projItem(projectDataView.ColumnCount) As String
         Try
             connector.connect.Open()
@@ -152,21 +151,27 @@ Public Class ProfessorForm
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
-            Dim i As Integer
+            Dim i As Integer = 0
             While connector.reader.Read
                 projItem(i) = connector.reader("item_name").ToString
                 i += 1
             End While
+            connector.reader.Close()
             connector.connect.Close()
         Catch ex As MySqlException
+            connector.reader.Close()
             connector.connect.Close()
             MessageBox.Show("Database Error refreshScores()")
         End Try
 
+        placeScores(numOfColumn, projItem)
+    End Sub
+
+    Private Sub placeScores(numOfColumn As Integer, projItem() As String)
         Try
             connector.connect.Open()
             For i As Integer = 0 To numOfColumn
-                connector.query = "SELECT score FROM score_record LEFT JOIN item ON score_record.item_id = item.item_id WHERE item_name = '" & projItem(i) & "' AND class_id = '" & classID & "' AND term = '" & term & "';"
+                connector.query = "SELECT score FROM score_record LEFT JOIN item ON score_record.item_id = item.item_id WHERE item_name = '" & projItem(i) & "' AND class_id = '" & classID & "' AND term = '" & term & "' ORDER BY enrollment_id;"
                 connector.command.CommandText = connector.query
                 connector.reader = connector.command.ExecuteReader
                 Dim j As Integer = 0
@@ -184,7 +189,6 @@ Public Class ProfessorForm
             MessageBox.Show("Database Error refreshScores()2")
         End Try
     End Sub
-
     Private Sub projectDataView_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles projectDataView.CellValueChanged
         If (isRefreshed = False) Then
             Dim rowIndex As Integer = e.RowIndex
@@ -316,6 +320,7 @@ Public Class ProfessorForm
     End Sub
 
     Private Sub initializeDVS()
+        'PROFESSOR CANNOT ADD ROWS
         projectDataView.AllowUserToAddRows = False
         studentInfoDataView.AllowUserToAddRows = False
         attendanceDataView.AllowUserToAddRows = False
@@ -324,6 +329,62 @@ Public Class ProfessorForm
         gradeDataView.AllowUserToAddRows = False
         equivalentDataView.AllowUserToAddRows = False
         remarkDataView.AllowUserToAddRows = False
+
+        'PROFESSOR CANNOT DELETE ROWS
+        projectDataView.AllowUserToDeleteRows = False
+        studentInfoDataView.AllowUserToDeleteRows = False
+        attendanceDataView.AllowUserToDeleteRows = False
+        quizDataView.AllowUserToDeleteRows = False
+        examDataView.AllowUserToDeleteRows = False
+        gradeDataView.AllowUserToDeleteRows = False
+        equivalentDataView.AllowUserToDeleteRows = False
+        remarkDataView.AllowUserToDeleteRows = False
+
+        'PROFESSOR CANNOT ORDER COLUMNS BY ID AND NAMES
+        projectDataView.AllowUserToOrderColumns = False
+        studentInfoDataView.AllowUserToOrderColumns = False
+        attendanceDataView.AllowUserToOrderColumns = False
+        quizDataView.AllowUserToOrderColumns = False
+        examDataView.AllowUserToOrderColumns = False
+        gradeDataView.AllowUserToOrderColumns = False
+        equivalentDataView.AllowUserToOrderColumns = False
+        remarkDataView.AllowUserToOrderColumns = False
+
+        'PROFESSOR CANNOT RESIZE COLUMNS
+        projectDataView.AllowUserToResizeColumns = False
+        studentInfoDataView.AllowUserToResizeColumns = False
+        attendanceDataView.AllowUserToResizeColumns = False
+        quizDataView.AllowUserToResizeColumns = False
+        examDataView.AllowUserToResizeColumns = False
+        gradeDataView.AllowUserToResizeColumns = False
+        equivalentDataView.AllowUserToResizeColumns = False
+        remarkDataView.AllowUserToResizeColumns = False
+
+        'PROFESSOR CANNOT ORDER ROWS BY ID AND NAMES
+        For Each column As DataGridViewColumn In projectDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In studentInfoDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In attendanceDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In quizDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In examDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In gradeDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In equivalentDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In remarkDataView.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
     End Sub
 
     Private Sub allDataView_Scroll(sender As Object, e As ScrollEventArgs) Handles remarkDataView.Scroll
@@ -347,7 +408,7 @@ Public Class ProfessorForm
 
     Private Sub logoutButton_Click(sender As Object, e As EventArgs) Handles logoutButton.Click
         Me.Visible = False
-        LoginForm.Visible = True
+        LoginForgot.Visible = True
     End Sub
 
     Private Sub midtermButton_Click(sender As Object, e As EventArgs) Handles midtermButton.Click

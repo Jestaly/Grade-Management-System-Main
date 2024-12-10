@@ -8,23 +8,16 @@ Imports Mysqlx
 Imports Mysqlx.XDevAPI.Common
 Imports Transitions
 
-
-
-
 Public Class LoginForgot
-    Dim hidden As Boolean
-    Dim idinputTracker As Integer
-    Dim randomcode As String
-    Dim email As String
-
+    Private hidden As Boolean
+    Private idinputTracker As Integer
+    Private randomcode As String
+    Private email As String
 
     Public connector As New DatabaseConnector
     Private emailSender As New email
-    Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Private professorForm As New ProfessorForm
-
-
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -252,25 +245,15 @@ Public Class LoginForgot
     End Function
 
     Private Sub enterbttn_Click(sender As Object, e As EventArgs) Handles enterbttn.Click
-        Dim result As Boolean
-
         Try
             connector.connect.Open()
             connector.query = "SELECT student.id AS id, student.password AS password FROM student UNION SELECT professor.id AS id, professor.password AS password FROM professor UNION SELECT admin.id AS id, admin.password AS password FROM admin;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.command.ExecuteNonQuery()
+            connector.reader = connector.command.ExecuteReader
 
-            Using command As New MySqlCommand(connector.query, connector.command.Connection)
-
-                command.Parameters.AddWithValue("@id", trimmedID())
-                command.Parameters.AddWithValue("@password", password())
-
-                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
-                result = (count > 0)
-
-                If result = True Then
+            While connector.reader.Read
+                If ((connector.reader("id").ToString IsNot Nothing AndAlso connector.reader("id").ToString.Equals(trimmedID())) And connector.reader("password").ToString IsNot Nothing AndAlso connector.reader("password").ToString.Equals(password())) Then
                     If (trimmedID().Chars(0) = "1") Then
                         connector.connect.Close()
                         Me.Visible = False
@@ -280,7 +263,6 @@ Public Class LoginForgot
                         connector.connect.Close()
                         loadClass()
                         getProfName()
-                        professorForm.classChooseBox.SelectedIndex = 0
                         Me.Visible = False
                         professorForm.Visible = True
                         Return
@@ -291,7 +273,7 @@ Public Class LoginForgot
                         Return
                     End If
                 End If
-            End Using
+            End While
 
             txtb_userid.Clear()
             txtb_password.Clear()
@@ -306,6 +288,7 @@ Public Class LoginForgot
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
+        MessageBox.Show("Wrong ID or password.")
     End Sub
 
 

@@ -3,7 +3,6 @@ Imports MySql.Data.MySqlClient
 
 Public Class LoginForm
     Public connector As New DatabaseConnector
-    Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Public professorForm As New ProfessorForm
     Public Property CornerRadius As Integer = 60
