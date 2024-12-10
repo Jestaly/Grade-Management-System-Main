@@ -8,31 +8,34 @@ Public Class ProfessorForm
 
     Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
         refreshForm()
+        refreshProjCol()
+        refreshScores()
     End Sub
 
     Public Sub refreshForm()
         Try
             connector.connect.Open()
             connector.dataTable.Clear()
-            connector.query = "SELECT enrollment.student_id AS 'Student ID', CONCAT(student.lname,' ',student.fname,' ',student.lname) AS 'Student Name' from enrollment LEFT JOIN student ON enrollment.student_id = student.id  WHERE enrollment.class_id = 'CL001';"
+            connector.query = "SELECT enrollment.student_id AS 'Student ID', CONCAT(student.lname,' ',student.fname,' ',student.lname) AS 'Student Name' from enrollment LEFT JOIN student ON enrollment.student_id = student.id  WHERE enrollment.class_id = '" & classID & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.dataAdapter.SelectCommand = connector.command
             connector.dataAdapter.Fill(connector.dataTable)
             studentInfoDataView.DataSource = connector.dataTable
             connector.connect.Close()
-            connector.command.Parameters.Clear()
         Catch ex As MySqlException
             connector.connect.Close()
             connector.command.Parameters.Clear()
             MessageBox.Show("Database Error")
         End Try
     End Sub
-    Private Sub refreshProject()
+
+    Private classCode As String = classID
+    Private Sub refreshProjCol()
         Dim colCount As Integer
         Try
             connector.connect.Open()
-            connector.query = "SELECT COUNT(*) AS 'Number of Project' FROM item WHERE item_type = 'Quiz' AND class_id = 'CL008'AND term = 'Midterm';"
+            connector.query = "SELECT COUNT(*) AS 'Number of Project' FROM item WHERE item_type = 'Project' AND class_id = '" & classChooseBox.Text & "' AND term = '" & term & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
@@ -40,14 +43,118 @@ Public Class ProfessorForm
                 colCount = Integer.Parse(connector.reader("Number of Project").ToString)
             End While
 
-            For i As Integer = 1 To colCount
-                quizDataView.Columns.Add("quiz" & i, "Q" & i)
+            For j As Integer = 0 To colCount - 1
+                If (projectDataView.Columns.Count > 0) Then
+                    projectDataView.Columns.RemoveAt(0)
+                End If
             Next
+
+            For i As Integer = 0 To colCount - 1
+                projectDataView.Columns.Add("project" & (i + 1), "P" & (i + 1))
+            Next
+            connector.reader.Close()
+            connector.connect.Close()
+            refreshProjRows()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Sub refreshProjRows()
+        Dim studentCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT COUNT(*) AS 'Number of Student' FROM enrollment WHERE class_id = '" & classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("Number of Student").ToString.Equals("")) Then
+                    studentCount = Integer.Parse(connector.reader("Number of Student").ToString)
+                End If
+            End While
+            projectDataView.Rows.Clear()
+            For i As Integer = 1 To studentCount
+                projectDataView.Rows.Add()
+            Next
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Function getRowNum() As Integer
+        Dim rowCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT COUNT(enrollment_id) AS enrollment_id FROM enrollment WHERE class_id = '" & classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("enrollment_id").ToString.Equals("")) Then
+                    rowCount = Integer.Parse(connector.reader("enrollment_id").ToString)
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return rowCount
+                End If
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return rowCount
+    End Function
+
+    Private Function getColumnNum() As Integer
+        Dim colCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT COUNT(*) AS 'Number of Project' FROM item WHERE item_type = 'Project' AND class_id = '" & classChooseBox.Text & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("Number of Project").ToString.Equals("")) Then
+                    colCount = Integer.Parse(connector.reader("Number of Project").ToString)
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return colCount
+                End If
+            End While
+            connector.reader.Close()
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
+        Return colCount
+    End Function
+
+    'stopped here
+    Private Sub refreshScores()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT "
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+
+        For i As Integer = 0 To getColumnNum() - 1
+            For j As Integer = 0 To getRowNum() - 1
+                projectDataView.Rows(j).Cells(i).Value = 0
+            Next
+        Next
     End Sub
 
     Public classID As String
@@ -91,7 +198,19 @@ Public Class ProfessorForm
     End Sub
 
     Private Sub ProfessorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        initializeDVS()
         makeAIFChild()
+    End Sub
+
+    Private Sub initializeDVS()
+        projectDataView.AllowUserToAddRows = False
+        studentInfoDataView.AllowUserToAddRows = False
+        attendanceDataView.AllowUserToAddRows = False
+        quizDataView.AllowUserToAddRows = False
+        examDataView.AllowUserToAddRows = False
+        gradeDataView.AllowUserToAddRows = False
+        equivalentDataView.AllowUserToAddRows = False
+        remarkDataView.AllowUserToAddRows = False
     End Sub
 
     Private Sub allDataView_Scroll(sender As Object, e As ScrollEventArgs) Handles remarkDataView.Scroll
@@ -106,7 +225,6 @@ Public Class ProfessorForm
         End If
     End Sub
 
-
     Private Sub classChooseBox_SelectedItemChanged(sender As Object, e As EventArgs) Handles classChooseBox.SelectedIndexChanged
         '--------------CAUTION ON RUNNING CODE HERE----------------
         'MIGHT INTERCHANGE ALL DATA IN GRADING TABLES FROM DATABASE
@@ -120,7 +238,6 @@ Public Class ProfessorForm
     End Sub
 
     Private Sub midtermButton_Click(sender As Object, e As EventArgs) Handles midtermButton.Click
-        MessageBox.Show(classID)
         term = "Midterm"
         refreshForm()
     End Sub
@@ -133,13 +250,5 @@ Public Class ProfessorForm
     Public Function getTerm() As String
         Return term
     End Function
-
-    Public Function getClass() As String
-        Return classID
-    End Function
-
-    Private Sub studentInfoDataView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles studentInfoDataView.CellContentClick
-
-    End Sub
 
 End Class
