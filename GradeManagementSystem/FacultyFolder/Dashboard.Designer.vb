@@ -27,12 +27,12 @@ Partial Class Dashboard
         Panel1 = New Panel()
         activitylog2 = New Panel()
         Label5 = New Label()
+        coursemanage2 = New Panel()
+        Label3 = New Label()
         activitylog = New Label()
         logout2 = New PictureBox()
         profile2 = New Panel()
         Label4 = New Label()
-        coursemanage2 = New Panel()
-        Label3 = New Label()
         grademanagement2 = New Panel()
         Label13 = New Label()
         logoutbttn = New Label()
@@ -54,9 +54,9 @@ Partial Class Dashboard
         Panel2 = New Panel()
         Panel1.SuspendLayout()
         activitylog2.SuspendLayout()
+        coursemanage2.SuspendLayout()
         CType(logout2, ComponentModel.ISupportInitialize).BeginInit()
         profile2.SuspendLayout()
-        coursemanage2.SuspendLayout()
         grademanagement2.SuspendLayout()
         dashboard2.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +109,27 @@ Partial Class Dashboard
         Label5.TabIndex = 2
         Label5.Text = "ACTIVITY LOG"
         ' 
+        ' coursemanage2
+        ' 
+        coursemanage2.BackColor = Color.White
+        coursemanage2.Controls.Add(Label3)
+        coursemanage2.Location = New Point(-2, 294)
+        coursemanage2.Name = "coursemanage2"
+        coursemanage2.Size = New Size(300, 53)
+        coursemanage2.TabIndex = 8
+        coursemanage2.Visible = False
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Sitka Banner", 7F)
+        Label3.ForeColor = Color.DarkGreen
+        Label3.Location = New Point(37, 18)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(104, 20)
+        Label3.TabIndex = 2
+        Label3.Text = "DATA SUMMARY"
+        ' 
         ' activitylog
         ' 
         activitylog.AutoSize = True
@@ -150,27 +171,6 @@ Partial Class Dashboard
         Label4.Size = New Size(58, 20)
         Label4.TabIndex = 2
         Label4.Text = "PROFILE"
-        ' 
-        ' coursemanage2
-        ' 
-        coursemanage2.BackColor = Color.White
-        coursemanage2.Controls.Add(Label3)
-        coursemanage2.Location = New Point(-2, 294)
-        coursemanage2.Name = "coursemanage2"
-        coursemanage2.Size = New Size(300, 53)
-        coursemanage2.TabIndex = 8
-        coursemanage2.Visible = False
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Sitka Banner", 7F)
-        Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(37, 18)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(104, 20)
-        Label3.TabIndex = 2
-        Label3.Text = "DATA SUMMARY"
         ' 
         ' grademanagement2
         ' 
@@ -379,11 +379,11 @@ Partial Class Dashboard
         Panel1.PerformLayout()
         activitylog2.ResumeLayout(False)
         activitylog2.PerformLayout()
+        coursemanage2.ResumeLayout(False)
+        coursemanage2.PerformLayout()
         CType(logout2, ComponentModel.ISupportInitialize).EndInit()
         profile2.ResumeLayout(False)
         profile2.PerformLayout()
-        coursemanage2.ResumeLayout(False)
-        coursemanage2.PerformLayout()
         grademanagement2.ResumeLayout(False)
         grademanagement2.PerformLayout()
         dashboard2.ResumeLayout(False)
