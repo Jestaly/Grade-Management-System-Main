@@ -113,10 +113,6 @@ Public Class LoginForm
     Public Function getProfID() As String
         Return accountIDLogin.Text
     End Function
-    Private Sub registerAdmin_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        Visible = False
-        registerForm.Visible = True
-    End Sub
 
     Private Sub exitbttn_Click(sender As Object, e As EventArgs) Handles exitbttn.Click
         End
