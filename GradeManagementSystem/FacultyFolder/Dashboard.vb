@@ -98,7 +98,4 @@ Public Class Dashboard
         notificationpanel.Size = New Size(397, 821)
     End Sub
 
-
-
-
 End Class

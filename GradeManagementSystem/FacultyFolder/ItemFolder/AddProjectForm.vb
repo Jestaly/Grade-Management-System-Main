@@ -8,293 +8,37 @@ Public Class AddProjectForm
         Me.Visible = False
     End Sub
 
-    Private Sub AddProjectForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    End Sub
-
-    Private Function getNumProject() As Integer
-        Dim classID As String = LoginForm.professorForm.classChooseBox.Text
+    Private Function getProjRowLastIndex() As Integer
+        Dim classID As String = LoginForgot.gradingSheet.classChooseBox.Text
+        Dim value As Integer
         Try
             connector.connect.Open()
-            connector.query = "SELECT COUNT(item_type) AS num_of_project FROM item WHERE class_id = '" & classID & "' AND item_type = 'Project' AND term = '" & ProfessorForm.getTerm & "' ORDER BY item_type;"
+            connector.query = "SELECT item_name FROM item WHERE item_type = 'Project' AND class_id = '" & classID & "' AND term = '" & GradingSheet.getTerm & "';"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
             While connector.reader.Read
-                If (connector.reader("num_of_project").ToString.Equals("")) Then
-                    Return 0
-                End If
-                Dim numOfProject As Integer = Integer.Parse(connector.reader("num_of_project").ToString)
-                connector.connect.Close()
-                connector.reader.Close()
-                Return numOfProject
+                value = Integer.Parse(connector.reader("item_name").ToString.Replace("P", "").ToString)
             End While
+            connector.reader.Close()
             connector.connect.Close()
+            Return value
         Catch ex As MySqlException
+            connector.reader.Close()
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        Return 0
+        Return value
     End Function
 
     Private Sub maxScoreButton_Click(sender As Object, e As EventArgs) Handles maxScoreButton.Click
         Dim itemID As String = getItemID()
         Dim maxScore As Integer = Integer.Parse(maxScoreTextBox.Text)
-        Dim itemName = "P" & (getNumProject() + 1)
-        Dim classID As String = LoginForm.professorForm.classChooseBox.Text
+        Dim itemName = "P" & (getProjRowLastIndex() + 1)
+        Dim classID As String = LoginForgot.gradingSheet.classChooseBox.Text
         Try
             connector.connect.Open()
-            connector.query = "INSERT INTO item VALUES('" & itemID & "','" & itemName & "','Project'," & maxScore & ",'" & ProfessorForm.getTerm & "','" & classID & "');"
+            connector.query = "INSERT INTO item VALUES('" & itemID & "','" & itemName & "','Project'," & maxScore & ",'" & GradingSheet.getTerm & "','" & classID & "');"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.command.ExecuteNonQuery()
@@ -310,7 +54,7 @@ Public Class AddProjectForm
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        ProfessorForm.refreshForm()
+        GradingSheet.mainRefresh()
     End Sub
 
     Private Sub setScores(itemID As String, classID As String)

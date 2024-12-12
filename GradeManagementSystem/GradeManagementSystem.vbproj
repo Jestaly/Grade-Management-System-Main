@@ -82,8 +82,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="FacultyFolder\Delete Item Files\" />
-  </ItemGroup>
-
 </Project>
