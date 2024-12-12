@@ -39,7 +39,7 @@ Partial Class OfficialModifyDepartmentForm
         Label3.BackColor = SystemColors.Control
         Label3.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(46, 151)
+        Label3.Location = New Point(39, 156)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(162, 29)
@@ -52,7 +52,7 @@ Partial Class OfficialModifyDepartmentForm
         Label2.BackColor = SystemColors.Control
         Label2.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
         Label2.ForeColor = Color.DarkGreen
-        Label2.Location = New Point(41, 107)
+        Label2.Location = New Point(38, 112)
         Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(167, 29)
@@ -65,7 +65,7 @@ Partial Class OfficialModifyDepartmentForm
         Label.BackColor = SystemColors.Control
         Label.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
         Label.ForeColor = Color.DarkGreen
-        Label.Location = New Point(70, 69)
+        Label.Location = New Point(39, 71)
         Label.Margin = New Padding(4, 0, 4, 0)
         Label.Name = "Label"
         Label.Size = New Size(138, 29)
@@ -94,7 +94,7 @@ Partial Class OfficialModifyDepartmentForm
         clearButton.FlatStyle = FlatStyle.Popup
         clearButton.Font = New Font("Sitka Banner", 9F)
         clearButton.ForeColor = Color.Black
-        clearButton.Location = New Point(254, 237)
+        clearButton.Location = New Point(255, 237)
         clearButton.Margin = New Padding(4, 5, 4, 5)
         clearButton.Name = "clearButton"
         clearButton.Size = New Size(85, 42)
@@ -111,7 +111,7 @@ Partial Class OfficialModifyDepartmentForm
         modifyDepartmentButton.Location = New Point(41, 236)
         modifyDepartmentButton.Margin = New Padding(4, 5, 4, 5)
         modifyDepartmentButton.Name = "modifyDepartmentButton"
-        modifyDepartmentButton.Size = New Size(182, 45)
+        modifyDepartmentButton.Size = New Size(160, 45)
         modifyDepartmentButton.TabIndex = 15
         modifyDepartmentButton.Text = "Modify Department"
         modifyDepartmentButton.UseVisualStyleBackColor = False
@@ -138,7 +138,7 @@ Partial Class OfficialModifyDepartmentForm
         deptIDTextBox.Mask = "L-000"
         deptIDTextBox.Name = "deptIDTextBox"
         deptIDTextBox.PromptChar = "X"c
-        deptIDTextBox.Size = New Size(155, 33)
+        deptIDTextBox.Size = New Size(214, 33)
         deptIDTextBox.TabIndex = 23
         ' 
         ' OfficialModifyDepartmentForm

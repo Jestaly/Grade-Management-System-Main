@@ -154,7 +154,7 @@ Partial Class LoginForgot
         ' 
         txtb_userid.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_userid.BorderStyle = BorderStyle.None
-        txtb_userid.Font = New Font("Segoe UI", 9.0F)
+        txtb_userid.Font = New Font("Segoe UI", 9F)
         txtb_userid.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_userid.Location = New Point(80, 249)
         txtb_userid.Name = "txtb_userid"
@@ -182,7 +182,7 @@ Partial Class LoginForgot
         Gerald3.BackColor = Color.White
         Gerald3.BorderRadius = 40
         Gerald3.ForeColor = Color.Black
-        Gerald3.GradientAngle = 90.0F
+        Gerald3.GradientAngle = 90F
         Gerald3.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald3.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald3.Location = New Point(75, 430)
@@ -218,7 +218,7 @@ Partial Class LoginForgot
         Gerald2.BorderRadius = 20
         Gerald2.FlatAppearance.BorderColor = Color.Red
         Gerald2.ForeColor = Color.Black
-        Gerald2.GradientAngle = 90.0F
+        Gerald2.GradientAngle = 90F
         Gerald2.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald2.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald2.Location = New Point(35, 240)
@@ -242,7 +242,7 @@ Partial Class LoginForgot
         ' 
         txtb_password.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_password.BorderStyle = BorderStyle.None
-        txtb_password.Font = New Font("Segoe UI", 9.0F)
+        txtb_password.Font = New Font("Segoe UI", 9F)
         txtb_password.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_password.Location = New Point(80, 310)
         txtb_password.Name = "txtb_password"
@@ -256,7 +256,7 @@ Partial Class LoginForgot
         Gerald1.BackColor = Color.White
         Gerald1.BorderRadius = 20
         Gerald1.ForeColor = Color.Black
-        Gerald1.GradientAngle = 90.0F
+        Gerald1.GradientAngle = 90F
         Gerald1.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald1.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald1.Location = New Point(35, 300)
@@ -284,7 +284,7 @@ Partial Class LoginForgot
         p_wid.BorderRadius = 21
         p_wid.FlatAppearance.BorderColor = Color.Red
         p_wid.ForeColor = Color.Black
-        p_wid.GradientAngle = 90.0F
+        p_wid.GradientAngle = 90F
         p_wid.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wid.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wid.Location = New Point(32, 237)
@@ -301,7 +301,7 @@ Partial Class LoginForgot
         p_wpassword.BorderRadius = 21
         p_wpassword.FlatAppearance.BorderColor = Color.Red
         p_wpassword.ForeColor = Color.Black
-        p_wpassword.GradientAngle = 90.0F
+        p_wpassword.GradientAngle = 90F
         p_wpassword.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wpassword.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wpassword.Location = New Point(32, 297)
@@ -394,7 +394,7 @@ Partial Class LoginForgot
         ' 
         txtb_confirmpassword.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_confirmpassword.BorderStyle = BorderStyle.None
-        txtb_confirmpassword.Font = New Font("Segoe UI", 9.0F)
+        txtb_confirmpassword.Font = New Font("Segoe UI", 9F)
         txtb_confirmpassword.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_confirmpassword.Location = New Point(84, 354)
         txtb_confirmpassword.Name = "txtb_confirmpassword"
@@ -407,7 +407,7 @@ Partial Class LoginForgot
         Gerald12.BackColor = Color.White
         Gerald12.BorderRadius = 20
         Gerald12.ForeColor = Color.Black
-        Gerald12.GradientAngle = 90.0F
+        Gerald12.GradientAngle = 90F
         Gerald12.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald12.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald12.Location = New Point(35, 344)
@@ -421,7 +421,7 @@ Partial Class LoginForgot
         ' 
         txtb_newpassword.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_newpassword.BorderStyle = BorderStyle.None
-        txtb_newpassword.Font = New Font("Segoe UI", 9.0F)
+        txtb_newpassword.Font = New Font("Segoe UI", 9F)
         txtb_newpassword.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_newpassword.Location = New Point(84, 297)
         txtb_newpassword.Name = "txtb_newpassword"
@@ -444,7 +444,7 @@ Partial Class LoginForgot
         Gerald4.BackColor = Color.White
         Gerald4.BorderRadius = 20
         Gerald4.ForeColor = Color.Black
-        Gerald4.GradientAngle = 90.0F
+        Gerald4.GradientAngle = 90F
         Gerald4.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald4.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald4.Location = New Point(35, 287)
@@ -457,7 +457,7 @@ Partial Class LoginForgot
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         Label1.Location = New Point(23, 165)
         Label1.Name = "Label1"
@@ -499,7 +499,7 @@ Partial Class LoginForgot
         Gerald17.BorderRadius = 40
         Gerald17.Enabled = False
         Gerald17.ForeColor = Color.Black
-        Gerald17.GradientAngle = 90.0F
+        Gerald17.GradientAngle = 90F
         Gerald17.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald17.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald17.Location = New Point(71, 432)
@@ -582,7 +582,7 @@ Partial Class LoginForgot
         Gerald11.BackColor = Color.White
         Gerald11.BorderRadius = 20
         Gerald11.ForeColor = Color.Black
-        Gerald11.GradientAngle = 90.0F
+        Gerald11.GradientAngle = 90F
         Gerald11.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald11.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald11.Location = New Point(280, 300)
@@ -610,7 +610,7 @@ Partial Class LoginForgot
         Gerald10.BackColor = Color.White
         Gerald10.BorderRadius = 20
         Gerald10.ForeColor = Color.Black
-        Gerald10.GradientAngle = 90.0F
+        Gerald10.GradientAngle = 90F
         Gerald10.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald10.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald10.Location = New Point(230, 300)
@@ -638,7 +638,7 @@ Partial Class LoginForgot
         Gerald7.BackColor = Color.White
         Gerald7.BorderRadius = 20
         Gerald7.ForeColor = Color.Black
-        Gerald7.GradientAngle = 90.0F
+        Gerald7.GradientAngle = 90F
         Gerald7.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald7.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald7.Location = New Point(180, 300)
@@ -666,7 +666,7 @@ Partial Class LoginForgot
         Gerald6.BackColor = Color.White
         Gerald6.BorderRadius = 20
         Gerald6.ForeColor = Color.Black
-        Gerald6.GradientAngle = 90.0F
+        Gerald6.GradientAngle = 90F
         Gerald6.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald6.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald6.Location = New Point(130, 300)
@@ -694,7 +694,7 @@ Partial Class LoginForgot
         Gerald5.BackColor = Color.White
         Gerald5.BorderRadius = 20
         Gerald5.ForeColor = Color.Black
-        Gerald5.GradientAngle = 90.0F
+        Gerald5.GradientAngle = 90F
         Gerald5.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald5.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald5.Location = New Point(80, 300)
@@ -720,7 +720,7 @@ Partial Class LoginForgot
         ' lbl_verification
         ' 
         lbl_verification.AutoSize = True
-        lbl_verification.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbl_verification.Font = New Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbl_verification.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         lbl_verification.Location = New Point(83, 179)
         lbl_verification.Name = "lbl_verification"
@@ -745,7 +745,7 @@ Partial Class LoginForgot
         bg_code.BackColor = Color.White
         bg_code.BorderRadius = 20
         bg_code.ForeColor = Color.Black
-        bg_code.GradientAngle = 90.0F
+        bg_code.GradientAngle = 90F
         bg_code.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         bg_code.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         bg_code.Location = New Point(30, 300)
@@ -777,7 +777,7 @@ Partial Class LoginForgot
         btnbg_verify.BorderRadius = 40
         btnbg_verify.Enabled = False
         btnbg_verify.ForeColor = Color.Black
-        btnbg_verify.GradientAngle = 90.0F
+        btnbg_verify.GradientAngle = 90F
         btnbg_verify.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_verify.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_verify.Location = New Point(75, 389)
@@ -792,7 +792,7 @@ Partial Class LoginForgot
         p_wc6.BackColor = Color.White
         p_wc6.BorderRadius = 20
         p_wc6.ForeColor = Color.Black
-        p_wc6.GradientAngle = 90.0F
+        p_wc6.GradientAngle = 90F
         p_wc6.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc6.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc6.Location = New Point(277, 297)
@@ -808,7 +808,7 @@ Partial Class LoginForgot
         p_wc5.BackColor = Color.White
         p_wc5.BorderRadius = 20
         p_wc5.ForeColor = Color.Black
-        p_wc5.GradientAngle = 90.0F
+        p_wc5.GradientAngle = 90F
         p_wc5.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc5.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc5.Location = New Point(227, 297)
@@ -824,7 +824,7 @@ Partial Class LoginForgot
         p_wc4.BackColor = Color.White
         p_wc4.BorderRadius = 20
         p_wc4.ForeColor = Color.Black
-        p_wc4.GradientAngle = 90.0F
+        p_wc4.GradientAngle = 90F
         p_wc4.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc4.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc4.Location = New Point(177, 297)
@@ -840,7 +840,7 @@ Partial Class LoginForgot
         p_wc3.BackColor = Color.White
         p_wc3.BorderRadius = 20
         p_wc3.ForeColor = Color.Black
-        p_wc3.GradientAngle = 90.0F
+        p_wc3.GradientAngle = 90F
         p_wc3.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc3.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc3.Location = New Point(127, 297)
@@ -856,7 +856,7 @@ Partial Class LoginForgot
         p_wc2.BackColor = Color.White
         p_wc2.BorderRadius = 20
         p_wc2.ForeColor = Color.Black
-        p_wc2.GradientAngle = 90.0F
+        p_wc2.GradientAngle = 90F
         p_wc2.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc2.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc2.Location = New Point(77, 297)
@@ -872,7 +872,7 @@ Partial Class LoginForgot
         p_wc1.BackColor = Color.White
         p_wc1.BorderRadius = 20
         p_wc1.ForeColor = Color.Black
-        p_wc1.GradientAngle = 90.0F
+        p_wc1.GradientAngle = 90F
         p_wc1.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc1.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         p_wc1.Location = New Point(27, 297)
@@ -944,7 +944,7 @@ Partial Class LoginForgot
         ' lbl_resetpass
         ' 
         lbl_resetpass.AutoSize = True
-        lbl_resetpass.Font = New Font("Segoe UI", 15.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbl_resetpass.Font = New Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbl_resetpass.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         lbl_resetpass.Location = New Point(22, 180)
         lbl_resetpass.Name = "lbl_resetpass"
@@ -968,7 +968,7 @@ Partial Class LoginForgot
         ' 
         txtb_email.BackColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         txtb_email.BorderStyle = BorderStyle.None
-        txtb_email.Font = New Font("Segoe UI", 9.0F)
+        txtb_email.Font = New Font("Segoe UI", 9F)
         txtb_email.ForeColor = Color.FromArgb(CByte(67), CByte(67), CByte(67))
         txtb_email.Location = New Point(87, 309)
         txtb_email.Name = "txtb_email"
@@ -997,7 +997,7 @@ Partial Class LoginForgot
         Gerald8.BackColor = Color.White
         Gerald8.BorderRadius = 40
         Gerald8.ForeColor = Color.Black
-        Gerald8.GradientAngle = 90.0F
+        Gerald8.GradientAngle = 90F
         Gerald8.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald8.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Gerald8.Location = New Point(74, 384)
@@ -1022,7 +1022,7 @@ Partial Class LoginForgot
         Gerald9.BackColor = Color.White
         Gerald9.BorderRadius = 20
         Gerald9.ForeColor = Color.Black
-        Gerald9.GradientAngle = 90.0F
+        Gerald9.GradientAngle = 90F
         Gerald9.GradientBottomColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald9.GradientTopColor = Color.FromArgb(CByte(244), CByte(248), CByte(247))
         Gerald9.Location = New Point(34, 297)
@@ -1038,7 +1038,7 @@ Partial Class LoginForgot
         pb_wemail.BorderRadius = 21
         pb_wemail.FlatAppearance.BorderColor = Color.Red
         pb_wemail.ForeColor = Color.Black
-        pb_wemail.GradientAngle = 90.0F
+        pb_wemail.GradientAngle = 90F
         pb_wemail.GradientBottomColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         pb_wemail.GradientTopColor = Color.FromArgb(CByte(202), CByte(48), CByte(48))
         pb_wemail.Location = New Point(31, 294)
@@ -1054,7 +1054,7 @@ Partial Class LoginForgot
         lbl_fpass.AutoSize = True
         lbl_fpass.BackColor = Color.Transparent
         lbl_fpass.Enabled = False
-        lbl_fpass.Font = New Font("Segoe UI", 6.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_fpass.Font = New Font("Segoe UI", 6F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lbl_fpass.ForeColor = Color.White
         lbl_fpass.Location = New Point(509, 386)
         lbl_fpass.Name = "lbl_fpass"
@@ -1109,7 +1109,7 @@ Partial Class LoginForgot
         btnbg_forgotpass.BackColor = Color.White
         btnbg_forgotpass.BorderRadius = 40
         btnbg_forgotpass.ForeColor = Color.Black
-        btnbg_forgotpass.GradientAngle = 90.0F
+        btnbg_forgotpass.GradientAngle = 90F
         btnbg_forgotpass.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_forgotpass.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_forgotpass.Location = New Point(475, 345)
@@ -1124,7 +1124,7 @@ Partial Class LoginForgot
         bg_fpass.BackColor = Color.White
         bg_fpass.BorderRadius = 40
         bg_fpass.ForeColor = Color.Black
-        bg_fpass.GradientAngle = 90.0F
+        bg_fpass.GradientAngle = 90F
         bg_fpass.GradientBottomColor = Color.White
         bg_fpass.GradientTopColor = Color.White
         bg_fpass.Location = New Point(473, 343)
@@ -1155,7 +1155,7 @@ Partial Class LoginForgot
         btnbg_signin.BackColor = Color.White
         btnbg_signin.BorderRadius = 40
         btnbg_signin.ForeColor = Color.Black
-        btnbg_signin.GradientAngle = 90.0F
+        btnbg_signin.GradientAngle = 90F
         btnbg_signin.GradientBottomColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_signin.GradientTopColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         btnbg_signin.Location = New Point(125, 350)
@@ -1171,7 +1171,7 @@ Partial Class LoginForgot
         bg_signin.BackColor = Color.White
         bg_signin.BorderRadius = 40
         bg_signin.ForeColor = Color.Black
-        bg_signin.GradientAngle = 90.0F
+        bg_signin.GradientAngle = 90F
         bg_signin.GradientBottomColor = Color.White
         bg_signin.GradientTopColor = Color.White
         bg_signin.Location = New Point(123, 348)
@@ -1196,7 +1196,7 @@ Partial Class LoginForgot
         ' LoginForgot
         ' 
         AllowDrop = True
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 600)
         Controls.Add(p_base)

@@ -8,23 +8,16 @@ Imports Mysqlx
 Imports Mysqlx.XDevAPI.Common
 Imports Transitions
 
-
-
-
 Public Class LoginForgot
-    Dim hidden As Boolean
-    Dim idinputTracker As Integer
-    Dim randomcode As String
-    Dim email As String
-
+    Private hidden As Boolean
+    Private idinputTracker As Integer
+    Private randomcode As String
+    Private email As String
 
     Public connector As New DatabaseConnector
-    'Private emailSender As New email
-    Private registerForm As New RegisterForm
+    Private emailSender As New email
     Private studentForm As New StudentForm
-    Private professorForm As New ProfessorForm
-
-
+    Public gradingSheet As New GradingSheet
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -247,30 +240,20 @@ Public Class LoginForgot
         Return id
     End Function
     Private Function password() As String
-        Dim pass As String = txtb_userid.Text
+        Dim pass As String = txtb_password.Text
         Return pass
     End Function
 
     Private Sub enterbttn_Click(sender As Object, e As EventArgs) Handles enterbttn.Click
-        Dim result As Boolean
-
         Try
             connector.connect.Open()
             connector.query = "SELECT student.id AS id, student.password AS password FROM student UNION SELECT professor.id AS id, professor.password AS password FROM professor UNION SELECT admin.id AS id, admin.password AS password FROM admin;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.command.ExecuteNonQuery()
+            connector.reader = connector.command.ExecuteReader
 
-            Using command As New MySqlCommand(connector.query, connector.command.Connection)
-
-                command.Parameters.AddWithValue("@id", trimmedID())
-                command.Parameters.AddWithValue("@password", password())
-
-                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
-                result = (count > 0)
-
-                If result = True Then
+            While connector.reader.Read
+                If ((connector.reader("id").ToString IsNot Nothing AndAlso connector.reader("id").ToString.Equals(trimmedID())) And connector.reader("password").ToString IsNot Nothing AndAlso connector.reader("password").ToString.Equals(password())) Then
                     If (trimmedID().Chars(0) = "1") Then
                         connector.connect.Close()
                         Me.Visible = False
@@ -280,9 +263,8 @@ Public Class LoginForgot
                         connector.connect.Close()
                         loadClass()
                         getProfName()
-                        professorForm.classChooseBox.SelectedIndex = 0
                         Me.Visible = False
-                        professorForm.Visible = True
+                        gradingSheet.Visible = True
                         Return
                     ElseIf (trimmedID().Chars(0) = "3") Then
                         connector.connect.Close()
@@ -291,7 +273,7 @@ Public Class LoginForgot
                         Return
                     End If
                 End If
-            End Using
+            End While
 
             txtb_userid.Clear()
             txtb_password.Clear()
@@ -308,11 +290,34 @@ Public Class LoginForgot
         End Try
     End Sub
 
+    Private Sub attendanceExists()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_type FROM item WHERE item_type = 'Attendance' AND term = '" & gradingSheet.getTerm & "' AND class_id = '" & gradingSheet.classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (connector.reader("Class ID").ToString Is Nothing) Then
+                    gradingSheet.attendanceButton.Enabled = False
+                Else
+                    gradingSheet.attendanceButton.Enabled = True
+                End If
+                Exit While
+            End While
+            gradingSheet.classChooseBox.SelectedIndex = 0
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
 
     Public Sub loadClass()
         Dim classID As String = ""
         Try
-            professorForm.classChooseBox.Items.Clear()
+            gradingSheet.classChooseBox.Items.Clear()
             connector.connect.Open()
             connector.query = "SELECT class_id AS 'Class ID' FROM class WHERE class.professor_id = '" & trimmedID() & "';"
             connector.command.Connection = connector.connect
@@ -321,10 +326,10 @@ Public Class LoginForgot
             While connector.reader.Read
                 If (connector.reader("Class ID").ToString IsNot Nothing) Then
                     classID = connector.reader("Class ID").ToString
-                    professorForm.classChooseBox.Items.Add(classID)
+                    gradingSheet.classChooseBox.Items.Add(classID)
                 End If
             End While
-            professorForm.classChooseBox.SelectedIndex = 0
+            gradingSheet.classChooseBox.SelectedIndex = 0
             connector.connect.Close()
             connector.reader.Close()
         Catch ex As MySqlException
@@ -339,7 +344,7 @@ Public Class LoginForgot
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             Dim profName As String = connector.command.ExecuteScalar
-            professorForm.profTextBox.Text = profName
+            gradingSheet.profTextBox.Text = profName
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
@@ -380,9 +385,9 @@ Public Class LoginForgot
         Next j
     End Sub
 
-    ' Function SendCode()
-    '    emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
-    'End Function
+    Private Sub SendCode()
+        emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
+    End Sub
 
     Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
         Dim result As Boolean
@@ -484,30 +489,30 @@ Public Class LoginForgot
     '''''CHANGE PASSWORD PANEL PANEL --------------------------------------------------------------------------
 
     Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-        Dim userID As String
-        'Dim accountTypeIdentifier As String
+        Dim userID As String = ""
+        Dim accountTypeIdentifier As String
 
         'If txtb_newpassword.Text = txtb_confirmpassword.Text Then
         connector.connect.Open()
-            connector.query = "SELECT student.id as id, student.email as email from student union SELECT professor.id as id, professor.email as email FROM professor;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
+        connector.query = "SELECT student.id as id, student.email as email from student union SELECT professor.id as id, professor.email as email FROM professor;"
+        connector.command.Connection = connector.connect
+        connector.command.CommandText = connector.query
 
-            Using command As New MySqlCommand(connector.query, connector.command.Connection)
-                Dim read As MySqlDataReader
-                read = command.ExecuteReader
+        Using command As New MySqlCommand(connector.query, connector.command.Connection)
+            Dim read As MySqlDataReader
+            read = command.ExecuteReader
 
-                While read.Read
-                    If (read("email").Equals(email)) Then
-                        userID = read("id")
-                        Exit While
+            While read.Read
+                If (read("email").Equals(email)) Then
+                    userID = read("id")
+                    Exit While
 
-                    End If
-                End While
-                read.Close()
-            End Using
+                End If
+            End While
+            read.Close()
+        End Using
 
-            'If userID <> "" Then
+        'If userID <> "" Then
         'accountTypeIdentifier = userID.Substring(0, 1)
         '
         ' If accountTypeIdentifier = 1 Then
@@ -523,8 +528,6 @@ Public Class LoginForgot
         'End If
         '   connector.connect.Close()
         'End If
-
-
 
     End Sub
 

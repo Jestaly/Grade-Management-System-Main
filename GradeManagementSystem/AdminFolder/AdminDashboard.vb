@@ -125,7 +125,7 @@ Public Class AdminDashboard
             Dim newDepBoxLeft As Integer = Math.Min(originalPositions(depBox) + slideOffset, originalPositions(depBox) + MAX_SLIDE_OFFSET)
             Dim newCourseBoxLeft As Integer = Math.Min(originalPositions(courseBox) + slideOffset, originalPositions(courseBox) + MAX_SLIDE_OFFSET)
             ' Dim newLeft As Integer = Me.Width - searchstudent.Width - SLIDE_DISTANCE
-            ' searchstudent.Location = New Point(485, 200)
+            'searchstudent.Location = New Point(485, 200)
             ' Transition.run(searchstudent, "Left", newLeft, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
@@ -164,10 +164,10 @@ Public Class AdminDashboard
             dashbtn.MouseLeave, progbtn.MouseLeave, profbtn.MouseLeave, managebtn.MouseLeave,
         depBtn.MouseLeave, Panel2.MouseLeave
         If expand Then
-            ' searchstudent.Location = New Point(220, 200)
+            'searchstudent.Location = New Point(220, 200)
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(100))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(100))
-            '   searchstudent.Location = New Point(220, 200)
+            'searchstudent.Location = New Point(220, 200)
             expand = False
         End If
     End Sub
@@ -212,13 +212,7 @@ Public Class AdminDashboard
     '=====================================DASHBOARD BUTTON==============================='
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.Visible = False
-        LoginForm.Visible = True
-        dashIcon2.Enabled = False
-        studIcon2.Enabled = False
-        profIcon2.Enabled = False
-        progIcon2.Enabled = False
-        depIcon2.Enabled = False
-        alloIcon2.Enabled = False
+        LoginForgot.Visible = True
     End Sub
     Private Sub studBox_Click(sender As Object, e As EventArgs) Handles studBox.Click
         SwitchPanel(searchstudent)
