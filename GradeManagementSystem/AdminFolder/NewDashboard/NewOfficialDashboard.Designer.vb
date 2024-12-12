@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NewOfficialDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class NewOfficialDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         GroupBox2 = New GroupBox()
         Label31 = New Label()
@@ -68,39 +68,26 @@ Partial Class NewOfficialDashboard
         Label4 = New Label()
         PictureBox17 = New PictureBox()
         PictureBox16 = New PictureBox()
-        ProgBox = New PictureBox()
-        DepBox = New PictureBox()
-        ProfBox = New PictureBox()
-        StudBox = New PictureBox()
-        CourseBox = New PictureBox()
-        AdminBox = New PictureBox()
-        Button10 = New Button()
+        searchprogrambttn = New PictureBox()
+        searchdepartmentbttn = New PictureBox()
+        searchprofessorbttn = New PictureBox()
+        searchstudentbttn = New PictureBox()
+        searchcoursesbttn = New PictureBox()
+        searchadministratorbttn = New PictureBox()
+        generatsummarybttn = New Button()
         Label1 = New Label()
-        DataGridView1 = New DataGridView()
-        StudBox2 = New PictureBox()
-        ProfBox2 = New PictureBox()
-        AdminBox2 = New PictureBox()
-        ProgBox2 = New PictureBox()
-        DepBox2 = New PictureBox()
-        CourseBox2 = New PictureBox()
+        Panel1 = New Panel()
         GroupBox2.SuspendLayout()
         GroupBox1.SuspendLayout()
         CType(PictureBox18, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox17, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).BeginInit()
-        CType(ProgBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(DepBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(ProfBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(StudBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(CourseBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(AdminBox, ComponentModel.ISupportInitialize).BeginInit()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(StudBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(ProfBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(AdminBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(ProgBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(DepBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(CourseBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchprogrambttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchdepartmentbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchprofessorbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchstudentbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchcoursesbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchadministratorbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' GroupBox2
@@ -134,7 +121,7 @@ Partial Class NewOfficialDashboard
         ' Label31
         ' 
         Label31.AutoSize = True
-        Label31.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label31.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label31.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label31.Location = New Point(73, 283)
         Label31.Margin = New Padding(2, 0, 2, 0)
@@ -146,7 +133,7 @@ Partial Class NewOfficialDashboard
         ' Label30
         ' 
         Label30.AutoSize = True
-        Label30.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label30.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label30.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label30.Location = New Point(61, 253)
         Label30.Margin = New Padding(2, 0, 2, 0)
@@ -158,7 +145,7 @@ Partial Class NewOfficialDashboard
         ' Label29
         ' 
         Label29.AutoSize = True
-        Label29.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label29.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label29.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label29.Location = New Point(277, 208)
         Label29.Margin = New Padding(2, 0, 2, 0)
@@ -170,7 +157,7 @@ Partial Class NewOfficialDashboard
         ' Label28
         ' 
         Label28.AutoSize = True
-        Label28.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label28.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label28.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label28.Location = New Point(254, 208)
         Label28.Margin = New Padding(2, 0, 2, 0)
@@ -182,7 +169,7 @@ Partial Class NewOfficialDashboard
         ' Label27
         ' 
         Label27.AutoSize = True
-        Label27.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label27.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label27.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label27.Location = New Point(230, 208)
         Label27.Margin = New Padding(2, 0, 2, 0)
@@ -194,7 +181,7 @@ Partial Class NewOfficialDashboard
         ' Label26
         ' 
         Label26.AutoSize = True
-        Label26.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label26.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label26.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label26.Location = New Point(178, 208)
         Label26.Margin = New Padding(2, 0, 2, 0)
@@ -206,7 +193,7 @@ Partial Class NewOfficialDashboard
         ' Label25
         ' 
         Label25.AutoSize = True
-        Label25.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label25.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label25.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label25.Location = New Point(207, 208)
         Label25.Margin = New Padding(2, 0, 2, 0)
@@ -218,7 +205,7 @@ Partial Class NewOfficialDashboard
         ' Label23
         ' 
         Label23.AutoSize = True
-        Label23.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label23.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label23.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label23.Location = New Point(153, 208)
         Label23.Margin = New Padding(2, 0, 2, 0)
@@ -230,7 +217,7 @@ Partial Class NewOfficialDashboard
         ' Label22
         ' 
         Label22.AutoSize = True
-        Label22.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label22.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label22.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label22.Location = New Point(129, 208)
         Label22.Margin = New Padding(2, 0, 2, 0)
@@ -242,7 +229,7 @@ Partial Class NewOfficialDashboard
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label19.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label19.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label19.Location = New Point(104, 208)
         Label19.Margin = New Padding(2, 0, 2, 0)
@@ -254,7 +241,7 @@ Partial Class NewOfficialDashboard
         ' Label18
         ' 
         Label18.AutoSize = True
-        Label18.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label18.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label18.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label18.Location = New Point(82, 208)
         Label18.Margin = New Padding(2, 0, 2, 0)
@@ -266,7 +253,7 @@ Partial Class NewOfficialDashboard
         ' Label17
         ' 
         Label17.AutoSize = True
-        Label17.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label17.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label17.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label17.Location = New Point(59, 208)
         Label17.Margin = New Padding(2, 0, 2, 0)
@@ -296,7 +283,7 @@ Partial Class NewOfficialDashboard
         ' Label16
         ' 
         Label16.AutoSize = True
-        Label16.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label16.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label16.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label16.Location = New Point(16, 146)
         Label16.Margin = New Padding(2, 0, 2, 0)
@@ -308,7 +295,7 @@ Partial Class NewOfficialDashboard
         ' Label15
         ' 
         Label15.AutoSize = True
-        Label15.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label15.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label15.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label15.Location = New Point(23, 58)
         Label15.Margin = New Padding(2, 0, 2, 0)
@@ -319,7 +306,7 @@ Partial Class NewOfficialDashboard
         ' Label20
         ' 
         Label20.AutoSize = True
-        Label20.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label20.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label20.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label20.Location = New Point(4, 90)
         Label20.Margin = New Padding(2, 0, 2, 0)
@@ -331,7 +318,7 @@ Partial Class NewOfficialDashboard
         ' Label21
         ' 
         Label21.AutoSize = True
-        Label21.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label21.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label21.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label21.Location = New Point(23, 18)
         Label21.Margin = New Padding(2, 0, 2, 0)
@@ -371,7 +358,7 @@ Partial Class NewOfficialDashboard
         ' Label14
         ' 
         Label14.AutoSize = True
-        Label14.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label14.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label14.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label14.Location = New Point(23, 58)
         Label14.Margin = New Padding(2, 0, 2, 0)
@@ -391,7 +378,7 @@ Partial Class NewOfficialDashboard
         ' Label24
         ' 
         Label24.AutoSize = True
-        Label24.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label24.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label24.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label24.Location = New Point(-102, 217)
         Label24.Margin = New Padding(2, 0, 2, 0)
@@ -448,7 +435,7 @@ Partial Class NewOfficialDashboard
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label13.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label13.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label13.Location = New Point(268, 270)
         Label13.Margin = New Padding(2, 0, 2, 0)
@@ -488,7 +475,7 @@ Partial Class NewOfficialDashboard
         ' Label12
         ' 
         Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label12.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label12.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label12.Location = New Point(214, 270)
         Label12.Margin = New Padding(2, 0, 2, 0)
@@ -501,7 +488,7 @@ Partial Class NewOfficialDashboard
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label11.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label11.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label11.Location = New Point(158, 270)
         Label11.Margin = New Padding(2, 0, 2, 0)
@@ -514,7 +501,7 @@ Partial Class NewOfficialDashboard
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label10.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label10.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label10.Location = New Point(118, 270)
         Label10.Margin = New Padding(2, 0, 2, 0)
@@ -527,7 +514,7 @@ Partial Class NewOfficialDashboard
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label9.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label9.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label9.Location = New Point(66, 270)
         Label9.Margin = New Padding(2, 0, 2, 0)
@@ -548,7 +535,7 @@ Partial Class NewOfficialDashboard
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label8.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label8.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label8.Location = New Point(23, 15)
         Label8.Margin = New Padding(2, 0, 2, 0)
@@ -571,7 +558,7 @@ Partial Class NewOfficialDashboard
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label7.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label7.Location = New Point(37, 27)
         Label7.Margin = New Padding(2, 0, 2, 0)
@@ -583,7 +570,7 @@ Partial Class NewOfficialDashboard
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label6.Location = New Point(1102, 388)
         Label6.Margin = New Padding(2, 0, 2, 0)
@@ -604,7 +591,7 @@ Partial Class NewOfficialDashboard
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI Semibold", 7F, FontStyle.Bold)
+        Label5.Font = New Font("Segoe UI Semibold", 7.0F, FontStyle.Bold)
         Label5.Location = New Point(1123, 44)
         Label5.Margin = New Padding(2, 0, 2, 0)
         Label5.Name = "Label5"
@@ -625,6 +612,7 @@ Partial Class NewOfficialDashboard
         ' 
         ' PictureBox17
         ' 
+        PictureBox17.BackgroundImage = My.Resources.Resources.Screenshot_2024_11_28_103641_removebg_preview
         PictureBox17.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox17.Location = New Point(1170, 24)
         PictureBox17.Margin = New Padding(2)
@@ -635,6 +623,7 @@ Partial Class NewOfficialDashboard
         ' 
         ' PictureBox16
         ' 
+        PictureBox16.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_04_153009_removebg_preview
         PictureBox16.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox16.Location = New Point(970, 24)
         PictureBox16.Margin = New Padding(2)
@@ -643,87 +632,85 @@ Partial Class NewOfficialDashboard
         PictureBox16.TabIndex = 44
         PictureBox16.TabStop = False
         ' 
-        ' ProgBox
+        ' searchprogrambttn
         ' 
-        ProgBox.BackgroundImage = My.Resources.Resources.programs1
-        ProgBox.BackgroundImageLayout = ImageLayout.Stretch
-        ProgBox.Location = New Point(21, 310)
-        ProgBox.Margin = New Padding(2)
-        ProgBox.Name = "ProgBox"
-        ProgBox.Size = New Size(277, 153)
-        ProgBox.TabIndex = 41
-        ProgBox.TabStop = False
+        searchprogrambttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012201
+        searchprogrambttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchprogrambttn.Location = New Point(103, 295)
+        searchprogrambttn.Margin = New Padding(2)
+        searchprogrambttn.Name = "searchprogrambttn"
+        searchprogrambttn.Size = New Size(210, 98)
+        searchprogrambttn.TabIndex = 41
+        searchprogrambttn.TabStop = False
         ' 
-        ' DepBox
+        ' searchdepartmentbttn
         ' 
-        DepBox.BackgroundImage = My.Resources.Resources.departments1
-        DepBox.BackgroundImageLayout = ImageLayout.Stretch
-        DepBox.Location = New Point(334, 310)
-        DepBox.Margin = New Padding(2)
-        DepBox.Name = "DepBox"
-        DepBox.Size = New Size(277, 153)
-        DepBox.TabIndex = 40
-        DepBox.TabStop = False
+        searchdepartmentbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012054
+        searchdepartmentbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchdepartmentbttn.Location = New Point(356, 294)
+        searchdepartmentbttn.Margin = New Padding(2)
+        searchdepartmentbttn.Name = "searchdepartmentbttn"
+        searchdepartmentbttn.Size = New Size(210, 98)
+        searchdepartmentbttn.TabIndex = 40
+        searchdepartmentbttn.TabStop = False
         ' 
-        ' ProfBox
+        ' searchprofessorbttn
         ' 
-        ProfBox.BackgroundImage = My.Resources.Resources.professors1
-        ProfBox.BackgroundImageLayout = ImageLayout.Stretch
-        ProfBox.Location = New Point(334, 152)
-        ProfBox.Margin = New Padding(2)
-        ProfBox.Name = "ProfBox"
-        ProfBox.Size = New Size(277, 154)
-        ProfBox.TabIndex = 39
-        ProfBox.TabStop = False
+        searchprofessorbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012117
+        searchprofessorbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchprofessorbttn.Location = New Point(356, 191)
+        searchprofessorbttn.Margin = New Padding(2)
+        searchprofessorbttn.Name = "searchprofessorbttn"
+        searchprofessorbttn.Size = New Size(210, 98)
+        searchprofessorbttn.TabIndex = 39
+        searchprofessorbttn.TabStop = False
         ' 
-        ' StudBox
+        ' searchstudentbttn
         ' 
-        StudBox.BackColor = Color.Transparent
-        StudBox.BackgroundImage = My.Resources.Resources.students1
-        StudBox.BackgroundImageLayout = ImageLayout.Stretch
-        StudBox.Location = New Point(21, 152)
-        StudBox.Margin = New Padding(2)
-        StudBox.Name = "StudBox"
-        StudBox.Size = New Size(277, 154)
-        StudBox.TabIndex = 38
-        StudBox.TabStop = False
+        searchstudentbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012104
+        searchstudentbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchstudentbttn.Location = New Point(100, 191)
+        searchstudentbttn.Margin = New Padding(2)
+        searchstudentbttn.Name = "searchstudentbttn"
+        searchstudentbttn.Size = New Size(210, 98)
+        searchstudentbttn.TabIndex = 38
+        searchstudentbttn.TabStop = False
         ' 
-        ' CourseBox
+        ' searchcoursesbttn
         ' 
-        CourseBox.BackgroundImage = My.Resources.Resources.courses1
-        CourseBox.BackgroundImageLayout = ImageLayout.Stretch
-        CourseBox.Location = New Point(641, 310)
-        CourseBox.Margin = New Padding(2)
-        CourseBox.Name = "CourseBox"
-        CourseBox.Size = New Size(277, 153)
-        CourseBox.TabIndex = 37
-        CourseBox.TabStop = False
+        searchcoursesbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012213
+        searchcoursesbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchcoursesbttn.Location = New Point(616, 293)
+        searchcoursesbttn.Margin = New Padding(2)
+        searchcoursesbttn.Name = "searchcoursesbttn"
+        searchcoursesbttn.Size = New Size(210, 98)
+        searchcoursesbttn.TabIndex = 37
+        searchcoursesbttn.TabStop = False
         ' 
-        ' AdminBox
+        ' searchadministratorbttn
         ' 
-        AdminBox.BackgroundImage = My.Resources.Resources.administrators1
-        AdminBox.BackgroundImageLayout = ImageLayout.Stretch
-        AdminBox.Location = New Point(641, 152)
-        AdminBox.Margin = New Padding(2)
-        AdminBox.Name = "AdminBox"
-        AdminBox.Size = New Size(277, 154)
-        AdminBox.TabIndex = 36
-        AdminBox.TabStop = False
+        searchadministratorbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012222
+        searchadministratorbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchadministratorbttn.Location = New Point(616, 191)
+        searchadministratorbttn.Margin = New Padding(2)
+        searchadministratorbttn.Name = "searchadministratorbttn"
+        searchadministratorbttn.Size = New Size(210, 98)
+        searchadministratorbttn.TabIndex = 36
+        searchadministratorbttn.TabStop = False
         ' 
-        ' Button10
+        ' generatsummarybttn
         ' 
-        Button10.Location = New Point(369, 842)
-        Button10.Margin = New Padding(2)
-        Button10.Name = "Button10"
-        Button10.Size = New Size(242, 27)
-        Button10.TabIndex = 53
-        Button10.Text = "Generate Summary Report"
-        Button10.UseVisualStyleBackColor = True
+        generatsummarybttn.Location = New Point(291, 838)
+        generatsummarybttn.Name = "generatsummarybttn"
+        generatsummarybttn.Size = New Size(302, 34)
+        generatsummarybttn.TabIndex = 53
+        generatsummarybttn.Text = "Generate Summary Report"
+        generatsummarybttn.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 7F, FontStyle.Bold Or FontStyle.Underline)
+        Label1.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold Or FontStyle.Underline)
         Label1.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label1.Location = New Point(1078, 854)
         Label1.Margin = New Padding(2, 0, 2, 0)
@@ -732,101 +719,22 @@ Partial Class NewOfficialDashboard
         Label1.TabIndex = 54
         Label1.Text = "Read more"
         ' 
-        ' DataGridView1
+        ' Panel1
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(959, 438)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(262, 385)
-        DataGridView1.TabIndex = 55
-        ' 
-        ' StudBox2
-        ' 
-        StudBox2.BackColor = Color.Transparent
-        StudBox2.BackgroundImage = My.Resources.Resources.students2
-        StudBox2.BackgroundImageLayout = ImageLayout.Stretch
-        StudBox2.Location = New Point(21, 152)
-        StudBox2.Margin = New Padding(2)
-        StudBox2.Name = "StudBox2"
-        StudBox2.Size = New Size(277, 154)
-        StudBox2.TabIndex = 56
-        StudBox2.TabStop = False
-        ' 
-        ' ProfBox2
-        ' 
-        ProfBox2.BackColor = Color.Transparent
-        ProfBox2.BackgroundImage = My.Resources.Resources.professors2
-        ProfBox2.BackgroundImageLayout = ImageLayout.Stretch
-        ProfBox2.Location = New Point(334, 152)
-        ProfBox2.Margin = New Padding(2)
-        ProfBox2.Name = "ProfBox2"
-        ProfBox2.Size = New Size(277, 154)
-        ProfBox2.TabIndex = 57
-        ProfBox2.TabStop = False
-        ' 
-        ' AdminBox2
-        ' 
-        AdminBox2.BackColor = Color.Transparent
-        AdminBox2.BackgroundImage = My.Resources.Resources.administrators2
-        AdminBox2.BackgroundImageLayout = ImageLayout.Stretch
-        AdminBox2.Location = New Point(641, 152)
-        AdminBox2.Margin = New Padding(2)
-        AdminBox2.Name = "AdminBox2"
-        AdminBox2.Size = New Size(277, 154)
-        AdminBox2.TabIndex = 58
-        AdminBox2.TabStop = False
-        ' 
-        ' ProgBox2
-        ' 
-        ProgBox2.BackColor = Color.Transparent
-        ProgBox2.BackgroundImage = My.Resources.Resources.programs2
-        ProgBox2.BackgroundImageLayout = ImageLayout.Stretch
-        ProgBox2.Location = New Point(21, 310)
-        ProgBox2.Margin = New Padding(2)
-        ProgBox2.Name = "ProgBox2"
-        ProgBox2.Size = New Size(277, 154)
-        ProgBox2.TabIndex = 59
-        ProgBox2.TabStop = False
-        ' 
-        ' DepBox2
-        ' 
-        DepBox2.BackColor = Color.Transparent
-        DepBox2.BackgroundImage = My.Resources.Resources.departments2
-        DepBox2.BackgroundImageLayout = ImageLayout.Stretch
-        DepBox2.Location = New Point(334, 309)
-        DepBox2.Margin = New Padding(2)
-        DepBox2.Name = "DepBox2"
-        DepBox2.Size = New Size(277, 154)
-        DepBox2.TabIndex = 60
-        DepBox2.TabStop = False
-        ' 
-        ' CourseBox2
-        ' 
-        CourseBox2.BackColor = Color.Transparent
-        CourseBox2.BackgroundImage = My.Resources.Resources.courses2
-        CourseBox2.BackgroundImageLayout = ImageLayout.Stretch
-        CourseBox2.Location = New Point(641, 310)
-        CourseBox2.Margin = New Padding(2)
-        CourseBox2.Name = "CourseBox2"
-        CourseBox2.Size = New Size(277, 154)
-        CourseBox2.TabIndex = 61
-        CourseBox2.TabStop = False
+        Panel1.Location = New Point(2, 2)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1265, 896)
+        Panel1.TabIndex = 55
+        Panel1.Visible = False
         ' 
         ' NewOfficialDashboard
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1261, 897)
-        Controls.Add(CourseBox2)
-        Controls.Add(DepBox2)
-        Controls.Add(ProgBox2)
-        Controls.Add(AdminBox2)
-        Controls.Add(ProfBox2)
-        Controls.Add(StudBox2)
-        Controls.Add(DataGridView1)
+        Controls.Add(Panel1)
         Controls.Add(Label1)
-        Controls.Add(Button10)
+        Controls.Add(generatsummarybttn)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Controls.Add(PictureBox18)
@@ -837,14 +745,13 @@ Partial Class NewOfficialDashboard
         Controls.Add(Label4)
         Controls.Add(PictureBox17)
         Controls.Add(PictureBox16)
-        Controls.Add(ProgBox)
-        Controls.Add(DepBox)
-        Controls.Add(ProfBox)
-        Controls.Add(StudBox)
-        Controls.Add(CourseBox)
-        Controls.Add(AdminBox)
+        Controls.Add(searchprogrambttn)
+        Controls.Add(searchdepartmentbttn)
+        Controls.Add(searchprofessorbttn)
+        Controls.Add(searchstudentbttn)
+        Controls.Add(searchcoursesbttn)
+        Controls.Add(searchadministratorbttn)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(2)
         Name = "NewOfficialDashboard"
         Text = "dashboard"
         GroupBox2.ResumeLayout(False)
@@ -854,19 +761,12 @@ Partial Class NewOfficialDashboard
         CType(PictureBox18, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox17, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).EndInit()
-        CType(ProgBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(DepBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(ProfBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(StudBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(CourseBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(AdminBox, ComponentModel.ISupportInitialize).EndInit()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        CType(StudBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(ProfBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(AdminBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(ProgBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(DepBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(CourseBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchprogrambttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchdepartmentbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchprofessorbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchstudentbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchcoursesbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchadministratorbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -918,19 +818,13 @@ Partial Class NewOfficialDashboard
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents PictureBox16 As PictureBox
-    Friend WithEvents ProgBox As PictureBox
-    Friend WithEvents DepBox As PictureBox
-    Friend WithEvents ProfBox As PictureBox
-    Friend WithEvents StudBox As PictureBox
-    Friend WithEvents CourseBox As PictureBox
-    Friend WithEvents AdminBox As PictureBox
-    Friend WithEvents Button10 As Button
+    Friend WithEvents searchprogrambttn As PictureBox
+    Friend WithEvents searchdepartmentbttn As PictureBox
+    Friend WithEvents searchprofessorbttn As PictureBox
+    Friend WithEvents searchstudentbttn As PictureBox
+    Friend WithEvents searchcoursesbttn As PictureBox
+    Friend WithEvents searchadministratorbttn As PictureBox
+    Friend WithEvents generatsummarybttn As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents StudBox2 As PictureBox
-    Friend WithEvents ProfBox2 As PictureBox
-    Friend WithEvents AdminBox2 As PictureBox
-    Friend WithEvents ProgBox2 As PictureBox
-    Friend WithEvents DepBox2 As PictureBox
-    Friend WithEvents CourseBox2 As PictureBox
+    Friend WithEvents Panel1 As Panel
 End Class

@@ -43,14 +43,14 @@ Partial Class NewAdminDashboard
         StudIcon = New PictureBox()
         HomeIcon = New PictureBox()
         logoutbttn = New Button()
-        Button8 = New Button()
+        settingsbttn = New Button()
         profilebttn = New Button()
         Label3 = New Label()
-        AlloBtn = New Button()
-        DepBtn = New Button()
-        ProgBtn = New Button()
-        ProfBtn = New Button()
-        studentBtn = New Button()
+        allocationmanagerbttn = New Button()
+        departmentmanagementbttn = New Button()
+        programmanagementbttn = New Button()
+        professorregistrybttn = New Button()
+        studentregistrybttn = New Button()
         dashboardbttn = New Button()
         Label2 = New Label()
         Label1 = New Label()
@@ -100,14 +100,14 @@ Partial Class NewAdminDashboard
         Panel1.Controls.Add(StudIcon)
         Panel1.Controls.Add(HomeIcon)
         Panel1.Controls.Add(logoutbttn)
-        Panel1.Controls.Add(Button8)
+        Panel1.Controls.Add(settingsbttn)
         Panel1.Controls.Add(profilebttn)
         Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(AlloBtn)
-        Panel1.Controls.Add(DepBtn)
-        Panel1.Controls.Add(ProgBtn)
-        Panel1.Controls.Add(ProfBtn)
-        Panel1.Controls.Add(studentBtn)
+        Panel1.Controls.Add(allocationmanagerbttn)
+        Panel1.Controls.Add(departmentmanagementbttn)
+        Panel1.Controls.Add(programmanagementbttn)
+        Panel1.Controls.Add(professorregistrybttn)
+        Panel1.Controls.Add(studentregistrybttn)
         Panel1.Controls.Add(dashboardbttn)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label1)
@@ -122,212 +122,102 @@ Partial Class NewAdminDashboard
         ' 
         ' SettingsIcon2
         ' 
-        SettingsIcon2.BackgroundImage = My.Resources.Resources.settings2
-        SettingsIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        SettingsIcon2.Location = New Point(11, 603)
-        SettingsIcon2.Margin = New Padding(2)
-        SettingsIcon2.Name = "SettingsIcon2"
-        SettingsIcon2.Size = New Size(48, 48)
-        SettingsIcon2.TabIndex = 29
-        SettingsIcon2.TabStop = False
+        PictureBox15.BackgroundImage = My.Resources.Resources.Screenshot_2024_11_28_144752_removebg_preview
+        PictureBox15.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox15.Location = New Point(11, 661)
+        PictureBox15.Margin = New Padding(2)
+        PictureBox15.Name = "PictureBox15"
+        PictureBox15.Size = New Size(48, 48)
+        PictureBox15.TabIndex = 19
+        PictureBox15.TabStop = False
         ' 
         ' ProfileIcon2
         ' 
-        ProfileIcon2.BackgroundImage = My.Resources.Resources.profile2
-        ProfileIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        ProfileIcon2.Location = New Point(11, 543)
-        ProfileIcon2.Margin = New Padding(2)
-        ProfileIcon2.Name = "ProfileIcon2"
-        ProfileIcon2.Size = New Size(48, 48)
-        ProfileIcon2.TabIndex = 28
-        ProfileIcon2.TabStop = False
+        PictureBox14.BackgroundImage = My.Resources.Resources.SETTINGS_OUTLINE_NA_GREEN
+        PictureBox14.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox14.Location = New Point(11, 603)
+        PictureBox14.Margin = New Padding(2)
+        PictureBox14.Name = "PictureBox14"
+        PictureBox14.Size = New Size(48, 48)
+        PictureBox14.TabIndex = 18
+        PictureBox14.TabStop = False
         ' 
         ' exitIcon2
         ' 
-        exitIcon2.BackgroundImage = My.Resources.Resources.exit2
-        exitIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        exitIcon2.Location = New Point(11, 661)
-        exitIcon2.Margin = New Padding(2)
-        exitIcon2.Name = "exitIcon2"
-        exitIcon2.Size = New Size(48, 48)
-        exitIcon2.TabIndex = 27
-        exitIcon2.TabStop = False
+        PictureBox13.BackgroundImage = My.Resources.Resources.PROFILE_OUTLINE_NA_GREEN
+        PictureBox13.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox13.Location = New Point(11, 543)
+        PictureBox13.Margin = New Padding(2)
+        PictureBox13.Name = "PictureBox13"
+        PictureBox13.Size = New Size(48, 48)
+        PictureBox13.TabIndex = 17
+        PictureBox13.TabStop = False
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.BackgroundImage = My.Resources.Resources.profile
-        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(11, 543)
-        PictureBox1.Margin = New Padding(2)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(48, 48)
-        PictureBox1.TabIndex = 26
-        PictureBox1.TabStop = False
+        PictureBox12.BackgroundImage = My.Resources.Resources.ALLOCATION_OUTLINE_NA_GREEN
+        PictureBox12.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox12.Location = New Point(11, 425)
+        PictureBox12.Margin = New Padding(2)
+        PictureBox12.Name = "PictureBox12"
+        PictureBox12.Size = New Size(48, 48)
+        PictureBox12.TabIndex = 16
+        PictureBox12.TabStop = False
         ' 
         ' AlloIcon2
         ' 
-        AlloIcon2.BackgroundImage = My.Resources.Resources.allocation2
-        AlloIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        AlloIcon2.Location = New Point(11, 424)
-        AlloIcon2.Margin = New Padding(2)
-        AlloIcon2.Name = "AlloIcon2"
-        AlloIcon2.Size = New Size(48, 48)
-        AlloIcon2.TabIndex = 25
-        AlloIcon2.TabStop = False
-        ' 
-        ' DepIcon2
-        ' 
-        DepIcon2.BackgroundImage = My.Resources.Resources.department2
-        DepIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        DepIcon2.Location = New Point(11, 367)
-        DepIcon2.Margin = New Padding(2)
-        DepIcon2.Name = "DepIcon2"
-        DepIcon2.Size = New Size(48, 48)
-        DepIcon2.TabIndex = 24
-        DepIcon2.TabStop = False
-        ' 
-        ' ProgIcon2
-        ' 
-        ProgIcon2.BackgroundImage = My.Resources.Resources.prog2
-        ProgIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        ProgIcon2.Location = New Point(11, 309)
-        ProgIcon2.Margin = New Padding(2)
-        ProgIcon2.Name = "ProgIcon2"
-        ProgIcon2.Size = New Size(48, 48)
-        ProgIcon2.TabIndex = 23
-        ProgIcon2.TabStop = False
-        ' 
-        ' ProfIcon2
-        ' 
-        ProfIcon2.BackgroundImage = My.Resources.Resources.prof2
-        ProfIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        ProfIcon2.Location = New Point(11, 251)
-        ProfIcon2.Margin = New Padding(2)
-        ProfIcon2.Name = "ProfIcon2"
-        ProfIcon2.Size = New Size(48, 48)
-        ProfIcon2.TabIndex = 22
-        ProfIcon2.TabStop = False
-        ' 
-        ' StudIcon2
-        ' 
-        StudIcon2.BackgroundImage = My.Resources.Resources.stud2
-        StudIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        StudIcon2.Location = New Point(11, 193)
-        StudIcon2.Margin = New Padding(2)
-        StudIcon2.Name = "StudIcon2"
-        StudIcon2.Size = New Size(48, 48)
-        StudIcon2.TabIndex = 21
-        StudIcon2.TabStop = False
-        ' 
-        ' HomeIcon2
-        ' 
-        HomeIcon2.BackgroundImage = My.Resources.Resources.home2
-        HomeIcon2.BackgroundImageLayout = ImageLayout.Stretch
-        HomeIcon2.Location = New Point(11, 138)
-        HomeIcon2.Margin = New Padding(2)
-        HomeIcon2.Name = "HomeIcon2"
-        HomeIcon2.Size = New Size(48, 48)
-        HomeIcon2.TabIndex = 20
-        HomeIcon2.TabStop = False
-        ' 
-        ' ExitIcon
-        ' 
-        ExitIcon.BackgroundImage = My.Resources.Resources.exit1
-        ExitIcon.BackgroundImageLayout = ImageLayout.Stretch
-        ExitIcon.Location = New Point(11, 661)
-        ExitIcon.Margin = New Padding(2)
-        ExitIcon.Name = "ExitIcon"
-        ExitIcon.Size = New Size(48, 48)
-        ExitIcon.TabIndex = 19
-        ExitIcon.TabStop = False
-        ' 
-        ' SettingsIcon
-        ' 
-        SettingsIcon.BackgroundImage = My.Resources.Resources.settings
-        SettingsIcon.BackgroundImageLayout = ImageLayout.Stretch
-        SettingsIcon.Location = New Point(11, 603)
-        SettingsIcon.Margin = New Padding(2)
-        SettingsIcon.Name = "SettingsIcon"
-        SettingsIcon.Size = New Size(48, 48)
-        SettingsIcon.TabIndex = 18
-        SettingsIcon.TabStop = False
-        ' 
-        ' ProfileIcon
-        ' 
-        ProfileIcon.BackgroundImage = My.Resources.Resources.PROFILE1
-        ProfileIcon.BackgroundImageLayout = ImageLayout.Stretch
-        ProfileIcon.Location = New Point(11, 543)
-        ProfileIcon.Margin = New Padding(2)
-        ProfileIcon.Name = "ProfileIcon"
-        ProfileIcon.Size = New Size(48, 48)
-        ProfileIcon.TabIndex = 17
-        ProfileIcon.TabStop = False
-        ' 
-        ' AlloIcon
-        ' 
-        AlloIcon.BackgroundImage = My.Resources.Resources.allocation1
-        AlloIcon.BackgroundImageLayout = ImageLayout.Stretch
-        AlloIcon.Location = New Point(11, 425)
-        AlloIcon.Margin = New Padding(2)
-        AlloIcon.Name = "AlloIcon"
-        AlloIcon.Size = New Size(48, 48)
-        AlloIcon.TabIndex = 16
-        AlloIcon.TabStop = False
-        ' 
-        ' DepIcon
-        ' 
-        DepIcon.BackgroundImage = My.Resources.Resources.department1
-        DepIcon.BackgroundImageLayout = ImageLayout.Stretch
-        DepIcon.Location = New Point(11, 367)
-        DepIcon.Margin = New Padding(2)
-        DepIcon.Name = "DepIcon"
-        DepIcon.Size = New Size(48, 48)
-        DepIcon.TabIndex = 15
-        DepIcon.TabStop = False
+        PictureBox11.BackgroundImage = My.Resources.Resources.DEPARTMENTS_OUTLINE_NA_GREEN__1_
+        PictureBox11.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox11.Location = New Point(11, 367)
+        PictureBox11.Margin = New Padding(2)
+        PictureBox11.Name = "PictureBox11"
+        PictureBox11.Size = New Size(48, 48)
+        PictureBox11.TabIndex = 15
+        PictureBox11.TabStop = False
         ' 
         ' ProgIcon
         ' 
-        ProgIcon.BackgroundImage = My.Resources.Resources.prog1
-        ProgIcon.BackgroundImageLayout = ImageLayout.Stretch
-        ProgIcon.Location = New Point(11, 309)
-        ProgIcon.Margin = New Padding(2)
-        ProgIcon.Name = "ProgIcon"
-        ProgIcon.Size = New Size(48, 48)
-        ProgIcon.TabIndex = 14
-        ProgIcon.TabStop = False
+        PictureBox10.BackgroundImage = My.Resources.Resources.PROGRAM_OUTLINE_NA_GREEN
+        PictureBox10.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox10.Location = New Point(11, 309)
+        PictureBox10.Margin = New Padding(2)
+        PictureBox10.Name = "PictureBox10"
+        PictureBox10.Size = New Size(48, 48)
+        PictureBox10.TabIndex = 14
+        PictureBox10.TabStop = False
         ' 
         ' ProfIcon
         ' 
-        ProfIcon.BackgroundImage = My.Resources.Resources.prof1
-        ProfIcon.BackgroundImageLayout = ImageLayout.Stretch
-        ProfIcon.Location = New Point(11, 251)
-        ProfIcon.Margin = New Padding(2)
-        ProfIcon.Name = "ProfIcon"
-        ProfIcon.Size = New Size(48, 48)
-        ProfIcon.TabIndex = 13
-        ProfIcon.TabStop = False
+        PictureBox9.BackgroundImage = My.Resources.Resources.PROF_OUTLINE_NA_GREEN
+        PictureBox9.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox9.Location = New Point(11, 251)
+        PictureBox9.Margin = New Padding(2)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(48, 48)
+        PictureBox9.TabIndex = 13
+        PictureBox9.TabStop = False
         ' 
         ' StudIcon
         ' 
-        StudIcon.BackgroundImage = My.Resources.Resources.stud1
-        StudIcon.BackgroundImageLayout = ImageLayout.Stretch
-        StudIcon.Location = New Point(11, 193)
-        StudIcon.Margin = New Padding(2)
-        StudIcon.Name = "StudIcon"
-        StudIcon.Size = New Size(48, 48)
-        StudIcon.TabIndex = 12
-        StudIcon.TabStop = False
+        PictureBox8.BackgroundImage = My.Resources.Resources.STUDENT_OUTLINENA_GREEN
+        PictureBox8.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox8.Location = New Point(11, 193)
+        PictureBox8.Margin = New Padding(2)
+        PictureBox8.Name = "PictureBox8"
+        PictureBox8.Size = New Size(48, 48)
+        PictureBox8.TabIndex = 12
+        PictureBox8.TabStop = False
         ' 
         ' HomeIcon
         ' 
-        HomeIcon.BackgroundImage = My.Resources.Resources.home1
-        HomeIcon.BackgroundImageLayout = ImageLayout.Stretch
-        HomeIcon.Location = New Point(11, 138)
-        HomeIcon.Margin = New Padding(2)
-        HomeIcon.Name = "HomeIcon"
-        HomeIcon.Size = New Size(48, 48)
-        HomeIcon.TabIndex = 7
-        HomeIcon.TabStop = False
+        PictureBox7.BackgroundImage = My.Resources.Resources.DASHBOARD_OUTLINE_NA_GREEN_
+        PictureBox7.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox7.Location = New Point(11, 138)
+        PictureBox7.Margin = New Padding(2)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(48, 48)
+        PictureBox7.TabIndex = 7
+        PictureBox7.TabStop = False
         ' 
         ' logoutbttn
         ' 
@@ -347,23 +237,23 @@ Partial Class NewAdminDashboard
         logoutbttn.TextAlign = ContentAlignment.MiddleLeft
         logoutbttn.UseVisualStyleBackColor = True
         ' 
-        ' Button8
+        ' settingsbttn
         ' 
-        Button8.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button8.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button8.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button8.FlatStyle = FlatStyle.System
-        Button8.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button8.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button8.ImageAlign = ContentAlignment.MiddleRight
-        Button8.Location = New Point(79, 598)
-        Button8.Margin = New Padding(2)
-        Button8.Name = "Button8"
-        Button8.Size = New Size(228, 58)
-        Button8.TabIndex = 10
-        Button8.Text = "Settings"
-        Button8.TextAlign = ContentAlignment.MiddleLeft
-        Button8.UseVisualStyleBackColor = True
+        settingsbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        settingsbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        settingsbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        settingsbttn.FlatStyle = FlatStyle.System
+        settingsbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        settingsbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        settingsbttn.ImageAlign = ContentAlignment.MiddleRight
+        settingsbttn.Location = New Point(79, 598)
+        settingsbttn.Margin = New Padding(2)
+        settingsbttn.Name = "settingsbttn"
+        settingsbttn.Size = New Size(228, 58)
+        settingsbttn.TabIndex = 10
+        settingsbttn.Text = "Settings"
+        settingsbttn.TextAlign = ContentAlignment.MiddleLeft
+        settingsbttn.UseVisualStyleBackColor = True
         ' 
         ' profilebttn
         ' 
@@ -386,7 +276,7 @@ Partial Class NewAdminDashboard
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label3.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label3.Location = New Point(78, 511)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
@@ -394,91 +284,91 @@ Partial Class NewAdminDashboard
         Label3.TabIndex = 8
         Label3.Text = "OTHER"
         ' 
-        ' AlloBtn
+        ' allocationmanagerbttn
         ' 
-        AlloBtn.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        AlloBtn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        AlloBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        AlloBtn.FlatStyle = FlatStyle.System
-        AlloBtn.Font = New Font("Microsoft Sans Serif", 8.25F)
-        AlloBtn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        AlloBtn.ImageAlign = ContentAlignment.MiddleRight
-        AlloBtn.Location = New Point(78, 418)
-        AlloBtn.Margin = New Padding(2)
-        AlloBtn.Name = "AlloBtn"
-        AlloBtn.Size = New Size(228, 58)
-        AlloBtn.TabIndex = 7
-        AlloBtn.Text = "Allocation Manager"
-        AlloBtn.TextAlign = ContentAlignment.MiddleLeft
-        AlloBtn.UseVisualStyleBackColor = True
+        allocationmanagerbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        allocationmanagerbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        allocationmanagerbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        allocationmanagerbttn.FlatStyle = FlatStyle.System
+        allocationmanagerbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        allocationmanagerbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        allocationmanagerbttn.ImageAlign = ContentAlignment.MiddleRight
+        allocationmanagerbttn.Location = New Point(78, 418)
+        allocationmanagerbttn.Margin = New Padding(2)
+        allocationmanagerbttn.Name = "allocationmanagerbttn"
+        allocationmanagerbttn.Size = New Size(228, 58)
+        allocationmanagerbttn.TabIndex = 7
+        allocationmanagerbttn.Text = "Allocation Manager"
+        allocationmanagerbttn.TextAlign = ContentAlignment.MiddleLeft
+        allocationmanagerbttn.UseVisualStyleBackColor = True
         ' 
-        ' DepBtn
+        ' departmentmanagementbttn
         ' 
-        DepBtn.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        DepBtn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        DepBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        DepBtn.FlatStyle = FlatStyle.System
-        DepBtn.Font = New Font("Microsoft Sans Serif", 8.25F)
-        DepBtn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        DepBtn.Location = New Point(78, 361)
-        DepBtn.Margin = New Padding(2)
-        DepBtn.Name = "DepBtn"
-        DepBtn.Size = New Size(228, 58)
-        DepBtn.TabIndex = 6
-        DepBtn.Text = "Department Management"
-        DepBtn.TextAlign = ContentAlignment.MiddleLeft
-        DepBtn.UseVisualStyleBackColor = True
+        departmentmanagementbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        departmentmanagementbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        departmentmanagementbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        departmentmanagementbttn.FlatStyle = FlatStyle.System
+        departmentmanagementbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        departmentmanagementbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        departmentmanagementbttn.Location = New Point(78, 361)
+        departmentmanagementbttn.Margin = New Padding(2)
+        departmentmanagementbttn.Name = "departmentmanagementbttn"
+        departmentmanagementbttn.Size = New Size(228, 58)
+        departmentmanagementbttn.TabIndex = 6
+        departmentmanagementbttn.Text = "Department Management"
+        departmentmanagementbttn.TextAlign = ContentAlignment.MiddleLeft
+        departmentmanagementbttn.UseVisualStyleBackColor = True
         ' 
-        ' ProgBtn
+        ' programmanagementbttn
         ' 
-        ProgBtn.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        ProgBtn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        ProgBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        ProgBtn.FlatStyle = FlatStyle.System
-        ProgBtn.Font = New Font("Microsoft Sans Serif", 8.25F)
-        ProgBtn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        ProgBtn.Location = New Point(77, 304)
-        ProgBtn.Margin = New Padding(2)
-        ProgBtn.Name = "ProgBtn"
-        ProgBtn.Size = New Size(228, 58)
-        ProgBtn.TabIndex = 5
-        ProgBtn.Text = "Program Management"
-        ProgBtn.TextAlign = ContentAlignment.MiddleLeft
-        ProgBtn.UseVisualStyleBackColor = True
+        programmanagementbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        programmanagementbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        programmanagementbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        programmanagementbttn.FlatStyle = FlatStyle.System
+        programmanagementbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        programmanagementbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        programmanagementbttn.Location = New Point(77, 304)
+        programmanagementbttn.Margin = New Padding(2)
+        programmanagementbttn.Name = "programmanagementbttn"
+        programmanagementbttn.Size = New Size(228, 58)
+        programmanagementbttn.TabIndex = 5
+        programmanagementbttn.Text = "Program Management"
+        programmanagementbttn.TextAlign = ContentAlignment.MiddleLeft
+        programmanagementbttn.UseVisualStyleBackColor = True
         ' 
-        ' ProfBtn
+        ' professorregistrybttn
         ' 
-        ProfBtn.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        ProfBtn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        ProfBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        ProfBtn.FlatStyle = FlatStyle.System
-        ProfBtn.Font = New Font("Microsoft Sans Serif", 8.25F)
-        ProfBtn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        ProfBtn.Location = New Point(77, 247)
-        ProfBtn.Margin = New Padding(2)
-        ProfBtn.Name = "ProfBtn"
-        ProfBtn.Size = New Size(228, 58)
-        ProfBtn.TabIndex = 4
-        ProfBtn.Text = "Professor Registry"
-        ProfBtn.TextAlign = ContentAlignment.MiddleLeft
-        ProfBtn.UseVisualStyleBackColor = True
+        professorregistrybttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        professorregistrybttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        professorregistrybttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        professorregistrybttn.FlatStyle = FlatStyle.System
+        professorregistrybttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        professorregistrybttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        professorregistrybttn.Location = New Point(77, 247)
+        professorregistrybttn.Margin = New Padding(2)
+        professorregistrybttn.Name = "professorregistrybttn"
+        professorregistrybttn.Size = New Size(228, 58)
+        professorregistrybttn.TabIndex = 4
+        professorregistrybttn.Text = "Professor Registry"
+        professorregistrybttn.TextAlign = ContentAlignment.MiddleLeft
+        professorregistrybttn.UseVisualStyleBackColor = True
         ' 
-        ' studentBtn
+        ' studentregistrybttn
         ' 
-        studentBtn.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        studentBtn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        studentBtn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        studentBtn.FlatStyle = FlatStyle.System
-        studentBtn.Font = New Font("Microsoft Sans Serif", 8.25F)
-        studentBtn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        studentBtn.Location = New Point(77, 190)
-        studentBtn.Margin = New Padding(2)
-        studentBtn.Name = "studentBtn"
-        studentBtn.Size = New Size(228, 58)
-        studentBtn.TabIndex = 3
-        studentBtn.Text = "Student Registry"
-        studentBtn.TextAlign = ContentAlignment.MiddleLeft
-        studentBtn.UseVisualStyleBackColor = True
+        studentregistrybttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        studentregistrybttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        studentregistrybttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        studentregistrybttn.FlatStyle = FlatStyle.System
+        studentregistrybttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        studentregistrybttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        studentregistrybttn.Location = New Point(77, 190)
+        studentregistrybttn.Margin = New Padding(2)
+        studentregistrybttn.Name = "studentregistrybttn"
+        studentregistrybttn.Size = New Size(228, 58)
+        studentregistrybttn.TabIndex = 3
+        studentregistrybttn.Text = "Student Registry"
+        studentregistrybttn.TextAlign = ContentAlignment.MiddleLeft
+        studentregistrybttn.UseVisualStyleBackColor = True
         ' 
         ' dashboardbttn
         ' 
@@ -500,7 +390,7 @@ Partial Class NewAdminDashboard
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label2.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label2.Location = New Point(78, 101)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
@@ -511,7 +401,7 @@ Partial Class NewAdminDashboard
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label1.Location = New Point(81, 32)
         Label1.Margin = New Padding(2, 0, 2, 0)
@@ -529,13 +419,13 @@ Partial Class NewAdminDashboard
         ' 
         ' NewAdminDashboard
         ' 
-        AutoScaleDimensions = New SizeF(9F, 20F)
+        AutoScaleDimensions = New SizeF(9.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1572, 897)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         DoubleBuffered = True
-        Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(2)
@@ -570,13 +460,13 @@ Partial Class NewAdminDashboard
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents dashboardbttn As Button
-    Friend WithEvents ProgBtn As Button
-    Friend WithEvents ProfBtn As Button
-    Friend WithEvents studentBtn As Button
-    Friend WithEvents AlloBtn As Button
-    Friend WithEvents DepBtn As Button
+    Friend WithEvents programmanagementbttn As Button
+    Friend WithEvents professorregistrybttn As Button
+    Friend WithEvents studentregistrybttn As Button
+    Friend WithEvents allocationmanagerbttn As Button
+    Friend WithEvents departmentmanagementbttn As Button
     Friend WithEvents logoutbttn As Button
-    Friend WithEvents Button8 As Button
+    Friend WithEvents settingsbttn As Button
     Friend WithEvents profilebttn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents HomeIcon As PictureBox

@@ -1,12 +1,25 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports System.Runtime.InteropServices
 Public Class Dashboard
     Dim targetWidth As Integer
     Dim stepSize As Integer = 40
+    Public Property CornerRadius As Integer = 30
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-
+    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
+        MyBase.OnPaint(e)
+        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+        Dim path As New GraphicsPath()
+        path.AddArc(0, 0, CornerRadius, CornerRadius, 180, 90)
+        path.AddArc(Me.ClientSize.Width - CornerRadius, 0, CornerRadius, CornerRadius, 270, 90)
+        path.AddArc(Me.ClientSize.Width - CornerRadius, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 0, 90)
+        path.AddArc(0, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 90, 90)
+        path.CloseAllFigures()
+        Me.Region = New Region(path)
+        e.Graphics.DrawPath(New Pen(Color.Black, 2), path)
+    End Sub
     Private Sub grademanagebttn_Click(sender As Object, e As EventArgs) Handles grademanagebttn.Click
         activitylog2.Visible = False
         switchPanel(gradingsheet)
