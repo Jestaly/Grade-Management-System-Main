@@ -30,16 +30,16 @@ Partial Class ManageDepartmentAdmin
         TextBox1 = New TextBox()
         reloadbttn = New PictureBox()
         reloadbttn1 = New Label()
-        modifybttn = New PictureBox()
         adddepartmentbttn1 = New Label()
         adddepartmentbttn = New PictureBox()
+        modifybttn = New PictureBox()
         modifybttn1 = New Label()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(searchbttn, ComponentModel.ISupportInitialize).BeginInit()
         CType(searchfield, ComponentModel.ISupportInitialize).BeginInit()
         CType(reloadbttn, ComponentModel.ISupportInitialize).BeginInit()
-        CType(modifybttn, ComponentModel.ISupportInitialize).BeginInit()
         CType(adddepartmentbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(modifybttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dataView
@@ -112,16 +112,6 @@ Partial Class ManageDepartmentAdmin
         reloadbttn1.TabIndex = 14
         reloadbttn1.Text = "Reload"
         ' 
-        ' modifybttn
-        ' 
-        modifybttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_101453
-        modifybttn.BackgroundImageLayout = ImageLayout.Stretch
-        modifybttn.Location = New Point(988, 794)
-        modifybttn.Name = "modifybttn"
-        modifybttn.Size = New Size(38, 38)
-        modifybttn.TabIndex = 15
-        modifybttn.TabStop = False
-        ' 
         ' adddepartmentbttn1
         ' 
         adddepartmentbttn1.AutoSize = True
@@ -141,6 +131,16 @@ Partial Class ManageDepartmentAdmin
         adddepartmentbttn.Size = New Size(38, 38)
         adddepartmentbttn.TabIndex = 17
         adddepartmentbttn.TabStop = False
+        ' 
+        ' modifybttn
+        ' 
+        modifybttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_101453
+        modifybttn.BackgroundImageLayout = ImageLayout.Stretch
+        modifybttn.Location = New Point(988, 794)
+        modifybttn.Name = "modifybttn"
+        modifybttn.Size = New Size(38, 38)
+        modifybttn.TabIndex = 15
+        modifybttn.TabStop = False
         ' 
         ' modifybttn1
         ' 
@@ -178,8 +178,8 @@ Partial Class ManageDepartmentAdmin
         CType(searchbttn, ComponentModel.ISupportInitialize).EndInit()
         CType(searchfield, ComponentModel.ISupportInitialize).EndInit()
         CType(reloadbttn, ComponentModel.ISupportInitialize).EndInit()
-        CType(modifybttn, ComponentModel.ISupportInitialize).EndInit()
         CType(adddepartmentbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(modifybttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -190,8 +190,8 @@ Partial Class ManageDepartmentAdmin
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents reloadbttn As PictureBox
     Friend WithEvents reloadbttn1 As Label
-    Friend WithEvents modifybttn As PictureBox
     Friend WithEvents adddepartmentbttn1 As Label
     Friend WithEvents adddepartmentbttn As PictureBox
+    Friend WithEvents modifybttn As PictureBox
     Friend WithEvents modifybttn1 As Label
 End Class
