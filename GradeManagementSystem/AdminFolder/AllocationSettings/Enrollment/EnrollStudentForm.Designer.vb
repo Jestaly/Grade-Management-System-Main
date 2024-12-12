@@ -96,8 +96,9 @@ Partial Class EnrollStudentForm
         enrollmentIDTextBox.Mask = "L-000"
         enrollmentIDTextBox.Name = "enrollmentIDTextBox"
         enrollmentIDTextBox.PromptChar = "X"c
-        enrollmentIDTextBox.Size = New Size(124, 33)
+        enrollmentIDTextBox.Size = New Size(187, 33)
         enrollmentIDTextBox.TabIndex = 24
+        enrollmentIDTextBox.TextAlign = HorizontalAlignment.Center
         ' 
         ' Label3
         ' 
@@ -116,7 +117,7 @@ Partial Class EnrollStudentForm
         enrollButton.BackColor = Color.DarkSeaGreen
         enrollButton.FlatStyle = FlatStyle.Popup
         enrollButton.Font = New Font("Sitka Banner", 9F)
-        enrollButton.Location = New Point(207, 289)
+        enrollButton.Location = New Point(46, 304)
         enrollButton.Margin = New Padding(4, 5, 4, 5)
         enrollButton.Name = "enrollButton"
         enrollButton.Size = New Size(133, 42)
@@ -185,7 +186,7 @@ Partial Class EnrollStudentForm
         ' 
         showProfessorTextBox.Enabled = False
         showProfessorTextBox.Font = New Font("Sitka Banner", 10F)
-        showProfessorTextBox.Location = New Point(408, 108)
+        showProfessorTextBox.Location = New Point(408, 126)
         showProfessorTextBox.Margin = New Padding(4, 5, 4, 5)
         showProfessorTextBox.Name = "showProfessorTextBox"
         showProfessorTextBox.Size = New Size(363, 33)
@@ -196,7 +197,7 @@ Partial Class EnrollStudentForm
         Label5.AutoSize = True
         Label5.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(408, 74)
+        Label5.Location = New Point(408, 92)
         Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
         Label5.Size = New Size(88, 29)

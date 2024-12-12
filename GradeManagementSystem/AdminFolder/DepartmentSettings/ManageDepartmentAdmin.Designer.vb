@@ -23,73 +23,34 @@ Partial Class ManageDepartmentAdmin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManageDepartmentAdmin))
-        addDepartment = New Button()
-        modifyButton = New Button()
         dataView = New DataGridView()
-        removeDeptButton = New Button()
         searchbttn = New PictureBox()
         departmentlabel = New Label()
         searchfield = New PictureBox()
         TextBox1 = New TextBox()
         reloadbttn = New PictureBox()
         reloadbttn1 = New Label()
+        modifybttn = New PictureBox()
+        adddepartmentbttn1 = New Label()
+        adddepartmentbttn = New PictureBox()
+        modifybttn1 = New Label()
         CType(dataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(searchbttn, ComponentModel.ISupportInitialize).BeginInit()
         CType(searchfield, ComponentModel.ISupportInitialize).BeginInit()
         CType(reloadbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(modifybttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(adddepartmentbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' addDepartment
-        ' 
-        addDepartment.BackColor = Color.DarkGreen
-        addDepartment.FlatStyle = FlatStyle.Popup
-        addDepartment.Font = New Font("Microsoft Sans Serif", 8.25F)
-        addDepartment.ForeColor = Color.White
-        addDepartment.Location = New Point(1045, 275)
-        addDepartment.Margin = New Padding(4)
-        addDepartment.Name = "addDepartment"
-        addDepartment.Size = New Size(147, 36)
-        addDepartment.TabIndex = 1
-        addDepartment.Text = "Add Department"
-        addDepartment.UseVisualStyleBackColor = False
-        ' 
-        ' modifyButton
-        ' 
-        modifyButton.BackColor = Color.DarkGreen
-        modifyButton.FlatStyle = FlatStyle.Popup
-        modifyButton.Font = New Font("Microsoft Sans Serif", 8.25F)
-        modifyButton.ForeColor = Color.White
-        modifyButton.Location = New Point(837, 831)
-        modifyButton.Margin = New Padding(4)
-        modifyButton.Name = "modifyButton"
-        modifyButton.Size = New Size(173, 36)
-        modifyButton.TabIndex = 2
-        modifyButton.Text = "Modify Department"
-        modifyButton.UseVisualStyleBackColor = False
         ' 
         ' dataView
         ' 
         dataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dataView.Location = New Point(71, 319)
+        dataView.Location = New Point(71, 296)
         dataView.Margin = New Padding(4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
         dataView.Size = New Size(1121, 495)
         dataView.TabIndex = 5
-        ' 
-        ' removeDeptButton
-        ' 
-        removeDeptButton.BackColor = Color.DarkGreen
-        removeDeptButton.FlatStyle = FlatStyle.Popup
-        removeDeptButton.Font = New Font("Microsoft Sans Serif", 8.25F)
-        removeDeptButton.ForeColor = Color.White
-        removeDeptButton.Location = New Point(1018, 831)
-        removeDeptButton.Margin = New Padding(4)
-        removeDeptButton.Name = "removeDeptButton"
-        removeDeptButton.Size = New Size(174, 36)
-        removeDeptButton.TabIndex = 6
-        removeDeptButton.Text = "Remove Department"
-        removeDeptButton.UseVisualStyleBackColor = False
         ' 
         ' searchbttn
         ' 
@@ -114,7 +75,7 @@ Partial Class ManageDepartmentAdmin
         ' 
         ' searchfield
         ' 
-        searchfield.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_0932281
+        searchfield.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_0932282
         searchfield.BackgroundImageLayout = ImageLayout.Stretch
         searchfield.Location = New Point(71, 137)
         searchfield.Name = "searchfield"
@@ -133,9 +94,9 @@ Partial Class ManageDepartmentAdmin
         ' 
         ' reloadbttn
         ' 
-        reloadbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_095237
+        reloadbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_0952371
         reloadbttn.BackgroundImageLayout = ImageLayout.Stretch
-        reloadbttn.Location = New Point(71, 281)
+        reloadbttn.Location = New Point(71, 258)
         reloadbttn.Name = "reloadbttn"
         reloadbttn.Size = New Size(30, 30)
         reloadbttn.TabIndex = 13
@@ -145,11 +106,51 @@ Partial Class ManageDepartmentAdmin
         ' 
         reloadbttn1.AutoSize = True
         reloadbttn1.ForeColor = Color.FromArgb(CByte(4), CByte(64), CByte(30))
-        reloadbttn1.Location = New Point(98, 283)
+        reloadbttn1.Location = New Point(98, 260)
         reloadbttn1.Name = "reloadbttn1"
         reloadbttn1.Size = New Size(66, 25)
         reloadbttn1.TabIndex = 14
         reloadbttn1.Text = "Reload"
+        ' 
+        ' modifybttn
+        ' 
+        modifybttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_101453
+        modifybttn.BackgroundImageLayout = ImageLayout.Stretch
+        modifybttn.Location = New Point(988, 794)
+        modifybttn.Name = "modifybttn"
+        modifybttn.Size = New Size(38, 38)
+        modifybttn.TabIndex = 15
+        modifybttn.TabStop = False
+        ' 
+        ' adddepartmentbttn1
+        ' 
+        adddepartmentbttn1.AutoSize = True
+        adddepartmentbttn1.ForeColor = Color.FromArgb(CByte(4), CByte(64), CByte(30))
+        adddepartmentbttn1.Location = New Point(1046, 258)
+        adddepartmentbttn1.Name = "adddepartmentbttn1"
+        adddepartmentbttn1.Size = New Size(146, 25)
+        adddepartmentbttn1.TabIndex = 16
+        adddepartmentbttn1.Text = "Add Department"
+        ' 
+        ' adddepartmentbttn
+        ' 
+        adddepartmentbttn.BackgroundImage = CType(resources.GetObject("adddepartmentbttn.BackgroundImage"), Image)
+        adddepartmentbttn.BackgroundImageLayout = ImageLayout.Stretch
+        adddepartmentbttn.Location = New Point(1009, 253)
+        adddepartmentbttn.Name = "adddepartmentbttn"
+        adddepartmentbttn.Size = New Size(38, 38)
+        adddepartmentbttn.TabIndex = 17
+        adddepartmentbttn.TabStop = False
+        ' 
+        ' modifybttn1
+        ' 
+        modifybttn1.AutoSize = True
+        modifybttn1.ForeColor = Color.FromArgb(CByte(4), CByte(64), CByte(30))
+        modifybttn1.Location = New Point(1023, 800)
+        modifybttn1.Name = "modifybttn1"
+        modifybttn1.Size = New Size(169, 25)
+        modifybttn1.TabIndex = 18
+        modifybttn1.Text = "Modify Department"
         ' 
         ' ManageDepartmentAdmin
         ' 
@@ -157,16 +158,17 @@ Partial Class ManageDepartmentAdmin
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1261, 897)
+        Controls.Add(modifybttn1)
+        Controls.Add(adddepartmentbttn)
+        Controls.Add(adddepartmentbttn1)
+        Controls.Add(modifybttn)
         Controls.Add(reloadbttn1)
         Controls.Add(reloadbttn)
         Controls.Add(TextBox1)
         Controls.Add(searchbttn)
         Controls.Add(searchfield)
         Controls.Add(departmentlabel)
-        Controls.Add(removeDeptButton)
         Controls.Add(dataView)
-        Controls.Add(modifyButton)
-        Controls.Add(addDepartment)
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4)
         Name = "ManageDepartmentAdmin"
@@ -176,17 +178,20 @@ Partial Class ManageDepartmentAdmin
         CType(searchbttn, ComponentModel.ISupportInitialize).EndInit()
         CType(searchfield, ComponentModel.ISupportInitialize).EndInit()
         CType(reloadbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(modifybttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(adddepartmentbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents addDepartment As Button
-    Friend WithEvents modifyButton As Button
     Friend WithEvents dataView As DataGridView
-    Friend WithEvents removeDeptButton As Button
     Friend WithEvents searchbttn As PictureBox
     Friend WithEvents departmentlabel As Label
     Friend WithEvents searchfield As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents reloadbttn As PictureBox
     Friend WithEvents reloadbttn1 As Label
+    Friend WithEvents modifybttn As PictureBox
+    Friend WithEvents adddepartmentbttn1 As Label
+    Friend WithEvents adddepartmentbttn As PictureBox
+    Friend WithEvents modifybttn1 As Label
 End Class

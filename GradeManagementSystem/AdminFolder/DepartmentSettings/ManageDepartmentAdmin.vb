@@ -41,9 +41,7 @@ Public Class ManageDepartmentAdmin
             MessageBox.Show("Database Error")
         End Try
     End Sub
-
-    Private Sub addDepartment_Click(sender As Object, e As EventArgs) Handles addDepartment.Click
-
+    Private Sub adddepartmentbttn_Click(sender As Object, e As EventArgs) Handles adddepartmentbttn.Click
         Dim dCount As Integer = 0
         Try
             connector.connect.Open()
@@ -63,6 +61,46 @@ Public Class ManageDepartmentAdmin
         addDepartmentForm.Visible = True
     End Sub
 
+    Private Sub adddepartmentbttn1_Click(sender As Object, e As EventArgs) Handles adddepartmentbttn1.Click
+        Dim dCount As Integer = 0
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM dept_count_history ORDER BY count DESC LIMIT 1;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                dCount = Integer.Parse(connector.reader("count").ToString())
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        addDepartmentForm.departmentIDTextBox.Text = "D" & "-" & getZeros(dCount) & (dCount + 1)
+        addDepartmentForm.Visible = True
+    End Sub
+    Private Sub addDepartment_Click(sender As Object, e As EventArgs)
+
+        Dim dCount = 0
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM dept_count_history ORDER BY count DESC LIMIT 1;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                dCount = Integer.Parse(connector.reader("count").ToString)
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        addDepartmentForm.departmentIDTextBox.Text = "D" & "-" & getZeros(dCount) & dCount + 1
+        addDepartmentForm.Visible = True
+    End Sub
+
     Private Function getZeros(dCount As Integer) As String
         Dim zeros As String = "000"
         Select Case dCount.ToString.Length
@@ -76,7 +114,7 @@ Public Class ManageDepartmentAdmin
         Return zeros
     End Function
 
-    Private Sub modifyButton_Click(sender As Object, e As EventArgs) Handles modifyButton.Click
+    Private Sub modifyButton_Click(sender As Object, e As EventArgs)
         modifyDepartmentForm.Visible = True
     End Sub
 
@@ -124,5 +162,11 @@ Public Class ManageDepartmentAdmin
 
     End Sub
 
+    Private Sub modifybttn_Click(sender As Object, e As EventArgs) Handles modifybttn.Click
+        modifyDepartmentForm.Visible = True
+    End Sub
 
+    Private Sub modifybttn1_Click(sender As Object, e As EventArgs) Handles modifybttn1.Click
+        modifyDepartmentForm.Visible = True
+    End Sub
 End Class
