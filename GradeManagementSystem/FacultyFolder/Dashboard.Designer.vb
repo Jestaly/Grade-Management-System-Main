@@ -103,7 +103,7 @@ Partial Class Dashboard
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Sitka Banner", 7F)
+        Label5.Font = New Font("Sitka Banner", 7.0F)
         Label5.ForeColor = Color.DarkGreen
         Label5.Location = New Point(30, 14)
         Label5.Margin = New Padding(2, 0, 2, 0)
@@ -116,29 +116,27 @@ Partial Class Dashboard
         ' 
         coursemanage2.BackColor = Color.White
         coursemanage2.Controls.Add(Label3)
-        coursemanage2.Location = New Point(-2, 235)
-        coursemanage2.Margin = New Padding(2, 2, 2, 2)
+        coursemanage2.Location = New Point(-2, 294)
         coursemanage2.Name = "coursemanage2"
-        coursemanage2.Size = New Size(240, 42)
+        coursemanage2.Size = New Size(300, 53)
         coursemanage2.TabIndex = 8
         coursemanage2.Visible = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Sitka Banner", 7F)
+        Label3.Font = New Font("Sitka Banner", 7.0F)
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(30, 14)
-        Label3.Margin = New Padding(2, 0, 2, 0)
+        Label3.Location = New Point(37, 18)
         Label3.Name = "Label3"
-        Label3.Size = New Size(88, 18)
+        Label3.Size = New Size(104, 20)
         Label3.TabIndex = 2
         Label3.Text = "DATA SUMMARY"
         ' 
         ' activitylog
         ' 
         activitylog.AutoSize = True
-        activitylog.Font = New Font("Verdana", 6F)
+        activitylog.Font = New Font("Verdana", 6.0F)
         activitylog.ForeColor = Color.White
         activitylog.Location = New Point(34, 303)
         activitylog.Margin = New Padding(2, 0, 2, 0)
@@ -171,7 +169,7 @@ Partial Class Dashboard
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Sitka Banner", 7F)
+        Label4.Font = New Font("Sitka Banner", 7.0F)
         Label4.ForeColor = Color.DarkGreen
         Label4.Location = New Point(30, 14)
         Label4.Margin = New Padding(2, 0, 2, 0)
@@ -194,7 +192,7 @@ Partial Class Dashboard
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Font = New Font("Sitka Banner", 7F)
+        Label13.Font = New Font("Sitka Banner", 7.0F)
         Label13.ForeColor = Color.DarkGreen
         Label13.Location = New Point(30, 14)
         Label13.Margin = New Padding(2, 0, 2, 0)
@@ -206,7 +204,7 @@ Partial Class Dashboard
         ' logoutbttn
         ' 
         logoutbttn.AutoSize = True
-        logoutbttn.Font = New Font("Verdana", 6F)
+        logoutbttn.Font = New Font("Verdana", 6.0F)
         logoutbttn.ForeColor = Color.White
         logoutbttn.Location = New Point(75, 596)
         logoutbttn.Margin = New Padding(2, 0, 2, 0)
@@ -229,7 +227,7 @@ Partial Class Dashboard
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Font = New Font("Sitka Banner", 7F)
+        Label7.Font = New Font("Sitka Banner", 7.0F)
         Label7.ForeColor = Color.DarkGreen
         Label7.Location = New Point(30, 14)
         Label7.Margin = New Padding(2, 0, 2, 0)
@@ -241,7 +239,7 @@ Partial Class Dashboard
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Verdana", 6F)
+        Label6.Font = New Font("Verdana", 6.0F)
         Label6.ForeColor = Color.White
         Label6.Location = New Point(46, 82)
         Label6.Margin = New Padding(2, 0, 2, 0)
@@ -264,7 +262,7 @@ Partial Class Dashboard
         ' profilebttn
         ' 
         profilebttn.AutoSize = True
-        profilebttn.Font = New Font("Verdana", 6F)
+        profilebttn.Font = New Font("Verdana", 6.0F)
         profilebttn.ForeColor = Color.White
         profilebttn.Location = New Point(34, 363)
         profilebttn.Margin = New Padding(2, 0, 2, 0)
@@ -276,7 +274,7 @@ Partial Class Dashboard
         ' coursemanagebttn
         ' 
         coursemanagebttn.AutoSize = True
-        coursemanagebttn.Font = New Font("Verdana", 6F)
+        coursemanagebttn.Font = New Font("Verdana", 6.0F)
         coursemanagebttn.ForeColor = Color.White
         coursemanagebttn.Location = New Point(31, 244)
         coursemanagebttn.Margin = New Padding(2, 0, 2, 0)
@@ -288,7 +286,7 @@ Partial Class Dashboard
         ' grademanagebttn
         ' 
         grademanagebttn.AutoSize = True
-        grademanagebttn.Font = New Font("Verdana", 6F)
+        grademanagebttn.Font = New Font("Verdana", 6.0F)
         grademanagebttn.ForeColor = Color.White
         grademanagebttn.Location = New Point(30, 190)
         grademanagebttn.Margin = New Padding(2, 0, 2, 0)
@@ -300,7 +298,7 @@ Partial Class Dashboard
         ' dashboardbttn
         ' 
         dashboardbttn.AutoSize = True
-        dashboardbttn.Font = New Font("Verdana", 6F)
+        dashboardbttn.Font = New Font("Verdana", 6.0F)
         dashboardbttn.ForeColor = Color.White
         dashboardbttn.Location = New Point(30, 137)
         dashboardbttn.Margin = New Padding(2, 0, 2, 0)
@@ -326,7 +324,7 @@ Partial Class Dashboard
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Font = New Font("Sitka Banner", 8F)
+        Label11.Font = New Font("Sitka Banner", 8.0F)
         Label11.ForeColor = Color.DarkGreen
         Label11.Location = New Point(19, 76)
         Label11.Margin = New Padding(2, 0, 2, 0)
@@ -341,7 +339,7 @@ Partial Class Dashboard
         profmenu.BackgroundImageLayout = ImageLayout.Zoom
         profmenu.BorderRadius = 60
         profmenu.ForeColor = Color.Black
-        profmenu.GradientAngle = 90F
+        profmenu.GradientAngle = 90.0F
         profmenu.GradientBottomColor = Color.Transparent
         profmenu.GradientTopColor = Color.Transparent
         profmenu.Image = CType(resources.GetObject("profmenu.Image"), Image)
@@ -355,7 +353,7 @@ Partial Class Dashboard
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Sitka Banner", 10F)
+        Label1.Font = New Font("Sitka Banner", 10.0F)
         Label1.Location = New Point(94, 19)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
@@ -387,7 +385,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1360, 657)
