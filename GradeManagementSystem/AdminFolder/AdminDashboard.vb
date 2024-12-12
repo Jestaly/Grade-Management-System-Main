@@ -198,7 +198,7 @@ Public Class AdminDashboard
     '=====================================DASHBOARD BUTTON==============================='
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.Visible = False
-        LoginForm.Visible = True
+        LoginForgot.Visible = True
     End Sub
     Private Sub studBox_Click(sender As Object, e As EventArgs) Handles studBox.Click
         searchstudent.Show()

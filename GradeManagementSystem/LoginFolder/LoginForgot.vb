@@ -17,7 +17,7 @@ Public Class LoginForgot
     Public connector As New DatabaseConnector
     Private emailSender As New email
     Private studentForm As New StudentForm
-    Private professorForm As New ProfessorForm
+    Public gradingSheet As New GradingSheet
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         MyBase.OnPaint(e)
@@ -240,7 +240,7 @@ Public Class LoginForgot
         Return id
     End Function
     Private Function password() As String
-        Dim pass As String = txtb_userid.Text
+        Dim pass As String = txtb_password.Text
         Return pass
     End Function
 
@@ -264,7 +264,7 @@ Public Class LoginForgot
                         loadClass()
                         getProfName()
                         Me.Visible = False
-                        professorForm.Visible = True
+                        gradingSheet.Visible = True
                         Return
                     ElseIf (trimmedID().Chars(0) = "3") Then
                         connector.connect.Close()
@@ -288,14 +288,36 @@ Public Class LoginForgot
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
-        MessageBox.Show("Wrong ID or password.")
     End Sub
 
+    Private Sub attendanceExists()
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_type FROM item WHERE item_type = 'Attendance' AND term = '" & gradingSheet.getTerm & "' AND class_id = '" & gradingSheet.classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (connector.reader("Class ID").ToString Is Nothing) Then
+                    gradingSheet.attendanceButton.Enabled = False
+                Else
+                    gradingSheet.attendanceButton.Enabled = True
+                End If
+                Exit While
+            End While
+            gradingSheet.classChooseBox.SelectedIndex = 0
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
 
     Public Sub loadClass()
         Dim classID As String = ""
         Try
-            professorForm.classChooseBox.Items.Clear()
+            gradingSheet.classChooseBox.Items.Clear()
             connector.connect.Open()
             connector.query = "SELECT class_id AS 'Class ID' FROM class WHERE class.professor_id = '" & trimmedID() & "';"
             connector.command.Connection = connector.connect
@@ -304,10 +326,10 @@ Public Class LoginForgot
             While connector.reader.Read
                 If (connector.reader("Class ID").ToString IsNot Nothing) Then
                     classID = connector.reader("Class ID").ToString
-                    professorForm.classChooseBox.Items.Add(classID)
+                    gradingSheet.classChooseBox.Items.Add(classID)
                 End If
             End While
-            professorForm.classChooseBox.SelectedIndex = 0
+            gradingSheet.classChooseBox.SelectedIndex = 0
             connector.connect.Close()
             connector.reader.Close()
         Catch ex As MySqlException
@@ -322,7 +344,7 @@ Public Class LoginForgot
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             Dim profName As String = connector.command.ExecuteScalar
-            professorForm.profTextBox.Text = profName
+            gradingSheet.profTextBox.Text = profName
             connector.connect.Close()
         Catch ex As MySqlException
             connector.connect.Close()
@@ -506,8 +528,6 @@ Public Class LoginForgot
             End If
             connector.connect.Close()
         End If
-
-
 
     End Sub
 
