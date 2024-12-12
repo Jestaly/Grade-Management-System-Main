@@ -90,7 +90,7 @@ Partial Class AdminDashboard
         DatabaseConnectorBindingSource1 = New BindingSource(components)
         DatabaseConnectorBindingSource = New BindingSource(components)
         tuldoklikod = New gerald.Gerald()
-        time = New Label()
+        ToolTip1 = New ToolTip(components)
         Panel2.SuspendLayout()
         CType(alloIcon2, ComponentModel.ISupportInitialize).BeginInit()
         CType(depIcon2, ComponentModel.ISupportInitialize).BeginInit()
@@ -150,7 +150,7 @@ Partial Class AdminDashboard
         Panel2.Location = New Point(0, 166)
         Panel2.Margin = New Padding(4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(468, 671)
+        Panel2.Size = New Size(374, 537)
         Panel2.TabIndex = 11
         ' 
         ' alloIcon2
@@ -158,10 +158,10 @@ Partial Class AdminDashboard
         alloIcon2.BackColor = Color.Transparent
         alloIcon2.BackgroundImage = CType(resources.GetObject("alloIcon2.BackgroundImage"), Image)
         alloIcon2.BackgroundImageLayout = ImageLayout.Zoom
-        alloIcon2.Location = New Point(4, 432)
+        alloIcon2.Location = New Point(3, 346)
         alloIcon2.Margin = New Padding(2)
         alloIcon2.Name = "alloIcon2"
-        alloIcon2.Size = New Size(62, 81)
+        alloIcon2.Size = New Size(50, 65)
         alloIcon2.SizeMode = PictureBoxSizeMode.Zoom
         alloIcon2.TabIndex = 64
         alloIcon2.TabStop = False
@@ -171,10 +171,10 @@ Partial Class AdminDashboard
         depIcon2.BackColor = Color.Transparent
         depIcon2.BackgroundImage = CType(resources.GetObject("depIcon2.BackgroundImage"), Image)
         depIcon2.BackgroundImageLayout = ImageLayout.Zoom
-        depIcon2.Location = New Point(4, 341)
+        depIcon2.Location = New Point(3, 273)
         depIcon2.Margin = New Padding(2)
         depIcon2.Name = "depIcon2"
-        depIcon2.Size = New Size(62, 81)
+        depIcon2.Size = New Size(50, 65)
         depIcon2.SizeMode = PictureBoxSizeMode.Zoom
         depIcon2.TabIndex = 63
         depIcon2.TabStop = False
@@ -184,10 +184,10 @@ Partial Class AdminDashboard
         profIcon2.BackColor = Color.Transparent
         profIcon2.BackgroundImage = CType(resources.GetObject("profIcon2.BackgroundImage"), Image)
         profIcon2.BackgroundImageLayout = ImageLayout.Zoom
-        profIcon2.Location = New Point(4, 256)
+        profIcon2.Location = New Point(3, 205)
         profIcon2.Margin = New Padding(2)
         profIcon2.Name = "profIcon2"
-        profIcon2.Size = New Size(62, 81)
+        profIcon2.Size = New Size(50, 65)
         profIcon2.SizeMode = PictureBoxSizeMode.Zoom
         profIcon2.TabIndex = 62
         profIcon2.TabStop = False
@@ -197,10 +197,10 @@ Partial Class AdminDashboard
         progIcon2.BackColor = Color.Transparent
         progIcon2.BackgroundImage = CType(resources.GetObject("progIcon2.BackgroundImage"), Image)
         progIcon2.BackgroundImageLayout = ImageLayout.Zoom
-        progIcon2.Location = New Point(6, 171)
+        progIcon2.Location = New Point(5, 137)
         progIcon2.Margin = New Padding(2)
         progIcon2.Name = "progIcon2"
-        progIcon2.Size = New Size(61, 81)
+        progIcon2.Size = New Size(49, 65)
         progIcon2.SizeMode = PictureBoxSizeMode.Zoom
         progIcon2.TabIndex = 61
         progIcon2.TabStop = False
@@ -210,10 +210,10 @@ Partial Class AdminDashboard
         studIcon2.BackColor = Color.Transparent
         studIcon2.BackgroundImage = CType(resources.GetObject("studIcon2.BackgroundImage"), Image)
         studIcon2.BackgroundImageLayout = ImageLayout.Zoom
-        studIcon2.Location = New Point(6, 86)
+        studIcon2.Location = New Point(5, 69)
         studIcon2.Margin = New Padding(2)
         studIcon2.Name = "studIcon2"
-        studIcon2.Size = New Size(61, 81)
+        studIcon2.Size = New Size(49, 65)
         studIcon2.SizeMode = PictureBoxSizeMode.Zoom
         studIcon2.TabIndex = 60
         studIcon2.TabStop = False
@@ -224,10 +224,10 @@ Partial Class AdminDashboard
         dashIcon2.BackgroundImage = CType(resources.GetObject("dashIcon2.BackgroundImage"), Image)
         dashIcon2.BackgroundImageLayout = ImageLayout.Zoom
         dashIcon2.InitialImage = CType(resources.GetObject("dashIcon2.InitialImage"), Image)
-        dashIcon2.Location = New Point(6, 6)
+        dashIcon2.Location = New Point(5, 5)
         dashIcon2.Margin = New Padding(2)
         dashIcon2.Name = "dashIcon2"
-        dashIcon2.Size = New Size(61, 75)
+        dashIcon2.Size = New Size(49, 60)
         dashIcon2.SizeMode = PictureBoxSizeMode.Zoom
         dashIcon2.TabIndex = 59
         dashIcon2.TabStop = False
@@ -240,7 +240,7 @@ Partial Class AdminDashboard
         depIcon.Location = New Point(4, 341)
         depIcon.Margin = New Padding(4)
         depIcon.Name = "depIcon"
-        depIcon.Size = New Size(62, 81)
+        depIcon.Size = New Size(50, 65)
         depIcon.SizeMode = PictureBoxSizeMode.Zoom
         depIcon.TabIndex = 58
         depIcon.TabStop = False
@@ -254,7 +254,7 @@ Partial Class AdminDashboard
         depBtn.Location = New Point(70, 341)
         depBtn.Margin = New Padding(4)
         depBtn.Name = "depBtn"
-        depBtn.Size = New Size(391, 81)
+        depBtn.Size = New Size(313, 65)
         depBtn.TabIndex = 57
         depBtn.Text = "M A N A G E  D E P A R T M E N T "
         depBtn.TextAlign = ContentAlignment.MiddleRight
@@ -268,7 +268,7 @@ Partial Class AdminDashboard
         alloIcon.Location = New Point(4, 432)
         alloIcon.Margin = New Padding(4)
         alloIcon.Name = "alloIcon"
-        alloIcon.Size = New Size(62, 81)
+        alloIcon.Size = New Size(50, 65)
         alloIcon.SizeMode = PictureBoxSizeMode.Zoom
         alloIcon.TabIndex = 56
         alloIcon.TabStop = False
@@ -281,7 +281,7 @@ Partial Class AdminDashboard
         profIcon.Location = New Point(4, 256)
         profIcon.Margin = New Padding(4)
         profIcon.Name = "profIcon"
-        profIcon.Size = New Size(62, 81)
+        profIcon.Size = New Size(50, 65)
         profIcon.SizeMode = PictureBoxSizeMode.Zoom
         profIcon.TabIndex = 50
         profIcon.TabStop = False
@@ -294,7 +294,7 @@ Partial Class AdminDashboard
         PictureBox2.Location = New Point(162, 736)
         PictureBox2.Margin = New Padding(2)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(121, 80)
+        PictureBox2.Size = New Size(97, 64)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 47
         PictureBox2.TabStop = False
@@ -307,7 +307,7 @@ Partial Class AdminDashboard
         progIcon.Location = New Point(6, 171)
         progIcon.Margin = New Padding(4)
         progIcon.Name = "progIcon"
-        progIcon.Size = New Size(61, 81)
+        progIcon.Size = New Size(49, 65)
         progIcon.SizeMode = PictureBoxSizeMode.Zoom
         progIcon.TabIndex = 49
         progIcon.TabStop = False
@@ -320,7 +320,7 @@ Partial Class AdminDashboard
         studIcon.Location = New Point(6, 86)
         studIcon.Margin = New Padding(4)
         studIcon.Name = "studIcon"
-        studIcon.Size = New Size(61, 81)
+        studIcon.Size = New Size(49, 65)
         studIcon.SizeMode = PictureBoxSizeMode.Zoom
         studIcon.TabIndex = 48
         studIcon.TabStop = False
@@ -334,7 +334,7 @@ Partial Class AdminDashboard
         homeIcon.Location = New Point(6, 6)
         homeIcon.Margin = New Padding(4)
         homeIcon.Name = "homeIcon"
-        homeIcon.Size = New Size(61, 75)
+        homeIcon.Size = New Size(49, 60)
         homeIcon.SizeMode = PictureBoxSizeMode.Zoom
         homeIcon.TabIndex = 47
         homeIcon.TabStop = False
@@ -344,12 +344,12 @@ Partial Class AdminDashboard
         dashbtn.BackColor = Color.Green
         dashbtn.BackgroundImageLayout = ImageLayout.None
         dashbtn.FlatStyle = FlatStyle.Flat
-        dashbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        dashbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         dashbtn.ForeColor = Color.White
         dashbtn.Location = New Point(70, 0)
         dashbtn.Margin = New Padding(4)
         dashbtn.Name = "dashbtn"
-        dashbtn.Size = New Size(391, 81)
+        dashbtn.Size = New Size(313, 65)
         dashbtn.TabIndex = 10
         dashbtn.Text = "D A S H B O A R D "
         dashbtn.TextAlign = ContentAlignment.MiddleRight
@@ -364,7 +364,7 @@ Partial Class AdminDashboard
         managebtn.Location = New Point(70, 426)
         managebtn.Margin = New Padding(4)
         managebtn.Name = "managebtn"
-        managebtn.Size = New Size(391, 81)
+        managebtn.Size = New Size(313, 65)
         managebtn.TabIndex = 9
         managebtn.Text = "A L L O C A T I O N  M A N A G E R"
         managebtn.TextAlign = ContentAlignment.MiddleRight
@@ -374,12 +374,12 @@ Partial Class AdminDashboard
         ' 
         progbtn.BackColor = Color.Green
         progbtn.FlatStyle = FlatStyle.Flat
-        progbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        progbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
         progbtn.ForeColor = Color.White
         progbtn.Location = New Point(70, 171)
         progbtn.Margin = New Padding(4)
         progbtn.Name = "progbtn"
-        progbtn.Size = New Size(391, 81)
+        progbtn.Size = New Size(313, 65)
         progbtn.TabIndex = 3
         progbtn.Text = "M A N A G E  P R O G R A M"
         progbtn.TextAlign = ContentAlignment.MiddleRight
@@ -389,12 +389,12 @@ Partial Class AdminDashboard
         ' 
         studbtn.BackColor = Color.Green
         studbtn.FlatStyle = FlatStyle.Flat
-        studbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        studbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
         studbtn.ForeColor = Color.White
         studbtn.Location = New Point(70, 86)
         studbtn.Margin = New Padding(4)
         studbtn.Name = "studbtn"
-        studbtn.Size = New Size(391, 81)
+        studbtn.Size = New Size(313, 65)
         studbtn.TabIndex = 2
         studbtn.Text = "M A N A G E  S T U D E N T"
         studbtn.TextAlign = ContentAlignment.MiddleRight
@@ -404,12 +404,12 @@ Partial Class AdminDashboard
         ' 
         profbtn.BackColor = Color.Green
         profbtn.FlatStyle = FlatStyle.Flat
-        profbtn.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        profbtn.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
         profbtn.ForeColor = Color.White
         profbtn.Location = New Point(70, 256)
         profbtn.Margin = New Padding(4)
         profbtn.Name = "profbtn"
-        profbtn.Size = New Size(391, 81)
+        profbtn.Size = New Size(313, 65)
         profbtn.TabIndex = 8
         profbtn.Text = "M A N A G E  P R O F E S S O R"
         profbtn.TextAlign = ContentAlignment.MiddleRight
@@ -438,22 +438,21 @@ Partial Class AdminDashboard
         Label2.AutoSize = True
         Label2.Font = New Font("Sitka Banner", 14.999999F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.Green
-        Label2.Location = New Point(399, 148)
+        Label2.Location = New Point(392, 93)
         Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(237, 43)
+        Label2.Size = New Size(198, 36)
         Label2.TabIndex = 41
         Label2.Text = "D A S H B O A R D"
         ' 
         ' Adminleft
         ' 
         Adminleft.AutoSize = True
-        Adminleft.Font = New Font("Arial", 9F, FontStyle.Bold)
+        Adminleft.Font = New Font("Arial", 9.0F, FontStyle.Bold)
         Adminleft.ForeColor = Color.White
-        Adminleft.Location = New Point(189, 95)
-        Adminleft.Margin = New Padding(4, 0, 4, 0)
+        Adminleft.Location = New Point(151, 76)
         Adminleft.Name = "Adminleft"
-        Adminleft.Size = New Size(193, 21)
+        Adminleft.Size = New Size(153, 18)
         Adminleft.TabIndex = 5
         Adminleft.Text = "A d m i n i s t r a t o r "
         ' 
@@ -484,7 +483,7 @@ Partial Class AdminDashboard
         PanelLeft.Location = New Point(6, 4)
         PanelLeft.Margin = New Padding(4)
         PanelLeft.Name = "PanelLeft"
-        PanelLeft.Size = New Size(455, 156)
+        PanelLeft.Size = New Size(364, 125)
         PanelLeft.TabIndex = 47
         ' 
         ' profileleft
@@ -493,14 +492,14 @@ Partial Class AdminDashboard
         profileleft.BackgroundImageLayout = ImageLayout.Zoom
         profileleft.BorderRadius = 60
         profileleft.ForeColor = Color.Black
-        profileleft.GradientAngle = 90F
+        profileleft.GradientAngle = 90.0F
         profileleft.GradientBottomColor = Color.Transparent
         profileleft.GradientTopColor = Color.Transparent
         profileleft.Image = CType(resources.GetObject("profileleft.Image"), Image)
         profileleft.Location = New Point(78, 36)
         profileleft.Margin = New Padding(4)
         profileleft.Name = "profileleft"
-        profileleft.Size = New Size(86, 92)
+        profileleft.Size = New Size(69, 74)
         profileleft.SizeMode = PictureBoxSizeMode.StretchImage
         profileleft.TabIndex = 79
         profileleft.TabStop = False
@@ -508,12 +507,12 @@ Partial Class AdminDashboard
         ' nameleft
         ' 
         nameleft.AutoSize = True
-        nameleft.Font = New Font("Arial", 12F, FontStyle.Bold)
+        nameleft.Font = New Font("Arial", 12.0F, FontStyle.Bold)
         nameleft.ForeColor = Color.White
         nameleft.Location = New Point(189, 65)
         nameleft.Margin = New Padding(5, 0, 5, 0)
         nameleft.Name = "nameleft"
-        nameleft.Size = New Size(65, 29)
+        nameleft.Size = New Size(54, 24)
         nameleft.TabIndex = 12
         nameleft.Text = "User"
         ' 
@@ -524,11 +523,11 @@ Partial Class AdminDashboard
         Panel3.Controls.Add(profmenu)
         Panel3.Controls.Add(PictureBox11)
         Panel3.Controls.Add(tuldok)
-        Panel3.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Panel3.Font = New Font("Sitka Banner", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Panel3.Location = New Point(0, -1)
-        Panel3.Margin = New Padding(2, 4, 2, 4)
+        Panel3.Margin = New Padding(2, 3, 2, 3)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(1799, 81)
+        Panel3.Size = New Size(1439, 65)
         Panel3.TabIndex = 53
         ' 
         ' profmenu
@@ -537,7 +536,7 @@ Partial Class AdminDashboard
         profmenu.BackgroundImageLayout = ImageLayout.Zoom
         profmenu.BorderRadius = 60
         profmenu.ForeColor = Color.Black
-        profmenu.GradientAngle = 90F
+        profmenu.GradientAngle = 90.0F
         profmenu.GradientBottomColor = Color.Transparent
         profmenu.GradientTopColor = Color.Transparent
         profmenu.Image = CType(resources.GetObject("profmenu.Image"), Image)
@@ -564,25 +563,24 @@ Partial Class AdminDashboard
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.CalendarFont = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        DateTimePicker1.CalendarFont = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
         DateTimePicker1.CustomFormat = "  hh:mm tt dddd, MMMM dd, yyyy"
         DateTimePicker1.Enabled = False
         DateTimePicker1.Format = DateTimePickerFormat.Custom
-        DateTimePicker1.Location = New Point(1354, 99)
-        DateTimePicker1.Margin = New Padding(2, 4, 2, 4)
+        DateTimePicker1.Location = New Point(1083, 79)
+        DateTimePicker1.Margin = New Padding(2, 3, 2, 3)
         DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(390, 31)
+        DateTimePicker1.Size = New Size(313, 27)
         DateTimePicker1.TabIndex = 54
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(502, 870)
-        Label3.Margin = New Padding(4, 0, 4, 0)
+        Label3.Location = New Point(402, 696)
         Label3.Name = "Label3"
-        Label3.Size = New Size(542, 29)
+        Label3.Size = New Size(456, 25)
         Label3.TabIndex = 55
         Label3.Text = "G E N E R A T E  S U M M A R Y  R E P O R T"
         ' 
@@ -590,10 +588,10 @@ Partial Class AdminDashboard
         ' 
         studBox.BackColor = Color.Transparent
         studBox.Image = CType(resources.GetObject("studBox.Image"), Image)
-        studBox.Location = New Point(320, 172)
-        studBox.Margin = New Padding(4, 5, 4, 5)
+        studBox.Location = New Point(256, 138)
+        studBox.Margin = New Padding(3, 4, 3, 4)
         studBox.Name = "studBox"
-        studBox.Size = New Size(342, 294)
+        studBox.Size = New Size(274, 235)
         studBox.SizeMode = PictureBoxSizeMode.Zoom
         studBox.TabIndex = 56
         studBox.TabStop = False
@@ -602,10 +600,10 @@ Partial Class AdminDashboard
         ' 
         courseBox.BackColor = Color.Transparent
         courseBox.Image = CType(resources.GetObject("courseBox.Image"), Image)
-        courseBox.Location = New Point(611, 172)
-        courseBox.Margin = New Padding(4, 5, 4, 5)
+        courseBox.Location = New Point(489, 138)
+        courseBox.Margin = New Padding(3, 4, 3, 4)
         courseBox.Name = "courseBox"
-        courseBox.Size = New Size(342, 294)
+        courseBox.Size = New Size(274, 235)
         courseBox.SizeMode = PictureBoxSizeMode.Zoom
         courseBox.TabIndex = 60
         courseBox.TabStop = False
@@ -614,10 +612,10 @@ Partial Class AdminDashboard
         ' 
         progBox.BackColor = Color.Transparent
         progBox.Image = CType(resources.GetObject("progBox.Image"), Image)
-        progBox.Location = New Point(611, 484)
-        progBox.Margin = New Padding(4, 5, 4, 5)
+        progBox.Location = New Point(489, 387)
+        progBox.Margin = New Padding(3, 4, 3, 4)
         progBox.Name = "progBox"
-        progBox.Size = New Size(342, 294)
+        progBox.Size = New Size(274, 235)
         progBox.SizeMode = PictureBoxSizeMode.Zoom
         progBox.TabIndex = 59
         progBox.TabStop = False
@@ -626,10 +624,10 @@ Partial Class AdminDashboard
         ' 
         profBox.BackColor = Color.Transparent
         profBox.Image = CType(resources.GetObject("profBox.Image"), Image)
-        profBox.Location = New Point(320, 484)
-        profBox.Margin = New Padding(4, 5, 4, 5)
+        profBox.Location = New Point(256, 387)
+        profBox.Margin = New Padding(3, 4, 3, 4)
         profBox.Name = "profBox"
-        profBox.Size = New Size(342, 294)
+        profBox.Size = New Size(274, 235)
         profBox.SizeMode = PictureBoxSizeMode.Zoom
         profBox.TabIndex = 57
         profBox.TabStop = False
@@ -643,7 +641,7 @@ Partial Class AdminDashboard
         profname.Location = New Point(1899, 232)
         profname.Margin = New Padding(4, 0, 4, 0)
         profname.Name = "profname"
-        profname.Size = New Size(260, 38)
+        profname.Size = New Size(212, 31)
         profname.TabIndex = 64
         profname.Text = "Mary Ynah N. Korea"
         ' 
@@ -652,13 +650,13 @@ Partial Class AdminDashboard
         Gerald2.BackColor = Color.White
         Gerald2.BorderRadius = 60
         Gerald2.ForeColor = Color.Black
-        Gerald2.GradientAngle = 90F
+        Gerald2.GradientAngle = 90.0F
         Gerald2.GradientBottomColor = Color.DarkSeaGreen
         Gerald2.GradientTopColor = Color.DarkSeaGreen
         Gerald2.Location = New Point(1878, 302)
         Gerald2.Margin = New Padding(4)
         Gerald2.Name = "Gerald2"
-        Gerald2.Size = New Size(316, 139)
+        Gerald2.Size = New Size(253, 111)
         Gerald2.TabIndex = 66
         Gerald2.Text = "Gerald2"
         Gerald2.UseVisualStyleBackColor = False
@@ -670,7 +668,7 @@ Partial Class AdminDashboard
         emailIcon.Location = New Point(1910, 330)
         emailIcon.Margin = New Padding(4)
         emailIcon.Name = "emailIcon"
-        emailIcon.Size = New Size(38, 41)
+        emailIcon.Size = New Size(30, 33)
         emailIcon.SizeMode = PictureBoxSizeMode.StretchImage
         emailIcon.TabIndex = 68
         emailIcon.TabStop = False
@@ -682,7 +680,7 @@ Partial Class AdminDashboard
         callIcon.Location = New Point(1910, 374)
         callIcon.Margin = New Padding(4)
         callIcon.Name = "callIcon"
-        callIcon.Size = New Size(38, 41)
+        callIcon.Size = New Size(30, 33)
         callIcon.SizeMode = PictureBoxSizeMode.StretchImage
         callIcon.TabIndex = 69
         callIcon.TabStop = False
@@ -693,10 +691,9 @@ Partial Class AdminDashboard
         boxname.BackColor = Color.DarkSeaGreen
         boxname.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         boxname.ForeColor = Color.DarkGreen
-        boxname.Location = New Point(1955, 335)
-        boxname.Margin = New Padding(4, 0, 4, 0)
+        boxname.Location = New Point(1564, 268)
         boxname.Name = "boxname"
-        boxname.Size = New Size(176, 30)
+        boxname.Size = New Size(143, 23)
         boxname.TabIndex = 70
         boxname.Text = "Mary@gmail.com"
         ' 
@@ -706,10 +703,9 @@ Partial Class AdminDashboard
         boxnum.BackColor = Color.DarkSeaGreen
         boxnum.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         boxnum.ForeColor = Color.DarkGreen
-        boxnum.Location = New Point(1955, 379)
-        boxnum.Margin = New Padding(4, 0, 4, 0)
+        boxnum.Location = New Point(1564, 303)
         boxnum.Name = "boxnum"
-        boxnum.Size = New Size(134, 30)
+        boxnum.Size = New Size(109, 23)
         boxnum.TabIndex = 71
         boxnum.Text = "09222309125"
         ' 
@@ -717,12 +713,11 @@ Partial Class AdminDashboard
         ' 
         editInfo.AutoSize = True
         editInfo.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        editInfo.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        editInfo.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         editInfo.ForeColor = Color.Green
-        editInfo.Location = New Point(1980, 529)
-        editInfo.Margin = New Padding(4, 0, 4, 0)
+        editInfo.Location = New Point(1584, 423)
         editInfo.Name = "editInfo"
-        editInfo.Size = New Size(105, 32)
+        editInfo.Size = New Size(89, 28)
         editInfo.TabIndex = 72
         editInfo.Text = "Edit Info"
         ' 
@@ -730,12 +725,11 @@ Partial Class AdminDashboard
         ' 
         secu.AutoSize = True
         secu.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
-        secu.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        secu.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         secu.ForeColor = Color.Green
-        secu.Location = New Point(1939, 562)
-        secu.Margin = New Padding(4, 0, 4, 0)
+        secu.Location = New Point(1551, 450)
         secu.Name = "secu"
-        secu.Size = New Size(196, 32)
+        secu.Size = New Size(164, 28)
         secu.TabIndex = 74
         secu.Text = "Security Settings"
         ' 
@@ -746,7 +740,7 @@ Partial Class AdminDashboard
         Gerald1.FlatAppearance.BorderColor = Color.Green
         Gerald1.FlatAppearance.BorderSize = 100000000
         Gerald1.ForeColor = Color.Black
-        Gerald1.GradientAngle = 90F
+        Gerald1.GradientAngle = 90.0F
         Gerald1.GradientBottomColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         Gerald1.GradientTopColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         Gerald1.Location = New Point(1864, 65)
@@ -764,7 +758,7 @@ Partial Class AdminDashboard
         Gerald5.BackColor = Color.White
         Gerald5.BorderRadius = 60
         Gerald5.ForeColor = Color.Black
-        Gerald5.GradientAngle = 90F
+        Gerald5.GradientAngle = 90.0F
         Gerald5.GradientBottomColor = Color.Green
         Gerald5.GradientTopColor = Color.Green
         Gerald5.Location = New Point(1859, 61)
@@ -782,10 +776,9 @@ Partial Class AdminDashboard
         proftitle.BackColor = Color.FromArgb(CByte(242), CByte(249), CByte(245))
         proftitle.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         proftitle.ForeColor = Color.Green
-        proftitle.Location = New Point(1955, 270)
-        proftitle.Margin = New Padding(4, 0, 4, 0)
+        proftitle.Location = New Point(1564, 216)
         proftitle.Name = "proftitle"
-        proftitle.Size = New Size(139, 30)
+        proftitle.Size = New Size(114, 23)
         proftitle.TabIndex = 76
         proftitle.Text = "Administrator"
         ' 
@@ -793,10 +786,10 @@ Partial Class AdminDashboard
         ' 
         depBox.BackColor = Color.Transparent
         depBox.Image = CType(resources.GetObject("depBox.Image"), Image)
-        depBox.Location = New Point(905, 484)
-        depBox.Margin = New Padding(4, 5, 4, 5)
+        depBox.Location = New Point(724, 387)
+        depBox.Margin = New Padding(3, 4, 3, 4)
         depBox.Name = "depBox"
-        depBox.Size = New Size(342, 294)
+        depBox.Size = New Size(274, 235)
         depBox.SizeMode = PictureBoxSizeMode.Zoom
         depBox.TabIndex = 58
         depBox.TabStop = False
@@ -805,10 +798,10 @@ Partial Class AdminDashboard
         ' 
         adminBox.BackColor = Color.Transparent
         adminBox.Image = CType(resources.GetObject("adminBox.Image"), Image)
-        adminBox.Location = New Point(905, 172)
-        adminBox.Margin = New Padding(4, 5, 4, 5)
+        adminBox.Location = New Point(724, 138)
+        adminBox.Margin = New Padding(3, 4, 3, 4)
         adminBox.Name = "adminBox"
-        adminBox.Size = New Size(342, 294)
+        adminBox.Size = New Size(274, 235)
         adminBox.SizeMode = PictureBoxSizeMode.Zoom
         adminBox.TabIndex = 61
         adminBox.TabStop = False
@@ -823,14 +816,14 @@ Partial Class AdminDashboard
         profpic.BackgroundImageLayout = ImageLayout.Zoom
         profpic.BorderRadius = 60
         profpic.ForeColor = Color.Black
-        profpic.GradientAngle = 90F
+        profpic.GradientAngle = 90.0F
         profpic.GradientBottomColor = Color.Transparent
         profpic.GradientTopColor = Color.Transparent
         profpic.Image = CType(resources.GetObject("profpic.Image"), Image)
         profpic.Location = New Point(1955, 68)
         profpic.Margin = New Padding(4)
         profpic.Name = "profpic"
-        profpic.Size = New Size(149, 138)
+        profpic.Size = New Size(119, 110)
         profpic.SizeMode = PictureBoxSizeMode.StretchImage
         profpic.TabIndex = 77
         profpic.TabStop = False
@@ -839,10 +832,9 @@ Partial Class AdminDashboard
         ' 
         changeEmail.AutoSize = True
         changeEmail.ForeColor = Color.Green
-        changeEmail.Location = New Point(1876, 669)
-        changeEmail.Margin = New Padding(4, 0, 4, 0)
+        changeEmail.Location = New Point(1501, 535)
         changeEmail.Name = "changeEmail"
-        changeEmail.Size = New Size(133, 25)
+        changeEmail.Size = New Size(110, 20)
         changeEmail.TabIndex = 78
         changeEmail.Text = "Email Address :"
         ' 
@@ -851,7 +843,7 @@ Partial Class AdminDashboard
         eklavutxt.Location = New Point(2012, 660)
         eklavutxt.Margin = New Padding(4)
         eklavutxt.Name = "eklavutxt"
-        eklavutxt.Size = New Size(155, 31)
+        eklavutxt.Size = New Size(125, 27)
         eklavutxt.TabIndex = 79
         ' 
         ' eklavutxt2
@@ -859,17 +851,16 @@ Partial Class AdminDashboard
         eklavutxt2.Location = New Point(2012, 701)
         eklavutxt2.Margin = New Padding(4)
         eklavutxt2.Name = "eklavutxt2"
-        eklavutxt2.Size = New Size(155, 31)
+        eklavutxt2.Size = New Size(125, 27)
         eklavutxt2.TabIndex = 81
         ' 
         ' changeNumber
         ' 
         changeNumber.AutoSize = True
         changeNumber.ForeColor = Color.Green
-        changeNumber.Location = New Point(1870, 705)
-        changeNumber.Margin = New Padding(4, 0, 4, 0)
+        changeNumber.Location = New Point(1496, 564)
         changeNumber.Name = "changeNumber"
-        changeNumber.Size = New Size(141, 25)
+        changeNumber.Size = New Size(115, 20)
         changeNumber.TabIndex = 80
         changeNumber.Text = "Phone Number :"
         ' 
@@ -878,13 +869,13 @@ Partial Class AdminDashboard
         tuldokharap.BackColor = Color.White
         tuldokharap.BorderRadius = 60
         tuldokharap.ForeColor = Color.Black
-        tuldokharap.GradientAngle = 90F
+        tuldokharap.GradientAngle = 90.0F
         tuldokharap.GradientBottomColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
         tuldokharap.GradientTopColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
         tuldokharap.Location = New Point(2261, 106)
         tuldokharap.Margin = New Padding(4)
         tuldokharap.Name = "tuldokharap"
-        tuldokharap.Size = New Size(1000, 631)
+        tuldokharap.Size = New Size(800, 505)
         tuldokharap.TabIndex = 83
         tuldokharap.Text = "Gerald3"
         tuldokharap.UseVisualStyleBackColor = False
@@ -893,12 +884,11 @@ Partial Class AdminDashboard
         ' 
         actlog.AutoSize = True
         actlog.BackColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
-        actlog.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        actlog.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         actlog.ForeColor = Color.DarkGreen
-        actlog.Location = New Point(2316, 162)
-        actlog.Margin = New Padding(4, 0, 4, 0)
+        actlog.Location = New Point(1853, 130)
         actlog.Name = "actlog"
-        actlog.Size = New Size(188, 29)
+        actlog.Size = New Size(163, 25)
         actlog.TabIndex = 84
         actlog.Text = "ACTIVITY LOG"
         ' 
@@ -906,12 +896,11 @@ Partial Class AdminDashboard
         ' 
         seemore.AutoSize = True
         seemore.BackColor = Color.FromArgb(CByte(245), CByte(245), CByte(241))
-        seemore.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
+        seemore.Font = New Font("Microsoft Sans Serif", 12.0F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         seemore.ForeColor = Color.Green
-        seemore.Location = New Point(2316, 678)
-        seemore.Margin = New Padding(4, 0, 4, 0)
+        seemore.Location = New Point(1853, 542)
         seemore.Name = "seemore"
-        seemore.Size = New Size(119, 29)
+        seemore.Size = New Size(97, 25)
         seemore.TabIndex = 85
         seemore.Text = "See more"
         ' 
@@ -922,7 +911,7 @@ Partial Class AdminDashboard
         dtg1.Margin = New Padding(4)
         dtg1.Name = "dtg1"
         dtg1.RowHeadersWidth = 51
-        dtg1.Size = New Size(832, 418)
+        dtg1.Size = New Size(666, 334)
         dtg1.TabIndex = 86
         ' 
         ' DatabaseConnectorBindingSource1
@@ -938,7 +927,7 @@ Partial Class AdminDashboard
         tuldoklikod.BackColor = Color.White
         tuldoklikod.BorderRadius = 60
         tuldoklikod.ForeColor = Color.Black
-        tuldoklikod.GradientAngle = 90F
+        tuldoklikod.GradientAngle = 90.0F
         tuldoklikod.GradientBottomColor = Color.Green
         tuldoklikod.GradientTopColor = Color.Green
         tuldoklikod.Location = New Point(2254, 101)
@@ -950,25 +939,13 @@ Partial Class AdminDashboard
         tuldoklikod.Text = "Gerald3"
         tuldoklikod.UseVisualStyleBackColor = False
         ' 
-        ' time
-        ' 
-        time.AutoSize = True
-        time.Font = New Font("Sitka Banner", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        time.Location = New Point(1769, 168)
-        time.Margin = New Padding(4, 0, 4, 0)
-        time.Name = "time"
-        time.Size = New Size(145, 26)
-        time.TabIndex = 88
-        time.Text = "Real Time and Date"
-        ' 
         ' AdminDashboard
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(233), CByte(234), CByte(233))
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1946, 1106)
-        Controls.Add(time)
+        ClientSize = New Size(1942, 1102)
         Controls.Add(Panel1)
         Controls.Add(studBox)
         Controls.Add(dtg1)
@@ -1004,7 +981,7 @@ Partial Class AdminDashboard
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(2)
-        MinimumSize = New Size(1795, 842)
+        MinimumSize = New Size(1436, 674)
         Name = "AdminDashboard"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AdminDashboard"
@@ -1113,4 +1090,5 @@ Partial Class AdminDashboard
     Friend WithEvents DatabaseConnectorBindingSource1 As BindingSource
     Friend WithEvents tuldoklikod As gerald.Gerald
     Friend WithEvents time As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

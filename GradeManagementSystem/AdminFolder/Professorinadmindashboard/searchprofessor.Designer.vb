@@ -30,13 +30,13 @@ Partial Class searchprofessor
         Button2 = New Button()
         DataGridView1 = New DataGridView()
         Label4 = New Label()
-        searchbttn = New PictureBox()
+
         TextBox1 = New TextBox()
         Label2 = New Label()
         Label1 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(searchbttn, ComponentModel.ISupportInitialize).BeginInit()
+
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -114,16 +114,7 @@ Partial Class searchprofessor
         Label4.Size = New Size(168, 18)
         Label4.TabIndex = 54
         Label4.Text = "School Year: 2024 - 2025"
-        ' 
-        ' searchbttn
-        ' 
-        searchbttn.BackgroundImage = CType(resources.GetObject("searchbttn.BackgroundImage"), Image)
-        searchbttn.BackgroundImageLayout = ImageLayout.Stretch
-        searchbttn.Location = New Point(449, 134)
-        searchbttn.Name = "searchbttn"
-        searchbttn.Size = New Size(40, 34)
-        searchbttn.TabIndex = 53
-        searchbttn.TabStop = False
+
         ' 
         ' TextBox1
         ' 
@@ -169,7 +160,7 @@ Partial Class searchprofessor
         Controls.Add(Button2)
         Controls.Add(DataGridView1)
         Controls.Add(Label4)
-        Controls.Add(searchbttn)
+
         Controls.Add(TextBox1)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -178,7 +169,7 @@ Partial Class searchprofessor
         Text = "searchprofessor"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        CType(searchbttn, ComponentModel.ISupportInitialize).EndInit()
+
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -190,7 +181,6 @@ Partial Class searchprofessor
     Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label4 As Label
-    Friend WithEvents searchbttn As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label

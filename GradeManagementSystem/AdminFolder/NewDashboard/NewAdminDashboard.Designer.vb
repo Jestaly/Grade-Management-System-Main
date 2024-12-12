@@ -23,15 +23,25 @@ Partial Class NewAdminDashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        PictureBox15 = New PictureBox()
-        PictureBox14 = New PictureBox()
-        PictureBox13 = New PictureBox()
-        PictureBox12 = New PictureBox()
-        PictureBox11 = New PictureBox()
-        PictureBox10 = New PictureBox()
-        PictureBox9 = New PictureBox()
-        PictureBox8 = New PictureBox()
-        PictureBox7 = New PictureBox()
+        SettingsIcon2 = New PictureBox()
+        ProfileIcon2 = New PictureBox()
+        exitIcon2 = New PictureBox()
+        PictureBox1 = New PictureBox()
+        AlloIcon2 = New PictureBox()
+        DepIcon2 = New PictureBox()
+        ProgIcon2 = New PictureBox()
+        ProfIcon2 = New PictureBox()
+        StudIcon2 = New PictureBox()
+        HomeIcon2 = New PictureBox()
+        ExitIcon = New PictureBox()
+        SettingsIcon = New PictureBox()
+        ProfileIcon = New PictureBox()
+        AlloIcon = New PictureBox()
+        DepIcon = New PictureBox()
+        ProgIcon = New PictureBox()
+        ProfIcon = New PictureBox()
+        StudIcon = New PictureBox()
+        HomeIcon = New PictureBox()
         logoutbttn = New Button()
         settingsbttn = New Button()
         profilebttn = New Button()
@@ -46,29 +56,49 @@ Partial Class NewAdminDashboard
         Label1 = New Label()
         Panel2 = New Panel()
         Panel1.SuspendLayout()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SettingsIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProfileIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(exitIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(AlloIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DepIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProgIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProfIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(StudIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(HomeIcon2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ExitIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SettingsIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProfileIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(AlloIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DepIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProgIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(ProfIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(StudIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(HomeIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.White
-        Panel1.Controls.Add(PictureBox15)
-        Panel1.Controls.Add(PictureBox14)
-        Panel1.Controls.Add(PictureBox13)
-        Panel1.Controls.Add(PictureBox12)
-        Panel1.Controls.Add(PictureBox11)
-        Panel1.Controls.Add(PictureBox10)
-        Panel1.Controls.Add(PictureBox9)
-        Panel1.Controls.Add(PictureBox8)
-        Panel1.Controls.Add(PictureBox7)
+        Panel1.Controls.Add(SettingsIcon2)
+        Panel1.Controls.Add(ProfileIcon2)
+        Panel1.Controls.Add(exitIcon2)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(AlloIcon2)
+        Panel1.Controls.Add(DepIcon2)
+        Panel1.Controls.Add(ProgIcon2)
+        Panel1.Controls.Add(ProfIcon2)
+        Panel1.Controls.Add(StudIcon2)
+        Panel1.Controls.Add(HomeIcon2)
+        Panel1.Controls.Add(ExitIcon)
+        Panel1.Controls.Add(SettingsIcon)
+        Panel1.Controls.Add(ProfileIcon)
+        Panel1.Controls.Add(AlloIcon)
+        Panel1.Controls.Add(DepIcon)
+        Panel1.Controls.Add(ProgIcon)
+        Panel1.Controls.Add(ProfIcon)
+        Panel1.Controls.Add(StudIcon)
+        Panel1.Controls.Add(HomeIcon)
         Panel1.Controls.Add(logoutbttn)
         Panel1.Controls.Add(settingsbttn)
         Panel1.Controls.Add(profilebttn)
@@ -84,11 +114,13 @@ Partial Class NewAdminDashboard
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(2)
+        Panel1.MaximumSize = New Size(312, 897)
+        Panel1.MinimumSize = New Size(71, 897)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(312, 897)
+        Panel1.Size = New Size(189, 897)
         Panel1.TabIndex = 0
         ' 
-        ' PictureBox15
+        ' SettingsIcon2
         ' 
         PictureBox15.BackgroundImage = My.Resources.Resources.Screenshot_2024_11_28_144752_removebg_preview
         PictureBox15.BackgroundImageLayout = ImageLayout.Stretch
@@ -99,7 +131,7 @@ Partial Class NewAdminDashboard
         PictureBox15.TabIndex = 19
         PictureBox15.TabStop = False
         ' 
-        ' PictureBox14
+        ' ProfileIcon2
         ' 
         PictureBox14.BackgroundImage = My.Resources.Resources.SETTINGS_OUTLINE_NA_GREEN
         PictureBox14.BackgroundImageLayout = ImageLayout.Stretch
@@ -110,7 +142,7 @@ Partial Class NewAdminDashboard
         PictureBox14.TabIndex = 18
         PictureBox14.TabStop = False
         ' 
-        ' PictureBox13
+        ' exitIcon2
         ' 
         PictureBox13.BackgroundImage = My.Resources.Resources.PROFILE_OUTLINE_NA_GREEN
         PictureBox13.BackgroundImageLayout = ImageLayout.Stretch
@@ -121,7 +153,7 @@ Partial Class NewAdminDashboard
         PictureBox13.TabIndex = 17
         PictureBox13.TabStop = False
         ' 
-        ' PictureBox12
+        ' PictureBox1
         ' 
         PictureBox12.BackgroundImage = My.Resources.Resources.ALLOCATION_OUTLINE_NA_GREEN
         PictureBox12.BackgroundImageLayout = ImageLayout.Stretch
@@ -132,7 +164,7 @@ Partial Class NewAdminDashboard
         PictureBox12.TabIndex = 16
         PictureBox12.TabStop = False
         ' 
-        ' PictureBox11
+        ' AlloIcon2
         ' 
         PictureBox11.BackgroundImage = My.Resources.Resources.DEPARTMENTS_OUTLINE_NA_GREEN__1_
         PictureBox11.BackgroundImageLayout = ImageLayout.Stretch
@@ -143,7 +175,7 @@ Partial Class NewAdminDashboard
         PictureBox11.TabIndex = 15
         PictureBox11.TabStop = False
         ' 
-        ' PictureBox10
+        ' ProgIcon
         ' 
         PictureBox10.BackgroundImage = My.Resources.Resources.PROGRAM_OUTLINE_NA_GREEN
         PictureBox10.BackgroundImageLayout = ImageLayout.Stretch
@@ -154,7 +186,7 @@ Partial Class NewAdminDashboard
         PictureBox10.TabIndex = 14
         PictureBox10.TabStop = False
         ' 
-        ' PictureBox9
+        ' ProfIcon
         ' 
         PictureBox9.BackgroundImage = My.Resources.Resources.PROF_OUTLINE_NA_GREEN
         PictureBox9.BackgroundImageLayout = ImageLayout.Stretch
@@ -165,7 +197,7 @@ Partial Class NewAdminDashboard
         PictureBox9.TabIndex = 13
         PictureBox9.TabStop = False
         ' 
-        ' PictureBox8
+        ' StudIcon
         ' 
         PictureBox8.BackgroundImage = My.Resources.Resources.STUDENT_OUTLINENA_GREEN
         PictureBox8.BackgroundImageLayout = ImageLayout.Stretch
@@ -176,7 +208,7 @@ Partial Class NewAdminDashboard
         PictureBox8.TabIndex = 12
         PictureBox8.TabStop = False
         ' 
-        ' PictureBox7
+        ' HomeIcon
         ' 
         PictureBox7.BackgroundImage = My.Resources.Resources.DASHBOARD_OUTLINE_NA_GREEN_
         PictureBox7.BackgroundImageLayout = ImageLayout.Stretch
@@ -244,11 +276,11 @@ Partial Class NewAdminDashboard
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label3.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label3.Location = New Point(78, 511)
         Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(54, 19)
+        Label3.Size = New Size(46, 15)
         Label3.TabIndex = 8
         Label3.Text = "OTHER"
         ' 
@@ -358,23 +390,23 @@ Partial Class NewAdminDashboard
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 7F, FontStyle.Bold)
+        Label2.Font = New Font("Segoe UI", 7.0F, FontStyle.Bold)
         Label2.Location = New Point(78, 101)
         Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(50, 19)
+        Label2.Size = New Size(42, 15)
         Label2.TabIndex = 1
         Label2.Text = "MENU"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Label1.Location = New Point(81, 32)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(224, 25)
+        Label1.Size = New Size(183, 20)
         Label1.TabIndex = 0
         Label1.Text = "A D M I N I S T R A T O R"
         ' 
@@ -387,12 +419,13 @@ Partial Class NewAdminDashboard
         ' 
         ' NewAdminDashboard
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(9.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1572, 897)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DoubleBuffered = True
+        Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(2)
@@ -401,15 +434,25 @@ Partial Class NewAdminDashboard
         Text = "Form1"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
+        CType(SettingsIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProfileIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(exitIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(AlloIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(DepIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProgIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProfIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(StudIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(HomeIcon2, ComponentModel.ISupportInitialize).EndInit()
+        CType(ExitIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(SettingsIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProfileIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(AlloIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(DepIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProgIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(ProfIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(StudIcon, ComponentModel.ISupportInitialize).EndInit()
+        CType(HomeIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -426,15 +469,25 @@ Partial Class NewAdminDashboard
     Friend WithEvents settingsbttn As Button
     Friend WithEvents profilebttn As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents PictureBox15 As PictureBox
-    Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents PictureBox12 As PictureBox
-    Friend WithEvents PictureBox11 As PictureBox
-    Friend WithEvents PictureBox10 As PictureBox
-    Friend WithEvents PictureBox9 As PictureBox
-    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents HomeIcon As PictureBox
+    Friend WithEvents ExitIcon As PictureBox
+    Friend WithEvents SettingsIcon As PictureBox
+    Friend WithEvents ProfileIcon As PictureBox
+    Friend WithEvents AlloIcon As PictureBox
+    Friend WithEvents DepIcon As PictureBox
+    Friend WithEvents ProgIcon As PictureBox
+    Friend WithEvents ProfIcon As PictureBox
+    Friend WithEvents StudIcon As PictureBox
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents StudIcon2 As PictureBox
+    Friend WithEvents HomeIcon2 As PictureBox
+    Friend WithEvents AlloIcon2 As PictureBox
+    Friend WithEvents DepIcon2 As PictureBox
+    Friend WithEvents ProgIcon2 As PictureBox
+    Friend WithEvents ProfIcon2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents exitIcon2 As PictureBox
+    Friend WithEvents SettingsIcon2 As PictureBox
+    Friend WithEvents ProfileIcon2 As PictureBox
 
 End Class

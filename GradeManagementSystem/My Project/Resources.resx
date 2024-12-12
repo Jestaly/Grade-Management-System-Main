@@ -157,7 +157,7 @@
   <data name="Screenshot 2024-12-12 0932282" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2024-12-12 0932282.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="courses1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="courses11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AdminFolder\Resources\dashboard\3-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_2024-12-12_173257__2_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -215,7 +215,7 @@
     <value>..\AdminFolder\Resources\dashboard\9-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\AdminFolder\Resources\icon_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dropshadow_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dropshadow_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,8 +250,8 @@
   <data name="icon_id" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_id.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="professors2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AdminFolder\Resources\dashboard\8-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_exclamationcircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AdminFolder\Resources\icon_exclamationcircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prof1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>prof1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
