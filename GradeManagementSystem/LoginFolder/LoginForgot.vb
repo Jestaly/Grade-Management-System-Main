@@ -19,7 +19,7 @@ Public Class LoginForgot
 
 
     Public connector As New DatabaseConnector
-    Private emailSender As New email
+    'Private emailSender As New email
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Private professorForm As New ProfessorForm
@@ -380,9 +380,9 @@ Public Class LoginForgot
         Next j
     End Sub
 
-    Function SendCode()
-        emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
-    End Function
+    ' Function SendCode()
+    '    emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
+    'End Function
 
     Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
         Dim result As Boolean
@@ -411,7 +411,7 @@ Public Class LoginForgot
                     numbergen()
                 End Try
 
-                SendCode()
+                'SendCode()
 
                 email = emailText
                 p_verification.BringToFront()
@@ -485,10 +485,10 @@ Public Class LoginForgot
 
     Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
         Dim userID As String
-        Dim accountTypeIdentifier As String
+        'Dim accountTypeIdentifier As String
 
-        If txtb_newpassword.Text = txtb_confirmpassword.Text Then
-            connector.connect.Open()
+        'If txtb_newpassword.Text = txtb_confirmpassword.Text Then
+        connector.connect.Open()
             connector.query = "SELECT student.id as id, student.email as email from student union SELECT professor.id as id, professor.email as email FROM professor;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
@@ -507,22 +507,22 @@ Public Class LoginForgot
                 read.Close()
             End Using
 
-            If userID <> "" Then
-                accountTypeIdentifier = userID.Substring(0, 1)
-
-                If accountTypeIdentifier = 1 Then
-                    connector.query = "UPDATE student SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
-                    signin()
-                ElseIf accountTypeIdentifier = 2 Then
-                    connector.query = "UPDATE professor SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
-                    signin()
-                End If
-                connector.command.Connection = connector.connect
-                connector.command.CommandText = connector.query
-                connector.command.ExecuteNonQuery()
-            End If
-            connector.connect.Close()
-        End If
+            'If userID <> "" Then
+        'accountTypeIdentifier = userID.Substring(0, 1)
+        '
+        ' If accountTypeIdentifier = 1 Then
+        'connector.query = "UPDATE student SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
+        'signin()
+        'ElseIf accountTypeIdentifier = 2 Then
+        '   connector.query = "UPDATE professor SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
+        '   signin()
+        'End If
+        '   connector.command.Connection = connector.connect
+        '  connector.command.CommandText = connector.query
+        ' connector.command.ExecuteNonQuery()
+        'End If
+        '   connector.connect.Close()
+        'End If
 
 
 

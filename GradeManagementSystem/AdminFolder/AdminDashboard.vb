@@ -41,6 +41,7 @@ Public Class AdminDashboard
     Dim departments2 As Image = My.Resources.departments2
     Dim department1 As Image = My.Resources.department1
     Dim department2 As Image = My.Resources.department2
+    Dim walking As Image = My.Resources.lakad
     Private originalPositions As Dictionary(Of Control, Integer)
 
     Private originalImage As Image
@@ -94,6 +95,7 @@ Public Class AdminDashboard
         depIcon2.Hide()
         alloIcon2.Hide()
 
+
         originalSize = Panel1.Size
         expandedSize = New Size(originalSize.Width + 345, originalSize.Height + 280)
         originalSize1 = Gerald1.Size
@@ -123,7 +125,7 @@ Public Class AdminDashboard
             Dim newDepBoxLeft As Integer = Math.Min(originalPositions(depBox) + slideOffset, originalPositions(depBox) + MAX_SLIDE_OFFSET)
             Dim newCourseBoxLeft As Integer = Math.Min(originalPositions(courseBox) + slideOffset, originalPositions(courseBox) + MAX_SLIDE_OFFSET)
             ' Dim newLeft As Integer = Me.Width - searchstudent.Width - SLIDE_DISTANCE
-            searchstudent.Location = New Point(485, 200)
+            ' searchstudent.Location = New Point(485, 200)
             ' Transition.run(searchstudent, "Left", newLeft, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Width", expandedSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", expandedSize.Height, New TransitionType_Deceleration(500))
@@ -133,6 +135,18 @@ Public Class AdminDashboard
             Transition.run(profBox, "Left", newProfBoxLeft, New TransitionType_Deceleration(500))
             Transition.run(depBox, "Left", newDepBoxLeft, New TransitionType_Deceleration(500))
             Transition.run(courseBox, "Left", newCourseBoxLeft, New TransitionType_Deceleration(500))
+            walk.Show()
+            studBox.Hide()
+            profBox.Hide()
+            adminBox.Hide()
+            profBox.Hide()
+            progBox.Hide()
+            courseBox.Hide()
+            depBox.Hide()
+
+
+            walk.Image = walking
+
             expand = True
         End If
     End Sub
@@ -150,10 +164,10 @@ Public Class AdminDashboard
             dashbtn.MouseLeave, progbtn.MouseLeave, profbtn.MouseLeave, managebtn.MouseLeave,
         depBtn.MouseLeave, Panel2.MouseLeave
         If expand Then
-            searchstudent.Location = New Point(220, 200)
+            ' searchstudent.Location = New Point(220, 200)
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(100))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(100))
-            searchstudent.Location = New Point(220, 200)
+            '   searchstudent.Location = New Point(220, 200)
             expand = False
         End If
     End Sub
@@ -199,18 +213,25 @@ Public Class AdminDashboard
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.Visible = False
         LoginForm.Visible = True
+        dashIcon2.Enabled = False
+        studIcon2.Enabled = False
+        profIcon2.Enabled = False
+        progIcon2.Enabled = False
+        depIcon2.Enabled = False
+        alloIcon2.Enabled = False
     End Sub
     Private Sub studBox_Click(sender As Object, e As EventArgs) Handles studBox.Click
-        searchstudent.Show()
+        SwitchPanel(searchstudent)
     End Sub
     Private Sub profBox_Click(sender As Object, e As EventArgs) Handles profBox.Click
         searchprofessor.Show()
+
     End Sub
     Private Sub adminBox_Click(sender As Object, e As EventArgs) Handles adminBox.Click
         searchadmin.Show()
     End Sub
     Private Sub courseBox_Click(sender As Object, e As EventArgs) Handles courseBox.Click
-        searchprogram.Show()
+        searchcourses.Show()
     End Sub
     Private Sub progBox_Click(sender As Object, e As EventArgs) Handles progBox.Click
         searchprogram.Show()
@@ -550,5 +571,20 @@ Public Class AdminDashboard
 
     End Sub
 
+    Sub SwitchPanel(ByVal panel As Form)
+        panel.SendToBack()
+        Panel2.BringToFront()
+        dashbtn.BringToFront()
+        studbtn.BringToFront()
+        Panel5.BringToFront()
+        Panel5.Controls.Clear()
+        panel.TopLevel = False
+        Panel5.Controls.Add(panel)
 
+        panel.Show()
+    End Sub
+
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
+    End Sub
 End Class

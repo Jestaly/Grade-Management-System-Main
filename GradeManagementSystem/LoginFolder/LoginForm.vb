@@ -3,7 +3,6 @@ Imports MySql.Data.MySqlClient
 
 Public Class LoginForm
     Public connector As New DatabaseConnector
-    ' Private adminForm As New AdminForm
     Private registerForm As New RegisterForm
     Private studentForm As New StudentForm
     Private professorForm As New ProfessorForm
@@ -12,10 +11,10 @@ Public Class LoginForm
         MyBase.OnPaint(e)
         e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
         Dim path As New GraphicsPath()
-        path.AddArc(0, 0, CornerRadius, CornerRadius, 180, 90) ' Top-left corner
-        path.AddArc(Me.ClientSize.Width - CornerRadius, 0, CornerRadius, CornerRadius, 270, 90) ' Top-right corner
-        path.AddArc(Me.ClientSize.Width - CornerRadius, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 0, 90) ' Bottom-right corner
-        path.AddArc(0, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 90, 90) ' Bottom-left corner
+        path.AddArc(0, 0, CornerRadius, CornerRadius, 180, 90)
+        path.AddArc(Me.ClientSize.Width - CornerRadius, 0, CornerRadius, CornerRadius, 270, 90)
+        path.AddArc(Me.ClientSize.Width - CornerRadius, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 0, 90)
+        path.AddArc(0, Me.ClientSize.Height - CornerRadius, CornerRadius, CornerRadius, 90, 90)
         path.CloseAllFigures()
         Me.Region = New Region(path)
         e.Graphics.DrawPath(New Pen(Color.Black, 2), path)
