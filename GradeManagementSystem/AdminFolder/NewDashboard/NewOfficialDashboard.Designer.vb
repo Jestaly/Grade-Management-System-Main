@@ -22,7 +22,6 @@ Partial Class NewOfficialDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewOfficialDashboard))
         GroupBox2 = New GroupBox()
         Label31 = New Label()
         Label30 = New Label()
@@ -70,26 +69,27 @@ Partial Class NewOfficialDashboard
         Label4 = New Label()
         PictureBox17 = New PictureBox()
         PictureBox16 = New PictureBox()
-        PictureBox6 = New PictureBox()
-        PictureBox5 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox3 = New PictureBox()
-        PictureBox2 = New PictureBox()
-        PictureBox1 = New PictureBox()
-        Button10 = New Button()
+        searchprogrambttn = New PictureBox()
+        searchdepartmentbttn = New PictureBox()
+        searchprofessorbttn = New PictureBox()
+        searchstudentbttn = New PictureBox()
+        searchcoursesbttn = New PictureBox()
+        searchadministratorbttn = New PictureBox()
+        generatsummarybttn = New Button()
         Label1 = New Label()
+        Panel1 = New Panel()
         GroupBox2.SuspendLayout()
         GroupBox1.SuspendLayout()
         CType(PictureBox18, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox17, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchprogrambttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchdepartmentbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchprofessorbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchstudentbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchcoursesbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(searchadministratorbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' GroupBox2
@@ -532,7 +532,7 @@ Partial Class NewOfficialDashboard
         ' 
         ' PictureBox18
         ' 
-        PictureBox18.BackgroundImage = CType(resources.GetObject("PictureBox18.BackgroundImage"), Image)
+        PictureBox18.BackgroundImage = My.Resources.Resources.PLP_BANNER
         PictureBox18.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox18.Location = New Point(26, 103)
         PictureBox18.Margin = New Padding(2)
@@ -608,7 +608,7 @@ Partial Class NewOfficialDashboard
         ' 
         ' PictureBox17
         ' 
-        PictureBox17.BackgroundImage = CType(resources.GetObject("PictureBox17.BackgroundImage"), Image)
+        PictureBox17.BackgroundImage = My.Resources.Resources.Screenshot_2024_11_28_103641_removebg_preview
         PictureBox17.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox17.Location = New Point(1168, 23)
         PictureBox17.Margin = New Padding(2)
@@ -619,7 +619,7 @@ Partial Class NewOfficialDashboard
         ' 
         ' PictureBox16
         ' 
-        PictureBox16.BackgroundImage = CType(resources.GetObject("PictureBox16.BackgroundImage"), Image)
+        PictureBox16.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_04_153009_removebg_preview
         PictureBox16.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox16.Location = New Point(918, 23)
         PictureBox16.Margin = New Padding(2)
@@ -628,80 +628,80 @@ Partial Class NewOfficialDashboard
         PictureBox16.TabIndex = 44
         PictureBox16.TabStop = False
         ' 
-        ' PictureBox6
+        ' searchprogrambttn
         ' 
-        PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), Image)
-        PictureBox6.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox6.Location = New Point(103, 295)
-        PictureBox6.Margin = New Padding(2)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(210, 98)
-        PictureBox6.TabIndex = 41
-        PictureBox6.TabStop = False
+        searchprogrambttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012201
+        searchprogrambttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchprogrambttn.Location = New Point(103, 295)
+        searchprogrambttn.Margin = New Padding(2)
+        searchprogrambttn.Name = "searchprogrambttn"
+        searchprogrambttn.Size = New Size(210, 98)
+        searchprogrambttn.TabIndex = 41
+        searchprogrambttn.TabStop = False
         ' 
-        ' PictureBox5
+        ' searchdepartmentbttn
         ' 
-        PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
-        PictureBox5.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox5.Location = New Point(356, 294)
-        PictureBox5.Margin = New Padding(2)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(210, 98)
-        PictureBox5.TabIndex = 40
-        PictureBox5.TabStop = False
+        searchdepartmentbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012054
+        searchdepartmentbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchdepartmentbttn.Location = New Point(356, 294)
+        searchdepartmentbttn.Margin = New Padding(2)
+        searchdepartmentbttn.Name = "searchdepartmentbttn"
+        searchdepartmentbttn.Size = New Size(210, 98)
+        searchdepartmentbttn.TabIndex = 40
+        searchdepartmentbttn.TabStop = False
         ' 
-        ' PictureBox4
+        ' searchprofessorbttn
         ' 
-        PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), Image)
-        PictureBox4.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox4.Location = New Point(356, 191)
-        PictureBox4.Margin = New Padding(2)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(210, 98)
-        PictureBox4.TabIndex = 39
-        PictureBox4.TabStop = False
+        searchprofessorbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012117
+        searchprofessorbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchprofessorbttn.Location = New Point(356, 191)
+        searchprofessorbttn.Margin = New Padding(2)
+        searchprofessorbttn.Name = "searchprofessorbttn"
+        searchprofessorbttn.Size = New Size(210, 98)
+        searchprofessorbttn.TabIndex = 39
+        searchprofessorbttn.TabStop = False
         ' 
-        ' PictureBox3
+        ' searchstudentbttn
         ' 
-        PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), Image)
-        PictureBox3.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox3.Location = New Point(100, 191)
-        PictureBox3.Margin = New Padding(2)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(210, 98)
-        PictureBox3.TabIndex = 38
-        PictureBox3.TabStop = False
+        searchstudentbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012104
+        searchstudentbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchstudentbttn.Location = New Point(100, 191)
+        searchstudentbttn.Margin = New Padding(2)
+        searchstudentbttn.Name = "searchstudentbttn"
+        searchstudentbttn.Size = New Size(210, 98)
+        searchstudentbttn.TabIndex = 38
+        searchstudentbttn.TabStop = False
         ' 
-        ' PictureBox2
+        ' searchcoursesbttn
         ' 
-        PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
-        PictureBox2.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox2.Location = New Point(616, 293)
-        PictureBox2.Margin = New Padding(2)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(210, 98)
-        PictureBox2.TabIndex = 37
-        PictureBox2.TabStop = False
+        searchcoursesbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012213
+        searchcoursesbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchcoursesbttn.Location = New Point(616, 293)
+        searchcoursesbttn.Margin = New Padding(2)
+        searchcoursesbttn.Name = "searchcoursesbttn"
+        searchcoursesbttn.Size = New Size(210, 98)
+        searchcoursesbttn.TabIndex = 37
+        searchcoursesbttn.TabStop = False
         ' 
-        ' PictureBox1
+        ' searchadministratorbttn
         ' 
-        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
-        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(616, 191)
-        PictureBox1.Margin = New Padding(2)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(210, 98)
-        PictureBox1.TabIndex = 36
-        PictureBox1.TabStop = False
+        searchadministratorbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_11_012222
+        searchadministratorbttn.BackgroundImageLayout = ImageLayout.Stretch
+        searchadministratorbttn.Location = New Point(616, 191)
+        searchadministratorbttn.Margin = New Padding(2)
+        searchadministratorbttn.Name = "searchadministratorbttn"
+        searchadministratorbttn.Size = New Size(210, 98)
+        searchadministratorbttn.TabIndex = 36
+        searchadministratorbttn.TabStop = False
         ' 
-        ' Button10
+        ' generatsummarybttn
         ' 
-        Button10.Location = New Point(291, 838)
-        Button10.Name = "Button10"
-        Button10.Size = New Size(302, 34)
-        Button10.TabIndex = 53
-        Button10.Text = "Generate Summary Report"
-        Button10.UseVisualStyleBackColor = True
+        generatsummarybttn.Location = New Point(291, 838)
+        generatsummarybttn.Name = "generatsummarybttn"
+        generatsummarybttn.Size = New Size(302, 34)
+        generatsummarybttn.TabIndex = 53
+        generatsummarybttn.Text = "Generate Summary Report"
+        generatsummarybttn.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
@@ -715,13 +715,22 @@ Partial Class NewOfficialDashboard
         Label1.TabIndex = 54
         Label1.Text = "Read more"
         ' 
-        ' NewDashboard
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(2, 2)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1265, 896)
+        Panel1.TabIndex = 55
+        Panel1.Visible = False
+        ' 
+        ' NewOfficialDashboard
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1261, 897)
+        Controls.Add(Panel1)
         Controls.Add(Label1)
-        Controls.Add(Button10)
+        Controls.Add(generatsummarybttn)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Controls.Add(PictureBox18)
@@ -733,14 +742,14 @@ Partial Class NewOfficialDashboard
         Controls.Add(Label4)
         Controls.Add(PictureBox17)
         Controls.Add(PictureBox16)
-        Controls.Add(PictureBox6)
-        Controls.Add(PictureBox5)
-        Controls.Add(PictureBox4)
-        Controls.Add(PictureBox3)
-        Controls.Add(PictureBox2)
-        Controls.Add(PictureBox1)
+        Controls.Add(searchprogrambttn)
+        Controls.Add(searchdepartmentbttn)
+        Controls.Add(searchprofessorbttn)
+        Controls.Add(searchstudentbttn)
+        Controls.Add(searchcoursesbttn)
+        Controls.Add(searchadministratorbttn)
         FormBorderStyle = FormBorderStyle.None
-        Name = "NewDashboard"
+        Name = "NewOfficialDashboard"
         Text = "dashboard"
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
@@ -750,12 +759,12 @@ Partial Class NewOfficialDashboard
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox17, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox16, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchprogrambttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchdepartmentbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchprofessorbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchstudentbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchcoursesbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(searchadministratorbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -807,12 +816,13 @@ Partial Class NewOfficialDashboard
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents PictureBox16 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button10 As Button
+    Friend WithEvents searchprogrambttn As PictureBox
+    Friend WithEvents searchdepartmentbttn As PictureBox
+    Friend WithEvents searchprofessorbttn As PictureBox
+    Friend WithEvents searchstudentbttn As PictureBox
+    Friend WithEvents searchcoursesbttn As PictureBox
+    Friend WithEvents searchadministratorbttn As PictureBox
+    Friend WithEvents generatsummarybttn As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
 End Class

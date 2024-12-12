@@ -5,27 +5,6 @@ Public Class ManageStudentAdmin
     Private addStudentForm As New AddStudentAccount
     Private modifyStudentForm As New ModifyStudentForm
     Private connector As New DatabaseConnector
-    Private Sub addStudent_Click(sender As Object, e As EventArgs) Handles addStudent.Click
-        Dim sCount As Integer
-        Try
-            addStudentForm.programComboBox.Items.Clear()
-            loadProgram()
-            connector.connect.Open()
-            connector.query = "SELECT * FROM student_count_history ORDER BY count DESC LIMIT 1;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.reader = connector.command.ExecuteReader
-            While connector.reader.Read
-                sCount = Integer.Parse(connector.reader("count").ToString())
-            End While
-            connector.connect.Close()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            MessageBox.Show("Database Error")
-        End Try
-        addStudentForm.studentIDTextBox.Text = getStudNum() & "-" & getStudYear() & "-" & getZeros(sCount) & (sCount + 1)
-        addStudentForm.Visible = True
-    End Sub
 
     Private Sub loadProgram()
         Try
@@ -84,49 +63,6 @@ Public Class ManageStudentAdmin
         Me.Visible = False
     End Sub
 
-    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
-        Try
-            connector.connect.Open()
-            connector.dataTable.Clear()
-            connector.query = "SELECT student.id,student.lname,student.fname,student.mname,student.birthdate,program.program_name,student.year,student.section,student.email FROM student LEFT JOIN program ON student.program_id = program.program_id;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.dataAdapter.Fill(connector.dataTable)
-            dataView.DataSource = connector.dataTable
-            connector.connect.Close()
-            connector.command.Parameters.Clear()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            connector.command.Parameters.Clear()
-            MessageBox.Show("Database Error")
-        End Try
-    End Sub
-
-    Private Sub modifyStudent_Click(sender As Object, e As EventArgs) Handles modifyStudent.Click
-        modifyStudentForm.Visible = True
-    End Sub
-
-    Private Sub searchStudent_Click(sender As Object, e As EventArgs)
-        Try
-            Dim studentDetail = searchStudentField.Text
-            connector.connect.Open()
-            connector.dataTable.Clear()
-            connector.query = "SELECT * FROM student_info WHERE CONCAT(fname,' ',mname,' ',lname) = ?fullname OR CONCAT(fname,' ',mname) = ?fullname OR CONCAT(fname,' ',lname) = ?fullname;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.command.Parameters.AddWithValue("?fullname", studentDetail)
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.dataAdapter.Fill(connector.dataTable)
-            dataView.DataSource = connector.dataTable
-            connector.connect.Close()
-            connector.command.Parameters.Clear()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            connector.command.Parameters.Clear()
-            MessageBox.Show("Database Error")
-        End Try
-    End Sub
 
     Private Sub ManageStudentAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         makeASFChild()
@@ -159,4 +95,73 @@ Public Class ManageStudentAdmin
     End Sub
 
 
+    Private Sub reloadbttn_Click(sender As Object, e As EventArgs) Handles reloadbttn.Click
+        Try
+            connector.connect.Open()
+            connector.dataTable.Clear()
+            connector.query = "SELECT student.id,student.lname,student.fname,student.mname,student.birthdate,program.program_name,student.year,student.section,student.email FROM student LEFT JOIN program ON student.program_id = program.program_id;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Sub searchbttn_Click(sender As Object, e As EventArgs) Handles searchbttn.Click
+        Try
+            Dim studentDetail = searchStudentField.Text
+            connector.connect.Open()
+            connector.dataTable.Clear()
+            connector.query = "SELECT * FROM student_info WHERE CONCAT(fname,' ',mname,' ',lname) = ?fullname OR CONCAT(fname,' ',mname) = ?fullname OR CONCAT(fname,' ',lname) = ?fullname;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.Parameters.AddWithValue("?fullname", studentDetail)
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.command.Parameters.Clear()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Sub addstudentbttn_Click(sender As Object, e As EventArgs) Handles addstudentbttn.Click
+        Dim sCount As Integer
+        Try
+            addStudentForm.programComboBox.Items.Clear()
+
+            loadProgram()
+            connector.connect.Open()
+            connector.query = "SELECT * FROM student_count_history ORDER BY count DESC LIMIT 1;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                sCount = Integer.Parse(connector.reader("count").ToString)
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        addStudentForm.SIDTextBox.Text = getStudNum() & "-" & getStudYear() & "-" & getZeros(sCount) & sCount + 1
+        addStudentForm.Visible = True
+    End Sub
+
+    Private Sub modifybttn1_Click(sender As Object, e As EventArgs) Handles modifybttn1.Click
+        modifyStudentForm.Visible = True
+    End Sub
+    Private Sub modifybttn_Click(sender As Object, e As EventArgs) Handles modifybttn.Click
+        modifyStudentForm.Visible = True
+    End Sub
 End Class

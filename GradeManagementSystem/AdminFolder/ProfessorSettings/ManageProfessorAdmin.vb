@@ -5,43 +5,6 @@ Public Class ManageProfessorAdmin
     Private connector As New DatabaseConnector
     Private addProfessorForm As New AddProfessorAccount
     Private modifyProfessorForm As New ModifyProfessorForm
-    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
-        Try
-            connector.connect.Open()
-            connector.dataTable.Clear()
-            connector.query = "SELECT * FROM professor;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.dataAdapter.Fill(connector.dataTable)
-            dataView.DataSource = connector.dataTable
-            connector.connect.Close()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            MessageBox.Show("Database Error")
-        End Try
-    End Sub
-
-    Private Sub addProfessorButton_Click(sender As Object, e As EventArgs) Handles addProfessorButton.Click
-        Dim pCount As Integer
-        Try
-            connector.connect.Open()
-            connector.query = "SELECT * FROM prof_count_history ORDER BY count DESC LIMIT 1;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.reader = connector.command.ExecuteReader
-            While connector.reader.Read
-                pCount = Integer.Parse(connector.reader("count").ToString())
-            End While
-            connector.connect.Close()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            MessageBox.Show("Database Error")
-        End Try
-        addProfessorForm.professorIDTextBox.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
-        loadDepartment()
-        addProfessorForm.Visible = True
-    End Sub
     Private Sub loadDepartment()
         Try
             AddProgramForm.departmentComboBox.Items.Clear()
@@ -92,11 +55,6 @@ Public Class ManageProfessorAdmin
         End Select
         Return zeros
     End Function
-
-    Private Sub modifyProfessorButton_Click(sender As Object, e As EventArgs) Handles modifyProfessorButton.Click
-        modifyProfessorForm.Visible = True
-    End Sub
-
     Private Sub ManageProfessorAdmin_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         e.Cancel = True
         Me.Visible = False
@@ -130,5 +88,89 @@ Public Class ManageProfessorAdmin
         Dim x As Integer = (Me.ClientSize.Width - modifyProfessorForm.Width) \ 2
         Dim y As Integer = (Me.ClientSize.Height - modifyProfessorForm.Height) \ 2
         modifyProfessorForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub addprofessor1_Click(sender As Object, e As EventArgs) Handles addprofessor1.Click
+        Dim pCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM prof_count_history ORDER BY count DESC LIMIT 1;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                pCount = Integer.Parse(connector.reader("count").ToString())
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        addProfessorForm.professorIDTextBox.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
+        loadDepartment()
+        addProfessorForm.Visible = True
+    End Sub
+
+    Private Sub addprofessorbttn_Click(sender As Object, e As EventArgs) Handles addprofessorbttn.Click
+        Dim pCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM prof_count_history ORDER BY count DESC LIMIT 1;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                pCount = Integer.Parse(connector.reader("count").ToString())
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        addProfessorForm.professorIDTextBox.Text = getProfNum() & "-" & getProfYear() & "-" & getZeros(pCount) & (pCount + 1)
+        loadDepartment()
+        addProfessorForm.Visible = True
+    End Sub
+
+    Private Sub modifybttn1_Click(sender As Object, e As EventArgs) Handles modifybttn1.Click
+        modifyProfessorForm.Visible = True
+    End Sub
+
+    Private Sub modifybttn_Click(sender As Object, e As EventArgs) Handles modifybttn.Click
+        modifyProfessorForm.Visible = True
+    End Sub
+
+    Private Sub reloadbttn1_Click(sender As Object, e As EventArgs) Handles reloadbttn1.Click
+        Try
+            connector.connect.Open()
+            connector.dataTable.Clear()
+            connector.query = "SELECT * FROM professor;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Sub reloadbttn_Click(sender As Object, e As EventArgs) Handles reloadbttn.Click
+        Try
+            connector.connect.Open()
+            connector.dataTable.Clear()
+            connector.query = "SELECT * FROM professor;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
     End Sub
 End Class

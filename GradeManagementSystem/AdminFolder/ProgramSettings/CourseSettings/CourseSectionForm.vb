@@ -8,32 +8,6 @@ Public Class CourseSectionForm
         e.Cancel = True
         Me.Visible = False
     End Sub
-
-    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
-        Me.Visible = False
-        ManageProgramAdmin.Visible = True
-    End Sub
-
-    Private Sub addCourseButton_Click(sender As Object, e As EventArgs) Handles addCourseButton.Click
-        Dim cCount As Integer
-        Try
-            connector.connect.Open()
-            connector.query = "SELECT * FROM course_count_history ORDER BY count DESC LIMIT 1;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.reader = connector.command.ExecuteReader
-            While connector.reader.Read
-                cCount = Integer.Parse(connector.reader("count").ToString())
-            End While
-            connector.connect.Close()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            MessageBox.Show("Database Error")
-        End Try
-        addCourseForm.courseIDTextBox.Text = "C" & "-" & getZeros(cCount) & (cCount + 1)
-        addCourseForm.Visible = True
-    End Sub
-
     Private Function getZeros(cCount As Integer) As String
         Dim zeros As String = "000"
         Select Case cCount.ToString.Length
@@ -46,10 +20,6 @@ Public Class CourseSectionForm
         End Select
         Return zeros
     End Function
-
-    Private Sub modifyCourseButton_Click(sender As Object, e As EventArgs) Handles modifyCourseButton.Click
-        modifyCourseForm.Visible = True
-    End Sub
 
     Private Sub CourseSectionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         makeACFChild()
@@ -80,7 +50,36 @@ Public Class CourseSectionForm
         modifyCourseForm.Location = New Point(x, y)
     End Sub
 
-    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+    Private Sub backbttn_Click(sender As Object, e As EventArgs) Handles backbttn.Click
+        Me.Visible = False
+        ManageProgramAdmin.Visible = True
+    End Sub
+
+    Private Sub addcoursebttn_Click(sender As Object, e As EventArgs) Handles addcoursebttn.Click
+        Dim cCount As Integer
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT * FROM course_count_history ORDER BY count DESC LIMIT 1;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                cCount = Integer.Parse(connector.reader("count").ToString())
+            End While
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        addCourseForm.courseIDTextBox.Text = "C" & "-" & getZeros(cCount) & (cCount + 1)
+        addCourseForm.Visible = True
+    End Sub
+
+    Private Sub modifybttn_Click(sender As Object, e As EventArgs) Handles modifybttn.Click
+        modifyCourseForm.Visible = True
+    End Sub
+
+    Private Sub reloadbttn_Click(sender As Object, e As EventArgs) Handles reloadbttn.Click
         Try
             connector.dataTable.Clear()
             connector.connect.Open()

@@ -3,15 +3,6 @@
 Public Class ModifyProfessorForm
     Private connector As New DatabaseConnector
     Private officialModifyProfessorForm As New OfficialModifyProfessorForm
-
-    Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
-        loadDepartment()
-        If (professorExists()) Then
-            Me.Visible = False
-            makeOMPFFChild()
-            officialModifyProfessorForm.Visible = True
-        End If
-    End Sub
     Private Sub loadDepartment()
         Try
             OfficialModifyProgramForm.departmentComboBox.Items.Clear()
@@ -74,8 +65,8 @@ Public Class ModifyProfessorForm
         Me.Visible = False
     End Sub
 
-    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
-        Me.Visible = False
+    Private Sub backButton_Click(sender As Object, e As EventArgs)
+        Visible = False
     End Sub
     Private Sub makeOMPFFChild()
         officialModifyProfessorForm.TopLevel = False
@@ -88,5 +79,30 @@ Public Class ModifyProfessorForm
         Dim x As Integer = (Me.Parent.ClientSize.Width - officialModifyProfessorForm.Width) \ 2
         Dim y As Integer = (Me.Parent.ClientSize.Height - officialModifyProfessorForm.Height) \ 2
         officialModifyProfessorForm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub ModifyProfessorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim p As New Drawing2D.GraphicsPath
+        p.StartFigure()
+        p.AddArc(New Rectangle(0, 0, 40, 40), 180, 90)
+        p.AddLine(40, 0, Me.Width - 40, 0)
+        p.AddArc(New Rectangle(Me.Width - 40, 0, 40, 40), 270, 90)
+        p.AddLine(Me.Width, 40, Me.Width, Me.Height - 40)
+        p.AddArc(New Rectangle(Me.Width - 40, Me.Height - 40, 40, 40), 0, 90)
+        p.AddLine(Me.Width - 40, Me.Height, 40, Me.Height)
+        p.AddArc(New Rectangle(0, Me.Height - 40, 40, 40), 90, 90)
+        p.AddLine(0, Me.Height - 40, 0, 40)
+        p.CloseFigure()
+        Me.Region = New Region(p)
+    End Sub
+
+    Private Sub searchb_Click(sender As Object, e As EventArgs) Handles searchb.Click
+        loadDepartment()
+
+        If professorExists() Then
+            Visible = False
+            makeOMPFFChild()
+            officialModifyProfessorForm.Visible = True
+        End If
     End Sub
 End Class

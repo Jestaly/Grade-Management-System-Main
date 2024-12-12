@@ -22,6 +22,7 @@ Partial Class OfficialModifyProgramForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OfficialModifyProgramForm))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -34,90 +35,95 @@ Partial Class OfficialModifyProgramForm
         backButton = New Button()
         departmentComboBox = New ComboBox()
         Label5 = New Label()
+        backbttn = New PictureBox()
+        Label6 = New Label()
+        CType(backbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label1.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label1.ForeColor = Color.DarkGreen
-        Label1.Location = New Point(97, 81)
+        Label1.Location = New Point(113, 98)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(112, 29)
+        Label1.Size = New Size(121, 28)
         Label1.TabIndex = 0
         Label1.Text = "Program ID:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label2.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label2.ForeColor = Color.DarkGreen
-        Label2.Location = New Point(68, 128)
+        Label2.Location = New Point(79, 138)
         Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(141, 29)
+        Label2.Size = New Size(155, 28)
         Label2.TabIndex = 1
         Label2.Text = "Program Name:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label3.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(97, 176)
+        Label3.Location = New Point(109, 183)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(110, 29)
+        Label3.Size = New Size(125, 28)
         Label3.TabIndex = 2
         Label3.Text = "Date Added:"
         ' 
         ' modifyButton
         ' 
-        modifyButton.BackColor = Color.DarkSeaGreen
+        modifyButton.BackColor = Color.DarkGreen
         modifyButton.FlatStyle = FlatStyle.Popup
-        modifyButton.ForeColor = Color.Black
-        modifyButton.Location = New Point(69, 385)
+        modifyButton.ForeColor = Color.White
+        modifyButton.Location = New Point(137, 339)
         modifyButton.Margin = New Padding(4, 5, 4, 5)
         modifyButton.Name = "modifyButton"
-        modifyButton.Size = New Size(160, 42)
+        modifyButton.Size = New Size(118, 42)
         modifyButton.TabIndex = 3
-        modifyButton.Text = "Modify Program"
+        modifyButton.Text = "Modify "
         modifyButton.UseVisualStyleBackColor = False
         ' 
         ' yearAddedTextBox
         ' 
-        yearAddedTextBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
-        yearAddedTextBox.Location = New Point(212, 180)
+        yearAddedTextBox.Font = New Font("Segoe UI", 10F)
+        yearAddedTextBox.Location = New Point(242, 179)
         yearAddedTextBox.Margin = New Padding(4, 5, 4, 5)
         yearAddedTextBox.Name = "yearAddedTextBox"
-        yearAddedTextBox.Size = New Size(155, 33)
+        yearAddedTextBox.Size = New Size(210, 34)
         yearAddedTextBox.TabIndex = 4
         ' 
         ' programnameTextBox
         ' 
-        programnameTextBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
-        programnameTextBox.Location = New Point(212, 131)
+        programnameTextBox.Font = New Font("Segoe UI", 10F)
+        programnameTextBox.Location = New Point(242, 135)
         programnameTextBox.Margin = New Padding(4, 5, 4, 5)
         programnameTextBox.Name = "programnameTextBox"
-        programnameTextBox.Size = New Size(210, 33)
+        programnameTextBox.Size = New Size(210, 34)
         programnameTextBox.TabIndex = 5
         ' 
         ' programIDTextBox
         ' 
         programIDTextBox.Enabled = False
-        programIDTextBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
-        programIDTextBox.Location = New Point(212, 83)
+        programIDTextBox.Font = New Font("Segoe UI", 10F)
+        programIDTextBox.Location = New Point(242, 95)
         programIDTextBox.Margin = New Padding(4, 5, 4, 5)
         programIDTextBox.Mask = "L-000"
         programIDTextBox.Name = "programIDTextBox"
         programIDTextBox.PromptChar = "X"c
-        programIDTextBox.Size = New Size(155, 33)
+        programIDTextBox.Size = New Size(210, 34)
         programIDTextBox.TabIndex = 6
+        programIDTextBox.TextAlign = HorizontalAlignment.Center
         ' 
         ' sectionBox
         ' 
         sectionBox.BorderStyle = BorderStyle.FixedSingle
+        sectionBox.Font = New Font("Segoe UI", 10F)
         sectionBox.Items.Add("1")
         sectionBox.Items.Add("2")
         sectionBox.Items.Add("3")
@@ -128,68 +134,92 @@ Partial Class OfficialModifyProgramForm
         sectionBox.Items.Add("8")
         sectionBox.Items.Add("9")
         sectionBox.Items.Add("10")
-        sectionBox.Location = New Point(214, 275)
+        sectionBox.Location = New Point(242, 270)
         sectionBox.Margin = New Padding(4, 6, 4, 6)
         sectionBox.Name = "sectionBox"
         sectionBox.ReadOnly = True
-        sectionBox.Size = New Size(95, 33)
+        sectionBox.Size = New Size(95, 34)
         sectionBox.TabIndex = 12
         sectionBox.Text = "1"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label4.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(121, 272)
+        Label4.Location = New Point(141, 270)
         Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(85, 29)
+        Label4.Size = New Size(93, 28)
         Label4.TabIndex = 11
         Label4.Text = "Sections:"
         ' 
         ' backButton
         ' 
-        backButton.BackColor = Color.DarkSeaGreen
+        backButton.BackColor = Color.DarkGreen
         backButton.FlatStyle = FlatStyle.Popup
-        backButton.ForeColor = Color.Black
-        backButton.Location = New Point(304, 385)
+        backButton.ForeColor = Color.White
+        backButton.Location = New Point(286, 339)
         backButton.Margin = New Padding(4, 5, 4, 5)
         backButton.Name = "backButton"
         backButton.Size = New Size(118, 42)
         backButton.TabIndex = 18
-        backButton.Text = "Back"
+        backButton.Text = "Clear"
         backButton.UseVisualStyleBackColor = False
         ' 
         ' departmentComboBox
         ' 
         departmentComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        departmentComboBox.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        departmentComboBox.Font = New Font("Segoe UI", 10F)
         departmentComboBox.FormattingEnabled = True
-        departmentComboBox.Location = New Point(212, 227)
+        departmentComboBox.Location = New Point(242, 223)
         departmentComboBox.Margin = New Padding(4, 5, 4, 5)
         departmentComboBox.Name = "departmentComboBox"
-        departmentComboBox.Size = New Size(214, 37)
+        departmentComboBox.Size = New Size(210, 36)
         departmentComboBox.TabIndex = 21
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label5.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(93, 222)
+        Label5.Location = New Point(107, 229)
         Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(115, 29)
+        Label5.Size = New Size(127, 28)
         Label5.TabIndex = 20
         Label5.Text = "Department:"
+        ' 
+        ' backbttn
+        ' 
+        backbttn.BackgroundImage = CType(resources.GetObject("backbttn.BackgroundImage"), Image)
+        backbttn.BackgroundImageLayout = ImageLayout.Stretch
+        backbttn.Location = New Point(12, 12)
+        backbttn.Name = "backbttn"
+        backbttn.Size = New Size(44, 35)
+        backbttn.TabIndex = 24
+        backbttn.TabStop = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
+        Label6.ForeColor = Color.DarkGreen
+        Label6.Location = New Point(129, 31)
+        Label6.Margin = New Padding(4, 0, 4, 0)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(273, 28)
+        Label6.TabIndex = 25
+        Label6.Text = "M O D I F Y   P R O G R A M"
         ' 
         ' OfficialModifyProgramForm
         ' 
         AutoScaleDimensions = New SizeF(10F, 29F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
-        ClientSize = New Size(504, 496)
+        ClientSize = New Size(536, 423)
+        Controls.Add(Label6)
+        Controls.Add(backbttn)
         Controls.Add(departmentComboBox)
         Controls.Add(Label5)
         Controls.Add(backButton)
@@ -208,6 +238,7 @@ Partial Class OfficialModifyProgramForm
         Name = "OfficialModifyProgramForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "OfficialModifyProgramForm"
+        CType(backbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -224,4 +255,6 @@ Partial Class OfficialModifyProgramForm
     Friend WithEvents backButton As Button
     Friend WithEvents departmentComboBox As ComboBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents backbttn As PictureBox
+    Friend WithEvents Label6 As Label
 End Class

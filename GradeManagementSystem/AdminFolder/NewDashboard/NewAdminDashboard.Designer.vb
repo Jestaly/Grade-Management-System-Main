@@ -33,14 +33,14 @@ Partial Class NewAdminDashboard
         PictureBox8 = New PictureBox()
         PictureBox7 = New PictureBox()
         logoutbttn = New Button()
-        Button8 = New Button()
+        settingsbttn = New Button()
         profilebttn = New Button()
         Label3 = New Label()
-        Button6 = New Button()
-        Button5 = New Button()
-        Button4 = New Button()
-        Button3 = New Button()
-        Button2 = New Button()
+        allocationmanagerbttn = New Button()
+        departmentmanagementbttn = New Button()
+        programmanagementbttn = New Button()
+        professorregistrybttn = New Button()
+        studentregistrybttn = New Button()
         dashboardbttn = New Button()
         Label2 = New Label()
         Label1 = New Label()
@@ -70,14 +70,14 @@ Partial Class NewAdminDashboard
         Panel1.Controls.Add(PictureBox8)
         Panel1.Controls.Add(PictureBox7)
         Panel1.Controls.Add(logoutbttn)
-        Panel1.Controls.Add(Button8)
+        Panel1.Controls.Add(settingsbttn)
         Panel1.Controls.Add(profilebttn)
         Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(Button6)
-        Panel1.Controls.Add(Button5)
-        Panel1.Controls.Add(Button4)
-        Panel1.Controls.Add(Button3)
-        Panel1.Controls.Add(Button2)
+        Panel1.Controls.Add(allocationmanagerbttn)
+        Panel1.Controls.Add(departmentmanagementbttn)
+        Panel1.Controls.Add(programmanagementbttn)
+        Panel1.Controls.Add(professorregistrybttn)
+        Panel1.Controls.Add(studentregistrybttn)
         Panel1.Controls.Add(dashboardbttn)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label1)
@@ -90,6 +90,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox15
         ' 
+        PictureBox15.BackgroundImage = My.Resources.Resources.Screenshot_2024_11_28_144752_removebg_preview
         PictureBox15.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox15.Location = New Point(11, 661)
         PictureBox15.Margin = New Padding(2)
@@ -100,6 +101,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox14
         ' 
+        PictureBox14.BackgroundImage = My.Resources.Resources.SETTINGS_OUTLINE_NA_GREEN
         PictureBox14.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox14.Location = New Point(11, 603)
         PictureBox14.Margin = New Padding(2)
@@ -110,6 +112,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox13
         ' 
+        PictureBox13.BackgroundImage = My.Resources.Resources.PROFILE_OUTLINE_NA_GREEN
         PictureBox13.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox13.Location = New Point(11, 543)
         PictureBox13.Margin = New Padding(2)
@@ -120,6 +123,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox12
         ' 
+        PictureBox12.BackgroundImage = My.Resources.Resources.ALLOCATION_OUTLINE_NA_GREEN
         PictureBox12.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox12.Location = New Point(11, 425)
         PictureBox12.Margin = New Padding(2)
@@ -130,6 +134,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox11
         ' 
+        PictureBox11.BackgroundImage = My.Resources.Resources.DEPARTMENTS_OUTLINE_NA_GREEN__1_
         PictureBox11.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox11.Location = New Point(11, 367)
         PictureBox11.Margin = New Padding(2)
@@ -140,6 +145,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox10
         ' 
+        PictureBox10.BackgroundImage = My.Resources.Resources.PROGRAM_OUTLINE_NA_GREEN
         PictureBox10.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox10.Location = New Point(11, 309)
         PictureBox10.Margin = New Padding(2)
@@ -150,6 +156,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox9
         ' 
+        PictureBox9.BackgroundImage = My.Resources.Resources.PROF_OUTLINE_NA_GREEN
         PictureBox9.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox9.Location = New Point(11, 251)
         PictureBox9.Margin = New Padding(2)
@@ -160,6 +167,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox8
         ' 
+        PictureBox8.BackgroundImage = My.Resources.Resources.STUDENT_OUTLINENA_GREEN
         PictureBox8.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox8.Location = New Point(11, 193)
         PictureBox8.Margin = New Padding(2)
@@ -170,6 +178,7 @@ Partial Class NewAdminDashboard
         ' 
         ' PictureBox7
         ' 
+        PictureBox7.BackgroundImage = My.Resources.Resources.DASHBOARD_OUTLINE_NA_GREEN_
         PictureBox7.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox7.Location = New Point(11, 138)
         PictureBox7.Margin = New Padding(2)
@@ -196,23 +205,23 @@ Partial Class NewAdminDashboard
         logoutbttn.TextAlign = ContentAlignment.MiddleLeft
         logoutbttn.UseVisualStyleBackColor = True
         ' 
-        ' Button8
+        ' settingsbttn
         ' 
-        Button8.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button8.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button8.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button8.FlatStyle = FlatStyle.System
-        Button8.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button8.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button8.ImageAlign = ContentAlignment.MiddleRight
-        Button8.Location = New Point(79, 598)
-        Button8.Margin = New Padding(2)
-        Button8.Name = "Button8"
-        Button8.Size = New Size(228, 58)
-        Button8.TabIndex = 10
-        Button8.Text = "Settings"
-        Button8.TextAlign = ContentAlignment.MiddleLeft
-        Button8.UseVisualStyleBackColor = True
+        settingsbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        settingsbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        settingsbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        settingsbttn.FlatStyle = FlatStyle.System
+        settingsbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        settingsbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        settingsbttn.ImageAlign = ContentAlignment.MiddleRight
+        settingsbttn.Location = New Point(79, 598)
+        settingsbttn.Margin = New Padding(2)
+        settingsbttn.Name = "settingsbttn"
+        settingsbttn.Size = New Size(228, 58)
+        settingsbttn.TabIndex = 10
+        settingsbttn.Text = "Settings"
+        settingsbttn.TextAlign = ContentAlignment.MiddleLeft
+        settingsbttn.UseVisualStyleBackColor = True
         ' 
         ' profilebttn
         ' 
@@ -243,91 +252,91 @@ Partial Class NewAdminDashboard
         Label3.TabIndex = 8
         Label3.Text = "OTHER"
         ' 
-        ' Button6
+        ' allocationmanagerbttn
         ' 
-        Button6.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button6.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button6.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button6.FlatStyle = FlatStyle.System
-        Button6.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button6.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button6.ImageAlign = ContentAlignment.MiddleRight
-        Button6.Location = New Point(78, 418)
-        Button6.Margin = New Padding(2)
-        Button6.Name = "Button6"
-        Button6.Size = New Size(228, 58)
-        Button6.TabIndex = 7
-        Button6.Text = "Allocation Manager"
-        Button6.TextAlign = ContentAlignment.MiddleLeft
-        Button6.UseVisualStyleBackColor = True
+        allocationmanagerbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        allocationmanagerbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        allocationmanagerbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        allocationmanagerbttn.FlatStyle = FlatStyle.System
+        allocationmanagerbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        allocationmanagerbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        allocationmanagerbttn.ImageAlign = ContentAlignment.MiddleRight
+        allocationmanagerbttn.Location = New Point(78, 418)
+        allocationmanagerbttn.Margin = New Padding(2)
+        allocationmanagerbttn.Name = "allocationmanagerbttn"
+        allocationmanagerbttn.Size = New Size(228, 58)
+        allocationmanagerbttn.TabIndex = 7
+        allocationmanagerbttn.Text = "Allocation Manager"
+        allocationmanagerbttn.TextAlign = ContentAlignment.MiddleLeft
+        allocationmanagerbttn.UseVisualStyleBackColor = True
         ' 
-        ' Button5
+        ' departmentmanagementbttn
         ' 
-        Button5.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button5.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button5.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button5.FlatStyle = FlatStyle.System
-        Button5.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button5.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button5.Location = New Point(78, 361)
-        Button5.Margin = New Padding(2)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(228, 58)
-        Button5.TabIndex = 6
-        Button5.Text = "Department Management"
-        Button5.TextAlign = ContentAlignment.MiddleLeft
-        Button5.UseVisualStyleBackColor = True
+        departmentmanagementbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        departmentmanagementbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        departmentmanagementbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        departmentmanagementbttn.FlatStyle = FlatStyle.System
+        departmentmanagementbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        departmentmanagementbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        departmentmanagementbttn.Location = New Point(78, 361)
+        departmentmanagementbttn.Margin = New Padding(2)
+        departmentmanagementbttn.Name = "departmentmanagementbttn"
+        departmentmanagementbttn.Size = New Size(228, 58)
+        departmentmanagementbttn.TabIndex = 6
+        departmentmanagementbttn.Text = "Department Management"
+        departmentmanagementbttn.TextAlign = ContentAlignment.MiddleLeft
+        departmentmanagementbttn.UseVisualStyleBackColor = True
         ' 
-        ' Button4
+        ' programmanagementbttn
         ' 
-        Button4.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button4.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button4.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button4.FlatStyle = FlatStyle.System
-        Button4.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button4.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button4.Location = New Point(77, 304)
-        Button4.Margin = New Padding(2)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(228, 58)
-        Button4.TabIndex = 5
-        Button4.Text = "Program Management"
-        Button4.TextAlign = ContentAlignment.MiddleLeft
-        Button4.UseVisualStyleBackColor = True
+        programmanagementbttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        programmanagementbttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        programmanagementbttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        programmanagementbttn.FlatStyle = FlatStyle.System
+        programmanagementbttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        programmanagementbttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        programmanagementbttn.Location = New Point(77, 304)
+        programmanagementbttn.Margin = New Padding(2)
+        programmanagementbttn.Name = "programmanagementbttn"
+        programmanagementbttn.Size = New Size(228, 58)
+        programmanagementbttn.TabIndex = 5
+        programmanagementbttn.Text = "Program Management"
+        programmanagementbttn.TextAlign = ContentAlignment.MiddleLeft
+        programmanagementbttn.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' professorregistrybttn
         ' 
-        Button3.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button3.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button3.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button3.FlatStyle = FlatStyle.System
-        Button3.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button3.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button3.Location = New Point(77, 247)
-        Button3.Margin = New Padding(2)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(228, 58)
-        Button3.TabIndex = 4
-        Button3.Text = "Professor Registry"
-        Button3.TextAlign = ContentAlignment.MiddleLeft
-        Button3.UseVisualStyleBackColor = True
+        professorregistrybttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        professorregistrybttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        professorregistrybttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        professorregistrybttn.FlatStyle = FlatStyle.System
+        professorregistrybttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        professorregistrybttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        professorregistrybttn.Location = New Point(77, 247)
+        professorregistrybttn.Margin = New Padding(2)
+        professorregistrybttn.Name = "professorregistrybttn"
+        professorregistrybttn.Size = New Size(228, 58)
+        professorregistrybttn.TabIndex = 4
+        professorregistrybttn.Text = "Professor Registry"
+        professorregistrybttn.TextAlign = ContentAlignment.MiddleLeft
+        professorregistrybttn.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' studentregistrybttn
         ' 
-        Button2.FlatAppearance.CheckedBackColor = Color.DarkGreen
-        Button2.FlatAppearance.MouseDownBackColor = Color.DarkGreen
-        Button2.FlatAppearance.MouseOverBackColor = Color.DarkGreen
-        Button2.FlatStyle = FlatStyle.System
-        Button2.Font = New Font("Microsoft Sans Serif", 8.25F)
-        Button2.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
-        Button2.Location = New Point(77, 190)
-        Button2.Margin = New Padding(2)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(228, 58)
-        Button2.TabIndex = 3
-        Button2.Text = "Student Registry"
-        Button2.TextAlign = ContentAlignment.MiddleLeft
-        Button2.UseVisualStyleBackColor = True
+        studentregistrybttn.FlatAppearance.CheckedBackColor = Color.DarkGreen
+        studentregistrybttn.FlatAppearance.MouseDownBackColor = Color.DarkGreen
+        studentregistrybttn.FlatAppearance.MouseOverBackColor = Color.DarkGreen
+        studentregistrybttn.FlatStyle = FlatStyle.System
+        studentregistrybttn.Font = New Font("Microsoft Sans Serif", 8.25F)
+        studentregistrybttn.ForeColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
+        studentregistrybttn.Location = New Point(77, 190)
+        studentregistrybttn.Margin = New Padding(2)
+        studentregistrybttn.Name = "studentregistrybttn"
+        studentregistrybttn.Size = New Size(228, 58)
+        studentregistrybttn.TabIndex = 3
+        studentregistrybttn.Text = "Student Registry"
+        studentregistrybttn.TextAlign = ContentAlignment.MiddleLeft
+        studentregistrybttn.UseVisualStyleBackColor = True
         ' 
         ' dashboardbttn
         ' 
@@ -408,13 +417,13 @@ Partial Class NewAdminDashboard
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents dashboardbttn As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents programmanagementbttn As Button
+    Friend WithEvents professorregistrybttn As Button
+    Friend WithEvents studentregistrybttn As Button
+    Friend WithEvents allocationmanagerbttn As Button
+    Friend WithEvents departmentmanagementbttn As Button
     Friend WithEvents logoutbttn As Button
-    Friend WithEvents Button8 As Button
+    Friend WithEvents settingsbttn As Button
     Friend WithEvents profilebttn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox7 As PictureBox
