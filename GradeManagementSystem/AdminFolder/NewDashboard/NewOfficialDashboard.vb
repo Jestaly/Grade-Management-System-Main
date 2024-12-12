@@ -49,4 +49,52 @@
         Panel12.Region = New Region(path)
 
     End Sub
+    Public Sub ResetState()
+        Panel1.Visible = False
+        Panel1.Controls.Clear()
+    End Sub
+    Sub switchPanel(ByVal panel As Form)
+        If panel.Controls.Count > 0 Then
+            panel.Controls.RemoveAt(0)
+        End If
+        Panel1.Controls.Clear()
+        panel.TopLevel = False
+        Panel1.Controls.Add(panel)
+        panel.Show()
+    End Sub
+
+    Private Sub searchstudentbttn_Click(sender As Object, e As EventArgs) Handles searchstudentbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchstudent)
+
+    End Sub
+
+    Private Sub searchprofessorbttn_Click(sender As Object, e As EventArgs) Handles searchprofessorbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchprofessor)
+    End Sub
+
+    Private Sub searchadministratorbttn_Click(sender As Object, e As EventArgs) Handles searchadministratorbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchadmin)
+    End Sub
+
+    Private Sub searchprogrambttn_Click(sender As Object, e As EventArgs) Handles searchprogrambttn.Click
+        Panel1.Visible = True
+        switchPanel(searchprogram)
+    End Sub
+
+    Private Sub searchdepartmentbttn_Click(sender As Object, e As EventArgs) Handles searchdepartmentbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchdepartment)
+    End Sub
+
+    Private Sub searchcoursesbttn_Click(sender As Object, e As EventArgs) Handles searchcoursesbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchcourses)
+    End Sub
+    Private Sub generatsummarybttn_Click(sender As Object, e As EventArgs) Handles generatsummarybttn.Click
+        Panel1.Visible = True
+        switchPanel(generateSummary)
+    End Sub
 End Class

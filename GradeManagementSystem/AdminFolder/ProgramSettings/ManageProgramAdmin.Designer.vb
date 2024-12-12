@@ -65,7 +65,7 @@ Partial Class ManageProgramAdmin
         modifyProgramButton.BackColor = Color.DarkSeaGreen
         modifyProgramButton.FlatStyle = FlatStyle.Popup
         modifyProgramButton.Font = New Font("Sitka Banner", 9F)
-        modifyProgramButton.Location = New Point(1167, 149)
+        modifyProgramButton.Location = New Point(1068, 149)
         modifyProgramButton.Margin = New Padding(4)
         modifyProgramButton.Name = "modifyProgramButton"
         modifyProgramButton.Size = New Size(142, 37)
@@ -78,7 +78,7 @@ Partial Class ManageProgramAdmin
         addProgramButton.BackColor = Color.DarkSeaGreen
         addProgramButton.FlatStyle = FlatStyle.Popup
         addProgramButton.Font = New Font("Sitka Banner", 9F)
-        addProgramButton.Location = New Point(1019, 149)
+        addProgramButton.Location = New Point(920, 149)
         addProgramButton.Margin = New Padding(4)
         addProgramButton.Name = "addProgramButton"
         addProgramButton.Size = New Size(140, 37)
@@ -93,7 +93,7 @@ Partial Class ManageProgramAdmin
         dataView.Margin = New Padding(4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(1247, 455)
+        dataView.Size = New Size(1148, 521)
         dataView.TabIndex = 6
         ' 
         ' removeProgramForm
@@ -101,7 +101,7 @@ Partial Class ManageProgramAdmin
         removeProgramForm.BackColor = Color.DarkSeaGreen
         removeProgramForm.FlatStyle = FlatStyle.Popup
         removeProgramForm.Font = New Font("Sitka Banner", 9F)
-        removeProgramForm.Location = New Point(1158, 657)
+        removeProgramForm.Location = New Point(1059, 723)
         removeProgramForm.Margin = New Padding(4)
         removeProgramForm.Name = "removeProgramForm"
         removeProgramForm.Size = New Size(151, 37)
@@ -123,7 +123,7 @@ Partial Class ManageProgramAdmin
         ' 
         courseSecButton.BackgroundImage = CType(resources.GetObject("courseSecButton.BackgroundImage"), Image)
         courseSecButton.BackgroundImageLayout = ImageLayout.Stretch
-        courseSecButton.Location = New Point(1294, 36)
+        courseSecButton.Location = New Point(1155, 43)
         courseSecButton.Name = "courseSecButton"
         courseSecButton.Size = New Size(55, 34)
         courseSecButton.TabIndex = 9
@@ -133,7 +133,7 @@ Partial Class ManageProgramAdmin
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Sitka Banner", 7F)
-        Label1.Location = New Point(1211, 42)
+        Label1.Location = New Point(1072, 49)
         Label1.Name = "Label1"
         Label1.Size = New Size(87, 20)
         Label1.TabIndex = 10
@@ -143,7 +143,7 @@ Partial Class ManageProgramAdmin
         ' 
         AutoScaleDimensions = New SizeF(9F, 26F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1383, 749)
+        ClientSize = New Size(1261, 897)
         Controls.Add(Label1)
         Controls.Add(courseSecButton)
         Controls.Add(searchbttn)

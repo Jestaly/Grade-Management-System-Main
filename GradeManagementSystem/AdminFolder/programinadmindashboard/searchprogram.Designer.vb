@@ -27,7 +27,6 @@ Partial Class searchprogram
         TextBox2 = New TextBox()
         Label3 = New Label()
         Label5 = New Label()
-        Button2 = New Button()
         DataGridView1 = New DataGridView()
         Label4 = New Label()
         searchbttn = New PictureBox()
@@ -75,33 +74,19 @@ Partial Class searchprogram
         Label5.AutoSize = True
         Label5.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(1142, 58)
+        Label5.Location = New Point(1050, 48)
         Label5.Name = "Label5"
         Label5.Size = New Size(102, 18)
         Label5.TabIndex = 68
         Label5.Text = "First Semester"
         ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.Green
-        Button2.BackgroundImageLayout = ImageLayout.None
-        Button2.FlatStyle = FlatStyle.Popup
-        Button2.Font = New Font("Sitka Text Semibold", 7F, FontStyle.Bold)
-        Button2.ForeColor = Color.White
-        Button2.Location = New Point(1211, 663)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(107, 43)
-        Button2.TabIndex = 67
-        Button2.Text = "DASHBOARD"
-        Button2.UseVisualStyleBackColor = False
-        ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(91, 240)
+        DataGridView1.Location = New Point(91, 246)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 62
-        DataGridView1.Size = New Size(1219, 404)
+        DataGridView1.Size = New Size(1102, 498)
         DataGridView1.TabIndex = 66
         ' 
         ' Label4
@@ -109,7 +94,7 @@ Partial Class searchprogram
         Label4.AutoSize = True
         Label4.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(1142, 37)
+        Label4.Location = New Point(1050, 27)
         Label4.Name = "Label4"
         Label4.Size = New Size(168, 18)
         Label4.TabIndex = 65
@@ -161,12 +146,11 @@ Partial Class searchprogram
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1385, 743)
+        ClientSize = New Size(1265, 896)
         Controls.Add(PictureBox1)
         Controls.Add(TextBox2)
         Controls.Add(Label3)
         Controls.Add(Label5)
-        Controls.Add(Button2)
         Controls.Add(DataGridView1)
         Controls.Add(Label4)
         Controls.Add(searchbttn)
@@ -187,7 +171,6 @@ Partial Class searchprogram
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label4 As Label
     Friend WithEvents searchbttn As PictureBox

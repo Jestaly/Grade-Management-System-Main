@@ -52,7 +52,7 @@ Partial Class ManageProfessorAdmin
         addProfessorButton.BackColor = Color.DarkSeaGreen
         addProfessorButton.FlatStyle = FlatStyle.Popup
         addProfessorButton.Font = New Font("Sitka Banner", 9F)
-        addProfessorButton.Location = New Point(1158, 127)
+        addProfessorButton.Location = New Point(1057, 118)
         addProfessorButton.Margin = New Padding(4)
         addProfessorButton.Name = "addProfessorButton"
         addProfessorButton.Size = New Size(152, 36)
@@ -65,7 +65,7 @@ Partial Class ManageProfessorAdmin
         modifyProfessorButton.BackColor = Color.DarkSeaGreen
         modifyProfessorButton.FlatStyle = FlatStyle.Popup
         modifyProfessorButton.Font = New Font("Sitka Banner", 9F)
-        modifyProfessorButton.Location = New Point(991, 127)
+        modifyProfessorButton.Location = New Point(870, 118)
         modifyProfessorButton.Margin = New Padding(4)
         modifyProfessorButton.Name = "modifyProfessorButton"
         modifyProfessorButton.Size = New Size(159, 36)
@@ -90,7 +90,7 @@ Partial Class ManageProfessorAdmin
         dataView.Margin = New Padding(4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(1261, 498)
+        dataView.Size = New Size(1160, 557)
         dataView.TabIndex = 5
         ' 
         ' removeProfButton
@@ -98,7 +98,7 @@ Partial Class ManageProfessorAdmin
         removeProfButton.BackColor = Color.DarkSeaGreen
         removeProfButton.FlatStyle = FlatStyle.Popup
         removeProfButton.Font = New Font("Sitka Banner", 9F)
-        removeProfButton.Location = New Point(1134, 677)
+        removeProfButton.Location = New Point(1033, 750)
         removeProfButton.Margin = New Padding(4)
         removeProfButton.Name = "removeProfButton"
         removeProfButton.Size = New Size(176, 36)
@@ -120,7 +120,7 @@ Partial Class ManageProfessorAdmin
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1383, 749)
+        ClientSize = New Size(1261, 897)
         Controls.Add(searchbttn)
         Controls.Add(removeProfButton)
         Controls.Add(dataView)

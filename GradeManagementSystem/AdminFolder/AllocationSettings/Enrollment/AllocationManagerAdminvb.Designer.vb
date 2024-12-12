@@ -38,7 +38,7 @@ Partial Class AllocationManagerAdminvb
         enrollDataView.Margin = New Padding(4)
         enrollDataView.Name = "enrollDataView"
         enrollDataView.RowHeadersWidth = 51
-        enrollDataView.Size = New Size(1239, 512)
+        enrollDataView.Size = New Size(1147, 512)
         enrollDataView.TabIndex = 3
         ' 
         ' enrollStudentButton
@@ -59,7 +59,7 @@ Partial Class AllocationManagerAdminvb
         gradeSectionButton.BackColor = Color.DarkSeaGreen
         gradeSectionButton.FlatStyle = FlatStyle.Popup
         gradeSectionButton.Font = New Font("Sitka Banner", 9F)
-        gradeSectionButton.Location = New Point(1166, 35)
+        gradeSectionButton.Location = New Point(1074, 34)
         gradeSectionButton.Margin = New Padding(4)
         gradeSectionButton.Name = "gradeSectionButton"
         gradeSectionButton.Size = New Size(138, 34)
@@ -72,7 +72,7 @@ Partial Class AllocationManagerAdminvb
         modifyEnrollButton.BackColor = Color.DarkSeaGreen
         modifyEnrollButton.FlatStyle = FlatStyle.Popup
         modifyEnrollButton.Font = New Font("Sitka Banner", 9F)
-        modifyEnrollButton.Location = New Point(1194, 685)
+        modifyEnrollButton.Location = New Point(1102, 665)
         modifyEnrollButton.Margin = New Padding(4)
         modifyEnrollButton.Name = "modifyEnrollButton"
         modifyEnrollButton.Size = New Size(110, 36)
@@ -98,7 +98,7 @@ Partial Class AllocationManagerAdminvb
         classSectionButton.BackColor = Color.DarkSeaGreen
         classSectionButton.FlatStyle = FlatStyle.Popup
         classSectionButton.Font = New Font("Sitka Banner", 9F)
-        classSectionButton.Location = New Point(1001, 35)
+        classSectionButton.Location = New Point(908, 34)
         classSectionButton.Margin = New Padding(4)
         classSectionButton.Name = "classSectionButton"
         classSectionButton.Size = New Size(138, 35)
@@ -110,7 +110,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1379, 749)
+        ClientSize = New Size(1261, 897)
         Controls.Add(classSectionButton)
         Controls.Add(refreshButton)
         Controls.Add(modifyEnrollButton)

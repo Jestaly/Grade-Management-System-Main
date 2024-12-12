@@ -49,7 +49,7 @@ Partial Class ManageStudentAdmin
         addStudent.BackColor = Color.DarkSeaGreen
         addStudent.FlatStyle = FlatStyle.Popup
         addStudent.Font = New Font("Sitka Banner", 9F)
-        addStudent.Location = New Point(990, 118)
+        addStudent.Location = New Point(891, 118)
         addStudent.Margin = New Padding(4)
         addStudent.Name = "addStudent"
         addStudent.Size = New Size(144, 36)
@@ -62,7 +62,7 @@ Partial Class ManageStudentAdmin
         modifyStudent.BackColor = Color.DarkSeaGreen
         modifyStudent.FlatStyle = FlatStyle.Popup
         modifyStudent.Font = New Font("Sitka Banner", 9F)
-        modifyStudent.Location = New Point(1142, 118)
+        modifyStudent.Location = New Point(1043, 118)
         modifyStudent.Margin = New Padding(4)
         modifyStudent.Name = "modifyStudent"
         modifyStudent.Size = New Size(158, 36)
@@ -77,7 +77,7 @@ Partial Class ManageStudentAdmin
         dataView.Margin = New Padding(4)
         dataView.Name = "dataView"
         dataView.RowHeadersWidth = 51
-        dataView.Size = New Size(1224, 492)
+        dataView.Size = New Size(1131, 586)
         dataView.TabIndex = 4
         ' 
         ' refreshButton
@@ -98,7 +98,7 @@ Partial Class ManageStudentAdmin
         removeStudent.BackColor = Color.DarkSeaGreen
         removeStudent.FlatStyle = FlatStyle.Popup
         removeStudent.Font = New Font("Sitka Banner", 9F)
-        removeStudent.Location = New Point(1142, 662)
+        removeStudent.Location = New Point(1049, 790)
         removeStudent.Margin = New Padding(4)
         removeStudent.Name = "removeStudent"
         removeStudent.Size = New Size(158, 36)
@@ -121,7 +121,7 @@ Partial Class ManageStudentAdmin
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
-        ClientSize = New Size(1383, 749)
+        ClientSize = New Size(1261, 897)
         Controls.Add(PictureBox1)
         Controls.Add(removeStudent)
         Controls.Add(refreshButton)

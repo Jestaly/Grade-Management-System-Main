@@ -32,7 +32,6 @@ Partial Class searchstudent
         Label4 = New Label()
         DataGridView1 = New DataGridView()
         Button1 = New Button()
-        Button2 = New Button()
         Label5 = New Label()
         PictureBox1 = New PictureBox()
         TextBox3 = New TextBox()
@@ -91,7 +90,7 @@ Partial Class searchstudent
         Label3.BorderStyle = BorderStyle.FixedSingle
         Label3.Font = New Font("Sitka Small", 7.5F, FontStyle.Bold)
         Label3.ForeColor = Color.White
-        Label3.Location = New Point(1089, 101)
+        Label3.Location = New Point(993, 111)
         Label3.Name = "Label3"
         Label3.Size = New Size(204, 23)
         Label3.TabIndex = 18
@@ -102,7 +101,7 @@ Partial Class searchstudent
         TextBox2.BackColor = Color.Khaki
         TextBox2.BorderStyle = BorderStyle.FixedSingle
         TextBox2.Font = New Font("Segoe UI", 10F)
-        TextBox2.Location = New Point(1089, 123)
+        TextBox2.Location = New Point(993, 133)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(204, 34)
         TextBox2.TabIndex = 19
@@ -112,7 +111,7 @@ Partial Class searchstudent
         Label4.AutoSize = True
         Label4.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(1090, 21)
+        Label4.Location = New Point(994, 31)
         Label4.Name = "Label4"
         Label4.Size = New Size(168, 18)
         Label4.TabIndex = 20
@@ -124,7 +123,7 @@ Partial Class searchstudent
         DataGridView1.Location = New Point(71, 230)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 62
-        DataGridView1.Size = New Size(1242, 423)
+        DataGridView1.Size = New Size(1126, 521)
         DataGridView1.TabIndex = 21
         ' 
         ' Button1
@@ -134,33 +133,19 @@ Partial Class searchstudent
         Button1.FlatStyle = FlatStyle.Popup
         Button1.Font = New Font("Sitka Text Semibold", 7F, FontStyle.Bold)
         Button1.ForeColor = Color.White
-        Button1.Location = New Point(1103, 674)
+        Button1.Location = New Point(1118, 757)
         Button1.Name = "Button1"
         Button1.Size = New Size(79, 43)
         Button1.TabIndex = 22
         Button1.Text = "SELECT"
         Button1.UseVisualStyleBackColor = False
         ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.Green
-        Button2.BackgroundImageLayout = ImageLayout.None
-        Button2.FlatStyle = FlatStyle.Popup
-        Button2.Font = New Font("Sitka Text Semibold", 7F, FontStyle.Bold)
-        Button2.ForeColor = Color.White
-        Button2.Location = New Point(1200, 674)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(107, 43)
-        Button2.TabIndex = 23
-        Button2.Text = "DASHBOARD"
-        Button2.UseVisualStyleBackColor = False
-        ' 
         ' Label5
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(1090, 42)
+        Label5.Location = New Point(994, 52)
         Label5.Name = "Label5"
         Label5.Size = New Size(102, 18)
         Label5.TabIndex = 24
@@ -201,12 +186,11 @@ Partial Class searchstudent
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1385, 743)
+        ClientSize = New Size(1265, 896)
         Controls.Add(PictureBox1)
         Controls.Add(TextBox3)
         Controls.Add(Label6)
         Controls.Add(Label5)
-        Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(DataGridView1)
         Controls.Add(Label4)
@@ -235,7 +219,6 @@ Partial Class searchstudent
     Friend WithEvents Label4 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBox3 As TextBox

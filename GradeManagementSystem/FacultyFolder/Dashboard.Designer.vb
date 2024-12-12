@@ -45,6 +45,7 @@ Partial Class Dashboard
         grademanagebttn = New Label()
         dashboardbttn = New Label()
         notificationpanel = New Panel()
+        Label2 = New Label()
         Label11 = New Label()
         profmenu = New picture.CirclePicture()
         Label1 = New Label()
@@ -67,7 +68,7 @@ Partial Class Dashboard
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.DarkGreen
+        Panel1.BackColor = Color.FromArgb(CByte(0), CByte(102), CByte(0))
         Panel1.Controls.Add(activitylog2)
         Panel1.Controls.Add(coursemanage2)
         Panel1.Controls.Add(activitylog)
@@ -101,11 +102,11 @@ Partial Class Dashboard
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Sitka Banner", 7F)
+        Label5.Font = New Font("Microsoft Sans Serif", 6.5F)
         Label5.ForeColor = Color.DarkGreen
         Label5.Location = New Point(37, 18)
         Label5.Name = "Label5"
-        Label5.Size = New Size(92, 20)
+        Label5.Size = New Size(97, 16)
         Label5.TabIndex = 2
         Label5.Text = "ACTIVITY LOG"
         ' 
@@ -122,11 +123,11 @@ Partial Class Dashboard
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Sitka Banner", 7F)
+        Label3.Font = New Font("Microsoft Sans Serif", 6.5F)
         Label3.ForeColor = Color.DarkGreen
         Label3.Location = New Point(37, 18)
         Label3.Name = "Label3"
-        Label3.Size = New Size(104, 20)
+        Label3.Size = New Size(116, 16)
         Label3.TabIndex = 2
         Label3.Text = "DATA SUMMARY"
         ' 
@@ -164,11 +165,11 @@ Partial Class Dashboard
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Sitka Banner", 7F)
+        Label4.Font = New Font("Microsoft Sans Serif", 6.5F)
         Label4.ForeColor = Color.DarkGreen
         Label4.Location = New Point(37, 18)
         Label4.Name = "Label4"
-        Label4.Size = New Size(58, 20)
+        Label4.Size = New Size(63, 16)
         Label4.TabIndex = 2
         Label4.Text = "PROFILE"
         ' 
@@ -185,11 +186,11 @@ Partial Class Dashboard
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Font = New Font("Sitka Banner", 7F)
+        Label13.Font = New Font("Microsoft Sans Serif", 6.5F)
         Label13.ForeColor = Color.DarkGreen
         Label13.Location = New Point(37, 18)
         Label13.Name = "Label13"
-        Label13.Size = New Size(140, 20)
+        Label13.Size = New Size(155, 16)
         Label13.TabIndex = 2
         Label13.Text = "GRADE MANAGEMENT"
         ' 
@@ -217,11 +218,11 @@ Partial Class Dashboard
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Font = New Font("Sitka Banner", 7F)
+        Label7.Font = New Font("Microsoft Sans Serif", 6.5F)
         Label7.ForeColor = Color.DarkGreen
         Label7.Location = New Point(37, 18)
         Label7.Name = "Label7"
-        Label7.Size = New Size(108, 20)
+        Label7.Size = New Size(117, 16)
         Label7.TabIndex = 2
         Label7.Text = "D A S H B O A R D"
         ' 
@@ -293,6 +294,7 @@ Partial Class Dashboard
         ' notificationpanel
         ' 
         notificationpanel.BackColor = Color.Honeydew
+        notificationpanel.Controls.Add(Label2)
         notificationpanel.Controls.Add(Label11)
         notificationpanel.Controls.Add(profmenu)
         notificationpanel.Controls.Add(Label1)
@@ -303,14 +305,24 @@ Partial Class Dashboard
         notificationpanel.Size = New Size(397, 821)
         notificationpanel.TabIndex = 1
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Microsoft Sans Serif", 7F)
+        Label2.Location = New Point(249, 44)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(69, 17)
+        Label2.TabIndex = 80
+        Label2.Text = "Professor"
+        ' 
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Font = New Font("Sitka Banner", 8F)
+        Label11.Font = New Font("Microsoft Sans Serif", 8.25F)
         Label11.ForeColor = Color.DarkGreen
         Label11.Location = New Point(24, 95)
         Label11.Name = "Label11"
-        Label11.Size = New Size(81, 23)
+        Label11.Size = New Size(93, 20)
         Label11.TabIndex = 4
         Label11.Text = "Notification"
         ' 
@@ -327,7 +339,7 @@ Partial Class Dashboard
         profmenu.Location = New Point(326, 17)
         profmenu.Margin = New Padding(4)
         profmenu.Name = "profmenu"
-        profmenu.Size = New Size(46, 41)
+        profmenu.Size = New Size(46, 46)
         profmenu.SizeMode = PictureBoxSizeMode.StretchImage
         profmenu.TabIndex = 79
         profmenu.TabStop = False
@@ -335,10 +347,10 @@ Partial Class Dashboard
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Sitka Banner", 10F)
-        Label1.Location = New Point(117, 24)
+        Label1.Font = New Font("Microsoft Sans Serif", 8F)
+        Label1.Location = New Point(125, 25)
         Label1.Name = "Label1"
-        Label1.Size = New Size(209, 29)
+        Label1.Size = New Size(192, 20)
         Label1.TabIndex = 2
         Label1.Text = "Sese, Mary Ynah Brazil A."
         ' 
@@ -348,7 +360,7 @@ Partial Class Dashboard
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox1.Location = New Point(24, 28)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(41, 30)
+        PictureBox1.Size = New Size(41, 40)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -424,5 +436,6 @@ Partial Class Dashboard
     Friend WithEvents activitylog2 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents activitylog As Label
+    Friend WithEvents Label2 As Label
 
 End Class

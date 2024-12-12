@@ -27,16 +27,17 @@ Partial Class searchdepartment
         TextBox2 = New TextBox()
         Label3 = New Label()
         Label5 = New Label()
-        Button2 = New Button()
         DataGridView1 = New DataGridView()
         Label4 = New Label()
         searchbttn = New PictureBox()
         TextBox1 = New TextBox()
         Label2 = New Label()
         Label1 = New Label()
+        backbttn = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(searchbttn, ComponentModel.ISupportInitialize).BeginInit()
+        CType(backbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -75,25 +76,11 @@ Partial Class searchdepartment
         Label5.AutoSize = True
         Label5.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(1142, 58)
+        Label5.Location = New Point(1067, 61)
         Label5.Name = "Label5"
         Label5.Size = New Size(102, 18)
         Label5.TabIndex = 79
         Label5.Text = "First Semester"
-        ' 
-        ' Button2
-        ' 
-        Button2.BackColor = Color.Green
-        Button2.BackgroundImageLayout = ImageLayout.None
-        Button2.FlatStyle = FlatStyle.Popup
-        Button2.Font = New Font("Sitka Text Semibold", 7F, FontStyle.Bold)
-        Button2.ForeColor = Color.White
-        Button2.Location = New Point(1211, 663)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(107, 43)
-        Button2.TabIndex = 78
-        Button2.Text = "DASHBOARD"
-        Button2.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
         ' 
@@ -101,7 +88,7 @@ Partial Class searchdepartment
         DataGridView1.Location = New Point(91, 240)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 62
-        DataGridView1.Size = New Size(1219, 404)
+        DataGridView1.Size = New Size(1108, 484)
         DataGridView1.TabIndex = 77
         ' 
         ' Label4
@@ -109,7 +96,7 @@ Partial Class searchdepartment
         Label4.AutoSize = True
         Label4.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(1142, 37)
+        Label4.Location = New Point(1067, 40)
         Label4.Name = "Label4"
         Label4.Size = New Size(168, 18)
         Label4.TabIndex = 76
@@ -157,16 +144,26 @@ Partial Class searchdepartment
         Label1.TabIndex = 72
         Label1.Text = "D E P A R T M E N T S"
         ' 
+        ' backbttn
+        ' 
+        backbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_11_28_132304
+        backbttn.BackgroundImageLayout = ImageLayout.Stretch
+        backbttn.Location = New Point(41, 782)
+        backbttn.Name = "backbttn"
+        backbttn.Size = New Size(92, 56)
+        backbttn.TabIndex = 83
+        backbttn.TabStop = False
+        ' 
         ' searchdepartment
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1385, 743)
+        ClientSize = New Size(1265, 896)
+        Controls.Add(backbttn)
         Controls.Add(PictureBox1)
         Controls.Add(TextBox2)
         Controls.Add(Label3)
         Controls.Add(Label5)
-        Controls.Add(Button2)
         Controls.Add(DataGridView1)
         Controls.Add(Label4)
         Controls.Add(searchbttn)
@@ -179,6 +176,7 @@ Partial Class searchdepartment
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(searchbttn, ComponentModel.ISupportInitialize).EndInit()
+        CType(backbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -187,11 +185,11 @@ Partial Class searchdepartment
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label4 As Label
     Friend WithEvents searchbttn As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents backbttn As PictureBox
 End Class

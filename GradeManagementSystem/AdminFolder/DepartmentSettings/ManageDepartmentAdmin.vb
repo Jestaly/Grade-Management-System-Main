@@ -5,7 +5,26 @@ Public Class ManageDepartmentAdmin
     Private addDepartmentForm As New AddDepartmentForm
     Private modifyDepartmentForm As New ModifyDepartmentForm
     Private officialModifyDepartmentForm As New OfficialModifyDepartmentForm
-    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
+
+    Private Sub reloadbttn_Click(sender As Object, e As EventArgs) Handles reloadbttn.Click
+        Try
+            connector.dataTable.Clear()
+            connector.connect.Open()
+            connector.query = "SELECT * FROM department;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            dataView.DataSource = connector.dataTable
+            connector.command.ExecuteNonQuery()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
+
+    Private Sub reloadbttn1_Click(sender As Object, e As EventArgs) Handles reloadbttn1.Click
         Try
             connector.dataTable.Clear()
             connector.connect.Open()
@@ -96,5 +115,14 @@ Public Class ManageDepartmentAdmin
         e.Cancel = True
         Me.Visible = False
     End Sub
+
+    Private Sub searchfield_Click(sender As Object, e As EventArgs) Handles searchfield.Click
+
+    End Sub
+
+    Private Sub searchbttn_Click(sender As Object, e As EventArgs) Handles searchbttn.Click
+
+    End Sub
+
 
 End Class
