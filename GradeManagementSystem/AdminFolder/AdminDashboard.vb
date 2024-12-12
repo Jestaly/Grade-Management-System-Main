@@ -28,17 +28,17 @@ Public Class AdminDashboard
     Dim allo1 As Image = My.Resources.allocation1
     Dim allo2 As Image = My.Resources.allocation2
     Dim admin1 As Image = My.Resources.administrator1
-    Dim admin2 As Image = My.Resources.administrator2
-    Dim courses1 As Image = My.Resources.courses1
-    Dim courses2 As Image = My.Resources.courses2
-    Dim programs1 As Image = My.Resources.programs1
-    Dim programs2 As Image = My.Resources.programs2
-    Dim professors1 As Image = My.Resources.professors1
-    Dim professors2 As Image = My.Resources.professors2
-    Dim students1 As Image = My.Resources.students1
-    Dim students2 As Image = My.Resources.students2
-    Dim departments1 As Image = My.Resources.departments1
-    Dim departments2 As Image = My.Resources.departments2
+    Dim admin2 As Image = My.Resources.administrator22
+    Dim courses1 As Image = My.Resources.courses11
+    Dim courses2 As Image = My.Resources.courses22
+    Dim programs1 As Image = My.Resources.programs11
+    Dim programs2 As Image = My.Resources.programs22
+    Dim professors1 As Image = My.Resources.professors11
+    Dim professors2 As Image = My.Resources.professors22
+    Dim students1 As Image = My.Resources.students11
+    Dim students2 As Image = My.Resources.students22
+    Dim departments1 As Image = My.Resources.departments11
+    Dim departments2 As Image = My.Resources.departments22
     Dim department1 As Image = My.Resources.department1
     Dim department2 As Image = My.Resources.department2
     Dim walking As Image = My.Resources.lakad
@@ -95,7 +95,6 @@ Public Class AdminDashboard
         depIcon2.Hide()
         alloIcon2.Hide()
 
-
         originalSize = Panel1.Size
         expandedSize = New Size(originalSize.Width + 345, originalSize.Height + 280)
         originalSize1 = Gerald1.Size
@@ -135,7 +134,7 @@ Public Class AdminDashboard
             Transition.run(profBox, "Left", newProfBoxLeft, New TransitionType_Deceleration(500))
             Transition.run(depBox, "Left", newDepBoxLeft, New TransitionType_Deceleration(500))
             Transition.run(courseBox, "Left", newCourseBoxLeft, New TransitionType_Deceleration(500))
-            walk.Show()
+
             studBox.Hide()
             profBox.Hide()
             adminBox.Hide()
@@ -143,9 +142,6 @@ Public Class AdminDashboard
             progBox.Hide()
             courseBox.Hide()
             depBox.Hide()
-
-
-            walk.Image = walking
 
             expand = True
         End If
@@ -173,7 +169,6 @@ Public Class AdminDashboard
     End Sub
     Private Sub Panel1_MouseLeave(sender As Object, e As EventArgs) Handles Panel1.MouseLeave
         If expand Then
-
             Transition.run(Panel1, "Width", originalSize.Width, New TransitionType_Deceleration(500))
             Transition.run(Panel1, "Height", originalSize.Height, New TransitionType_Deceleration(500))
             Transition.run(studBox, "Left", studBox.Left - slideOffset, New TransitionType_Deceleration(500))
@@ -570,15 +565,9 @@ Public Class AdminDashboard
         Panel2.BringToFront()
         dashbtn.BringToFront()
         studbtn.BringToFront()
-        Panel5.BringToFront()
-        Panel5.Controls.Clear()
-        panel.TopLevel = False
-        Panel5.Controls.Add(panel)
+
 
         panel.Show()
     End Sub
 
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
-
-    End Sub
 End Class

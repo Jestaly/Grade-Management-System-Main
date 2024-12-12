@@ -15,7 +15,7 @@ Public Class LoginForgot
     Private email As String
 
     Public connector As New DatabaseConnector
-    Private emailSender As New email
+    'Private emailSender As New email
     Private studentForm As New StudentForm
     Public gradingSheet As New GradingSheet
 
@@ -386,7 +386,7 @@ Public Class LoginForgot
     End Sub
 
     Private Sub SendCode()
-        emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
+        '  emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
     End Sub
 
     Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
@@ -490,7 +490,7 @@ Public Class LoginForgot
 
     Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
         Dim userID As String = ""
-        Dim accountTypeIdentifier As String
+        'Dim accountTypeIdentifier As String
 
         'If txtb_newpassword.Text = txtb_confirmpassword.Text Then
         connector.connect.Open()
