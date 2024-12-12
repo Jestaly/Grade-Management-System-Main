@@ -54,12 +54,12 @@ Partial Class AllocationManagerAdminvb
         ' 
         enrollStudentButton.BackColor = Color.DarkGreen
         enrollStudentButton.FlatStyle = FlatStyle.Popup
-        enrollStudentButton.Font = New Font("Sitka Banner", 9F)
+        enrollStudentButton.Font = New Font("Segoe UI", 9F)
         enrollStudentButton.ForeColor = Color.White
-        enrollStudentButton.Location = New Point(63, 795)
+        enrollStudentButton.Location = New Point(996, 89)
         enrollStudentButton.Margin = New Padding(4)
         enrollStudentButton.Name = "enrollStudentButton"
-        enrollStudentButton.Size = New Size(176, 49)
+        enrollStudentButton.Size = New Size(176, 37)
         enrollStudentButton.TabIndex = 2
         enrollStudentButton.Text = "ENROLL STUDENT"
         enrollStudentButton.UseVisualStyleBackColor = False
@@ -70,10 +70,10 @@ Partial Class AllocationManagerAdminvb
         gradeSectionButton.FlatStyle = FlatStyle.Popup
         gradeSectionButton.Font = New Font("Segoe UI", 10F)
         gradeSectionButton.ForeColor = Color.WhiteSmoke
-        gradeSectionButton.Location = New Point(1047, 97)
+        gradeSectionButton.Location = New Point(996, 179)
         gradeSectionButton.Margin = New Padding(4)
         gradeSectionButton.Name = "gradeSectionButton"
-        gradeSectionButton.Size = New Size(147, 34)
+        gradeSectionButton.Size = New Size(176, 37)
         gradeSectionButton.TabIndex = 4
         gradeSectionButton.Text = "Grade Section"
         gradeSectionButton.UseVisualStyleBackColor = False
@@ -84,10 +84,10 @@ Partial Class AllocationManagerAdminvb
         modifyEnrollButton.FlatStyle = FlatStyle.Popup
         modifyEnrollButton.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         modifyEnrollButton.ForeColor = Color.White
-        modifyEnrollButton.Location = New Point(1084, 808)
+        modifyEnrollButton.Location = New Point(1018, 809)
         modifyEnrollButton.Margin = New Padding(4)
         modifyEnrollButton.Name = "modifyEnrollButton"
-        modifyEnrollButton.Size = New Size(110, 36)
+        modifyEnrollButton.Size = New Size(154, 36)
         modifyEnrollButton.TabIndex = 7
         modifyEnrollButton.Text = "Modify"
         modifyEnrollButton.UseVisualStyleBackColor = False
@@ -98,10 +98,10 @@ Partial Class AllocationManagerAdminvb
         classSectionButton.FlatStyle = FlatStyle.Popup
         classSectionButton.Font = New Font("Segoe UI", 10F)
         classSectionButton.ForeColor = Color.WhiteSmoke
-        classSectionButton.Location = New Point(900, 46)
+        classSectionButton.Location = New Point(996, 134)
         classSectionButton.Margin = New Padding(4)
         classSectionButton.Name = "classSectionButton"
-        classSectionButton.Size = New Size(147, 35)
+        classSectionButton.Size = New Size(176, 37)
         classSectionButton.TabIndex = 10
         classSectionButton.Text = "Class Section"
         classSectionButton.UseVisualStyleBackColor = False
@@ -121,7 +121,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         reloadbttn1.AutoSize = True
         reloadbttn1.ForeColor = Color.FromArgb(CByte(4), CByte(64), CByte(30))
-        reloadbttn1.Location = New Point(97, 229)
+        reloadbttn1.Location = New Point(97, 231)
         reloadbttn1.Name = "reloadbttn1"
         reloadbttn1.Size = New Size(66, 25)
         reloadbttn1.TabIndex = 85
@@ -131,7 +131,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         reloadbttn.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_0952371
         reloadbttn.BackgroundImageLayout = ImageLayout.Stretch
-        reloadbttn.Location = New Point(67, 227)
+        reloadbttn.Location = New Point(67, 229)
         reloadbttn.Name = "reloadbttn"
         reloadbttn.Size = New Size(33, 29)
         reloadbttn.TabIndex = 84
@@ -141,7 +141,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         searchstuentField.BorderStyle = BorderStyle.None
         searchstuentField.Font = New Font("Segoe UI", 9F)
-        searchstuentField.Location = New Point(97, 162)
+        searchstuentField.Location = New Point(95, 161)
         searchstuentField.Name = "searchstuentField"
         searchstuentField.PlaceholderText = "Search Student ID..."
         searchstuentField.Size = New Size(221, 24)
@@ -151,9 +151,9 @@ Partial Class AllocationManagerAdminvb
         ' 
         searchButtonPic.BackgroundImage = CType(resources.GetObject("searchButtonPic.BackgroundImage"), Image)
         searchButtonPic.BackgroundImageLayout = ImageLayout.Stretch
-        searchButtonPic.Location = New Point(443, 157)
+        searchButtonPic.Location = New Point(451, 153)
         searchButtonPic.Name = "searchButtonPic"
-        searchButtonPic.Size = New Size(58, 34)
+        searchButtonPic.Size = New Size(38, 38)
         searchButtonPic.TabIndex = 86
         searchButtonPic.TabStop = False
         ' 
@@ -161,7 +161,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         searchfield.BackgroundImage = My.Resources.Resources.Screenshot_2024_12_12_0932282
         searchfield.BackgroundImageLayout = ImageLayout.Stretch
-        searchfield.Location = New Point(68, 135)
+        searchfield.Location = New Point(66, 134)
         searchfield.Name = "searchfield"
         searchfield.Size = New Size(453, 72)
         searchfield.TabIndex = 87
@@ -171,6 +171,7 @@ Partial Class AllocationManagerAdminvb
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
         ClientSize = New Size(1261, 897)
         Controls.Add(searchstuentField)
         Controls.Add(searchButtonPic)

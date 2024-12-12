@@ -23,31 +23,72 @@ Partial Class generateSummary
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         generatesummarylabel = New Label()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
         SuspendLayout()
         ' 
         ' generatesummarylabel
         ' 
         generatesummarylabel.AutoSize = True
-        generatesummarylabel.Font = New Font("Sitka Small", 11F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        generatesummarylabel.Font = New Font("Segoe UI Semibold", 11F, FontStyle.Bold)
         generatesummarylabel.ForeColor = Color.DarkGreen
-        generatesummarylabel.Location = New Point(81, 57)
+        generatesummarylabel.Location = New Point(441, 37)
         generatesummarylabel.Name = "generatesummarylabel"
-        generatesummarylabel.Size = New Size(299, 32)
+        generatesummarylabel.Size = New Size(366, 30)
         generatesummarylabel.TabIndex = 73
-        generatesummarylabel.Text = "S u m m a r y  R e p o r t"
+        generatesummarylabel.Text = "A d m i n   S u m m a r y   R e p o r t"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
+        Label1.ForeColor = Color.DarkGreen
+        Label1.Location = New Point(74, 87)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(135, 25)
+        Label1.TabIndex = 74
+        Label1.Text = "Academic Year:"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
+        Label2.ForeColor = Color.DarkGreen
+        Label2.Location = New Point(74, 44)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(0, 25)
+        Label2.TabIndex = 75
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
+        Label3.ForeColor = Color.DarkGreen
+        Label3.Location = New Point(74, 119)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(148, 25)
+        Label3.TabIndex = 76
+        Label3.Text = "Date Generated:"
         ' 
         ' generateSummary
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1265, 896)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
         Controls.Add(generatesummarylabel)
         FormBorderStyle = FormBorderStyle.None
         Name = "generateSummary"
-        Text = "generateSummary"
+        Text = " "
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents generatesummarylabel As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class
