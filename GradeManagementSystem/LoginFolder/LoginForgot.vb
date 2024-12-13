@@ -16,7 +16,7 @@ Public Class LoginForgot
     Private email As String
 
     Public connector As New DatabaseConnector
-    Private emailSender As New email
+    'Private emailSender As New email
     Private studentForm As New StudentForm
     Public gradingSheet As New GradingSheet
 
@@ -423,7 +423,7 @@ Public Class LoginForgot
     End Sub
 
     Private Sub SendCode()
-        emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
+        '  emailSender.emailReset(txtb_email.Text, "Password Reset OTP", "", randomcode)
     End Sub
 
     Private Sub btn_reset_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
@@ -453,7 +453,7 @@ Public Class LoginForgot
                     numbergen()
                 End Try
 
-                SendCode()
+                'SendCode()
 
                 email = emailText
                 p_verification.BringToFront()
@@ -527,43 +527,44 @@ Public Class LoginForgot
 
     Private Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
         Dim userID As String = ""
-        Dim accountTypeIdentifier As String
+        'Dim accountTypeIdentifier As String
 
-        If txtb_newpassword.Text = txtb_confirmpassword.Text Then
-            connector.connect.Open()
-            connector.query = "SELECT student.id as id, student.email as email from student union SELECT professor.id as id, professor.email as email FROM professor;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
+        'If txtb_newpassword.Text = txtb_confirmpassword.Text Then
+        connector.connect.Open()
+        connector.query = "SELECT student.id as id, student.email as email from student union SELECT professor.id as id, professor.email as email FROM professor;"
+        connector.command.Connection = connector.connect
+        connector.command.CommandText = connector.query
 
-            Using command As New MySqlCommand(connector.query, connector.command.Connection)
-                Dim read As MySqlDataReader
-                read = command.ExecuteReader
+        Using command As New MySqlCommand(connector.query, connector.command.Connection)
+            Dim read As MySqlDataReader
+            read = command.ExecuteReader
 
-                While read.Read
-                    If (read("email").Equals(email)) Then
-                        userID = read("id")
-                        Exit While
-                    End If
-                End While
-                read.Close()
-            End Using
+            While read.Read
+                If (read("email").Equals(email)) Then
+                    userID = read("id")
+                    Exit While
 
-            If userID <> "" Then
-                accountTypeIdentifier = userID.Substring(0, 1)
-
-                If accountTypeIdentifier = 1 Then
-                    connector.query = "UPDATE student SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
-                    signin()
-                ElseIf accountTypeIdentifier = 2 Then
-                    connector.query = "UPDATE professor SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
-                    signin()
                 End If
-                connector.command.Connection = connector.connect
-                connector.command.CommandText = connector.query
-                connector.command.ExecuteNonQuery()
-            End If
-            connector.connect.Close()
-        End If
+            End While
+            read.Close()
+        End Using
+
+        'If userID <> "" Then
+        'accountTypeIdentifier = userID.Substring(0, 1)
+        '
+        ' If accountTypeIdentifier = 1 Then
+        'connector.query = "UPDATE student SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
+        'signin()
+        'ElseIf accountTypeIdentifier = 2 Then
+        '   connector.query = "UPDATE professor SET password = '" & txtb_newpassword.Text & "' where email = '" & email & "';"
+        '   signin()
+        'End If
+        '   connector.command.Connection = connector.connect
+        '  connector.command.CommandText = connector.query
+        ' connector.command.ExecuteNonQuery()
+        'End If
+        '   connector.connect.Close()
+        'End If
 
     End Sub
 

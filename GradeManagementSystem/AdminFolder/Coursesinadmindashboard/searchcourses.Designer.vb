@@ -22,7 +22,6 @@ Partial Class searchcourses
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(searchcourses))
         Label5 = New Label()
         Button2 = New Button()
         DataGridView1 = New DataGridView()
@@ -44,9 +43,10 @@ Partial Class searchcourses
         Label5.AutoSize = True
         Label5.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(1128, 74)
+        Label5.Location = New Point(902, 59)
+        Label5.Margin = New Padding(2, 0, 2, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(102, 18)
+        Label5.Size = New Size(85, 14)
         Label5.TabIndex = 35
         Label5.Text = "First Semester"
         ' 
@@ -57,9 +57,10 @@ Partial Class searchcourses
         Button2.FlatStyle = FlatStyle.Popup
         Button2.Font = New Font("Sitka Text Semibold", 7F, FontStyle.Bold)
         Button2.ForeColor = Color.White
-        Button2.Location = New Point(1189, 679)
+        Button2.Location = New Point(951, 543)
+        Button2.Margin = New Padding(2, 2, 2, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(107, 43)
+        Button2.Size = New Size(86, 34)
         Button2.TabIndex = 34
         Button2.Text = "DASHBOARD"
         Button2.UseVisualStyleBackColor = False
@@ -67,10 +68,11 @@ Partial Class searchcourses
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(77, 256)
+        DataGridView1.Location = New Point(62, 205)
+        DataGridView1.Margin = New Padding(2, 2, 2, 2)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 62
-        DataGridView1.Size = New Size(1219, 404)
+        DataGridView1.Size = New Size(975, 323)
         DataGridView1.TabIndex = 32
         ' 
         ' Label4
@@ -78,19 +80,21 @@ Partial Class searchcourses
         Label4.AutoSize = True
         Label4.Font = New Font("Sitka Small", 6F, FontStyle.Bold)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(1128, 53)
+        Label4.Location = New Point(902, 42)
+        Label4.Margin = New Padding(2, 0, 2, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(168, 18)
+        Label4.Size = New Size(135, 14)
         Label4.TabIndex = 31
         Label4.Text = "School Year: 2024 - 2025"
         ' 
         ' searchbttn
         ' 
-        searchbttn.BackgroundImage = CType(resources.GetObject("searchbttn.BackgroundImage"), Image)
+        searchbttn.BackgroundImage = My.Resources.Resources.searchbttn
         searchbttn.BackgroundImageLayout = ImageLayout.Stretch
-        searchbttn.Location = New Point(411, 150)
+        searchbttn.Location = New Point(331, 122)
+        searchbttn.Margin = New Padding(2, 2, 2, 2)
         searchbttn.Name = "searchbttn"
-        searchbttn.Size = New Size(40, 34)
+        searchbttn.Size = New Size(32, 27)
         searchbttn.TabIndex = 28
         searchbttn.TabStop = False
         ' 
@@ -99,9 +103,10 @@ Partial Class searchcourses
         TextBox1.BackColor = Color.DarkSeaGreen
         TextBox1.BorderStyle = BorderStyle.FixedSingle
         TextBox1.Font = New Font("Segoe UI", 10F)
-        TextBox1.Location = New Point(220, 150)
+        TextBox1.Location = New Point(176, 120)
+        TextBox1.Margin = New Padding(2, 2, 2, 2)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(191, 34)
+        TextBox1.Size = New Size(153, 30)
         TextBox1.TabIndex = 27
         ' 
         ' Label2
@@ -109,9 +114,10 @@ Partial Class searchcourses
         Label2.AutoSize = True
         Label2.Font = New Font("Sitka Small", 9F, FontStyle.Bold)
         Label2.ForeColor = Color.DarkGreen
-        Label2.Location = New Point(77, 154)
+        Label2.Location = New Point(62, 123)
+        Label2.Margin = New Padding(2, 0, 2, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(134, 26)
+        Label2.Size = New Size(115, 21)
         Label2.TabIndex = 26
         Label2.Text = "Course Code:"
         ' 
@@ -120,19 +126,21 @@ Partial Class searchcourses
         Label1.AutoSize = True
         Label1.Font = New Font("Sitka Small", 11F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.DarkGreen
-        Label1.Location = New Point(53, 53)
+        Label1.Location = New Point(42, 42)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(167, 32)
+        Label1.Size = New Size(143, 28)
         Label1.TabIndex = 25
         Label1.Text = "C O U R S E S"
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImage = My.Resources.Resources.searchbttn
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(545, 190)
+        PictureBox1.Location = New Point(438, 154)
+        PictureBox1.Margin = New Padding(2, 2, 2, 2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(40, 34)
+        PictureBox1.Size = New Size(32, 27)
         PictureBox1.TabIndex = 38
         PictureBox1.TabStop = False
         ' 
@@ -141,9 +149,10 @@ Partial Class searchcourses
         TextBox2.BackColor = Color.DarkSeaGreen
         TextBox2.BorderStyle = BorderStyle.FixedSingle
         TextBox2.Font = New Font("Segoe UI", 10F)
-        TextBox2.Location = New Point(219, 190)
+        TextBox2.Location = New Point(175, 152)
+        TextBox2.Margin = New Padding(2, 2, 2, 2)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(326, 34)
+        TextBox2.Size = New Size(261, 30)
         TextBox2.TabIndex = 37
         ' 
         ' Label3
@@ -151,17 +160,18 @@ Partial Class searchcourses
         Label3.AutoSize = True
         Label3.Font = New Font("Sitka Small", 9F, FontStyle.Bold)
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(77, 194)
+        Label3.Location = New Point(62, 155)
+        Label3.Margin = New Padding(2, 0, 2, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(143, 26)
+        Label3.Size = New Size(121, 21)
         Label3.TabIndex = 36
         Label3.Text = "Course Name:"
         ' 
         ' searchcourses
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1385, 743)
+        ClientSize = New Size(1108, 594)
         Controls.Add(PictureBox1)
         Controls.Add(TextBox2)
         Controls.Add(Label3)
@@ -174,6 +184,7 @@ Partial Class searchcourses
         Controls.Add(Label2)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(2, 2, 2, 2)
         Name = "searchcourses"
         Text = "searchcourses"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()

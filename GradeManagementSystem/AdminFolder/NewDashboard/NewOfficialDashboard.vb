@@ -1,10 +1,43 @@
 ﻿Public Class NewOfficialDashboard
+
+    Dim students As Image = My.Resources.students1
+    Dim students2 As Image = My.Resources.students2
+    Dim professors As Image = My.Resources.professors1
+    Dim professors2 As Image = My.Resources.professors2
+    Dim administrator As Image = My.Resources.administrators1
+    Dim administrator2 As Image = My.Resources.administrators2
+    Dim programs As Image = My.Resources.programs1
+    Dim programs2 As Image = My.Resources.programs2
+    Dim departments As Image = My.Resources.departments1
+    Dim departments2 As Image = My.Resources.departments2
+    Dim courses As Image = My.Resources.courses1
+    Dim courses2 As Image = My.Resources.courses2
+    Dim plpbanner As Image = My.Resources.PLP_BANNER
+
+
+
+
+
+
+
+
+
+
+
+
     Private Sub dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MonthCalendar1.TodayDate = DateTime.Today
         MonthCalendar1.SelectionStart = DateTime.Today
         MonthCalendar1.SelectionEnd = DateTime.Today
         MonthCalendar1.ShowTodayCircle = False
         MakePictureBoxRounded(PictureBox18, 20)
+        StudBox2.Hide()
+        ProfBox2.Hide()
+        AdminBox2.Hide()
+        ProgBox2.Hide()
+        DepBox2.Hide()
+        CourseBox2.Hide()
+
     End Sub
     Public Sub MakePictureBoxRounded(pictureBox As PictureBox, cornerRadius As Integer)
         Dim path As New Drawing2D.GraphicsPath()
@@ -48,5 +81,98 @@
         path.CloseFigure()
         Panel12.Region = New Region(path)
 
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles ProfBox.Click
+
+    End Sub
+
+    Private Sub PictureBox3_MouseEnter(sender As Object, e As EventArgs) Handles StudBox.MouseEnter
+
+    End Sub
+
+    Private Sub StudBox_MouseEnter(sender As Object, e As EventArgs) Handles StudBox.MouseEnter
+        StudBox2.Show()
+    End Sub
+    Private Sub ProgBox_MouseEnter(sender As Object, e As EventArgs) Handles ProgBox.MouseEnter
+        ProgBox2.Show()
+    End Sub
+    Private Sub ProfBox_MouseEnter(sender As Object, e As EventArgs) Handles ProfBox.MouseEnter
+        ProfBox2.Show()
+    End Sub
+    Private Sub DepBox_MouseEnter(sender As Object, e As EventArgs) Handles DepBox.MouseEnter
+        DepBox2.Show()
+    End Sub
+    Private Sub AdminBox_MouseEnter(sender As Object, e As EventArgs) Handles AdminBox.MouseEnter
+        AdminBox2.Show()
+    End Sub
+    Private Sub CourseBox_MouseEnter(sender As Object, e As EventArgs) Handles CourseBox.MouseEnter
+        CourseBox2.Show()
+    End Sub
+    Private Sub StudBox_MouseLeave(sender As Object, e As EventArgs) Handles StudBox.MouseLeave
+        StudBox2.Hide()
+    End Sub
+    Private Sub ProgBox_MouseLeave(sender As Object, e As EventArgs) Handles ProgBox.MouseLeave
+        ProgBox2.Hide()
+    End Sub
+    Private Sub ProfBox_MouseLeave(sender As Object, e As EventArgs) Handles ProfBox.MouseLeave
+        ProfBox2.Hide()
+    End Sub
+    Private Sub DepBox_MouseLeave(sender As Object, e As EventArgs) Handles DepBox.MouseLeave
+        DepBox2.Hide()
+    End Sub
+    Private Sub AdminBox_MouseLeave(sender As Object, e As EventArgs) Handles AdminBox.MouseLeave
+        AdminBox2.Hide()
+    End Sub
+    Private Sub CourseBox_MouseLeave(sender As Object, e As EventArgs) Handles CourseBox.MouseLeave
+        CourseBox2.Hide()
+    End Sub
+    Public Sub ResetState()
+        Panel1.Visible = False
+        Panel1.Controls.Clear()
+    End Sub
+    Sub switchPanel(ByVal panel As Form)
+        If panel.Controls.Count > 0 Then
+            panel.Controls.RemoveAt(0)
+        End If
+        Panel1.Controls.Clear()
+        panel.TopLevel = False
+        Panel1.Controls.Add(panel)
+        panel.Show()
+    End Sub
+
+    Private Sub searchstudentbttn_Click(sender As Object, e As EventArgs) Handles searchstudentbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchstudent)
+
+    End Sub
+
+    Private Sub searchprofessorbttn_Click(sender As Object, e As EventArgs) Handles searchprofessorbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchprofessor)
+    End Sub
+
+    Private Sub searchadministratorbttn_Click(sender As Object, e As EventArgs) Handles searchadministratorbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchadmin)
+    End Sub
+
+    Private Sub searchprogrambttn_Click(sender As Object, e As EventArgs) Handles searchprogrambttn.Click
+        Panel1.Visible = True
+        switchPanel(searchprogram)
+    End Sub
+
+    Private Sub searchdepartmentbttn_Click(sender As Object, e As EventArgs) Handles searchdepartmentbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchdepartment)
+    End Sub
+
+    Private Sub searchcoursesbttn_Click(sender As Object, e As EventArgs) Handles searchcoursesbttn.Click
+        Panel1.Visible = True
+        switchPanel(searchcourses)
+    End Sub
+    Private Sub generatsummarybttn_Click(sender As Object, e As EventArgs) Handles generatsummarybttn.Click
+        Panel1.Visible = True
+        switchPanel(generateSummary)
     End Sub
 End Class

@@ -3,9 +3,6 @@ Imports MySql.Data.MySqlClient
 
 Public Class CreateClassForm
     Private connector As New DatabaseConnector
-    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
-        Me.Visible = False
-    End Sub
 
     Private Sub setTimeAbb()
         Dim startTimeAbb As String = startTimePicker.Text.Chars(8) & startTimePicker.Text.Chars(9)
@@ -103,6 +100,22 @@ Public Class CreateClassForm
     End Function
 
     Private Sub CreateClassForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim p As New Drawing2D.GraphicsPath
+        p.StartFigure()
+        p.AddArc(New Rectangle(0, 0, 40, 40), 180, 90)
+        p.AddLine(40, 0, Me.Width - 40, 0)
+        p.AddArc(New Rectangle(Me.Width - 40, 0, 40, 40), 270, 90)
+        p.AddLine(Me.Width, 40, Me.Width, Me.Height - 40)
+        p.AddArc(New Rectangle(Me.Width - 40, Me.Height - 40, 40, 40), 0, 90)
+        p.AddLine(Me.Width - 40, Me.Height, 40, Me.Height)
+        p.AddArc(New Rectangle(0, Me.Height - 40, 40, 40), 90, 90)
+        p.AddLine(0, Me.Height - 40, 0, 40)
+        p.CloseFigure()
+        Me.Region = New Region(p)
     End Sub
+
+    Private Sub backbttn_Click(sender As Object, e As EventArgs) Handles backbttn.Click
+        Me.Visible = False
+    End Sub
+
 End Class

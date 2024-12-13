@@ -22,7 +22,7 @@ Partial Class OfficialModifyGradeWeightForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        backButton = New Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OfficialModifyGradeWeightForm))
         clearButton = New Button()
         modifyPercentageButton = New Button()
         Label5 = New Label()
@@ -35,40 +35,33 @@ Partial Class OfficialModifyGradeWeightForm
         projectTextBox = New TextBox()
         attTextBox = New TextBox()
         quizTextBox = New TextBox()
+        Label6 = New Label()
+        backbttn = New PictureBox()
+        CType(backbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' backButton
-        ' 
-        backButton.BackColor = Color.DarkSeaGreen
-        backButton.FlatStyle = FlatStyle.Popup
-        backButton.Location = New Point(532, 213)
-        backButton.Margin = New Padding(4)
-        backButton.Name = "backButton"
-        backButton.Size = New Size(118, 36)
-        backButton.TabIndex = 25
-        backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = False
         ' 
         ' clearButton
         ' 
-        clearButton.BackColor = Color.DarkSeaGreen
+        clearButton.BackColor = Color.DarkGreen
         clearButton.FlatStyle = FlatStyle.Popup
-        clearButton.Location = New Point(403, 212)
+        clearButton.ForeColor = Color.White
+        clearButton.Location = New Point(383, 220)
         clearButton.Margin = New Padding(4)
         clearButton.Name = "clearButton"
-        clearButton.Size = New Size(121, 39)
+        clearButton.Size = New Size(131, 39)
         clearButton.TabIndex = 24
         clearButton.Text = "Clear"
         clearButton.UseVisualStyleBackColor = False
         ' 
         ' modifyPercentageButton
         ' 
-        modifyPercentageButton.BackColor = Color.DarkSeaGreen
+        modifyPercentageButton.BackColor = Color.DarkGreen
         modifyPercentageButton.FlatStyle = FlatStyle.Popup
-        modifyPercentageButton.Location = New Point(139, 216)
+        modifyPercentageButton.ForeColor = Color.White
+        modifyPercentageButton.Location = New Point(228, 220)
         modifyPercentageButton.Margin = New Padding(4)
         modifyPercentageButton.Name = "modifyPercentageButton"
-        modifyPercentageButton.Size = New Size(174, 36)
+        modifyPercentageButton.Size = New Size(132, 36)
         modifyPercentageButton.TabIndex = 23
         modifyPercentageButton.Text = "Modify Percentages"
         modifyPercentageButton.UseVisualStyleBackColor = False
@@ -76,60 +69,60 @@ Partial Class OfficialModifyGradeWeightForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label5.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label5.ForeColor = Color.DarkGreen
-        Label5.Location = New Point(44, 48)
+        Label5.Location = New Point(55, 77)
         Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(115, 29)
+        Label5.Size = New Size(127, 28)
         Label5.TabIndex = 22
         Label5.Text = "Department:"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label4.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label4.ForeColor = Color.DarkGreen
-        Label4.Location = New Point(425, 134)
+        Label4.Location = New Point(383, 151)
         Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(64, 29)
+        Label4.Size = New Size(65, 28)
         Label4.TabIndex = 21
         Label4.Text = "Exam:"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label3.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label3.ForeColor = Color.DarkGreen
-        Label3.Location = New Point(413, 98)
+        Label3.Location = New Point(368, 118)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(74, 29)
+        Label3.Size = New Size(80, 28)
         Label3.TabIndex = 20
         Label3.Text = "Project:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label2.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label2.ForeColor = Color.DarkGreen
-        Label2.Location = New Point(103, 139)
+        Label2.Location = New Point(124, 151)
         Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(55, 29)
+        Label2.Size = New Size(58, 28)
         Label2.TabIndex = 19
         Label2.Text = "Quiz:"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Sitka Banner Semibold", 10F, FontStyle.Bold)
+        Label1.Font = New Font("Segoe UI Semibold", 10F, FontStyle.Bold)
         Label1.ForeColor = Color.DarkGreen
-        Label1.Location = New Point(49, 95)
+        Label1.Location = New Point(61, 121)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(109, 29)
+        Label1.Size = New Size(121, 28)
         Label1.TabIndex = 18
         Label1.Text = "Attendance:"
         ' 
@@ -138,15 +131,15 @@ Partial Class OfficialModifyGradeWeightForm
         deptComboBox.DropDownStyle = ComboBoxStyle.DropDownList
         deptComboBox.Enabled = False
         deptComboBox.FormattingEnabled = True
-        deptComboBox.Location = New Point(157, 44)
+        deptComboBox.Location = New Point(190, 77)
         deptComboBox.Margin = New Padding(4)
         deptComboBox.Name = "deptComboBox"
-        deptComboBox.Size = New Size(493, 33)
+        deptComboBox.Size = New Size(416, 33)
         deptComboBox.TabIndex = 17
         ' 
         ' examTextBox
         ' 
-        examTextBox.Location = New Point(495, 131)
+        examTextBox.Location = New Point(451, 154)
         examTextBox.Margin = New Padding(4)
         examTextBox.Name = "examTextBox"
         examTextBox.Size = New Size(155, 31)
@@ -154,7 +147,7 @@ Partial Class OfficialModifyGradeWeightForm
         ' 
         ' projectTextBox
         ' 
-        projectTextBox.Location = New Point(495, 92)
+        projectTextBox.Location = New Point(451, 115)
         projectTextBox.Margin = New Padding(4)
         projectTextBox.Name = "projectTextBox"
         projectTextBox.Size = New Size(155, 31)
@@ -162,7 +155,7 @@ Partial Class OfficialModifyGradeWeightForm
         ' 
         ' attTextBox
         ' 
-        attTextBox.Location = New Point(158, 92)
+        attTextBox.Location = New Point(190, 118)
         attTextBox.Margin = New Padding(4)
         attTextBox.Name = "attTextBox"
         attTextBox.Size = New Size(155, 31)
@@ -170,11 +163,33 @@ Partial Class OfficialModifyGradeWeightForm
         ' 
         ' quizTextBox
         ' 
-        quizTextBox.Location = New Point(157, 131)
+        quizTextBox.Location = New Point(190, 154)
         quizTextBox.Margin = New Padding(4)
         quizTextBox.Name = "quizTextBox"
         quizTextBox.Size = New Size(155, 31)
         quizTextBox.TabIndex = 13
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.ForeColor = Color.DarkGreen
+        Label6.Location = New Point(203, 17)
+        Label6.Margin = New Padding(4, 0, 4, 0)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(342, 28)
+        Label6.TabIndex = 50
+        Label6.Text = "M O D I F Y  G R A D E  WE I G H T "
+        ' 
+        ' backbttn
+        ' 
+        backbttn.BackgroundImage = CType(resources.GetObject("backbttn.BackgroundImage"), Image)
+        backbttn.BackgroundImageLayout = ImageLayout.Stretch
+        backbttn.Location = New Point(12, 14)
+        backbttn.Name = "backbttn"
+        backbttn.Size = New Size(59, 31)
+        backbttn.TabIndex = 51
+        backbttn.TabStop = False
         ' 
         ' OfficialModifyGradeWeightForm
         ' 
@@ -182,7 +197,8 @@ Partial Class OfficialModifyGradeWeightForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(724, 298)
-        Controls.Add(backButton)
+        Controls.Add(backbttn)
+        Controls.Add(Label6)
         Controls.Add(clearButton)
         Controls.Add(modifyPercentageButton)
         Controls.Add(Label5)
@@ -199,11 +215,10 @@ Partial Class OfficialModifyGradeWeightForm
         Margin = New Padding(4)
         Name = "OfficialModifyGradeWeightForm"
         Text = "OfficialModifyGradeWeightForm"
+        CType(backbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents backButton As Button
     Friend WithEvents clearButton As Button
     Friend WithEvents modifyPercentageButton As Button
     Friend WithEvents Label5 As Label
@@ -216,4 +231,6 @@ Partial Class OfficialModifyGradeWeightForm
     Friend WithEvents projectTextBox As TextBox
     Friend WithEvents attTextBox As TextBox
     Friend WithEvents quizTextBox As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents backbttn As PictureBox
 End Class

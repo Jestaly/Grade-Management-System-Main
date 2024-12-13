@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.VisualBasic.FileIO
+Imports MySql.Data.MySqlClient
 Public Class AllocationManagerAdminvb
     Private connector As New DatabaseConnector
     Private gradeSectionForm As New GradeSectionForm
@@ -58,23 +59,6 @@ Public Class AllocationManagerAdminvb
         Dim y As Integer = (Me.ClientSize.Height - modifyEnrollStudentForm.Height) \ 2
         modifyEnrollStudentForm.Location = New Point(x, y)
     End Sub
-
-    Private Sub refreshButton_Click(sender As Object, e As EventArgs) Handles refreshButton.Click
-        Try
-            connector.dataTable.Clear()
-            connector.query = "Select enrollment_id, CONCAT(student.fname,' ',student.mname,' ',student.lname) AS Student, CONCAT(professor.fname,' ',professor.mname,' ',professor.lname) AS Professor, course.course_name AS Course,course.units AS Units FROM enrollment LEFT JOIN student ON enrollment.student_id = student.id LEFT JOIN class ON enrollment.class_id = class.class_id LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id;"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.dataAdapter.SelectCommand = connector.command
-            connector.dataAdapter.Fill(connector.dataTable)
-            enrollDataView.DataSource = connector.dataTable
-            connector.connect.Close()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            MessageBox.Show("Database Error")
-        End Try
-    End Sub
-
     Private Sub enrollStudentButton_Click(sender As Object, e As EventArgs) Handles enrollStudentButton.Click
         Dim eCount As Integer
         Try
@@ -160,4 +144,19 @@ Public Class AllocationManagerAdminvb
         classSectionForm.Visible = True
     End Sub
 
+    Private Sub reloadbttn_Click(sender As Object, e As EventArgs) Handles reloadbttn.Click
+        Try
+            connector.dataTable.Clear()
+            connector.query = "Select enrollment_id, CONCAT(student.fname,' ',student.mname,' ',student.lname) AS Student, CONCAT(professor.fname,' ',professor.mname,' ',professor.lname) AS Professor, course.course_name AS Course,course.units AS Units FROM enrollment LEFT JOIN student ON enrollment.student_id = student.id LEFT JOIN class ON enrollment.class_id = class.class_id LEFT JOIN professor ON class.professor_id = professor.id LEFT JOIN course ON class.course_id = course.course_id;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.dataAdapter.SelectCommand = connector.command
+            connector.dataAdapter.Fill(connector.dataTable)
+            enrollDataView.DataSource = connector.dataTable
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error")
+        End Try
+    End Sub
 End Class

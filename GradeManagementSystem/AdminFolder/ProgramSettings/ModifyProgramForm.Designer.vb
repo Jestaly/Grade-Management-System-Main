@@ -22,33 +22,38 @@ Partial Class ModifyProgramForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ModifyProgramForm))
         Label1 = New Label()
         searchButton = New Button()
         programIDTextBox = New MaskedTextBox()
-        backButton = New Button()
+        searchfield = New PictureBox()
+        backbttn = New PictureBox()
+        CType(searchfield, ComponentModel.ISupportInitialize).BeginInit()
+        CType(backbttn, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Sitka Banner Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         Label1.ForeColor = Color.DarkGreen
-        Label1.Location = New Point(82, 67)
+        Label1.Location = New Point(53, 68)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(145, 40)
+        Label1.Size = New Size(145, 32)
         Label1.TabIndex = 1
-        Label1.Text = "Program ID"
+        Label1.Text = "Program ID:"
         ' 
         ' searchButton
         ' 
-        searchButton.BackColor = Color.DarkSeaGreen
+        searchButton.BackColor = Color.DarkGreen
         searchButton.FlatStyle = FlatStyle.Popup
         searchButton.Font = New Font("Sitka Banner", 9F)
-        searchButton.Location = New Point(162, 207)
-        searchButton.Margin = New Padding(4, 4, 4, 4)
+        searchButton.ForeColor = Color.White
+        searchButton.Location = New Point(320, 60)
+        searchButton.Margin = New Padding(4)
         searchButton.Name = "searchButton"
-        searchButton.Size = New Size(108, 41)
+        searchButton.Size = New Size(96, 46)
         searchButton.TabIndex = 2
         searchButton.Text = "Search"
         searchButton.UseVisualStyleBackColor = False
@@ -56,49 +61,61 @@ Partial Class ModifyProgramForm
         ' programIDTextBox
         ' 
         programIDTextBox.AsciiOnly = True
-        programIDTextBox.Font = New Font("Sitka Banner", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        programIDTextBox.Location = New Point(82, 111)
-        programIDTextBox.Margin = New Padding(4, 4, 4, 4)
+        programIDTextBox.Font = New Font("Segoe UI", 10F)
+        programIDTextBox.Location = New Point(199, 67)
+        programIDTextBox.Margin = New Padding(4)
         programIDTextBox.Mask = "L-000"
         programIDTextBox.Name = "programIDTextBox"
         programIDTextBox.PromptChar = "X"c
-        programIDTextBox.Size = New Size(256, 43)
+        programIDTextBox.Size = New Size(126, 34)
         programIDTextBox.TabIndex = 3
+        programIDTextBox.TextAlign = HorizontalAlignment.Center
         ' 
-        ' backButton
+        ' searchfield
         ' 
-        backButton.BackColor = Color.Red
-        backButton.FlatStyle = FlatStyle.Popup
-        backButton.Font = New Font("Sitka Banner", 8F)
-        backButton.ForeColor = Color.White
-        backButton.Location = New Point(355, 13)
-        backButton.Margin = New Padding(4, 4, 4, 4)
-        backButton.Name = "backButton"
-        backButton.Size = New Size(61, 34)
-        backButton.TabIndex = 17
-        backButton.Text = "Back"
-        backButton.UseVisualStyleBackColor = False
+        searchfield.BackColor = SystemColors.Control
+        searchfield.BackgroundImage = CType(resources.GetObject("searchfield.BackgroundImage"), Image)
+        searchfield.BackgroundImageLayout = ImageLayout.Stretch
+        searchfield.Location = New Point(191, 48)
+        searchfield.Name = "searchfield"
+        searchfield.Size = New Size(195, 67)
+        searchfield.TabIndex = 22
+        searchfield.TabStop = False
+        ' 
+        ' backbttn
+        ' 
+        backbttn.BackgroundImage = CType(resources.GetObject("backbttn.BackgroundImage"), Image)
+        backbttn.BackgroundImageLayout = ImageLayout.Stretch
+        backbttn.Location = New Point(12, 12)
+        backbttn.Name = "backbttn"
+        backbttn.Size = New Size(44, 35)
+        backbttn.TabIndex = 23
+        backbttn.TabStop = False
         ' 
         ' ModifyProgramForm
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
-        ClientSize = New Size(441, 277)
-        Controls.Add(backButton)
-        Controls.Add(programIDTextBox)
+        ClientSize = New Size(464, 146)
+        Controls.Add(backbttn)
         Controls.Add(searchButton)
+        Controls.Add(programIDTextBox)
+        Controls.Add(searchfield)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(4, 4, 4, 4)
+        Margin = New Padding(4)
         Name = "ModifyProgramForm"
         StartPosition = FormStartPosition.CenterParent
         Text = "ModifyProgramForm"
+        CType(searchfield, ComponentModel.ISupportInitialize).EndInit()
+        CType(backbttn, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents searchButton As Button
     Friend WithEvents programIDTextBox As MaskedTextBox
-    Friend WithEvents backButton As Button
+    Friend WithEvents searchfield As PictureBox
+    Friend WithEvents backbttn As PictureBox
 End Class

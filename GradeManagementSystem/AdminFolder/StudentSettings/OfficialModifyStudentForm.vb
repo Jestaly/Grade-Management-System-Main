@@ -49,36 +49,36 @@ Public Class OfficialModifyStudentForm
 
     End Sub
 
-    Private Sub programComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles programComboBox.SelectedIndexChanged
-        sectionComboBox.Items.Clear()
-        Dim selectedProgram As String = programComboBox.Text
+    Private Sub programComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
+        sectionComboBox.Items.Clear
+        Dim selectedProgram = programComboBox.Text
         Dim numOfSection As Integer
         Try
-            connector.connect.Open()
+            connector.connect.Open
             connector.query = "SELECT program_name,sections FROM program;"
             connector.command.Connection = connector.connect
             connector.command.CommandText = connector.query
             connector.reader = connector.command.ExecuteReader
             While connector.reader.Read
                 If selectedProgram.Equals(connector.reader("program_name").ToString) Then
-                    numOfSection = Integer.Parse(connector.reader("sections").ToString())
+                    numOfSection = Integer.Parse(connector.reader("sections").ToString)
                     Exit While
                 End If
             End While
-            connector.connect.Close()
+            connector.connect.Close
         Catch ex As MySqlException
-            connector.connect.Close()
+            connector.connect.Close
             MessageBox.Show("Database Error")
         End Try
 
-        Dim section() As String = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}
+        Dim section = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}
 
-        For i As Integer = 0 To numOfSection - 1
+        For i = 0 To numOfSection - 1
             sectionComboBox.Items.Add(section(i))
         Next
     End Sub
 
-    Private Sub backButton_Click(sender As Object, e As EventArgs) Handles backButton.Click
+    Private Sub backbttn_Click(sender As Object, e As EventArgs) Handles backbttn.Click
         Me.Visible = False
     End Sub
 End Class
