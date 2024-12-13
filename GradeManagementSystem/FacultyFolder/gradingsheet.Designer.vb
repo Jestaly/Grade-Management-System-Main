@@ -27,9 +27,7 @@ Partial Class GradingSheet
         equivalentDataView = New DataGridView()
         equivalentColumn = New DataGridViewTextBoxColumn()
         gradeDataView = New DataGridView()
-        gradeColumn = New DataGridViewTextBoxColumn()
         attendanceDataView = New DataGridView()
-        daysColumn = New DataGridViewTextBoxColumn()
         presentColumn = New DataGridViewTextBoxColumn()
         absentColumn = New DataGridViewTextBoxColumn()
         deleteItemButton = New Button()
@@ -45,21 +43,20 @@ Partial Class GradingSheet
         TextBox31 = New TextBox()
         TextBox30 = New TextBox()
         TextBox29 = New TextBox()
-        TextBox28 = New TextBox()
+        gradeMaxTextBox = New TextBox()
         TextBox27 = New TextBox()
-        TextBox26 = New TextBox()
+        examMaxTextBox = New TextBox()
         TextBox25 = New TextBox()
         TextBox24 = New TextBox()
         TextBox23 = New TextBox()
         TextBox22 = New TextBox()
         TextBox21 = New TextBox()
         TextBox20 = New TextBox()
-        TextBox19 = New TextBox()
         TextBox18 = New TextBox()
         TextBox17 = New TextBox()
         TextBox16 = New TextBox()
         TextBox15 = New TextBox()
-        TextBox9 = New TextBox()
+        AttMaxTextBox = New TextBox()
         TextBox10 = New TextBox()
         TextBox14 = New TextBox()
         TextBox13 = New TextBox()
@@ -86,6 +83,8 @@ Partial Class GradingSheet
         classChooseBox = New ComboBox()
         TextBox8 = New TextBox()
         attendanceButton = New Button()
+        examButton = New Button()
+        gradeColumn = New DataGridViewTextBoxColumn()
         CType(remarkDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(equivalentDataView, ComponentModel.ISupportInitialize).BeginInit()
         CType(gradeDataView, ComponentModel.ISupportInitialize).BeginInit()
@@ -168,13 +167,6 @@ Partial Class GradingSheet
         gradeDataView.Size = New Size(85, 320)
         gradeDataView.TabIndex = 120
         ' 
-        ' gradeColumn
-        ' 
-        gradeColumn.HeaderText = "Grade"
-        gradeColumn.MinimumWidth = 6
-        gradeColumn.Name = "gradeColumn"
-        gradeColumn.Width = 85
-        ' 
         ' attendanceDataView
         ' 
         attendanceDataView.AllowUserToAddRows = False
@@ -184,7 +176,7 @@ Partial Class GradingSheet
         attendanceDataView.BackgroundColor = Color.Honeydew
         attendanceDataView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         attendanceDataView.ColumnHeadersVisible = False
-        attendanceDataView.Columns.AddRange(New DataGridViewColumn() {daysColumn, presentColumn, absentColumn})
+        attendanceDataView.Columns.AddRange(New DataGridViewColumn() {presentColumn, absentColumn})
         attendanceDataView.Location = New Point(324, 257)
         attendanceDataView.Margin = New Padding(3, 2, 3, 2)
         attendanceDataView.Name = "attendanceDataView"
@@ -194,22 +186,13 @@ Partial Class GradingSheet
         attendanceDataView.Size = New Size(132, 320)
         attendanceDataView.TabIndex = 119
         ' 
-        ' daysColumn
-        ' 
-        daysColumn.HeaderText = "Days"
-        daysColumn.MinimumWidth = 6
-        daysColumn.Name = "daysColumn"
-        daysColumn.ReadOnly = True
-        daysColumn.SortMode = DataGridViewColumnSortMode.NotSortable
-        daysColumn.Width = 45
-        ' 
         ' presentColumn
         ' 
         presentColumn.HeaderText = "P"
         presentColumn.MinimumWidth = 6
         presentColumn.Name = "presentColumn"
         presentColumn.SortMode = DataGridViewColumnSortMode.NotSortable
-        presentColumn.Width = 45
+        presentColumn.Width = 67
         ' 
         ' absentColumn
         ' 
@@ -217,7 +200,7 @@ Partial Class GradingSheet
         absentColumn.MinimumWidth = 6
         absentColumn.Name = "absentColumn"
         absentColumn.SortMode = DataGridViewColumnSortMode.NotSortable
-        absentColumn.Width = 43
+        absentColumn.Width = 67
         ' 
         ' deleteItemButton
         ' 
@@ -390,17 +373,19 @@ Partial Class GradingSheet
         TextBox29.Size = New Size(85, 24)
         TextBox29.TabIndex = 103
         ' 
-        ' TextBox28
+        ' gradeMaxTextBox
         ' 
-        TextBox28.BackColor = Color.Honeydew
-        TextBox28.BorderStyle = BorderStyle.FixedSingle
-        TextBox28.Enabled = False
-        TextBox28.Font = New Font("Sitka Banner", 8F)
-        TextBox28.Location = New Point(903, 209)
-        TextBox28.Margin = New Padding(3, 2, 3, 2)
-        TextBox28.Name = "TextBox28"
-        TextBox28.Size = New Size(85, 24)
-        TextBox28.TabIndex = 102
+        gradeMaxTextBox.BackColor = Color.Honeydew
+        gradeMaxTextBox.BorderStyle = BorderStyle.FixedSingle
+        gradeMaxTextBox.Enabled = False
+        gradeMaxTextBox.Font = New Font("Sitka Banner", 8F)
+        gradeMaxTextBox.Location = New Point(903, 209)
+        gradeMaxTextBox.Margin = New Padding(3, 2, 3, 2)
+        gradeMaxTextBox.Name = "gradeMaxTextBox"
+        gradeMaxTextBox.Size = New Size(85, 24)
+        gradeMaxTextBox.TabIndex = 102
+        gradeMaxTextBox.Text = "100"
+        gradeMaxTextBox.TextAlign = HorizontalAlignment.Center
         ' 
         ' TextBox27
         ' 
@@ -414,17 +399,19 @@ Partial Class GradingSheet
         TextBox27.Size = New Size(77, 24)
         TextBox27.TabIndex = 101
         ' 
-        ' TextBox26
+        ' examMaxTextBox
         ' 
-        TextBox26.BackColor = Color.Honeydew
-        TextBox26.BorderStyle = BorderStyle.FixedSingle
-        TextBox26.Enabled = False
-        TextBox26.Font = New Font("Sitka Banner", 8F)
-        TextBox26.Location = New Point(825, 209)
-        TextBox26.Margin = New Padding(3, 2, 3, 2)
-        TextBox26.Name = "TextBox26"
-        TextBox26.Size = New Size(77, 24)
-        TextBox26.TabIndex = 100
+        examMaxTextBox.BackColor = Color.Honeydew
+        examMaxTextBox.BorderStyle = BorderStyle.FixedSingle
+        examMaxTextBox.Enabled = False
+        examMaxTextBox.Font = New Font("Sitka Banner", 8F)
+        examMaxTextBox.Location = New Point(825, 209)
+        examMaxTextBox.Margin = New Padding(3, 2, 3, 2)
+        examMaxTextBox.Name = "examMaxTextBox"
+        examMaxTextBox.Size = New Size(77, 24)
+        examMaxTextBox.TabIndex = 100
+        examMaxTextBox.Text = "0"
+        examMaxTextBox.TextAlign = HorizontalAlignment.Center
         ' 
         ' TextBox25
         ' 
@@ -509,19 +496,6 @@ Partial Class GradingSheet
         TextBox20.Text = "Projects"
         TextBox20.TextAlign = HorizontalAlignment.Center
         ' 
-        ' TextBox19
-        ' 
-        TextBox19.BackColor = Color.Honeydew
-        TextBox19.BorderStyle = BorderStyle.FixedSingle
-        TextBox19.Enabled = False
-        TextBox19.Font = New Font("Sitka Banner", 8F)
-        TextBox19.Location = New Point(324, 233)
-        TextBox19.Margin = New Padding(3, 2, 3, 2)
-        TextBox19.Name = "TextBox19"
-        TextBox19.Size = New Size(47, 24)
-        TextBox19.TabIndex = 93
-        TextBox19.Text = "Days"
-        ' 
         ' TextBox18
         ' 
         TextBox18.BackColor = Color.Honeydew
@@ -573,17 +547,19 @@ Partial Class GradingSheet
         TextBox15.Text = "Quizzes"
         TextBox15.TextAlign = HorizontalAlignment.Center
         ' 
-        ' TextBox9
+        ' AttMaxTextBox
         ' 
-        TextBox9.BackColor = Color.Honeydew
-        TextBox9.BorderStyle = BorderStyle.FixedSingle
-        TextBox9.Enabled = False
-        TextBox9.Font = New Font("Sitka Banner", 8F)
-        TextBox9.Location = New Point(324, 209)
-        TextBox9.Margin = New Padding(3, 2, 3, 2)
-        TextBox9.Name = "TextBox9"
-        TextBox9.Size = New Size(132, 24)
-        TextBox9.TabIndex = 88
+        AttMaxTextBox.BackColor = Color.Honeydew
+        AttMaxTextBox.BorderStyle = BorderStyle.FixedSingle
+        AttMaxTextBox.Enabled = False
+        AttMaxTextBox.Font = New Font("Sitka Banner", 8F)
+        AttMaxTextBox.Location = New Point(324, 209)
+        AttMaxTextBox.Margin = New Padding(3, 2, 3, 2)
+        AttMaxTextBox.Name = "AttMaxTextBox"
+        AttMaxTextBox.Size = New Size(132, 24)
+        AttMaxTextBox.TabIndex = 88
+        AttMaxTextBox.Text = "0"
+        AttMaxTextBox.TextAlign = HorizontalAlignment.Center
         ' 
         ' TextBox10
         ' 
@@ -591,12 +567,13 @@ Partial Class GradingSheet
         TextBox10.BorderStyle = BorderStyle.FixedSingle
         TextBox10.Enabled = False
         TextBox10.Font = New Font("Sitka Banner", 8F)
-        TextBox10.Location = New Point(368, 233)
+        TextBox10.Location = New Point(324, 233)
         TextBox10.Margin = New Padding(3, 2, 3, 2)
         TextBox10.Name = "TextBox10"
-        TextBox10.Size = New Size(48, 24)
+        TextBox10.Size = New Size(67, 24)
         TextBox10.TabIndex = 87
         TextBox10.Text = "P"
+        TextBox10.TextAlign = HorizontalAlignment.Center
         ' 
         ' TextBox14
         ' 
@@ -645,12 +622,13 @@ Partial Class GradingSheet
         TextBox11.BorderStyle = BorderStyle.FixedSingle
         TextBox11.Enabled = False
         TextBox11.Font = New Font("Sitka Banner", 8F)
-        TextBox11.Location = New Point(415, 233)
+        TextBox11.Location = New Point(391, 233)
         TextBox11.Margin = New Padding(3, 2, 3, 2)
         TextBox11.Name = "TextBox11"
-        TextBox11.Size = New Size(41, 24)
+        TextBox11.Size = New Size(65, 24)
         TextBox11.TabIndex = 83
         TextBox11.Text = "A"
+        TextBox11.TextAlign = HorizontalAlignment.Center
         ' 
         ' TextBox7
         ' 
@@ -883,11 +861,31 @@ Partial Class GradingSheet
         attendanceButton.Text = "Attendance"
         attendanceButton.UseVisualStyleBackColor = True
         ' 
+        ' examButton
+        ' 
+        examButton.Font = New Font("Sitka Text", 9F, FontStyle.Bold)
+        examButton.Location = New Point(739, 594)
+        examButton.Margin = New Padding(3, 2, 3, 2)
+        examButton.Name = "examButton"
+        examButton.Size = New Size(104, 27)
+        examButton.TabIndex = 135
+        examButton.Text = "Exam"
+        examButton.UseVisualStyleBackColor = True
+        ' 
+        ' gradeColumn
+        ' 
+        gradeColumn.HeaderText = "Grade"
+        gradeColumn.MinimumWidth = 6
+        gradeColumn.Name = "gradeColumn"
+        gradeColumn.ReadOnly = True
+        gradeColumn.Width = 85
+        ' 
         ' GradingSheet
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1191, 657)
+        Controls.Add(examButton)
         Controls.Add(attendanceButton)
         Controls.Add(classChooseBox)
         Controls.Add(logoutButton)
@@ -911,9 +909,9 @@ Partial Class GradingSheet
         Controls.Add(TextBox31)
         Controls.Add(TextBox30)
         Controls.Add(TextBox29)
-        Controls.Add(TextBox28)
+        Controls.Add(gradeMaxTextBox)
         Controls.Add(TextBox27)
-        Controls.Add(TextBox26)
+        Controls.Add(examMaxTextBox)
         Controls.Add(TextBox25)
         Controls.Add(TextBox24)
         Controls.Add(TextBox23)
@@ -924,7 +922,7 @@ Partial Class GradingSheet
         Controls.Add(TextBox17)
         Controls.Add(TextBox16)
         Controls.Add(TextBox15)
-        Controls.Add(TextBox9)
+        Controls.Add(AttMaxTextBox)
         Controls.Add(TextBox10)
         Controls.Add(TextBox14)
         Controls.Add(TextBox13)
@@ -944,7 +942,6 @@ Partial Class GradingSheet
         Controls.Add(Label12)
         Controls.Add(Label5)
         Controls.Add(Label2)
-        Controls.Add(TextBox19)
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(3, 2, 3, 2)
         Name = "GradingSheet"
@@ -979,21 +976,20 @@ Partial Class GradingSheet
     Friend WithEvents TextBox31 As TextBox
     Friend WithEvents TextBox30 As TextBox
     Friend WithEvents TextBox29 As TextBox
-    Friend WithEvents TextBox28 As TextBox
+    Friend WithEvents gradeMaxTextBox As TextBox
     Friend WithEvents TextBox27 As TextBox
-    Friend WithEvents TextBox26 As TextBox
+    Friend WithEvents examMaxTextBox As TextBox
     Friend WithEvents TextBox25 As TextBox
     Friend WithEvents TextBox24 As TextBox
     Friend WithEvents TextBox23 As TextBox
     Friend WithEvents TextBox22 As TextBox
     Friend WithEvents TextBox21 As TextBox
     Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents TextBox19 As TextBox
     Friend WithEvents TextBox18 As TextBox
     Friend WithEvents TextBox17 As TextBox
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents TextBox15 As TextBox
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents AttMaxTextBox As TextBox
     Friend WithEvents TextBox10 As TextBox
     Friend WithEvents TextBox14 As TextBox
     Friend WithEvents TextBox13 As TextBox
@@ -1021,10 +1017,10 @@ Partial Class GradingSheet
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents remarkColumn As DataGridViewTextBoxColumn
     Friend WithEvents equivalentColumn As DataGridViewTextBoxColumn
-    Friend WithEvents gradeColumn As DataGridViewTextBoxColumn
     Friend WithEvents examColumn As DataGridViewTextBoxColumn
-    Friend WithEvents daysColumn As DataGridViewTextBoxColumn
+    Friend WithEvents attendanceButton As Button
     Friend WithEvents presentColumn As DataGridViewTextBoxColumn
     Friend WithEvents absentColumn As DataGridViewTextBoxColumn
-    Friend WithEvents attendanceButton As Button
+    Friend WithEvents examButton As Button
+    Friend WithEvents gradeColumn As DataGridViewTextBoxColumn
 End Class

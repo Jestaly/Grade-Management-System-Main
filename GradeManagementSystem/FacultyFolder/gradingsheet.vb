@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Security.Permissions
+Imports MySql.Data.MySqlClient
 
 Public Class GradingSheet
     Private connector As New DatabaseConnector
@@ -89,7 +90,9 @@ Public Class GradingSheet
             End While
             projectDataView.Rows.Clear()
             For i As Integer = 1 To studentCount
-                projectDataView.Rows.Add()
+                If (projectDataView.Columns.Count > 0) Then
+                    projectDataView.Rows.Add()
+                End If
             Next
             connector.connect.Close()
             connector.reader.Close()
@@ -208,6 +211,69 @@ Public Class GradingSheet
         End Try
     End Sub
 
+    Private Function computeProject(projectArr() As Double) As Double()
+        Dim totalProjectScore As Double
+        Dim totalProjectMax As Double
+        Dim projectPercentage As Double
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_name, item_max_score FROM item WHERE item_type = 'Project' AND class_id = '" & classID & "' AND term = '" & term & "' ;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("item_max_score").ToString.Equals("")) Then
+                    totalProjectMax += Double.Parse(connector.reader("item_max_score").ToString)
+                End If
+            End While
+            MessageBox.Show("project max " & totalProjectMax)
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error computeProject()1")
+        End Try
+
+        Dim department As String = getDeptID()
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT p_project FROM percentage WHERE dept_id = '" & department & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("p_project").ToString.Equals("")) Then
+                    projectPercentage = Double.Parse(connector.reader("p_project").ToString)
+                    MessageBox.Show("project perc " & projectPercentage)
+                    Exit While
+                End If
+            End While
+            projectPercentage = projectPercentage / 100
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error  computeProject()2")
+        End Try
+
+        For i As Integer = 0 To projectArr.Length - 1
+            For j As Integer = 0 To projectDataView.ColumnCount - 1
+                Dim thisScore As Double = Double.Parse(projectDataView.Rows(i).Cells(j).Value.ToString)
+                MessageBox.Show("project this " & thisScore)
+                totalProjectScore += thisScore
+            Next
+            Dim totalProject As Double = (((totalProjectScore / totalProjectMax) * 50) + 50) * projectPercentage
+            MessageBox.Show("project total " & totalProject)
+            projectArr(i) = totalProject
+        Next
+
+        Return projectArr
+    End Function
+
     'QUIZ SETTINGS--------------------------------
     Private Sub refreshQuizCol()
         Dim colCount As Integer
@@ -268,7 +334,9 @@ Public Class GradingSheet
             End While
             quizDataView.Rows.Clear()
             For i As Integer = 1 To studentCount
-                quizDataView.Rows.Add()
+                If (quizDataView.Columns.Count > 0) Then
+                    quizDataView.Rows.Add()
+                End If
             Next
             connector.connect.Close()
             connector.reader.Close()
@@ -345,7 +413,6 @@ Public Class GradingSheet
 
     Private Function getQuizItemID(columnIndex As Integer) As String
         Dim columnName As String = quizDataView.Columns(columnIndex).Name
-        MessageBox.Show(columnName)
         Try
             connector.connect.Open()
             connector.query = "SELECT item_id FROM item WHERE item_name = '" & columnName & "' AND term = '" & term & "' AND class_id = '" & classID & "';"
@@ -388,6 +455,96 @@ Public Class GradingSheet
         End Try
     End Sub
 
+    Public professorID As String
+    Private Function computeQuiz(quizArr() As Double) As Double()
+        Dim totalQuizScore As Double
+        Dim totalQuizMax As Double
+        Dim quizPercentage As Double
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_name, item_max_score FROM item WHERE item_type = 'Quiz' AND class_id = '" & classID & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("item_max_score").ToString.Equals("")) Then
+                    totalQuizMax += Double.Parse(connector.reader("item_max_score").ToString)
+                End If
+            End While
+            MessageBox.Show("quiz max " & totalQuizMax)
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error computeQuiz()1")
+        End Try
+
+        Dim department As String = getDeptID()
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT p_quiz FROM percentage WHERE dept_id = '" & department & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("p_quiz").ToString.Equals("")) Then
+                    quizPercentage = Double.Parse(connector.reader("p_quiz").ToString)
+                    MessageBox.Show("quiz perc " & quizPercentage)
+                    Exit While
+                End If
+            End While
+            quizPercentage = quizPercentage / 100
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error  computeQuiz()2")
+        End Try
+
+        MessageBox.Show("row quiz" & quizArr.Length)
+        For i As Integer = 0 To quizArr.Length - 1
+            For j As Integer = 0 To quizDataView.ColumnCount - 1
+                Dim thisScore As Double = Double.Parse(quizDataView.Rows(i).Cells(j).Value.ToString)
+                MessageBox.Show("quiz this " & thisScore)
+                totalQuizScore += thisScore
+            Next
+            Dim totalQuiz As Double = (((totalQuizScore / totalQuizMax) * 50) + 50) * quizPercentage
+            MessageBox.Show("quiz total " & totalQuiz)
+            quizArr(i) = totalQuiz
+        Next
+        Return quizArr
+    End Function
+
+    Private Function getDeptID() As String
+        Dim department As String = ""
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT dept_id FROM professor WHERE id = '" & professorID & "'; "
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("dept_id").ToString.Equals("")) Then
+                    department = connector.reader("dept_id").ToString
+                    connector.reader.Close()
+                    connector.connect.Close()
+                    Return department
+                End If
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error getDeptID()")
+        End Try
+        Return Nothing
+    End Function
+
     'ATTENDANCE SETTINGS--------------------------------
     Private Sub refreshAttRows()
         Dim studentCount As Integer
@@ -411,6 +568,146 @@ Public Class GradingSheet
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error refreshAttRows()")
+        End Try
+    End Sub
+
+    Private Sub refreshAttScores()
+        isRefreshed = True
+        Dim numOfRow As Integer = attendanceDataView.RowCount
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT present FROM attendance WHERE class_id = '" & classID & "' AND term = '" & term & "' ORDER BY enrollment_id;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                If (Not connector.reader("present").ToString.Equals("")) Then
+                    attendanceDataView.Rows(i).Cells(0).Value = connector.reader("present").ToString
+                    i += 1
+                End If
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error refreshAttScores()")
+        End Try
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT absent FROM attendance WHERE class_id = '" & classID & "' AND term = '" & term & "' ORDER BY enrollment_id;"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                attendanceDataView.Rows(i).Cells(1).Value = connector.reader("absent").ToString
+                i += 1
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error refreshAttScores()")
+        End Try
+    End Sub
+
+    Private Sub attendanceDataView_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles attendanceDataView.CellValueChanged
+        If (isRefreshed = False) Then
+            Dim rowIndex As Integer = e.RowIndex
+            Dim columnIndex As Integer = e.ColumnIndex
+            If rowIndex >= 0 And columnIndex >= 0 Then
+                setAttendanceScore(rowIndex, columnIndex)
+            End If
+            mainRefresh()
+        End If
+    End Sub
+
+    Private Function computeAttendance(attendanceArr() As Double) As Double()
+        Dim totalAttendanceScore As Double
+        Dim totalAttendanceMax As Double
+        Dim attendancePercentage As Double
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_name, item_max_score FROM item WHERE item_type = 'Attendance' AND class_id = '" & classID & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("item_max_score").ToString.Equals("")) Then
+                    totalAttendanceMax += Double.Parse(connector.reader("item_max_score").ToString)
+                End If
+            End While
+            MessageBox.Show(" attendance max " & totalAttendanceMax)
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error computeAttendance()1")
+        End Try
+
+        Dim department As String = getDeptID()
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT p_attendance FROM percentage WHERE dept_id = '" & department & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("p_attendance").ToString.Equals("")) Then
+                    attendancePercentage = Double.Parse(connector.reader("p_attendance").ToString)
+                    MessageBox.Show("attendance perc " & attendancePercentage)
+                    Exit While
+                End If
+            End While
+            attendancePercentage = attendancePercentage / 100
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error  computeAttendance()2")
+        End Try
+        For i As Integer = 0 To attendanceDataView.RowCount - 2
+            Dim thisScore As Double = Double.Parse(attendanceDataView.Rows(i).Cells(0).Value.ToString)
+            MessageBox.Show("this attendance " & thisScore)
+            totalAttendanceScore += thisScore
+
+            Dim totalAttendance As Double = (((totalAttendanceScore / totalAttendanceMax) * 50) + 50) * attendancePercentage
+            MessageBox.Show("attendance total " & totalAttendance)
+            attendanceArr(i) = totalAttendance
+        Next
+        Return attendanceArr
+    End Function
+
+    Private Function getAttendanceScore(rowIndex As Integer, columnIndex As Integer) As Integer
+        Dim newValue As Integer = Integer.Parse(attendanceDataView.Rows(rowIndex).Cells(columnIndex).Value.ToString)
+        Return newValue
+    End Function
+
+    Private Sub setAttendanceScore(rowIndex As Integer, columnIndex As Integer)
+        Dim attendanceScore As Integer = getAttendanceScore(rowIndex, columnIndex)
+        Dim enrollmentID As String = getEnrollmentID(rowIndex)
+        Dim presOrAbs As String = "present"
+        If (columnIndex.ToString.Equals("1")) Then
+            presOrAbs = "absent"
+        End If
+        Try
+            connector.connect.Open()
+            connector.query = "UPDATE attendance SET " & presOrAbs & " = '" & attendanceScore & "' WHERE enrollment_id = '" & enrollmentID & "' AND class_id = '" & classID & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error setAttendanceScore")
         End Try
     End Sub
 
@@ -440,6 +737,173 @@ Public Class GradingSheet
         End Try
     End Sub
 
+    Private Sub placeExamScores(numOfColumn As Integer, examItem() As String)
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT score FROM score_record LEFT JOIN item ON score_record.item_id = item.item_id WHERE item_name = '" & examItem(0) & "' AND class_id = '" & classID & "' AND term = '" & term & "' ORDER BY enrollment_id;"
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                examDataView.Rows(i).Cells(0).Value = connector.reader("score").ToString
+                i += 1
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error placeExamScores()")
+        End Try
+    End Sub
+
+    Private Sub refreshExamScores()
+        isRefreshed = True
+        Dim numOfColumn As Integer = examDataView.ColumnCount
+        Dim numOfRow As Integer = examDataView.RowCount
+        Dim examItem(examDataView.ColumnCount) As String
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_name FROM item WHERE item_type = 'Exam' AND class_id = '" & classID & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                examItem(i) = connector.reader("item_name").ToString
+                i += 1
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error refreshExamScores()")
+        End Try
+        placeExamScores(numOfColumn, examItem)
+    End Sub
+
+    Private Sub examDataView_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles examDataView.CellValueChanged
+        If (isRefreshed = False) Then
+            Dim rowIndex As Integer = e.RowIndex
+            Dim columnIndex As Integer = e.ColumnIndex
+            If rowIndex >= 0 And columnIndex >= 0 Then
+                setExamScore(rowIndex, columnIndex)
+            End If
+            mainRefresh()
+        End If
+    End Sub
+
+    Private Function getExamScore(rowIndex As Integer, columnIndex As Integer) As Integer
+        Dim newValue As Integer = Integer.Parse(examDataView.Rows(rowIndex).Cells(columnIndex).Value.ToString)
+        Return newValue
+    End Function
+
+    Private Function getExamItemID(columnIndex As Integer) As String
+        Dim columnName As String = "E1"
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_id FROM item WHERE item_name = '" & columnName & "' AND term = '" & term & "' AND class_id = '" & classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("item_id").ToString.Equals("")) Then
+                    Dim itemID As String = connector.reader("item_id").ToString
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return itemID
+                End If
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error getExamItemID")
+        End Try
+        Return Nothing
+    End Function
+
+    Private Sub setExamScore(rowIndex As Integer, columnIndex As Integer)
+        Dim examScore As Integer = getExamScore(rowIndex, columnIndex)
+        Dim enrollmentID As String = getEnrollmentID(rowIndex)
+        Dim itemID As String = getExamItemID(columnIndex)
+        Try
+            connector.connect.Open()
+            connector.query = "UPDATE score_record SET score = '" & examScore & "' WHERE enrollment_id = '" & enrollmentID & "' AND item_id = '" & itemID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.command.ExecuteNonQuery()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            MessageBox.Show("Database Error setExamScore")
+        End Try
+    End Sub
+
+    Private Function computeExam(examArr() As Double) As Double()
+        Dim totalExamScore As Double
+        Dim totalExamMax As Double
+        Dim ExamPercentage As Double
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_name, item_max_score FROM item WHERE item_type = 'Exam' AND class_id = '" & classID & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("item_max_score").ToString.Equals("")) Then
+                    totalExamMax += Double.Parse(connector.reader("item_max_score").ToString)
+                End If
+            End While
+            MessageBox.Show(" exam max " & totalExamMax)
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error computeExam()1")
+        End Try
+
+        Dim department As String = getDeptID()
+
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT p_exam FROM percentage WHERE dept_id = '" & department & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Not connector.reader("p_exam").ToString.Equals("")) Then
+                    ExamPercentage = Double.Parse(connector.reader("p_exam").ToString)
+                    MessageBox.Show("exam perc " & ExamPercentage)
+                    Exit While
+                End If
+            End While
+            ExamPercentage = ExamPercentage / 100
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error  computeexam()2")
+        End Try
+
+        For i As Integer = 0 To examDataView.RowCount - 1
+            Dim thisScore As Double = Double.Parse(examDataView.Rows(i).Cells(0).Value.ToString)
+            MessageBox.Show("this exam " & thisScore)
+            totalExamScore += thisScore
+
+            Dim totalExam As Double = (((totalExamScore / totalExamMax) * 50) + 50) * ExamPercentage
+            MessageBox.Show("exam total " & totalExam)
+            examArr(i) = totalExam
+        Next
+
+        Return examArr
+    End Function
+
     'GRADE SETTINGS--------------------------------
     Private Sub refreshGradeRows()
         Dim studentCount As Integer
@@ -455,8 +919,9 @@ Public Class GradingSheet
                 End If
             End While
             gradeDataView.Rows.Clear()
-            For i As Integer = 1 To studentCount
+            For i As Integer = 0 To studentCount - 1
                 gradeDataView.Rows.Add()
+                gradeDataView.Rows(i).Cells(0).Value = 0
             Next
             connector.connect.Close()
             connector.reader.Close()
@@ -464,6 +929,52 @@ Public Class GradingSheet
             connector.connect.Close()
             MessageBox.Show("Database Error refreshAttRows()")
         End Try
+    End Sub
+
+    Private Sub placeGradeScores(numOfColumn As Integer, gradeItem() As String)
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT grade FROM grade LEFT JOIN enrollment ON grade.enrollment_id = enrollment.enrollment_id WHERE class_id = '" & classID & "'; "
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                examDataView.Rows(i).Cells(0).Value = connector.reader("grade").ToString
+                i += 1
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error placeGradeScores()")
+        End Try
+    End Sub
+
+    Private Sub refreshGradeScores()
+        isRefreshed = True
+        Dim numOfColumn As Integer = examDataView.ColumnCount
+        Dim numOfRow As Integer = examDataView.RowCount
+        Dim examItem(examDataView.ColumnCount) As String
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_name FROM item WHERE item_type = 'Exam' AND class_id = '" & classID & "' AND term = '" & term & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            Dim i As Integer = 0
+            While connector.reader.Read
+                examItem(i) = connector.reader("item_name").ToString
+                i += 1
+            End While
+            connector.reader.Close()
+            connector.connect.Close()
+        Catch ex As MySqlException
+            connector.reader.Close()
+            connector.connect.Close()
+            MessageBox.Show("Database Error refreshExamScores()")
+        End Try
+        placeExamScores(numOfColumn, examItem)
     End Sub
 
     'EQUIVALENT SETTINGS--------------------------------
@@ -520,6 +1031,10 @@ Public Class GradingSheet
 
     'OVERALL SETTINGS--------------------------------
     Public Sub mainRefresh()
+        Dim attendanceArr(attendanceDataView.RowCount) As Double
+        Dim projectArr(projectDataView.RowCount) As Double
+        Dim quizArr(quizDataView.RowCount) As Double
+        Dim examArr(examDataView.RowCount) As Double
         refreshForm()
         refreshProjCol()
         refreshProjRows()
@@ -528,10 +1043,16 @@ Public Class GradingSheet
         refreshQuizRows()
         refreshQuizScores()
         refreshAttRows()
+        refreshAttScores()
         refreshExamRows()
+        refreshExamScores()
         refreshGradeRows()
         refreshEquivalentRows()
         refreshRemarkRows()
+        'computeQuiz(quizArr)
+        'computeProject(projectArr)
+        'computeAttendance(attendanceArr)
+        'computeExam(examArr)
         isRefreshed = False
     End Sub
 
@@ -692,6 +1213,7 @@ Public Class GradingSheet
         makeAIFChild()
         makeSAFChild()
         makeDIFChild()
+        makeSEFChild()
     End Sub
 
     Private Sub makeDIFChild()
@@ -723,5 +1245,23 @@ Public Class GradingSheet
         Dim x As Integer = (Me.ClientSize.Width - setAttendance.Width) \ 2
         Dim y As Integer = (Me.ClientSize.Height - setAttendance.Height) \ 2
         setAttendance.Location = New Point(x, y)
+    End Sub
+
+    Private setExamForm As New SetExamForm
+    Private Sub examButton_Click(sender As Object, e As EventArgs) Handles examButton.Click
+        setExamForm.Visible = True
+    End Sub
+
+    Private Sub makeSEFChild()
+        setExamForm.TopLevel = False
+        setExamForm.Parent = Me
+        CenterSEF()
+        setExamForm.BringToFront()
+    End Sub
+
+    Private Sub CenterSEF()
+        Dim x As Integer = (Me.ClientSize.Width - setExamForm.Width) \ 2
+        Dim y As Integer = (Me.ClientSize.Height - setExamForm.Height) \ 2
+        setExamForm.Location = New Point(x, y)
     End Sub
 End Class

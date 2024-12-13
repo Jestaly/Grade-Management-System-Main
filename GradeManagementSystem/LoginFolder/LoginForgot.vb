@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports System.Security.Permissions
 Imports System.Text.RegularExpressions
 Imports System.Windows
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
@@ -235,7 +236,7 @@ Public Class LoginForgot
     End Sub
 
 
-    Private Function trimmedID() As String
+    Public Function trimmedID() As String
         Dim id As String = txtb_userid.Text.Replace("-", "")
         Return id
     End Function
@@ -290,30 +291,6 @@ Public Class LoginForgot
         End Try
     End Sub
 
-    Private Sub attendanceExists()
-        Try
-            connector.connect.Open()
-            connector.query = "SELECT item_type FROM item WHERE item_type = 'Attendance' AND term = '" & gradingSheet.getTerm & "' AND class_id = '" & gradingSheet.classID & "';"
-            connector.command.Connection = connector.connect
-            connector.command.CommandText = connector.query
-            connector.reader = connector.command.ExecuteReader
-            While connector.reader.Read
-                If (connector.reader("Class ID").ToString Is Nothing) Then
-                    gradingSheet.attendanceButton.Enabled = False
-                Else
-                    gradingSheet.attendanceButton.Enabled = True
-                End If
-                Exit While
-            End While
-            gradingSheet.classChooseBox.SelectedIndex = 0
-            connector.connect.Close()
-            connector.reader.Close()
-        Catch ex As MySqlException
-            connector.connect.Close()
-            MessageBox.Show("Database Error")
-        End Try
-    End Sub
-
     Public Sub loadClass()
         Dim classID As String = ""
         Try
@@ -329,14 +306,74 @@ Public Class LoginForgot
                     gradingSheet.classChooseBox.Items.Add(classID)
                 End If
             End While
-            gradingSheet.classChooseBox.SelectedIndex = 0
+            If (gradingSheet.classChooseBox.Items.Count > 0) Then
+                gradingSheet.classChooseBox.SelectedIndex = 0
+            End If
             connector.connect.Close()
             connector.reader.Close()
         Catch ex As MySqlException
             connector.connect.Close()
             MessageBox.Show("Database Error")
         End Try
+
+        If (hasAttendance()) Then
+            gradingSheet.attendanceButton.Enabled = False
+        End If
+        If (hasExam()) Then
+            gradingSheet.examButton.Enabled = False
+        End If
+
+        gradingSheet.AttMaxTextBox.Text = getAttText()
+        gradingSheet.examMaxTextBox.Text = getExamText()
+        gradingSheet.professorID = trimmedID()
     End Sub
+
+    Private Function getExamText() As String
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_max_score FROM item WHERE item_type = 'Exam' AND class_id = '" & gradingSheet.classChooseBox.Text & "' AND term = '" & gradingSheet.getTerm & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                Dim examText As String = connector.reader("item_max_score").ToString
+                connector.reader.Close()
+                connector.connect.Close()
+                Return examText
+            End While
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return Nothing
+    End Function
+
+    Private Function getAttText() As String
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT item_max_score FROM item WHERE item_type = 'Attendance' AND class_id = '" & gradingSheet.classChooseBox.Text & "' AND term = '" & gradingSheet.getTerm & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                Dim attText As String = connector.reader("item_max_score").ToString
+                connector.reader.Close()
+                connector.connect.Close()
+                Return attText
+            End While
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return Nothing
+    End Function
+
     Public Sub getProfName()
         Try
             connector.connect.Open()
@@ -506,7 +543,6 @@ Public Class LoginForgot
                     If (read("email").Equals(email)) Then
                         userID = read("id")
                         Exit While
-
                     End If
                 End While
                 read.Close()
@@ -561,4 +597,54 @@ Public Class LoginForgot
         resetForgot()
         ShowLogin()
     End Sub
+
+    Private Function hasAttendance() As Boolean
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT COUNT(item_id) AS attendance FROM item WHERE item_type = 'Attendance' AND term = '" & gradingSheet.getTerm & "' AND class_id = '" & gradingSheet.classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Integer.Parse(connector.reader("attendance").ToString) > 0) Then
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return True
+                End If
+                Exit While
+            End While
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return False
+    End Function
+
+    Private Function hasExam() As Boolean
+        Try
+            connector.connect.Open()
+            connector.query = "SELECT COUNT(item_id) AS exam FROM item WHERE item_type = 'Exam' AND term = '" & gradingSheet.getTerm & "' AND class_id = '" & gradingSheet.classID & "';"
+            connector.command.Connection = connector.connect
+            connector.command.CommandText = connector.query
+            connector.reader = connector.command.ExecuteReader
+            While connector.reader.Read
+                If (Integer.Parse(connector.reader("exam").ToString) > 0) Then
+                    connector.connect.Close()
+                    connector.reader.Close()
+                    Return True
+                End If
+                Exit While
+            End While
+            connector.connect.Close()
+            connector.reader.Close()
+        Catch ex As MySqlException
+            connector.connect.Close()
+            connector.reader.Close()
+            MessageBox.Show("Database Error")
+        End Try
+        Return False
+    End Function
 End Class
